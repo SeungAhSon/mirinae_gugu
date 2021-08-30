@@ -1,4 +1,4 @@
-# gugujeoljeol
+# mirinae_gugu
 
 A new Flutter project.
 

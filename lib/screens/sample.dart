@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gugujeoljeol/screens/screens.dart';
+import 'package:mirinae_gugu/screens/screens.dart';
 
 class SamplePage extends StatelessWidget {
   @override

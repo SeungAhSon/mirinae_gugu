@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mirinae_gugu">
+    package="com.example.gugujeoljeol">
    <application
-        android:label="mirinae_gugu"
+        android:label="gugujeoljeol"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

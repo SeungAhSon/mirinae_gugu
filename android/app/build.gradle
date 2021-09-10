@@ -73,5 +73,5 @@ dependencies {
         implementation 'com.google.firebase:firebase-auth'
         implementation 'com.google.firebase:firebase-firestore'
         implementation 'com.android.support:multidex:1.0.3'
-
+        implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }

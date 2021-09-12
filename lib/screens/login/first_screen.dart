@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/screens/login/login_page.dart';
 import 'package:mirinae_gugu/screens/login/sign_in.dart';
+
+import '../login.dart';
+
 
 class FirstScreen extends StatelessWidget {
   @override
@@ -63,9 +66,6 @@ class FirstScreen extends StatelessWidget {
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) {return LoginPage();}), ModalRoute.withName('/'));
                 },
                 color: Colors.deepPurple,
-                elevation: 5,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
@@ -73,6 +73,9 @@ class FirstScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 25, color: Colors.white),
                   ),
                 ),
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40)),
               )
             ],
           ),

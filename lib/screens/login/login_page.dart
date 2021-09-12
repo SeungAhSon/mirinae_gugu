@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _signInButton() {
-    return OutlinedButton(
+    return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
         signInWithGoogle().then((result) {

@@ -45,19 +45,19 @@ class _MyHomePageState extends State<MyHomePage> {
             onTap: _onTap,
             currentIndex: _currentIndex,
             items: [
-              new BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 title: Text('MY'),
               ),
-              new BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: Icon(Icons.menu_book),
                 title: Text('학습'),
               ),
-              new BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: Icon(Icons.mic),
                 title: Text('녹음'),
               ),
-              new BottomNavigationBarItem(
+              BottomNavigationBarItem(
                 icon: Icon(Icons.more_horiz),
                 title: Text('더보기'),
                 //chat

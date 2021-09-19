@@ -1,67 +1,125 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:mirinae_gugu/video_down/firebase_file.dart';
+import 'package:mirinae_gugu/video_down/firebase_api.dart';
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/screens/screens.dart';
+import 'package:mirinae_gugu/video_down/firebase_image.dart';
 
-void main() {
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  //초기화 필수임
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.blue,),
-      home: MyHomePage(title: '구구절절'),
-
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  static final String title = 'Firebase Download';
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  Widget build(BuildContext context) => MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: title,
+    theme: ThemeData(primarySwatch: Colors.blue),
+    home: MainPage(),
+  );
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _currentIndex = 0;
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
 
-  final List<Widget> _children = [SamplePage(), StudyPage(), RecordPage(), AboutPage()];
-  void _onTap(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+class _MainPageState extends State<MainPage> {
+  late Future<List<FirebaseFile>> futureFiles;
+
+  @override
+  void initState() {
+    super.initState();
+
+    futureFiles = FirebaseApi.listAll('files/');
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: _children[_currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            onTap: _onTap,
-            currentIndex: _currentIndex,
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                title: Text('MY'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.menu_book),
-                title: Text('학습'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.mic),
-                title: Text('녹음'),
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.more_horiz),
-                title: Text('더보기'),
-                //chat
-              )
-            ]));
-  }
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(
+      title: Text(MyApp.title),
+      centerTitle: true,
+    ),
+    body: FutureBuilder<List<FirebaseFile>>(
+      future: futureFiles,
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting:
+            return Center(child: CircularProgressIndicator());
+          default:
+            if (snapshot.hasError) {
+              return Center(child: Text('Some error occurred!'));
+            } else {
+              final files = snapshot.data!;
+
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildHeader(files.length),
+                  const SizedBox(height: 12),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: files.length,
+                      itemBuilder: (context, index) {
+                        final file = files[index];
+
+                        return buildFile(context, file);
+                      },
+                    ),
+                  ),
+                ],
+              );
+            }
+        }
+      },
+    ),
+  );
+
+  Widget buildFile(BuildContext context, FirebaseFile file) => ListTile(
+    leading: ClipOval(
+      child: Image.network(
+        file.url,
+        width: 52,
+        height: 52,
+        fit: BoxFit.cover,
+      ),
+    ),
+    title: Text(
+      file.name,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        decoration: TextDecoration.underline,
+        color: Colors.blue,
+      ),
+    ),
+    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => ImagePage(file: file),
+    )),
+  );
+
+  Widget buildHeader(int length) => ListTile(
+    tileColor: Colors.blue,
+    leading: Container(
+      width: 52,
+      height: 52,
+      child: Icon(
+        Icons.file_copy,
+        color: Colors.white,
+      ),
+    ),
+    title: Text(
+      '$length Files',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 20,
+        color: Colors.white,
+      ),
+    ),
+  );
 }

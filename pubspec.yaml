@@ -31,7 +31,7 @@ dependencies:
   provider: ^6.0.0
   carousel_slider: ^4.0.0
 # flutter_linkify: ^5.0.2
-  rxdart: ^0.21.0
+  rxdart: ^0.27.2
   #cloud_firestore: ^0.13.6
   font_awesome_flutter: ^9.1.0
   #google_sign_in: ^4.4.6
@@ -48,10 +48,18 @@ dependencies:
   firebase_auth: ^2.0.0
   google_sign_in: ^5.0.4
   cloud_firestore: ^2.3.0
-  image_picker: ^0.6.2+2
+  image_picker: ^0.7.0
   path_provider: ^2.0.1
 
   video_player:
+
+  get: 3.24.0
+  flutter_svg: ^0.19.1
+  intl: ^0.17.0
+  #youtube_player_flutter: ^8.0.0
+  youtube_player_flutter: ^6.1.0+7
+  #shared_preferences: ^0.5.12+4
+  cached_network_image: ^3.1.0
 
 
 dev_dependencies:
@@ -73,6 +81,7 @@ flutter:
   assets:
     - images/hedgehog.jpeg
     - images/google_logo.png
+    - images/asset/
      #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

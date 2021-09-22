@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/controller/app_controller.dart';
-
+import 'package:mirinae_gugu/video/src/controller/app_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/home.dart';
+import 'package:mirinae_gugu/video/src/pages/Explore.dart';
+import 'package:mirinae_gugu/video/src/pages/Add.dart';
 
 
 class App extends GetView<AppController>{ //루트 경로로  만듦
@@ -13,7 +15,22 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
   Widget build(BuildContext context){
 
     return Scaffold(
-      appBar: AppBar(backgroundColor: PrimaryColor1,),
+
+      body: Obx(() {
+        switch(RouteName.values[controller.currentIndex.value]) {
+          case RouteName.Home:
+            return Home();
+            break;
+          case RouteName.Explore:
+            return Explore();
+            break;
+          case RouteName.Add:
+            return Add();
+            break;
+        }
+        return Container();
+
+      }),
       bottomNavigationBar: Obx(
             ()=> BottomNavigationBar(
               type: BottomNavigationBarType.fixed,

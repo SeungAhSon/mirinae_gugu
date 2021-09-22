@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/binding/InitBinding.dart';
+import 'package:mirinae_gugu/video/src/binding/InitBinding.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 void main() {

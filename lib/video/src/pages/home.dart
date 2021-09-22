@@ -6,8 +6,8 @@ import 'package:mirinae_gugu/video/src/components/Video_widget.dart';
 
 
 class Home extends StatelessWidget{
-
   const Home({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context){
     return SafeArea(
@@ -44,19 +44,21 @@ class Home extends StatelessWidget{
           ],
         ),
           body: ListView.builder(
-            padding: const EdgeInsets.all(1),
+            padding: const EdgeInsets.all(50.0),
+            itemCount: 10,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: (){
-                },
+              onTap: (){
+
+              },
                 child: VideoWidget(),
               );
             },
               ),
 
-          ),
 
 
+)
     );
   }
 }

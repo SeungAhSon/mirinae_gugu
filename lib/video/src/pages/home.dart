@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/components/Video_appbar.dart';
 import 'package:mirinae_gugu/video/src/components/Video_widget.dart';
@@ -44,8 +45,8 @@ class Home extends StatelessWidget{
           ],
         ),
           body: ListView.builder(
-            padding: const EdgeInsets.all(0),
-            itemCount:1,
+            padding: const EdgeInsets.only(left: 50,right: 50,),
+            itemCount:2,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
               onTap: (){

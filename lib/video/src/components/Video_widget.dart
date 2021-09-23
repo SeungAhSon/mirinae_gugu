@@ -11,16 +11,22 @@ class VideoWidget extends StatelessWidget{
     return Container(
 
       height: MediaQuery.of(context).size.height/2.9,
+
       color: Colors.grey.withOpacity(0.5),
     );
   }
 
-  Widget _simpleDetailinfo(){
+  Widget _simpleDetailinfo(BuildContext context){
     return Container(
       child: Row(children: [
+        SizedBox(
+          height: MediaQuery.of(context).size.height/30,
+        ),
 
       ],
+
       ),
+
     );
   }
 
@@ -30,7 +36,7 @@ class VideoWidget extends StatelessWidget{
       child: Column(
         children: [
           _thumbnail(context),
-          _simpleDetailinfo()
+          _simpleDetailinfo(context)
         ],
       ),
     );

@@ -16,7 +16,8 @@ class Home extends StatelessWidget{
       child: Scaffold(
 
         appBar: AppBar(
-
+          //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
+          //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
           backgroundColor: Colors.white,
           title: Text('1-1',
             style: TextStyle(
@@ -58,7 +59,7 @@ class Home extends StatelessWidget{
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 3), //상단 슬라이드 밑에 선
+                padding: EdgeInsets.only(bottom:MediaQuery.of(context).size.height/(300/1)), //상단 슬라이드 밑에 선
                 child: Container(
                   height: 1,
                   color: Colors.grey.withOpacity(0.2),
@@ -67,7 +68,7 @@ class Home extends StatelessWidget{
 
               //여긴 유튜브 영상
               Padding(
-                padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
 
                 height: MediaQuery.of(context).size.height/(3/1),
@@ -80,7 +81,7 @@ class Home extends StatelessWidget{
               ),
 
               Padding(
-                padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
 
                 height: MediaQuery.of(context).size.height/(3/1),

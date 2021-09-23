@@ -32,7 +32,9 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
 
       }),
       bottomNavigationBar: Obx(
+
             ()=> BottomNavigationBar(
+
               type: BottomNavigationBarType.fixed,
         currentIndex: controller.currentIndex.value,
       showSelectedLabels: true,

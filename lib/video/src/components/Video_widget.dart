@@ -20,7 +20,7 @@ class VideoWidget extends StatelessWidget{
     return Container(
       child: Row(children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height/30,
+          height: MediaQuery.of(context).size.height/40,
         ),
 
       ],

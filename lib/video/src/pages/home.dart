@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/components/Video_appbar.dart';
 import 'package:mirinae_gugu/video/src/components/Video_widget.dart';
@@ -44,18 +45,32 @@ class Home extends StatelessWidget{
             ),
           ],
         ),
-          body: ListView.builder(
-            padding: const EdgeInsets.only(left: 50,right: 50,),
-            itemCount:2,
-            itemBuilder: (BuildContext context, int index) {
-              return GestureDetector(
-              onTap: (){
 
-              },
-                child: VideoWidget(),
-              );
-            },
+          body: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 30,right: 30,),
+                child: Container(
+
+                height: MediaQuery.of(context).size.height/2.9,
+                color: Colors.blue.withOpacity(0.5),
               ),
+            ),
+
+              SizedBox(
+                height: MediaQuery.of(context).size.height/40,
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(left: 30,right: 30,),
+                child: Container(
+
+                height: MediaQuery.of(context).size.height/2.9,
+                color: Colors.blue.withOpacity(0.5),
+              ),
+              ),
+            ],
+          )
 
 
 

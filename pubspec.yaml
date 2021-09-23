@@ -50,7 +50,7 @@ dependencies:
   cloud_firestore: ^2.3.0
   image_picker: ^0.7.0
   path_provider: ^2.0.1
-
+  sizer: ^2.0.15
   video_player:
 
   get: 3.24.0

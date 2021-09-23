@@ -14,7 +14,6 @@ class Home extends StatelessWidget{
   Widget build(BuildContext context){
     return SafeArea(
       child: Scaffold(
-
         appBar: AppBar(
           //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
           //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
@@ -77,7 +76,7 @@ class Home extends StatelessWidget{
             ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height/(50/1),
+                height: MediaQuery.of(context).size.height/(80/1),
               ),
 
               Padding(
@@ -88,14 +87,85 @@ class Home extends StatelessWidget{
                 color: Colors.grey.withOpacity(0.5),
               ),
               ),
+
+              Padding(
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/(80/1), bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                child: Container(
+                  height: MediaQuery.of(context).size.height/(13/1),
+                  color: Colors.grey.withOpacity(0.5),
+                ),
+              ),
+
+
+
+              //하단 바 상단선
+              Padding(
+                padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/(80/1),bottom:0), //상단 슬라이드 밑에 선
+                child: Container(
+                  height: 1,
+                  color: Colors.grey.withOpacity(0.5),
+                ),
+              ),
+
+
+              //하단 바
+              Padding(
+                padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/(70/1), right: MediaQuery.of(context).size.width/(70/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                child: Container(
+                  height: MediaQuery.of(context).size.height/(13/1),
+                  color: Colors.white.withOpacity(0),
+                    child: _buttonZone()
+                ),
+              ),
+
+              //하단 바 아래
+              Padding(
+                padding: EdgeInsets.only(bottom:MediaQuery.of(context).size.height/(300/1)), //상단 슬라이드 밑에 선
+                child: Container(
+                  height: 1,
+                  color: Colors.grey.withOpacity(0.5),
+
+                ),
+              ),
+
+
+
+
             ],
           )
 
-
-
-)
+),
     );
   }
+
+
+  Widget _buttonZone() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(Icons.arrow_back_sharp, size: 30,
+          color: Colors.black.withOpacity(0)),
+
+        // IconButton(
+        //     icon: Icon(Icons.arrow_back_sharp),
+        //     iconSize: 30,
+        //     color: Colors.black,
+        //     onPressed: () {
+        //       print('이전꺼');
+        //     }
+        // ),
+        IconButton(
+            icon: Icon(Icons.arrow_forward_sharp),
+            iconSize: 30,
+            color: Colors.black,
+            onPressed: () {
+              print('앞에꺼');
+            }
+        ),
+      ],
+    );
+  }
+
 }
 
     //     return SafeArea(

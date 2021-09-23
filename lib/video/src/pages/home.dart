@@ -18,10 +18,11 @@ class Home extends StatelessWidget{
         appBar: AppBar(
 
           backgroundColor: Colors.white,
-          title: Text('구구절절',
+          title: Text('1-1',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.blueAccent,
               fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),),
           centerTitle: true,
           leading: IconButton(
@@ -49,24 +50,41 @@ class Home extends StatelessWidget{
           body: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 30,right: 30,),
+                padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(30/29),), //상단 슬라이드
                 child: Container(
 
-                height: MediaQuery.of(context).size.height/2.9,
-                color: Colors.blue.withOpacity(0.5),
+                  height: MediaQuery.of(context).size.height/(150/1),
+                  color: Colors.blue.withOpacity(0.6),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 3), //상단 슬라이드 밑에 선
+                child: Container(
+                  height: 1,
+                  color: Colors.grey.withOpacity(0.2),
+                ),
+              ),
+
+              //여긴 유튜브 영상
+              Padding(
+                padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                child: Container(
+
+                height: MediaQuery.of(context).size.height/(3/1),
+                color: Colors.grey.withOpacity(0.5),
               ),
             ),
 
               SizedBox(
-                height: MediaQuery.of(context).size.height/40,
+                height: MediaQuery.of(context).size.height/(50/1),
               ),
 
               Padding(
-                padding: EdgeInsets.only(left: 30,right: 30,),
+                padding: EdgeInsets.only(left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
 
-                height: MediaQuery.of(context).size.height/2.9,
-                color: Colors.blue.withOpacity(0.5),
+                height: MediaQuery.of(context).size.height/(3/1),
+                color: Colors.grey.withOpacity(0.5),
               ),
               ),
             ],

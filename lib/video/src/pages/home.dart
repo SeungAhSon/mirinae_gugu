@@ -49,6 +49,8 @@ class Home extends StatelessWidget{
 
           body: Column(
             children: [
+
+              //상단 슬라이드
               Padding(
                 padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(30/29),), //상단 슬라이드
                 child: Container(
@@ -57,8 +59,10 @@ class Home extends StatelessWidget{
                   color: Colors.blue.withOpacity(0.6),
                 ),
               ),
+
+              //상단 슬라이드 밑에 선
               Padding(
-                padding: EdgeInsets.only(bottom:MediaQuery.of(context).size.height/(300/1)), //상단 슬라이드 밑에 선
+                padding: EdgeInsets.only(bottom:MediaQuery.of(context).size.height/(500/1)), //상단 슬라이드 밑에 선
                 child: Container(
                   height: 1,
                   color: Colors.grey.withOpacity(0.2),
@@ -75,10 +79,14 @@ class Home extends StatelessWidget{
               ),
             ),
 
+
+              //중간 여백
               SizedBox(
                 height: MediaQuery.of(context).size.height/(80/1),
               ),
 
+
+              //카메라
               Padding(
                 padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
@@ -88,6 +96,8 @@ class Home extends StatelessWidget{
               ),
               ),
 
+
+              //텍스트
               Padding(
                 padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/(80/1), bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(

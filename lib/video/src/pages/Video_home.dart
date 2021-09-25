@@ -2,19 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/app.dart';
-import 'package:mirinae_gugu/video/src/components/Video_appbar.dart';
-import 'package:mirinae_gugu/video/src/components/Video_widget.dart';
+import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
 
 
 class Home extends StatelessWidget{
-  const Home({Key? key}) : super(key: key);
-
+  Home({Key? key}) : super(key: key);
+  final VideoHomeController controller= Get.put(VideoHomeController());
 
 
 
   @override
   Widget build(BuildContext context){
+
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(
@@ -127,7 +126,7 @@ class Home extends StatelessWidget{
               Padding(
                 padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/(70/1), right: MediaQuery.of(context).size.width/(70/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08, //크기 8%
                   color: Colors.white.withOpacity(0),
                     child: _buttonZone()
                 ),

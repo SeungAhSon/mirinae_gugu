@@ -1,19 +1,99 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
+import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
+
+import 'package:mirinae_gugu/main.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+
+import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
 
 
-class Home extends StatelessWidget{
-  Home({Key? key}) : super(key: key);
-  final VideoHomeController controller= Get.put(VideoHomeController());
+
+class Home extends StatefulWidget {
+  @override
+  _Home createState() => _Home();
+}
+
+class _Home extends State<Home>{
+  //final VideoHomeController controller= Get.put(VideoHomeController());
+  late final YoutubePlayerController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = YoutubePlayerController(
+      initialVideoId: 'urlVideoFromYouTube',
+      params: const YoutubePlayerParams(
+        playlist: [
+          '1uJvtbTyVPk',
+        ],
+        loop: true,
+        showControls: false,
+        showFullscreenButton: false,
+        showVideoAnnotations: false,
+        privacyEnhanced: true,
+        useHybridComposition: false,
+
+
+      ),
+    );
+
+
+
+
+
+    _controller.onEnterFullscreen = () {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+      log('Entered Fullscreen');
+    };
+    _controller.onExitFullscreen = () {
+      log('Exited Fullscreen');
+    };
+  }
+  //
+  // void runYoutubePlayer(){
+  //   _controller = YoutubePlayerController(
+  //       initialVideoId: "W-rHIsDFrzQ",
+  //     params: YoutubePlayerParams(
+  //       playlist: ['nPt8bK2gbaU', 'gQDByCdjUXw'],
+  //       startAt: Duration(seconds: 0),
+  //       showControls: true,
+  //       showFullscreenButton: true,
+  //     )
+  //   );
+  //   YoutubePlayerControllerProvider( // Provides controller to all the widget below it.
+  //     controller: _controller,
+  //     child: YoutubePlayerIFrame(
+  //       aspectRatio: 16 / 9,
+  //     ),
+  //   );
+  // }
+
+  @override
+
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
+  }
+
 
 
 
   @override
   Widget build(BuildContext context){
 
+    //Get.find<YoutubeDetailController>();
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(
@@ -49,9 +129,9 @@ class Home extends StatelessWidget{
             ),
           ],
         ),
-        
+
           body: Column(
-            
+
             children: [
 
               //상단 슬라이드
@@ -77,9 +157,10 @@ class Home extends StatelessWidget{
               Padding(
                 padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.36,
-                color: Colors.grey.withOpacity(0.5),
+                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38, //39
+                width: MediaQuery.of(context).size.width,
+                  color: Colors.grey.withOpacity(0.5),
+                  child: youtube(context),
               ),
             ),
 
@@ -95,7 +176,7 @@ class Home extends StatelessWidget{
                 padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
 
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.36,
+                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.37,
                 color: Colors.grey.withOpacity(0.5),
               ),
               ),
@@ -142,7 +223,7 @@ class Home extends StatelessWidget{
                 ),
               ),
 
-//0.043남음
+//0.013남음
 
 
             ],
@@ -180,31 +261,22 @@ class Home extends StatelessWidget{
     );
   }
 
+
+
+  Widget youtube(BuildContext context) {
+
+
+    return YoutubePlayerControllerProvider( // Provides controller to all the widget below it.
+      controller: _controller,
+      child: YoutubePlayerIFrame(
+        aspectRatio: 16 / 9,
+      ),
+    );
+  }
+
+
+
+
 }
 
-    //     return SafeArea(
-//       child: CustomScrollView
-//       (slivers: [
-//         SliverAppBar(
-//             title: CustomAppBar(),
-//             floating: true,
-//             snap: true
-//         ),
-//         SliverList(
-//           delegate: SliverChildBuilderDelegate(
-//                 (context, index){
-//                   return Padding(
-//                       padding:const EdgeInsets.all(8.0),
-//                       child: Container(height: 150,color: Colors.grey,),
-//                   );
-//
-//                 },
-//               childCount: 10,
-//             ),
-//             ),
-//           ],
-//
-//     ),
-// );
-//   }
-// }
+

@@ -52,12 +52,13 @@ dependencies:
   path_provider: ^2.0.1
   sizer: ^2.0.15
   video_player:
+  youtube_player_iframe: ^2.2.2
 
   get: 3.24.0
   flutter_svg: ^0.19.1
   intl: ^0.17.0
   #youtube_player_flutter: ^8.0.0
-  youtube_player_flutter: ^6.1.0+7
+  youtube_player_flutter: ^8.0.0
   #shared_preferences: ^0.5.12+4
   cached_network_image: ^3.1.0
 

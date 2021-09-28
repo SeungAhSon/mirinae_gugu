@@ -1,11 +1,13 @@
 import 'dart:developer';
 
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
+import 'package:mirinae_gugu/video/src/models/camera.dart';
 import 'package:mirinae_gugu/video/src/pages/Video_home.dart';
 import 'package:mirinae_gugu/video/src/repository/Youtube_Repository.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -19,7 +21,14 @@ import 'package:mirinae_gugu/video/src/components/initbinding.dart';
 
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras = await availableCameras();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
@@ -27,7 +36,7 @@ class MyApp extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    WidgetsFlutterBinding.ensureInitialized();
+
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]); //세로 고정
     return MaterialApp(
       debugShowCheckedModeBanner: false,

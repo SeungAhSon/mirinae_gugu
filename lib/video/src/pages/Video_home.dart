@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,69 +11,60 @@ import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
 import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
 
 import 'package:mirinae_gugu/main.dart';
+import 'package:mirinae_gugu/video/src/models/camera.dart';
 //import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
 
+List<CameraDescription> cameras = List.empty(growable: true); //카메라
 
 
 class Home extends StatefulWidget {
   @override
+  const Home({Key? key}) : super(key: key);
   _Home createState() => _Home();
 }
 
 class _Home extends State<Home>{
+  CameraController controller =
+  CameraController(cameras[1], ResolutionPreset.max);
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
 
   @override
   void initState() {
     super.initState();
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    });
     _controller = YoutubePlayerController(
-      initialVideoId: 'XrhZaJBfq0s',
+      initialVideoId: '1uJvtbTyVPk',
       flags: YoutubePlayerFlags(
         autoPlay: false,
         loop: false,
-        //hideThumbnail: false,
-        isLive: false,
+        hideThumbnail: false,
+        //isLive: true,
+
+        controlsVisibleAtStart: false,
+
         useHybridComposition: false,
       ),
     );
 
-
-
-
-
-
   }
-  //
-  // void runYoutubePlayer(){
-  //   _controller = YoutubePlayerController(
-  //       initialVideoId: "W-rHIsDFrzQ",
-  //     params: YoutubePlayerParams(
-  //       playlist: ['nPt8bK2gbaU', 'gQDByCdjUXw'],
-  //       startAt: Duration(seconds: 0),
-  //       showControls: true,
-  //       showFullscreenButton: true,
-  //     )
-  //   );
-  //   YoutubePlayerControllerProvider( // Provides controller to all the widget below it.
-  //     controller: _controller,
-  //     child: YoutubePlayerIFrame(
-  //       aspectRatio: 16 / 9,
-  //     ),
-  //   );
-  // }
+
 
   @override
 
   @override
   void dispose() {
-    _controller.pause();
+    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
-
-
 
 
   @override
@@ -80,6 +72,10 @@ class _Home extends State<Home>{
 
     //Get.find<YoutubeDetailController>();
     var height2 = AppBar().preferredSize.height;
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
+
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -115,11 +111,21 @@ class _Home extends State<Home>{
           ],
         ),
 
-          body: Column(
+          body: Stack(
 
             children: [
+              CameraPreview(controller),
 
               //상단 슬라이드
+          Column(
+              children: [
+                Stack(
+                  children: [
+                    backcolor1(),
+                    Column(
+
+                      children: [
+
               Padding(
                 padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(30/29),), //상단 슬라이드
                 child: Container(
@@ -140,15 +146,19 @@ class _Home extends State<Home>{
 
               //여긴 유튜브 영상
               Padding(
-                padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                padding: EdgeInsets.only(bottom: 0,),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.40,//
+                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,//
                 width: MediaQuery.of(context).size.width,
                   color: Colors.grey.withOpacity(0.5),
-                  child: youtube(context),
+                    child: youtube(context),
               ),
-            ),
 
+            ),
+            ],
+  ),
+              ],
+                ),
 
               //중간 여백
               SizedBox(
@@ -161,18 +171,31 @@ class _Home extends State<Home>{
                 padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
 
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.36,
+                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.39,
                 color: Colors.grey.withOpacity(0.5),
+
+
+                  //child: camera(),
               ),
+              ),
+
+
+              Padding(
+                padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
+                  left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1) ), //상단 슬라이드 밑에 선
+                child: Container(
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
+                  color: Colors.grey[300],
+                ),
               ),
 
 
               //텍스트
               Padding(
-                padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01, bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                padding: EdgeInsets.only(bottom: 0,left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.1,
-                  color: Colors.grey.withOpacity(0.5),
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
+                  color: Colors.grey[200],
                 ),
               ),
 
@@ -192,7 +215,7 @@ class _Home extends State<Home>{
               Padding(
                 padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/(70/1), right: MediaQuery.of(context).size.width/(70/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08, //크기 8%
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.07, //크기 8%
                   color: Colors.white.withOpacity(0),
                     child: _buttonZone()
                 ),
@@ -209,12 +232,13 @@ class _Home extends State<Home>{
               ),
 
 //0.013남음
-
-
+  ],
+          ),
             ],
+            )
           )
 
-),
+
     );
   }
 
@@ -254,8 +278,23 @@ class _Home extends State<Home>{
     return YoutubePlayer(
       controller: _controller,
       liveUIColor: Colors.amber,
+
     );
   }
+
+
+
+Widget backcolor1(){
+  var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.5,
+      color: Colors.white,
+    );
+}
+
+
+
+
 
 
 

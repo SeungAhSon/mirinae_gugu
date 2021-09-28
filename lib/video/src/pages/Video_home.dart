@@ -27,7 +27,8 @@ class Home extends StatefulWidget {
 
 class _Home extends State<Home>{
   CameraController controller =
-  CameraController(cameras[1], ResolutionPreset.max);
+  CameraController(cameras[1], ResolutionPreset.veryHigh);
+
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
 
@@ -114,14 +115,18 @@ class _Home extends State<Home>{
           body: Stack(
 
             children: [
-              CameraPreview(controller),
+            Center(
+              child: CameraPreview(controller),
+            ),
 
               //상단 슬라이드
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Stack(
                   children: [
-                    backcolor1(),
+                    backcolor1(), //유튜브 뒤에 흰색 배경
                     Column(
 
                       children: [
@@ -137,7 +142,7 @@ class _Home extends State<Home>{
 
               //상단 슬라이드 밑에 선
               Padding(
-                padding: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.003,), //상단 슬라이드 밑에 선
+                padding: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.001,), //상단 슬라이드 밑에 선
                 child: Container(
                   height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.001,
                   color: Colors.grey.withOpacity(0.3),
@@ -148,38 +153,38 @@ class _Home extends State<Home>{
               Padding(
                 padding: EdgeInsets.only(bottom: 0,),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 child: Container(
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,//
+                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.40,//
                 width: MediaQuery.of(context).size.width,
                   color: Colors.grey.withOpacity(0.5),
                     child: youtube(context),
               ),
 
             ),
+                        SizedBox(              //중간 여백
+                          height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
+
+                        ),
             ],
   ),
               ],
                 ),
 
-              //중간 여백
-              SizedBox(
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
-              ),
-
 
               //카메라
-              Padding(
-                padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
-                child: Container(
 
-                height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.39,
-                color: Colors.grey.withOpacity(0.5),
+                //padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                SizedBox(              //중간 여백
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,
 
-
-                  //child: camera(),
-              ),
-              ),
+                ),
 
 
+          Stack(
+            children: [
+              backcolor2(), //카메라 밑 부분 흰색 배경
+              Column(
+
+                children: [
               Padding(
                 padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
                   left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1) ), //상단 슬라이드 밑에 선
@@ -203,7 +208,7 @@ class _Home extends State<Home>{
 
               //하단 바 상단선
               Padding(
-                padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,bottom:0), //상단 슬라이드 밑에 선
+                padding: EdgeInsets.only(bottom:0), //상단 슬라이드 밑에 선
                 child: Container(
                   height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
                   color: Colors.grey.withOpacity(0.5),
@@ -230,7 +235,10 @@ class _Home extends State<Home>{
 
                 ),
               ),
-
+  ],
+              ),
+],
+          ),
 //0.013남음
   ],
           ),
@@ -247,7 +255,7 @@ class _Home extends State<Home>{
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.arrow_back_sharp, size: 30,
+        Icon(Icons.arrow_back_ios_sharp, size: 25,
           color: Colors.black.withOpacity(0)),
 
         // IconButton(
@@ -259,8 +267,8 @@ class _Home extends State<Home>{
         //     }
         // ),
         IconButton(
-            icon: Icon(Icons.arrow_forward_sharp),
-            iconSize: 30,
+            icon: Icon(Icons.arrow_forward_ios_sharp),
+            iconSize: 25,
             color: Colors.black,
             onPressed: () {
               print('앞에꺼');
@@ -284,13 +292,29 @@ class _Home extends State<Home>{
 
 
 
-Widget backcolor1(){
+Widget backcolor1(){// 카메라 위 유튜브 부분
   var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.5,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.422,
       color: Colors.white,
     );
 }
+
+  Widget backcolor2(){ //카메라 아래
+    var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.198,
+      color: Colors.white,
+    );
+  }
+
+  Widget backcolor3(){
+    var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.401,
+      color: Colors.white,
+    );
+  }
 
 
 

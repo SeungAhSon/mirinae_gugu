@@ -32,9 +32,7 @@ class _CameraAppState extends State<CameraApp> {
   void initState() {
     super.initState();
     controller.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
+
       setState(() {});
     });
   }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:camera/camera.dart';
@@ -7,21 +8,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:google_speech/google_speech.dart';
 import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
 import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
 
 import 'package:mirinae_gugu/main.dart';
 import 'package:mirinae_gugu/video/src/models/camera.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:sound_stream/sound_stream.dart';
 //import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
 
-List<CameraDescription> cameras = List.empty(growable: true); //카메라
+List<CameraDescription> cameras = List.empty(growable: true);//카메라
 
 
 class Home extends StatefulWidget {
   @override
   const Home({Key? key}) : super(key: key);
+  @override
   _Home createState() => _Home();
 }
 
@@ -31,10 +36,17 @@ class _Home extends State<Home>{
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
+  final RecorderStream _recorder = RecorderStream();
+  bool recognizing = false;
+  bool recognizeFinished = false;
+  String text = '';
+  StreamSubscription<List<int>>? _audioStreamSubscription;
+  BehaviorSubject<List<int>>? _audioStream;
 
   @override
   void initState() {
     super.initState();
+    _recorder.initialize();
     controller.initialize().then((_) {
       if (!mounted) {
         return;
@@ -66,6 +78,72 @@ class _Home extends State<Home>{
     controller.dispose();
     super.dispose();
   }
+
+  void streamingRecognize() async {
+    _audioStream = BehaviorSubject<List<int>>();
+    _audioStreamSubscription = _recorder.audioStream.listen((event) {
+      _audioStream?.add(event);
+    });
+
+    await _recorder.start();
+
+    setState(() {
+      recognizing = true;
+    });
+    //서비스 계정. assets 폴더에 api key 넣음
+    final serviceAccount = ServiceAccount.fromString(
+        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
+    final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
+    final config = _getConfig();
+
+    final responseStream = speechToText.streamingRecognize(
+        StreamingRecognitionConfig(config: config, interimResults: true),
+        _audioStream!);
+
+    var responseText = '';
+    //마이크 입력 받았을 때 출력될 텍스트 설정.
+    responseStream.listen((data) {
+      final currentText =
+      data.results.map((e) => e.alternatives.first.transcript).join("");
+      if (data.results.first.isFinal) {
+        //responseText += currentText;
+        setState(() {
+          //text = responseText;
+          recognizeFinished = true;
+        });
+      } else {
+        setState(() {
+          text = currentText;
+          recognizeFinished = true;
+        });
+      }
+
+    }, onDone: () {
+      setState(() {
+        recognizing = false;
+      });
+    });
+  }
+
+  //마이크 stop 했을 때
+  void stopRecording() async {
+    await _recorder.stop();
+    await _audioStreamSubscription?.cancel();
+    await _audioStream?.close();
+    setState(() {
+      recognizing = false;
+    });
+  }
+
+  //google speech to text api 설정
+  RecognitionConfig _getConfig() => RecognitionConfig(
+      encoding: AudioEncoding.LINEAR16,
+      model: RecognitionModel.command_and_search,
+      enableAutomaticPunctuation: false,
+      sampleRateHertz: 16000,
+      languageCode: 'ko-KR');
+
+
 
 
   @override
@@ -160,12 +238,12 @@ class _Home extends State<Home>{
               ),
 
             ),
+
                         SizedBox(              //중간 여백
                           height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
-
                         ),
-            ],
-  ),
+                ],
+                ),
               ],
                 ),
 
@@ -201,6 +279,10 @@ class _Home extends State<Home>{
                 child: Container(
                   height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
                   color: Colors.grey[200],
+                    child: Center(
+                      // text 프린트 해주는 함수 호출
+                        child: textprint()
+                    )
                 ),
               ),
 
@@ -267,6 +349,12 @@ class _Home extends State<Home>{
         //     }
         // ),
         IconButton(
+          onPressed: recognizing ? stopRecording : streamingRecognize,
+          icon: recognizing
+              ? Icon(Icons.mic, color: Colors.red, size: 30)
+              : Icon(Icons.mic, color: Colors.blue,size: 30),
+        ),
+        IconButton(
             icon: Icon(Icons.arrow_forward_ios_sharp),
             iconSize: 25,
             color: Colors.black,
@@ -317,8 +405,27 @@ Widget backcolor1(){// 카메라 위 유튜브 부분
   }
 
 
+//텍스트 프린트
+  Widget textprint() {
+    return Column(
+        children: [
+          (recognizeFinished)
+              ?Text(
+              text,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                letterSpacing: 1.0,
+                fontSize: 20.0,
+                height: 1.75,
+                /*fontWeight: FontWeight.bold,*/
+              )
 
-
+          )
+              :Text(""),
+        ]
+    );
+  }
 
 
 

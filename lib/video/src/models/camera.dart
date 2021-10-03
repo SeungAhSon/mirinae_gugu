@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:mirinae_gugu/video/src/pages/Video_home.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_01.dart';
 
 
 //List<CameraDescription> cameras = List.empty(growable: true);

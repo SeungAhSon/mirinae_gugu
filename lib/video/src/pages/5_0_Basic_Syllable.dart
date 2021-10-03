@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_02.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
-import 'package:mirinae_gugu/video/src/pages/Video_home.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_01.dart';
+
+
 
 class Syllable extends StatelessWidget{
   @override
   Widget build(BuildContext context){
+    WidgetsFlutterBinding.ensureInitialized();
     return Scaffold(
       appBar: AppBar(
           title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -28,15 +32,19 @@ class Syllable extends StatelessWidget{
                   text: '가',
                   onTap: () async {
                       await Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return Home();
+                        return Video0_01();
                       }));
                   },
                   ),
                 LearnLevelButton(
                   text: '나',
                   onTap: () async {
-                    //Level newLevel = await gameBloc.setLevel(index + 1);
-                    //Navigator.of(context).push(GamePage.route(newLevel));
+                    await Navigator.push(
+                        context, MaterialPageRoute(builder: (context) {
+                      return Video0_02();
+                      //Level newLevel = await gameBloc.setLevel(index + 1);
+                      //Navigator.of(context).push(GamePage.route(newLevel));
+                    }));
                   },
                 ),
                 LearnLevelButton(

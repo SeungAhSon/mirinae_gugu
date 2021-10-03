@@ -23,14 +23,14 @@ import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
 List<CameraDescription> cameras = List.empty(growable: true);//카메라
 
 
-class Home extends StatefulWidget {
+class Video0_02 extends StatefulWidget {
   @override
-  const Home({Key? key}) : super(key: key);
+  const Video0_02({Key? key}) : super(key: key);
   @override
-  _Home createState() => _Home();
+  _Video0_02 createState() => _Video0_02();
 }
 
-class _Home extends State<Home>{
+class _Video0_02 extends State<Video0_02>{
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 

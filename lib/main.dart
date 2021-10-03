@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
 import 'package:mirinae_gugu/video/src/models/camera.dart';
 import 'package:mirinae_gugu/video/src/pages/5_0_Basic_Syllable.dart';
-import 'package:mirinae_gugu/video/src/pages/Video_home.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_01.dart';
 import 'package:mirinae_gugu/video/src/repository/Youtube_Repository.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter/services.dart';

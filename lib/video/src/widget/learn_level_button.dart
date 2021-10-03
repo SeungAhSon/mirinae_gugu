@@ -54,8 +54,6 @@ class LearnLevelButton extends StatelessWidget {
                   offset: Offset(5.0, 5.0),
                   color: Color.fromRGBO(0, 0, 0, 0.3),
 
-
-
                 ),
               ],
               gradient: gradient,

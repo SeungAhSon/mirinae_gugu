@@ -1,12 +1,30 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/Video_0_02.dart';
+
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/Video_0_01.dart';
 
+import 'favorite_global.dart';
 
 
-class Syllable extends StatelessWidget{
+
+List<CameraDescription> cameras = List.empty(growable: true);//카메라
+
+
+
+
+
+class Syllable extends StatefulWidget {
+
+
+  @override
+  _Syllable createState() => _Syllable();
+}
+
+class _Syllable extends State<Syllable>{
+
   @override
   Widget build(BuildContext context){
     WidgetsFlutterBinding.ensureInitialized();
@@ -29,18 +47,20 @@ class Syllable extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
                 LearnLevelButton(
+                  color: favoriteButton_0_01 ? Colors.orange : Color(0xff7ba6f9),
                   text: '가',
                   onTap: () async {
-                      await Navigator.push(context, MaterialPageRoute(builder: (context){
+
+                      await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
                         return Video0_01();
                       }));
                   },
                   ),
                 LearnLevelButton(
+                  color: favoriteButton_0_02 ? Colors.orange : Color(0xff7ba6f9),
                   text: '나',
                   onTap: () async {
-                    await Navigator.push(
-                        context, MaterialPageRoute(builder: (context) {
+                    await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
                       return Video0_02();
                       //Level newLevel = await gameBloc.setLevel(index + 1);
                       //Navigator.of(context).push(GamePage.route(newLevel));
@@ -49,7 +69,10 @@ class Syllable extends StatelessWidget{
                 ),
                 LearnLevelButton(
                   text: '다',
+                  color:Colors.orange,
                   onTap: () async {
+                    print(favoriteButton_0_01);
+                    print(favoriteButton_0_02);
                     //Level newLevel = await gameBloc.setLevel(index + 1);
                     //Navigator.of(context).push(GamePage.route(newLevel));
                   },
@@ -60,10 +83,12 @@ class Syllable extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LearnLevelButton(
+                    color:Color(0xff7ba6f9).withOpacity(1),
                     text: '라',
                     onTap: () async {}
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '마',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -71,6 +96,7 @@ class Syllable extends StatelessWidget{
                   },
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '바',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -83,10 +109,12 @@ class Syllable extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LearnLevelButton(
+                    color:Color(0xff7ba6f9).withOpacity(1),
                     text: '사',
                     onTap: () async {}
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '아',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -94,6 +122,7 @@ class Syllable extends StatelessWidget{
                   },
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '자',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -106,10 +135,12 @@ class Syllable extends StatelessWidget{
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LearnLevelButton(
+                    color:Color(0xff7ba6f9).withOpacity(1),
                     text: '차',
                     onTap: () async {}
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '카',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -117,6 +148,7 @@ class Syllable extends StatelessWidget{
                   },
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '타',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -129,10 +161,12 @@ class Syllable extends StatelessWidget{
               mainAxisAlignment:  MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LearnLevelButton(
+                    color:Color(0xff7ba6f9).withOpacity(1),
                     text: '파',
                     onTap: () async {}
                 ),
                 LearnLevelButton(
+                  color:Color(0xff7ba6f9).withOpacity(1),
                   text: '하',
                   onTap: () async {
                     //Level newLevel = await gameBloc.setLevel(index + 1);
@@ -149,4 +183,11 @@ class Syllable extends StatelessWidget{
       )
     );
   }
+
+
+
+
+
+
+
 }

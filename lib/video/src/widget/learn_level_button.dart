@@ -7,9 +7,10 @@ class LearnLevelButton extends StatelessWidget {
     this.width = 80.0,
     this.height = 80.0,
     this.borderRadius = 50.0,
-    required this.onTap,
+    required this.onTap, required this.color,
   }) : super(key: key);
 
+  final color;
   final String text;
   final VoidCallback onTap;
   final double width;
@@ -24,10 +25,16 @@ class LearnLevelButton extends StatelessWidget {
       colors: [
         //Color(0xff9cbbf6),
         //Color(0xff9cbbf6),linkwell
-        Color(0xff7ba6f9),
-        Color(0xff7ba6f9),
+
+        //Color(0xff7ba6f9),
+        color,
+        color,
+
       ],
     );
+
+
+
 
     return InkWell(
       onTap: onTap,
@@ -44,9 +51,10 @@ class LearnLevelButton extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(borderRadius),
+
               border: Border.all(
                 width: 0.3,
-                color: Colors.black38,
+                color: Colors.black26,
               ),
               boxShadow: [
                 BoxShadow(

@@ -13,21 +13,23 @@ import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
 import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
 
 import 'package:mirinae_gugu/main.dart';
-import 'package:mirinae_gugu/video/src/models/camera.dart';
+
 import 'package:rxdart/rxdart.dart';
 import 'package:sound_stream/sound_stream.dart';
 //import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
 
+import '5_0_Basic_Syllable.dart';
 import 'Video_0_02.dart';
 
-List<CameraDescription> cameras = List.empty(growable: true);//카메라
+import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
+
 
 
 class Video0_01 extends StatefulWidget {
-  @override
-  const Video0_01({Key? key}) : super(key: key);
+
+
   @override
   _Video0_01 createState() => _Video0_01();
 }
@@ -39,6 +41,7 @@ class _Video0_01 extends State<Video0_01>{
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
   final RecorderStream _recorder = RecorderStream();
+
   bool recognizing = false;
   bool recognizeFinished = false;
   String text = '';
@@ -50,9 +53,7 @@ class _Video0_01 extends State<Video0_01>{
     super.initState();
     _recorder.initialize();
     controller.initialize().then((_) {
-      if (!mounted) {
-        return;
-      }
+
       setState(() {});
     });
     _controller = YoutubePlayerController(
@@ -62,7 +63,7 @@ class _Video0_01 extends State<Video0_01>{
         loop: false,
         hideThumbnail: false,
         //isLive: true,
-
+        mute: false,
         controlsVisibleAtStart: false,
 
         useHybridComposition: false,
@@ -76,7 +77,7 @@ class _Video0_01 extends State<Video0_01>{
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller.pause();
     controller.dispose();
     super.dispose();
   }
@@ -145,6 +146,22 @@ class _Video0_01 extends State<Video0_01>{
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
+  void delete() async {
+
+    setState(() {
+      favoriteButton_0_01 = false;
+      print(favoriteButton_0_01);
+    });
+  }
+
+  void saved() async {
+
+    setState(() {
+      favoriteButton_0_01 = true;
+      print(favoriteButton_0_01);
+    });
+  }
+
 
 
 
@@ -172,7 +189,8 @@ class _Video0_01 extends State<Video0_01>{
           centerTitle: true,
           leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.pushReplacement(
+                  context, CupertinoPageRoute(builder: (context) => Syllable()));;
             },
             color: Colors.black,
             iconSize: 25,
@@ -182,8 +200,8 @@ class _Video0_01 extends State<Video0_01>{
 
           actions: <Widget>[
             IconButton(
-                onPressed: recognizing ? stopRecording : streamingRecognize,
-              icon: recognizing
+                onPressed: favoriteButton_0_01 ? delete : saved,
+              icon: favoriteButton_0_01
                   ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
                   : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
             ),

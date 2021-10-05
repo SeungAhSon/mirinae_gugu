@@ -174,7 +174,13 @@ class _Video0_02 extends State<Video0_02>{
       return Container();
     }
 
-    return SafeArea(
+    return WillPopScope(
+        onWillPop: (){
+          setState(() {
+
+          });
+          return Future(()=>false);
+        },
         child: Scaffold(
             appBar: AppBar(
               //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯

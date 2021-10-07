@@ -1,28 +1,16 @@
 import 'dart:async';
-import 'dart:developer';
-
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:google_speech/google_speech.dart';
-import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
-import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
-
-import 'package:mirinae_gugu/main.dart';
-
 import 'package:rxdart/rxdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
-//import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
-
 import '5_0_Basic_Syllable.dart';
 import 'Video_0_02.dart';
-
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
 
@@ -52,7 +40,9 @@ class _Video0_01 extends State<Video0_01>{
   void initState() {
     super.initState();
     _recorder.initialize();
+    loadFavorite();
     controller.initialize().then((_) {
+
 
       setState(() {});
     });
@@ -146,19 +136,28 @@ class _Video0_01 extends State<Video0_01>{
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
-  void delete() async {
 
+  loadFavorite() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favoriteButton_0_01 = false;
-      print(favoriteButton_0_01);
+      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
+    });
+  }
+
+
+  void delete() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('_favoriteButton_0_01', false);
+    setState(() {
+      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
     });
   }
 
   void saved() async {
-
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('_favoriteButton_0_01', true);
     setState(() {
-      favoriteButton_0_01 = true;
-      print(favoriteButton_0_01);
+      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
     });
   }
 

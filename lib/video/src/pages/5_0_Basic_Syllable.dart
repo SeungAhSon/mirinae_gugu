@@ -2,22 +2,19 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/Video_0_02.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_03.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_04.dart';
 
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/Video_0_01.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'favorite_global.dart';
 
 
 
 List<CameraDescription> cameras = List.empty(growable: true);//카메라
-
-
-
-
-
 class Syllable extends StatefulWidget {
-
 
   @override
   _Syllable createState() => _Syllable();
@@ -26,8 +23,19 @@ class Syllable extends StatefulWidget {
 class _Syllable extends State<Syllable>{
 
   @override
+  void loadFavorite() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
+
+    });
+  }
+
+
+  @override
   Widget build(BuildContext context){
     WidgetsFlutterBinding.ensureInitialized();
+    loadFavorite();
     return Scaffold(
       appBar: AppBar(
           title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -47,6 +55,7 @@ class _Syllable extends State<Syllable>{
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
                 LearnLevelButton(
+
                   color: favoriteButton_0_01 ? Colors.orange : Color(0xff7ba6f9),
                   text: '가',
                   onTap: () async {
@@ -68,13 +77,14 @@ class _Syllable extends State<Syllable>{
                   },
                 ),
                 LearnLevelButton(
+                  color: favoriteButton_0_03 ? Colors.orange : Color(0xff7ba6f9),
                   text: '다',
-                  color:Colors.orange,
                   onTap: () async {
-                    print(favoriteButton_0_01);
-                    print(favoriteButton_0_02);
-                    //Level newLevel = await gameBloc.setLevel(index + 1);
-                    //Navigator.of(context).push(GamePage.route(newLevel));
+                    await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                      return Video0_03();
+                      //Level newLevel = await gameBloc.setLevel(index + 1);
+                      //Navigator.of(context).push(GamePage.route(newLevel));
+                    }));
                   },
                 ),
               ],
@@ -83,14 +93,22 @@ class _Syllable extends State<Syllable>{
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LearnLevelButton(
-                    color:Color(0xff7ba6f9).withOpacity(1),
-                    text: '라',
-                    onTap: () async {}
+                  color: favoriteButton_0_04 ? Colors.orange : Color(0xff7ba6f9),
+                  text: '라',
+                  onTap: () async {
+                    await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+                      return Video0_04();
+                      //Level newLevel = await gameBloc.setLevel(index + 1);
+                      //Navigator.of(context).push(GamePage.route(newLevel));
+                    }));
+                  },
                 ),
                 LearnLevelButton(
                   color:Color(0xff7ba6f9).withOpacity(1),
                   text: '마',
                   onTap: () async {
+                    print(favoriteButton_0_01);
+
                     //Level newLevel = await gameBloc.setLevel(index + 1);
                     //Navigator.of(context).push(GamePage.route(newLevel));
                   },

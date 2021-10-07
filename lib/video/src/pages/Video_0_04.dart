@@ -1,26 +1,40 @@
 import 'dart:async';
+import 'dart:developer';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:google_speech/google_speech.dart';
+import 'package:mirinae_gugu/video/src/controller/Video_home_controller.dart';
+import 'package:mirinae_gugu/video/src/controller/YoutubeDetailController.dart';
+
+import 'package:mirinae_gugu/main.dart';
+import 'package:mirinae_gugu/video/src/pages/Video_0_03.dart';
+
 import 'package:rxdart/rxdart.dart';
 import 'package:sound_stream/sound_stream.dart';
+//import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:mirinae_gugu/video/src/models/youtubeId.dart';
+
 import '5_0_Basic_Syllable.dart';
 import 'Video_0_01.dart';
+import 'Video_0_02.dart';
+
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
-import 'Video_0_03.dart';
 
 
 
-class Video0_02 extends StatefulWidget {
+class Video0_04 extends StatefulWidget {
   @override
-  _Video0_02 createState() => _Video0_02();
+  _Video0_04 createState() => _Video0_04();
 }
 
-class _Video0_02 extends State<Video0_02>{
+class _Video0_04 extends State<Video0_04>{
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
@@ -135,16 +149,14 @@ class _Video0_02 extends State<Video0_02>{
   void delete() async {
 
     setState(() {
-      favoriteButton_0_02 = false;
-      print(favoriteButton_0_02);
+      favoriteButton_0_04 = false;
     });
   }
 
   void saved() async {
 
     setState(() {
-      favoriteButton_0_02 = true;
-      print(favoriteButton_0_02);
+      favoriteButton_0_04 = true;
     });
   }
 
@@ -172,7 +184,7 @@ class _Video0_02 extends State<Video0_02>{
               //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
               //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
               backgroundColor: Colors.white,
-              title: Text('1-2',
+              title: Text('1-4',
                 style: TextStyle(
                   color: Colors.blueAccent,
                   fontSize: 20,
@@ -181,8 +193,8 @@ class _Video0_02 extends State<Video0_02>{
               centerTitle: true,
               leading: IconButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                      context, CupertinoPageRoute(builder: (context) => Syllable()));;
+                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                      Syllable()), (Route<dynamic> route) => false);
                 },
                 color: Colors.black,
                 iconSize: 25,
@@ -192,8 +204,8 @@ class _Video0_02 extends State<Video0_02>{
 
               actions: <Widget>[
                 IconButton(
-                  onPressed: favoriteButton_0_02 ? delete : saved,
-                  icon: favoriteButton_0_02
+                  onPressed: favoriteButton_0_04 ? delete : saved,
+                  icon: favoriteButton_0_04
                       ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
                       : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
                 ),
@@ -357,7 +369,7 @@ class _Video0_02 extends State<Video0_02>{
             color: Colors.black,
             onPressed: () {
               Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Video0_01()));
+                  context, CupertinoPageRoute(builder: (context) => Video0_03()));
             }
         ),
         IconButton(
@@ -371,8 +383,8 @@ class _Video0_02 extends State<Video0_02>{
             iconSize: 25,
             color: Colors.black,
             onPressed: () async {
-              await Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Video0_03()));
+              // Navigator.push(
+              //     context, CupertinoPageRoute(builder: (context) => Video0_02()));
             }
         ),
       ],

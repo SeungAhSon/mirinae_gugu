@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LearnLevelButton extends StatelessWidget {
-  LearnLevelButton({
+class Unit_Widget extends StatelessWidget {
+  Unit_Widget({
     Key ?key,
     this.text = '',
     this.width = 80.0,
@@ -80,8 +80,8 @@ class LearnLevelButton extends StatelessWidget {
                 child: Text(
                   text,
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0, fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 20.0, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

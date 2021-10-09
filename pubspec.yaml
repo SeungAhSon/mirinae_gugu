@@ -60,6 +60,10 @@ dependencies:
   google_speech: ^2.0.1
   sound_stream: ^0.3.0
 
+  flutter_animation_progress_bar: ^2.0.1
+  noise_meter: ^3.0.2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -77,10 +81,34 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/hedgehog.jpeg
-    - images/google_logo.png
-    - images/asset/
-    - assets/lejinhy-speech-to-text-11be68205205.json
+    - assets/hedgehog.jpeg
+    - assets/oral_structure.png
+    - assets/1_screen_start.png
+    - assets/2_screen_login.png
+    - assets/icons/book.png
+    - assets/icons/home.png
+    - assets/icons/more.png
+    - assets/icons/record_mic.png
+    - assets/mouth/1_b.png
+    - assets/mouth/2_bb.png
+    - assets/mouth/3_p.png
+    - assets/mouth/4_m.png
+    - assets/mouth/5_d.png
+    - assets/mouth/6_dd.png
+    - assets/mouth/7_t.png
+    - assets/mouth/8_n.png
+    - assets/mouth/9_s.png
+    - assets/mouth/10_ss.png
+    - assets/mouth/11_l.png
+    - assets/mouth/12_j.png
+    - assets/mouth/13_jj.png
+    - assets/mouth/14_ts.png
+    - assets/mouth/15_g.png
+    - assets/mouth/16_gg.png
+    - assets/mouth/17_k.png
+    - assets/mouth/18_y.png
+    - assets/mouth/19_h.png
+
      #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

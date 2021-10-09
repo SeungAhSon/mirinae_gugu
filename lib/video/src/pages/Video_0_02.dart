@@ -8,7 +8,7 @@ import 'package:google_speech/google_speech.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '5_0_Basic_Syllable.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
 import 'Video_0_01.dart';
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 import 'Video_0_03.dart';
@@ -135,16 +135,16 @@ class _Video0_02 extends State<Video0_02>{
   void delete() async {
 
     setState(() {
-      favoriteButton_0_02 = false;
-      print(favoriteButton_0_02);
+      favoriteButton_0_01_02 = false;
+
     });
   }
 
   void saved() async {
 
     setState(() {
-      favoriteButton_0_02 = true;
-      print(favoriteButton_0_02);
+      favoriteButton_0_01_02 = true;
+
     });
   }
 
@@ -182,7 +182,7 @@ class _Video0_02 extends State<Video0_02>{
               leading: IconButton(
                 onPressed: () {
                   Navigator.pushReplacement(
-                      context, CupertinoPageRoute(builder: (context) => Syllable()));;
+                      context, CupertinoPageRoute(builder: (context) => Vocab_Screen_51()));;
                 },
                 color: Colors.black,
                 iconSize: 25,
@@ -192,8 +192,8 @@ class _Video0_02 extends State<Video0_02>{
 
               actions: <Widget>[
                 IconButton(
-                  onPressed: favoriteButton_0_02 ? delete : saved,
-                  icon: favoriteButton_0_02
+                  onPressed: favoriteButton_0_01_02 ? delete : saved,
+                  icon: favoriteButton_0_01_02
                       ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
                       : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
                 ),
@@ -357,7 +357,7 @@ class _Video0_02 extends State<Video0_02>{
             color: Colors.black,
             onPressed: () {
               Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Video0_01()));
+                  context, CupertinoPageRoute(builder: (context) => Video0_01(text1: 'asd', YoutubeID: null,)));
             }
         ),
         IconButton(
@@ -371,8 +371,8 @@ class _Video0_02 extends State<Video0_02>{
             iconSize: 25,
             color: Colors.black,
             onPressed: () async {
-              await Navigator.push(
-                  context, CupertinoPageRoute(builder: (context) => Video0_03()));
+              // await Navigator.push(
+              //     context, CupertinoPageRoute(builder: (context) => Video0_03()));
             }
         ),
       ],

@@ -5,17 +5,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:google_speech/google_speech.dart';
+import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '5_0_Basic_Syllable.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
 import 'Video_0_02.dart';
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
 
 
 class Video0_01 extends StatefulWidget {
+  Video0_01({
+    Key ?key,
+    required this.text1, required this.YoutubeID,
+    this.favorite='',
+    this.favorite2='',
+    this.back='',
+    this.next='',
+
+
+  }) : super(key: key);
+
+  final String text1;
+  final YoutubeID;
+  final String favorite;
+  final String favorite2;
+  final String back;
+  final String next;
+
 
 
   @override
@@ -23,6 +42,9 @@ class Video0_01 extends StatefulWidget {
 }
 
 class _Video0_01 extends State<Video0_01>{
+
+
+
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
@@ -140,24 +162,24 @@ class _Video0_01 extends State<Video0_01>{
   loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
     });
   }
 
 
   void delete() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('_favoriteButton_0_01', false);
+    await prefs.setBool('_favoriteButton_0_01_01', false);
     setState(() {
-      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
     });
   }
 
   void saved() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('_favoriteButton_0_01', true);
+    await prefs.setBool('_favoriteButton_0_01_01', true);
     setState(() {
-      favoriteButton_0_01 = prefs.getBool('_favoriteButton_0_01')!;
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
     });
   }
 
@@ -195,7 +217,7 @@ class _Video0_01 extends State<Video0_01>{
           leading: IconButton(
             onPressed: () {
               Navigator.pushReplacement(
-                  context, CupertinoPageRoute(builder: (context) => Syllable()));;
+                  context, CupertinoPageRoute(builder: (context) => Vocab_Screen_51()));
             },
             color: Colors.black,
             iconSize: 25,
@@ -205,8 +227,8 @@ class _Video0_01 extends State<Video0_01>{
 
           actions: <Widget>[
             IconButton(
-                onPressed: favoriteButton_0_01 ? delete : saved,
-              icon: favoriteButton_0_01
+                onPressed: favoriteButton_0_01_01 ? delete : saved,
+              icon: favoriteButton_0_01_01
                   ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
                   : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
             ),
@@ -297,19 +319,24 @@ class _Video0_01 extends State<Video0_01>{
 
 
               //텍스트
-              Padding(
-                padding: EdgeInsets.only(bottom: 0,left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
-                child: Container(
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
-                  color: Colors.grey[200],
-                    child: Center(
-                      // text 프린트 해주는 함수 호출
-                        child: textprint()
-                    )
-                ),
-              ),
-
-
+                  Padding(
+                    padding: EdgeInsets.only(bottom: 0,left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                    child: Container(
+                        height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
+                        color: Colors.grey[200],
+                        child: Stack(
+                          // text 프린트 해주는 함수 호출
+                            children: <Widget>[
+                              Container(
+                                child: Noise(),
+                              ),
+                              Container(
+                                child: textprint(),
+                              )
+                            ]
+                        )
+                    ),
+                  ),
 
               //하단 바 상단선
               Padding(
@@ -383,7 +410,7 @@ class _Video0_01 extends State<Video0_01>{
             iconSize: 25,
             color: Colors.black,
             onPressed: () async {
-    await Navigator.push(
+    await Navigator.pushReplacement(
     context, CupertinoPageRoute(builder: (context) => Video0_02()));
             }
         ),

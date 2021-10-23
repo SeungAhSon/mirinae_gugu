@@ -12,6 +12,7 @@ class Login extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
+    WidgetsFlutterBinding.ensureInitialized();
     return GetMaterialApp(
       title: "구구절절",
       theme: ThemeData(
@@ -22,7 +23,9 @@ class Login extends StatelessWidget{
       initialBinding: InitBinding(),
       initialRoute: "/",
       debugShowCheckedModeBanner: false,
+
       getPages: [
+
         GetPage(name: '/', page: ()=>App())
       ],
     );

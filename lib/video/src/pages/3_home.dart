@@ -13,6 +13,7 @@ class Home extends StatelessWidget{
   const Home({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context){
+    var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -20,8 +21,8 @@ class Home extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Container(
-                height: 110,
-                margin: const EdgeInsets.all(15.0),
+                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
+                margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
                 padding: const EdgeInsets.all(3.0),
                 decoration: BoxDecoration(
                   color: Color(0xff9CBBF7),
@@ -53,10 +54,10 @@ class Home extends StatelessWidget{
               SizedBox(height: 1),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text('     학습하기', style: TextStyle(fontSize:18,fontWeight: FontWeight.bold)),
+                child: Text('     학습하기', style: TextStyle(fontSize:20,fontWeight: FontWeight.bold)),
               ),
               FlatButton(
-                height: 120,
+                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Syllable_pages()),);
@@ -95,7 +96,7 @@ class Home extends StatelessWidget{
                 ),
               ),
               FlatButton(
-                height: 120,
+                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Word_Main()),);
@@ -134,7 +135,7 @@ class Home extends StatelessWidget{
                 ),
               ),
               FlatButton(
-                height: 120,
+                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Test_Main()),);
@@ -172,6 +173,7 @@ class Home extends StatelessWidget{
                   ),
                 ),
               ),
+              SizedBox(height:1)
             ],
           ),
         ),

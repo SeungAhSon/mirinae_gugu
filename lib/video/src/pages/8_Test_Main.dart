@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/video/src/app.dart';
-import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
-import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
-
-import '8_2_Choice/8_2_1_Choice.dart';
-
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_2_1_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 class Test_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -18,448 +14,90 @@ class Test_Main extends StatelessWidget{
             children: [
               SizedBox(height: 5),
               Text('복습 시험', style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
-              Divider(thickness: 5),
+              Divider(thickness: 2),
+
+              Text('1단원 : 새학년',style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Choice821()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Choice821()),);
+                    },
+                    child: Container(
+                        width: 200, height: 100,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.teal,
+                              Color(0x80CBC4FF),
                             ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                          child: Center(
-                              child: Text('1단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(5, 5),
+                              blurRadius: 10,
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Press',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('새학년',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
+                        )
+                    ),
                   ),
-                ),
-              ),//새학년
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_52()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => Choice821()),);
+                    },
+                    child: Container(
+                        width: 200, height: 100,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.teal,
+                              Color(0x80CBC4FF),
                             ],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
                           ),
-                          child: Center(
-                              child: Text('2단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(5, 5),
+                              blurRadius: 10,
+                            )
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Press',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('봄',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
+                        )
+                    ),
                   ),
-                ),
-              ),//봄
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_53()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('3단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('건강',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//건강
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_54()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('4단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('동물 / 곤충',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//동물&곤충
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_55()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('5단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('감정 / 행동',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//감정&행동
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_56()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('6단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('여름',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//여름
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_57()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('7단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('과일 / 채소',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//과일&채소
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_58()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('8단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('가을',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//가을
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_59()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('9단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('직업',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//직업
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_510()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('10단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('집',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//집
-              SizedBox(height: 5),
-              FlatButton(
-                height: 120,
-                color: Color(0xffE4EDFF),
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Vocab_Screen_511()),);
-                },
-                child: Container(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
-                        Container(
-                          height: 80, width: 80,
-                          decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
-                            borderRadius: BorderRadius.all(Radius.circular(40)),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.8),
-                                spreadRadius: 2,
-                                blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
-                              ),
-                            ],
-                          ),
-                          child: Center(
-                              child: Text('11단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
-                          ),
-                        ),
-                        Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('겨울',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
-                            ]
-                        ),
-                      ]
-                  ),
-                ),
-              ),//겨울
-              SizedBox(height: 5),
+                ],
+              ),
+              Divider(thickness: 2),
+
               FlatButton(
                 height: 120,
                 color: Color(0xffE4EDFF),
@@ -510,6 +148,14 @@ class Test_Main extends StatelessWidget{
               fontSize: 20,
             ),),
           centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            color: Colors.black,
+            iconSize: 22,
+            icon: Icon(Icons.arrow_back),
+          ),
         ),
       ),
     );

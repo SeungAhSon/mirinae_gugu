@@ -14,12 +14,12 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height2 = AppBar().preferredSize.height;
     QuestionController _controller = Get.put(QuestionController());
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
       child: Column(
         children: [
-          SizedBox(height: 10),
+          SizedBox(height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.02),
           ...List.generate(
             question.options.length,
                 (index) => Option(

@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 
 List<CameraDescription> cameras = List.empty(growable: true);//카메라
-
 bool favoriteButton_0_01_01 = false;
 bool favoriteButton_0_01_02 = false;
 bool favoriteButton_0_01_03 = false;

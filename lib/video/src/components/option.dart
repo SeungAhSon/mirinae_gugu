@@ -15,7 +15,9 @@ class Option extends StatelessWidget {
   final VoidCallback press;
 
   @override
+
   Widget build(BuildContext context) {
+    var height2 = AppBar().preferredSize.height;
     return GetBuilder<QuestionController>(
         init: QuestionController(),
         builder: (qnController) {
@@ -34,11 +36,12 @@ class Option extends StatelessWidget {
           return InkWell(
             onTap: press,
             child: Container(
-              margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.all(20),
+              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.074,
+              margin: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.033),
+              padding: EdgeInsets.all((MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.02),
               decoration: BoxDecoration(
                 color: getTheRightColor(),
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,

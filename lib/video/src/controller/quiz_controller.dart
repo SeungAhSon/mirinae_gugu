@@ -10,11 +10,12 @@ class QuestionController extends GetxController
   late PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question> _questions = quiz1_1.map(
+  final List<Question> _questions = quiz1_1.map(
         (question) => Question(
         id: question['id'],
         options: question['options'],
-        answer: question['answer_index']),
+        answer: question['answer_index'],
+        VideoId: question['VideoId'],),
   ).toList();
 
   List<Question> get questions => this._questions;

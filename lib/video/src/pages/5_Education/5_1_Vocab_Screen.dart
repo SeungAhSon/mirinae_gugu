@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
@@ -6,7 +7,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../3_home.dart';
 import '../4_Word_Main.dart';
 import '../Video_0_01.dart';
+import '../Video_0_02.dart';
 import '../favorite_global.dart';
+
+
+List<CameraDescription> cameras = List.empty(growable: true);//
 
 class Vocab_Screen_51 extends StatefulWidget {
 
@@ -17,6 +22,40 @@ class Vocab_Screen_51 extends StatefulWidget {
 }
 
 class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
+
+
+
+  bool favoriteButton_0_01_01 = false;
+  bool favoriteButton_0_01_02 = false;
+  bool favoriteButton_0_01_03 = false;
+  bool favoriteButton_0_01_04 = false;
+  bool favoriteButton_0_01_05 = false;
+  bool favoriteButton_0_01_06 = false;
+  bool favoriteButton_0_01_07 = false;
+  bool favoriteButton_0_01_08 = false;
+  bool favoriteButton_0_01_09 = false;
+  bool favoriteButton_0_01_10 = false;
+  bool favoriteButton_0_01_11 = false;
+  bool favoriteButton_0_01_12 = false;
+  bool favoriteButton_0_01_13 = false;
+  bool favoriteButton_0_01_14 = false;
+  bool favoriteButton_0_01_15 = false;
+  bool favoriteButton_0_01_16 = false;
+  bool favoriteButton_0_01_17 = false;
+  bool favoriteButton_0_01_18 = false;
+  bool favoriteButton_0_01_19 = false;
+  bool favoriteButton_0_01_20 = false;
+  bool favoriteButton_0_01_21 = false;
+  bool favoriteButton_0_01_22 = false;
+  bool favoriteButton_0_01_23 = false;
+  bool favoriteButton_0_01_24 = false;
+  bool favoriteButton_0_01_25 = false;
+  bool favoriteButton_0_01_26 = false;
+  bool favoriteButton_0_01_27 = false;
+  bool favoriteButton_0_01_28 = false;
+  bool favoriteButton_0_01_29 = false;
+  bool favoriteButton_0_01_30 = false;
+
 
   @override
   void loadFavorite() async{
@@ -44,7 +83,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
 
   @override
   Widget build(BuildContext context){
-    WidgetsFlutterBinding.ensureInitialized();
+
     loadFavorite();
     return Scaffold(
         appBar: AppBar(
@@ -70,8 +109,8 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                           onTap: () async {
                             await Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Video0_01(
                                 YoutubeID: '1uJvtbTyVPk',
-                                favorite: 'favoriteButton_0_01_01',
-                                favorite2: '_favoriteButton_0_01_01', text1: '',
+                                favorite: favoriteButton_0_01_01,
+                                favorite2: '_favoriteButton_0_01_01', text1: '', back: '',
                             ),));
                           }
                       ),
@@ -79,9 +118,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         color: favoriteButton_0_01_02 ? Colors.orange : Color(0xff7ba6f9),
                         text: '1-2',
                         onTap: () async {
-                          //Level newLevel = await gameBloc.setLevel(index + 1);
-                          //Navigator.of(context).push(GamePage.route(newLevel));
-                        },
+                              },
                       ),
                       LearnLevelButton(
                         color: favoriteButton_0_01_03 ? Colors.orange : Color(0xff7ba6f9),

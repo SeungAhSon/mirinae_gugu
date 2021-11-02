@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
+import '../../../main.dart';
 import 'Video_0_02.dart';
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
@@ -20,17 +21,24 @@ class Video0_01 extends StatefulWidget {
   Video0_01({
     Key ?key,
     required this.text1, required this.YoutubeID,
-    this.favorite='',
-    this.favorite2='',
-    this.back='',
+    required this.favorite,
+    required this.favorite2,
+    required this.back,
     this.next='',
+
+
+
+
+
+
+
 
 
   }) : super(key: key);
 
   final String text1;
-  final YoutubeID;
-  final String favorite;
+  final String YoutubeID;
+  final bool favorite;
   final String favorite2;
   final String back;
   final String next;
@@ -43,14 +51,13 @@ class Video0_01 extends StatefulWidget {
 
 class _Video0_01 extends State<Video0_01>{
 
-
-
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
   final RecorderStream _recorder = RecorderStream();
+  late bool favoriteButton_0_01_01 = widget.favorite;
 
   bool recognizing = false;
   bool recognizeFinished = false;
@@ -69,7 +76,7 @@ class _Video0_01 extends State<Video0_01>{
       setState(() {});
     });
     _controller = YoutubePlayerController(
-      initialVideoId: '1uJvtbTyVPk',
+      initialVideoId: widget.YoutubeID,
       flags: YoutubePlayerFlags(
         autoPlay: false,
         loop: false,
@@ -411,7 +418,7 @@ class _Video0_01 extends State<Video0_01>{
             color: Colors.black,
             onPressed: () async {
     await Navigator.pushReplacement(
-    context, CupertinoPageRoute(builder: (context) => Video0_02()));
+    context, CupertinoPageRoute(builder: (context) => Vocab_Screen_51()));
             }
         ),
       ],

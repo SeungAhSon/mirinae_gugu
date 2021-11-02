@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
 void main() async {

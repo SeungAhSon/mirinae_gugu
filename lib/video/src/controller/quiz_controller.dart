@@ -4,6 +4,8 @@ import 'package:get/state_manager.dart';
 import 'package:mirinae_gugu/video/src/components/Questions.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
 
+
+
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
 
@@ -20,6 +22,10 @@ class QuestionController extends GetxController
 
   List<Question> get questions => this._questions;
 
+
+
+
+
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
 
@@ -34,6 +40,8 @@ class QuestionController extends GetxController
 
   int _numOfCorrectAns = 0;
   int get numOfCorrectAns => this._numOfCorrectAns;
+
+
 
   @override
   void onInit() {
@@ -52,6 +60,16 @@ class QuestionController extends GetxController
     _numOfCorrectAns = 0;
     _isAnswered = false;
   }
+
+  void Video(Question question){
+   _VideoId_ = question.VideoId as String?; //여긴 알빠아니고 null나옴
+
+  }
+
+  String? _VideoId_;
+  String? get VideoId_ => _VideoId_;
+
+
 
   void checkAns(Question question, int selectedIndex) {
     _isAnswered = true;

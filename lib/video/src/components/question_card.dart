@@ -14,6 +14,7 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     var height2 = AppBar().preferredSize.height;
     QuestionController _controller = Get.put(QuestionController());
     return Container(
@@ -25,6 +26,7 @@ class QuestionCard extends StatelessWidget {
                 (index) => Option(
               index: index,
               text: question.options[index],
+              video: question.VideoId[index],
               press: () => _controller.checkAns(question, index),
             ),
           ),
@@ -33,3 +35,4 @@ class QuestionCard extends StatelessWidget {
     );
   }
 }
+

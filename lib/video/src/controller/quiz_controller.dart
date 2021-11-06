@@ -82,8 +82,7 @@ class QuestionController extends GetxController
     Future.delayed(Duration(seconds: 1), () {
       if (_questionNumber.value != _questions.length) {
         _isAnswered = false;
-        _pageController.nextPage(
-            duration: Duration(milliseconds: 100), curve: Curves.ease);
+        _pageController.jumpToPage(_questionNumber.value++);
       } else {
         Get.off(ScoreScreen());
       }

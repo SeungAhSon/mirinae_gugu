@@ -20,47 +20,6 @@ class Body extends StatefulWidget {
 
 class _Body extends State<Body>{
 
-  late final YoutubePlayerController _controller;
-  @override
-  void initState() {
-    super.initState();
-    _controller = YoutubePlayerController(
-
-      initialVideoId: asd[QuestionController().questionNumber.value],
-
-      flags: YoutubePlayerFlags(
-        hideThumbnail: true,
-        //isLive: true,
-        autoPlay: false,
-        controlsVisibleAtStart: false,
-        useHybridComposition: false,
-      ),
-    );
-  }
-
-
-
-  List asd = ['0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas'];
-
-  @override
-  void dispose() {
-
-    _controller.pause();
-    super.dispose();
-  }
-
-  Widget youtube(BuildContext context) {
-    return YoutubePlayer(
-
-      controller: _controller,
-      liveUIColor: Colors.amber,
-    );
-  }
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;

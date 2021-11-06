@@ -11,8 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
-import '../../../main.dart';
-import 'Video_0_02.dart';
+
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
 
@@ -20,19 +19,11 @@ import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 class Video0_01 extends StatefulWidget {
   Video0_01({
     Key ?key,
-    required this.text1, required this.YoutubeID,
+    required this.text1, required this.YoutubeID, required this.navi,
     required this.favorite,
     required this.favorite2,
     required this.back,
     this.next='',
-
-
-
-
-
-
-
-
 
   }) : super(key: key);
 
@@ -42,6 +33,7 @@ class Video0_01 extends StatefulWidget {
   final String favorite2;
   final String back;
   final String next;
+  final navi;
 
 
 

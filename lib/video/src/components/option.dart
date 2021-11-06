@@ -28,9 +28,8 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-
+    print(index);
     return GetBuilder<QuestionController>(
-
         init: QuestionController(),
         builder: (qnController) {
           Color getTheRightColor() {

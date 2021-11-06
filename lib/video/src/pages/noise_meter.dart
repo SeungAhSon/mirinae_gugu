@@ -17,6 +17,7 @@ class _Noise extends State<StatefulWidget> {
   final int limitDecibel = 90;
   int minlimitDecibel =30;
   int currentDecibel = 0;
+  double a = 0;
 
   @override
   void dispose() {
@@ -37,20 +38,15 @@ class _Noise extends State<StatefulWidget> {
     setState(() {
       int decibel = sound.maxDecibel.toInt();
       this.currentDecibel = decibel;
-      if(currentDecibel < 60){
-        currentDecibel = currentDecibel-20;
+      if (currentDecibel < 50){
+        currentDecibel = 0;
       }
-      else if (currentDecibel >= 60 && currentDecibel < 75){
-        currentDecibel = currentDecibel-20;
-      }
-      else if (currentDecibel>= 75 && currentDecibel < 80){
-        currentDecibel = currentDecibel+5;
-      }
-      else if(currentDecibel >=80 && currentDecibel < 90){
-        currentDecibel = currentDecibel+15;
-      }
-      else if(currentDecibel >=  90){
+      else if(currentDecibel >= 85){
         currentDecibel = 100;
+      }
+      else{
+        a = (currentDecibel-50)*(85/50);
+        currentDecibel = a.toInt();
       }
     });
   }

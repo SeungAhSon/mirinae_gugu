@@ -10,7 +10,6 @@ import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
 import '../../../main.dart';
-import 'Video_0_01.dart';
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 import 'Video_0_03.dart';
 

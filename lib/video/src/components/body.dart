@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/components/question_card.dart';
 import 'package:mirinae_gugu/video/src/components/youtube.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -68,7 +67,7 @@ class _Body extends State<Body>{
                   itemCount: _questionController.questions.length,
                   itemBuilder: (context, index) => ayotube(
                     question: _questionController.questions[index],
-                    id: _questionController.questionNumber.value,
+                    id: index+1,
                   ),
                 ),
 

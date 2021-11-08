@@ -10,7 +10,7 @@ class Edu_controller extends GetxController
 
   PageController get pageController => this._pageController;
 
-  final List<VideoList_1> _questions = Video1_1.map(
+  final List<VideoList_1> _Video_c_1 = Video1_1.map(
         (question) =>
         VideoList_1(
           id: question['id'],
@@ -18,5 +18,48 @@ class Edu_controller extends GetxController
           favoriteButtons: question['favoriteButtons'],),
   ).toList();
 
+  List<VideoList_1> get Video_c_1 => this._Video_c_1;
 
+  bool _isAnswered = false;
+  bool get isAnswered => this._isAnswered;
+
+
+  RxInt _questionNumber = 1.obs;
+  RxInt get questionNumber => this._questionNumber;
+
+
+
+
+
+  @override
+  void onInit() {
+    _pageController = PageController();
+    super.onInit();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    _pageController.dispose();
+  }
+
+  String? _VideoId_;
+  String? get VideoId_ => _VideoId_;
+
+
+
+  void checkAns(VideoList_1 question, int selectedIndex) {
+    _isAnswered = true;
+
+    Future.delayed(Duration(seconds: 1), () {
+      if (_questionNumber.value != _Video_c_1.length) {
+        _isAnswered = false;
+        _pageController.jumpToPage(_questionNumber.value++);
+      }
+    });
+  }
+
+  void updateTheQnNum(int index) {
+    _questionNumber.value = index + 1;
+  }
 }

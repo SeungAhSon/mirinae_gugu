@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/components/Questions.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
-import 'package:mirinae_gugu/video/src/components/question_card.dart';
+
 import 'package:mirinae_gugu/video/src/components/body.dart';
 
 class Choice821 extends StatelessWidget {

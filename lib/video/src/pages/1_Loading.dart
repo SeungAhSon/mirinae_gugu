@@ -1,6 +1,11 @@
 import 'dart:async';
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/2_Login.dart';
+
+
+List<CameraDescription> cameras = List.empty(growable: true);//
+
 
 class Loading extends StatefulWidget {
   @override

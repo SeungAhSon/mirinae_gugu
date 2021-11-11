@@ -41,7 +41,7 @@ List<bool> FavoriteButtons = [
 
   @override
   void loadFavorite() async{
-    print(FavoriteButtons[0]);
+
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       FavoriteButtons[0] = prefs.getBool('_favoriteButton_0_01_01')!;

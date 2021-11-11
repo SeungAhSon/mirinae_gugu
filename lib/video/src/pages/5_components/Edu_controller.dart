@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '5_video.dart';
+import '5_video_list.dart';
+
 
 class Edu_controller extends GetxController
     with SingleGetTickerProviderMixin {
@@ -11,14 +12,14 @@ class Edu_controller extends GetxController
   PageController get pageController => this._pageController;
 
   final List<VideoList_1> _Video_c_1 = Video1_1.map(
-        (question) =>
+        (sad) =>
         VideoList_1(
-          id: question['id'],
-          VideoId: question['VideoId'],
-          favoriteButtons: question['favoriteButtons'],),
+          id: sad['id'],
+          VideoId: sad['VideoId'],
+          favoriteButtons: sad['favoriteButtons'],),
   ).toList();
 
-  List<VideoList_1> get Video_c_1 => this._Video_c_1;
+  List<VideoList_1> get Video_c_1 => _Video_c_1;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;

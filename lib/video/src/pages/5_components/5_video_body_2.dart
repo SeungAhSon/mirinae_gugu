@@ -190,26 +190,7 @@ class _video_Body extends State<video_Body_2>{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsets.only(top: 2),
-                child: Obx(
-                      () => Text.rich(
-
-                    TextSpan(
-                      text:
-                      "Question ${_questionController.questionNumber.value}",
-                      style: TextStyle(fontSize: 15, color: Colors.blue),
-                      children: [
-                        TextSpan(
-                          text: "/10",
-                          style: TextStyle(fontSize: 15, color: Colors.blue),
-                        ),
-
-                      ],
-                    ),
-                  ),
-                ),
-              ), //번째 문제 표시
+ //번째 문제 표시
               Padding(
                 padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
                 child: Container(

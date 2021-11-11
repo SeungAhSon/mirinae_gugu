@@ -1,28 +1,33 @@
 import 'dart:async';
 
 import 'package:camera/camera.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:mirinae_gugu/video/src/components/youtube.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/5_components/Edu_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../1_Loading.dart';
+import '5_pageview.dart';
 
 
 
 class video_Body extends StatefulWidget {
-  const video_Body({
+  video_Body({
     Key ?key,
     required this.index,
   }) : super(key: key);
   @override
   _video_Body createState() => _video_Body();
-  final int index;
+  int index;
 
 
 }
@@ -41,7 +46,7 @@ class _video_Body extends State<video_Body>{
   String text = '';
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
-
+  late bool favoriteButton_0_01_01 = false;
   @override
   void initState() {
     super.initState();
@@ -52,6 +57,8 @@ class _video_Body extends State<video_Body>{
       setState(() {});
     });
   }
+
+
 
 
 
@@ -127,6 +134,29 @@ class _video_Body extends State<video_Body>{
 
 
 
+  loadFavorite() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
+    });
+  }
+
+
+  void delete() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('_favoriteButton_0_01_01', false);
+    setState(() {
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
+    });
+  }
+
+  void saved() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('_favoriteButton_0_01_01', true);
+    setState(() {
+      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
+    });
+  }
 
 
 
@@ -134,21 +164,25 @@ class _video_Body extends State<video_Body>{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    QuestionController _questionController = Get.put(QuestionController());
+    Edu_controller _questionController = Get.put(Edu_controller());
     if (!controller.value.isInitialized) {
       return Container();
     }
 
     return Scaffold(
+
         appBar: AppBar(
         //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
         //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
         backgroundColor: Colors.white,
+
         title:
         Obx(
+
     () => Text.rich(
 
       TextSpan(
+
         text:
         "Question ${_questionController.questionNumber.value}",
         style: TextStyle(fontSize: 15, color: Colors.blue),
@@ -173,73 +207,254 @@ class _video_Body extends State<video_Body>{
 
     ),
 
-    actions: <Widget>[
+          actions: <Widget>[
+            IconButton(
+              onPressed: favoriteButton_0_01_01 ? delete : saved,
+              icon: favoriteButton_0_01_01
+                  ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
+                  : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
+            ),
+          ],
+        ),
 
-      ],
-      ),
 
 
 
 
+        body: Stack(
 
+          children: [
+            Center(
+              child: CameraPreview(controller),
+            ),
 
+            //상단 슬라이드
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  children: [
+                    backcolor1(), //유튜브 뒤에 흰색 배경
+                    Column(
 
-
-      body: Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 2),
-                child: Obx(
-                      () => Text.rich(
-
-                    TextSpan(
-                      text:
-                      "Question ${_questionController.questionNumber.value}",
-                      style: TextStyle(fontSize: 15, color: Colors.blue),
                       children: [
-                        TextSpan(
-                          text: "/10",
-                          style: TextStyle(fontSize: 15, color: Colors.blue),
+
+
+
+                        //여긴 유튜브 영상
+                        Padding(
+                          padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
+                          child: Container(
+
+                            height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.40,
+                            child: PageView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              controller: _questionController.pageController,
+                              onPageChanged: _questionController.updateTheQnNum,
+                              itemCount: _questionController.Video_c_1.length,
+                              itemBuilder: (context, index) => video_page(
+                                sad: _questionController.Video_c_1[widget.index],
+                                id: widget.index,
+                              ),
+                            ),
+
+                            //child: youtube(context),
+
+                          ),
                         ),
 
+                        SizedBox(              //중간 여백
+                          height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
+                        ),
                       ],
                     ),
-                  ),
+                  ],
                 ),
-              ), //번째 문제 표시
-              Padding(
-                padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
-                child: Container(
-                  height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.74,
-                  child: PageView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    controller: _questionController.pageController,
-                    onPageChanged: _questionController.updateTheQnNum,
-                    itemCount: _questionController.questions.length,
-                    itemBuilder: (context, index) => ayotube(
-                      question: _questionController.questions[index],
-                      id: _questionController.questionNumber.value,
+
+
+                //카메라
+
+                //padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                SizedBox(              //중간 여백
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,
+
+                ),
+
+
+                Stack(
+                  children: [
+                    backcolor2(), //카메라 밑 부분 흰색 배경
+                    Column(
+
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
+                              left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1) ), //상단 슬라이드 밑에 선
+                          child: Container(
+                            height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
+                            color: Colors.grey[300],
+                          ),
+                        ),
+
+
+                        //텍스트
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 0,left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                          child: Container(
+                              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
+                              color: Colors.grey[200],
+                              child: Stack(
+                                // text 프린트 해주는 함수 호출
+                                  children: <Widget>[
+                                    Container(
+                                      child: Noise(),
+                                    ),
+                                    Container(
+                                      child: textprint(),
+                                    )
+                                  ]
+                              )
+                          ),
+                        ),
+
+                        //하단 바 상단선
+                        Padding(
+                          padding: EdgeInsets.only(bottom:0), //상단 슬라이드 밑에 선
+                          child: Container(
+                            height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
+                            color: Colors.grey.withOpacity(0.5),
+                          ),
+                        ),
+
+
+                        //하단 바
+                        Padding(
+                          padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/(70/1), right: MediaQuery.of(context).size.width/(70/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
+                          child: Container(
+                              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.07, //크기 8%
+                              color: Colors.white.withOpacity(0),
+                              child: _buttonZone()
+                          ),
+                        ),
+
+                        //하단 바 아래
+                        Padding(
+                          padding: EdgeInsets.only(bottom:0), //0.063남음
+                          child: Container(
+                            height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
+                            color: Colors.grey.withOpacity(0.5),
+
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-
-                  //child: youtube(context),
-
+                  ],
                 ),
-              ),
-              SizedBox(height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.03),
-
-              Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold, color: Colors.black)),
-
-
-            ],
-          ),
+//0.013남음
+              ],
+            ),
+          ],
         )
+    );
+
+
+
+  }
+
+
+  Widget _buttonZone() {
+    Edu_controller _questionController = Get.put(Edu_controller());
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(Icons.arrow_back_ios_sharp, size: 25,
+            color: Colors.black.withOpacity(0)),
+
+
+        // IconButton(
+        //     icon: Icon(Icons.arrow_back_sharp),
+        //     iconSize: 30,
+        //     color: Colors.black,
+        //     onPressed: () {
+        //       print('이전꺼');
+        //     }
+        // ),
+        IconButton(
+          onPressed: recognizing ? stopRecording : streamingRecognize,
+          icon: recognizing
+              ? Icon(Icons.mic, color: Colors.red, size: 30)
+              : Icon(Icons.mic, color: Colors.blue,size: 30),
+        ),
+        IconButton(
+            icon: Icon(Icons.arrow_forward_ios_sharp),
+            iconSize: 25,
+            color: Colors.black,
+            onPressed: () async {
+                print(widget.index);
+                _questionController.pageController.jumpToPage(widget.index++);
+                print(widget.index);
+                //onPageChanged: _questionController.updateTheQnNum,
+            }
+        ),
       ],
-    )
     );
   }
+
+
+
+
+
+
+  Widget backcolor1(){// 카메라 위 유튜브 부분
+    var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.422,
+      color: Colors.white,
+    );
+  }
+
+  Widget backcolor2(){ //카메라 아래
+    var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.198,
+      color: Colors.white,
+    );
+  }
+
+  Widget backcolor3(){
+    var height2 = AppBar().preferredSize.height;
+    return Container(
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.401,
+      color: Colors.white,
+    );
+  }
+
+
+//텍스트 프린트
+  Widget textprint() {
+    return Column(
+        children: [
+          (recognizeFinished)
+              ?Text(
+              text,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                letterSpacing: 1.0,
+                fontSize: 20.0,
+                height: 1.75,
+                /*fontWeight: FontWeight.bold,*/
+              )
+
+          )
+              :Text(""),
+        ]
+    );
+  }
+
+
+
+
 }
+

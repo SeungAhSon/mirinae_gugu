@@ -1,12 +1,18 @@
 class VideoList_1{
   final int id;
-  final List<bool> favoriteButtons;
+  final bool favoriteButtons;
   final List<String> VideoId;
 
   VideoList_1({required this.id, required this.favoriteButtons, required this.VideoId});
 }
 
 List Video1_1 = [
+  
+  {
+    "id": 1,
+    "VideoID": 'ase3frfGSvw',
+    "favoriteButtons": false,
+  },
   {
     "id": 1,
     "VideoID": 'IovzbPNQcp4',

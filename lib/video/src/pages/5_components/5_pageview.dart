@@ -57,10 +57,7 @@ class _5_video_page extends State<video_page>{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    print("비디오번호");
-    print(asd[widget.id]);
 
-    print("위에");
     QuestionController _controller = Get.put(QuestionController());
     return Container(
       child: Column(
@@ -81,10 +78,8 @@ class _5_video_page extends State<video_page>{
               color: Colors.grey.withOpacity(0.3),
             ),
           ),
-          SizedBox(height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.02),
-
           Container(
-              height: 200,
+              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31,
               child: youtube(context)
           )
         ],

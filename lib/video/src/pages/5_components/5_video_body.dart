@@ -81,7 +81,7 @@ class _video_Body extends State<video_Body>{
     });
     //서비스 계정. assets 폴더에 api key 넣음
     final serviceAccount = ServiceAccount.fromString(
-        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
+        '${(await rootBundle.loadString('asset/lejinhy-speech-to-text-11be68205205.json'))}');
     final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
     final config = _getConfig();
 
@@ -165,6 +165,7 @@ class _video_Body extends State<video_Body>{
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
     Edu_controller _questionController = Get.put(Edu_controller());
+    _questionController.questionNumber.value = widget.index;
     if (!controller.value.isInitialized) {
       return Container();
     }
@@ -230,8 +231,7 @@ class _video_Body extends State<video_Body>{
 
             //상단 슬라이드
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+
               children: [
                 Stack(
                   children: [
@@ -247,7 +247,7 @@ class _video_Body extends State<video_Body>{
                           padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
                           child: Container(
 
-                            height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.40,
+                            height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.36,
                             child: PageView.builder(
                               physics: NeverScrollableScrollPhysics(),
                               controller: _questionController.pageController,
@@ -264,9 +264,7 @@ class _video_Body extends State<video_Body>{
                           ),
                         ),
 
-                        SizedBox(              //중간 여백
-                          height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
-                        ),
+
                       ],
                     ),
                   ],
@@ -277,7 +275,7 @@ class _video_Body extends State<video_Body>{
 
                 //padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 SizedBox(              //중간 여백
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.4,
 
                 ),
 
@@ -289,7 +287,7 @@ class _video_Body extends State<video_Body>{
 
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
+                          padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.013,
                               left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1) ), //상단 슬라이드 밑에 선
                           child: Container(
                             height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.002,
@@ -302,7 +300,7 @@ class _video_Body extends State<video_Body>{
                         Padding(
                           padding: EdgeInsets.only(bottom: 0,left: MediaQuery.of(context).size.width/(8/1),right:MediaQuery.of(context).size.width/(8/1)),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                           child: Container(
-                              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.08,
+                              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.12,
                               color: Colors.grey[200],
                               child: Stack(
                                 // text 프린트 해주는 함수 호출
@@ -391,7 +389,7 @@ class _video_Body extends State<video_Body>{
             iconSize: 25,
             color: Colors.black,
             onPressed: () async {
-                print(widget.index);
+
                 _questionController.pageController.jumpToPage(widget.index++);
                 print(widget.index);
                 //onPageChanged: _questionController.updateTheQnNum,
@@ -409,7 +407,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor1(){// 카메라 위 유튜브 부분
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.422,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.36,
       color: Colors.white,
     );
   }
@@ -417,7 +415,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor2(){ //카메라 아래
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.198,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.24,
       color: Colors.white,
     );
   }
@@ -425,7 +423,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor3(){
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.401,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.4,
       color: Colors.white,
     );
   }

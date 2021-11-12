@@ -35,8 +35,9 @@ class Vocab_Screen_52 extends StatelessWidget{
                       LearnLevelButton(
                         text: '2-2',
                         onTap: () async {
-                          //Level newLevel = await gameBloc.setLevel(index + 1);
-                          //Navigator.of(context).push(GamePage.route(newLevel));
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_2(
+                            index: 2,
+                          )));
                         },
                       ),
                       LearnLevelButton(

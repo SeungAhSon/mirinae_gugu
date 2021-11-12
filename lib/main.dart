@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/9_setting.dart';
 
 
 void main() async {
@@ -27,6 +28,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return Loading();
+    return Setting();
   }
 }

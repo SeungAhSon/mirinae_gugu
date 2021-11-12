@@ -81,7 +81,7 @@ class _video_Body extends State<video_Body>{
     });
     //서비스 계정. assets 폴더에 api key 넣음
     final serviceAccount = ServiceAccount.fromString(
-        '${(await rootBundle.loadString('asset/lejinhy-speech-to-text-11be68205205.json'))}');
+        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
     final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
     final config = _getConfig();
 
@@ -440,7 +440,7 @@ class _video_Body extends State<video_Body>{
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 letterSpacing: 1.0,
-                fontSize: 20.0,
+                fontSize: 20.0, //사이즈 조절 필요
                 height: 1.75,
                 /*fontWeight: FontWeight.bold,*/
               )

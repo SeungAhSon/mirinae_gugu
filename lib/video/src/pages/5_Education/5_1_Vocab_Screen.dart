@@ -122,26 +122,29 @@ List<bool> FavoriteButtons = [
                           text: '1-1',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
-                              index: 5
+                              index:5
                             ),));
                           }
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_02 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-2',
-                  //       onTap: () async {
-                  //             },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_03 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-3',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //1~3
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-2',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                              index: 9
+                          ),));
+                              },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-3',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => Video0_01(),));
+                          //Level newLevel = await gameBloc.setLevel(index + 1);
+                          //Navigator.of(context).push(GamePage.route(newLevel));
+                        },
+                      ),
+ //1~3
                   // Row(
                   //   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   //   children: <Widget>[
@@ -373,7 +376,7 @@ List<bool> FavoriteButtons = [
                   //         //Level newLevel = await gameBloc.setLevel(index + 1);
                   //         //Navigator.of(context).push(GamePage.route(newLevel));
                   //       },
-                       ),
+
                     ],
                   ), //28~30
                 ]

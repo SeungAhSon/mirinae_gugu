@@ -14,27 +14,18 @@ import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_Vocab_Screen.dart';
 
 import 'package:mirinae_gugu/video/src/pages/favorite_global.dart';
 
+import '../1_Loading.dart';
 
 
-List<CameraDescription> cameras = List.empty(growable: true);//
+
 class Video0_01 extends StatefulWidget {
   Video0_01({
     Key ?key,
-    required this.text1, required this.YoutubeID, required this.navi,
-    required this.favorite,
-    required this.favorite2,
-    required this.back,
-    this.next='',
+
 
   }) : super(key: key);
 
-  final String text1;
-  final String YoutubeID;
-  final bool favorite;
-  final String favorite2;
-  final String back;
-  final String next;
-  final navi;
+
 
 
 
@@ -50,7 +41,7 @@ class _Video0_01 extends State<Video0_01>{
   //final VideoHomeController controller= Get.put(VideoHomeController());
   late final YoutubePlayerController _controller;
   final RecorderStream _recorder = RecorderStream();
-  late bool favoriteButton_0_01_01 = widget.favorite;
+  late bool favoriteButton_0_01_01 = false;
 
   bool recognizing = false;
   bool recognizeFinished = false;
@@ -69,7 +60,7 @@ class _Video0_01 extends State<Video0_01>{
       setState(() {});
     });
     _controller = YoutubePlayerController(
-      initialVideoId: widget.YoutubeID,
+      initialVideoId: 'sad',
       flags: YoutubePlayerFlags(
         autoPlay: false,
         loop: false,

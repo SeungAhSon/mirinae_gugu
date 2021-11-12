@@ -81,6 +81,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/lejinhy-speech-to-text-11be68205205.json
     - assets/hedgehog.jpeg
     - assets/oral_structure.png
     - assets/1_screen_start.png

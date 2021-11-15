@@ -5,6 +5,7 @@ import 'package:mirinae_gugu/video/src/controller/app_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/3_home.dart';
 import 'package:mirinae_gugu/video/src/pages/6_Record.dart';
 import 'package:mirinae_gugu/video/src/pages/9_Add.dart';
+import 'package:mirinae_gugu/video/src/pages/9_setting.dart';
 
 
 class App extends GetView<AppController>{ //루트 경로로  만듦
@@ -25,7 +26,7 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
               break;
 
             case RouteName.Add:
-              return Add();
+              return Setting();
               break;
           }
           return Container();

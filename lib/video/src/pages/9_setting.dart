@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '9_1.dart';
+
 class Setting extends StatefulWidget{
   @override
   _Setting createState() => _Setting();
@@ -10,6 +12,8 @@ class _Setting extends State<Setting>{
   bool valNotify1 = true;
   bool valNotify2 = true;
   bool valNotify3 = false;
+  late String FontChoose;
+  List listFont = ["1","2","3","4"];
 
   onChangeFunction1(bool newValue1){
     setState(() {
@@ -35,7 +39,7 @@ class _Setting extends State<Setting>{
     return Scaffold(
       appBar: AppBar(
         title: Text("설정",style: TextStyle(fontSize: 20),),
-
+        centerTitle: true,
       ),
 
       body:
@@ -62,9 +66,9 @@ class _Setting extends State<Setting>{
             SizedBox(height: 10,),
             buildAccountOption(context, "언어 선택"),
 
-            buildAccountOption(context, "글자 크기"),
+            buildfontsize(context, "글자 크기"),
 
-            buildAccountOption(context, "글꼴"),
+            buildfontchoose(context, "글꼴"),
 
             buildNotificationOption("밝기 선택",valNotify1,onChangeFunction1),
             SizedBox(height: 40,),
@@ -80,7 +84,7 @@ class _Setting extends State<Setting>{
             ),
             Divider(height: 20,thickness: 3,),
             SizedBox(height: 10,),
-            buildAccountOption(context, "개발자 연락처"),
+            buildcontact(context, "개발자 연락처"),
             buildAccountOption2(context, "버젼"),
             buildAccountOption(context, "평가"),
 
@@ -100,7 +104,7 @@ class _Setting extends State<Setting>{
         Text(title,style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
-          color: Colors.grey[600]
+          color: Colors.grey[800]
     )),
     Transform.scale(
       scale: 0.9,
@@ -152,7 +156,7 @@ class _Setting extends State<Setting>{
             Text(title,style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
-              color: Colors.grey[600]
+              color: Colors.grey[800]
             ),),
             Icon(Icons.arrow_forward_ios, color: Colors.grey,)
           ],
@@ -174,13 +178,175 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
           Text(title,style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
-              color: Colors.grey[600]
+              color: Colors.grey[800]
           ),),
           Text("1.0.0",style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w500,
               color: Colors.grey[600]
           ),),
+        ],
+      ),
+    ),
+  );
+}
+
+GestureDetector buildcontact(BuildContext context, String title)
+{
+  return GestureDetector(
+    onTap: (){
+      showDialog(context: context, builder: (BuildContext context){
+        return AlertDialog(
+          title: Text(title),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(height: 10),
+              Text("이메일 주소\njaewan0114@naver.com"),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("닫기"),
+            )
+          ],
+        );
+      });
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[800]
+          ),),
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+        ],
+      ),
+    ),
+  );
+}
+
+
+
+
+
+GestureDetector buildfontsize(BuildContext context, String title)
+{
+  return GestureDetector(
+    onTap: (){
+      showDialog(context: context, builder: (BuildContext context){
+        return AlertDialog(
+          title: Text(title),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              fontchoose(title: title,)
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("닫기"),
+            )
+          ],
+        );
+      });
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[800]
+          ),),
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+        ],
+      ),
+    ),
+  );
+}
+
+
+
+GestureDetector buildfontchoose(BuildContext context, String title)
+{
+  int? _gropevalue = 2;
+  return GestureDetector(
+    onTap: (){
+      showDialog(context: context, builder: (BuildContext context){
+        return AlertDialog(
+          title: Text(title),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Row(children: [
+                Radio(
+                  value: 1,
+                  groupValue:_gropevalue,
+                  onChanged: (value){},
+                ),
+                SizedBox(width:10.0,),
+                Text("r")
+              ],),
+              Row(children: [
+                Radio(
+                  value: 2,
+                  groupValue:_gropevalue,
+                  onChanged: (value){},
+                ),
+                SizedBox(width:10.0,),
+                Text("r")
+              ],),
+              Row(children: [
+                Radio(
+                  value: 1,
+                  groupValue:_gropevalue,
+                  onChanged: (value){
+                    _gropevalue = value as int?;
+                  },
+                ),
+                SizedBox(width:10.0,),
+                Text("r")
+              ],)
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("닫기"),
+            )
+          ],
+        );
+      });
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[800]
+          ),),
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
         ],
       ),
     ),

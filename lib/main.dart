@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]); //세로 고정
     return MaterialApp(
 
-
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
@@ -28,6 +27,6 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context){
-    return Setting();
+    return Loading();
   }
 }

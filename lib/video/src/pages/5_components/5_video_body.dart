@@ -275,7 +275,7 @@ class _video_Body extends State<video_Body>{
 
                 //padding: EdgeInsets.only(bottom: 0),//left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                 SizedBox(              //중간 여백
-                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.4,
+                  height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,
 
                 ),
 
@@ -407,7 +407,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor1(){// 카메라 위 유튜브 부분
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.36,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.37,
       color: Colors.white,
     );
   }
@@ -415,7 +415,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor2(){ //카메라 아래
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.24,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.25,
       color: Colors.white,
     );
   }
@@ -423,7 +423,7 @@ class _video_Body extends State<video_Body>{
   Widget backcolor3(){
     var height2 = AppBar().preferredSize.height;
     return Container(
-      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.4,
+      height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.38,
       color: Colors.white,
     );
   }

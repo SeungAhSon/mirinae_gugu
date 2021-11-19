@@ -110,6 +110,27 @@ flutter:
     - assets/mouth/18_y.png
     - assets/mouth/19_h.png
 
+
+  fonts:
+    - family: bmjua
+      fonts:
+        - asset: assets/fonts/BMJUA_ttf.ttf
+
+    - family: origin
+      fonts:
+        - asset: assets/fonts/Roboto-Medium.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+
+
+    - family: chosun100
+      fonts:
+        - asset: assets/fonts/ChosunCentennial_ttf.ttf
+
+    - family: ya
+      fonts:
+        - asset: assets/fonts/야놀자 야체 Regular.ttf
+
+
      #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

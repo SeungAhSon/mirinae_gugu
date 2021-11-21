@@ -41,10 +41,11 @@ class Login extends StatelessWidget{
       Q = "ya";
     }
     else if(select ==5){
-      Q ="nanum";
+      Q ="nunum";
     }
     WidgetsFlutterBinding.ensureInitialized();
     load();
+    print(Q);
     return GetMaterialApp(
       builder: (context, child) {
         return MediaQuery(

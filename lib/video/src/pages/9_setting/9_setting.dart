@@ -74,7 +74,7 @@ class _Setting extends State<Setting>{
             SizedBox(height: 10,),
             buildfontsize(context, "글자 크기 설정"),
 
-            SizedBox(height: 40,),
+            SizedBox(height: 50,),
             Row(
               children: [
                 Icon(Icons.info_outlined, color: Colors.blue,size: 25,),

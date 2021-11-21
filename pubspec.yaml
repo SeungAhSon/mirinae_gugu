@@ -130,13 +130,10 @@ flutter:
       fonts:
         - asset: assets/fonts/야놀자 야체 Regular.ttf
 
-    - family: nanum
-      fonts:
-        - asset: NanumGothic.ttf
-        - asset: NanumGothicBold.ttf
-        - asset: NanumGothicExtraBold.ttf
-        - asset: NanumGothicLight.ttf
 
+    - family: nunum
+      fonts:
+        - asset: assets/fonts/NanumGothic.ttf
 
      #- images/a_dot_ham.jpeg
 

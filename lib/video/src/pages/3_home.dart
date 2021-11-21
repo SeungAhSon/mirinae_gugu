@@ -15,6 +15,7 @@ class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
+
     return SafeArea(
       child: Scaffold(
         body: Center(

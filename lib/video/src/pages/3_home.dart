@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
 import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
@@ -182,7 +183,8 @@ class Home extends StatelessWidget{
           title: Text('구구절절',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
             ),),
           centerTitle: true,
         ),

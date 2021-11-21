@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../main.dart';
 import '../1_Loading.dart';
 import '../2_Login.dart';
-import '9_Select_num.dart';
+
 
 
 class Fontchoose extends StatefulWidget{

@@ -7,9 +7,23 @@ class DD extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
         appBar: AppBar(
-          title: Text('조음 학습', style: TextStyle(color:Colors.blueAccent,fontWeight: FontWeight.bold)),
+          backgroundColor: Colors.white,
+          title: Text('조음 학습',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+            ),),
           centerTitle: true,
-          //elevation: 0.0
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            color: Colors.black,
+            iconSize: 24,
+            icon: Icon(Icons.arrow_back),
+          ),
+
         ),
         body: Center(
             child: ListView(

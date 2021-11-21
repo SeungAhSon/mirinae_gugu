@@ -5,21 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/screens/old_mail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../1_Loading.dart';
+
 class MyApp2 extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp2> {
-  int? _changeFontSize;
-  final List<int> _fontSizeList = [10, 11,12,13,14,15];
+  String? _changeFontSize;
+  final List<String> _fontSizeList = ['크게','조금 크게','보통','조금 작게','작게'];
 
   @override
   void initState() {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       //Retrieving font size
       getFontSize().then((value) => setState(() {
-        _changeFontSize = value as int?;
+        _changeFontSize = value as String?;
       }));
     });
     super.initState();
@@ -29,31 +31,92 @@ class _MyAppState extends State<MyApp2> {
   //   final sharedPreferences = await SharedPreferences.getInstance();
   //   await sharedPreferences.setInt('fontsize', 10);
   // }
-  Future<int?> getFontSize() async {
-    final sharedPreferences = await SharedPreferences.getInstance();
-    return sharedPreferences.getInt('fontsize');
+  Future<String?> getFontSize() async {
+    SharedPreferences ss = await SharedPreferences.getInstance();
+    if (size == -4) {
+      ss.setString('fontsize', "작게");
+      print(1);
+    }
+    else if (size == -2) {
+      ss.setString('fontsize', "조금 작게");
+      print(2);
+    }
+    else if (size == 0) {
+      ss.setString('fontsize', "보통");
+      print(3);
+    }
+    else if (size ==2) {
+      ss.setString('fontsize', "조금 크게");
+      print(4);
+    }
+    else if (size ==4) {
+      ss.setString('fontsize', "크게");
+      print(5);
+    }
+
+    return ss.getString('fontsize');
+
+
   }
 
-  Future<void> updateFontSize(int updatedSize) async {
-    final sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setInt('fontsize', updatedSize);
-    print(updatedSize);
+  Future<String?> updateFontSize(String updatedSize) async {
+    SharedPreferences ss = await SharedPreferences.getInstance();
+    await ss.setString('fontsize', updatedSize);
+    if (ss.getString('fontsize') == "작게") {
+      size = -2;
+      print(11);
+    }
+    else if (ss.getString('fontsize') == "조금 작게") {
+      size = -1;
+      print(22);
+    }
+    else if (ss.getString('fontsize') == "보통") {
+      size = 0;
+      print(33);
+    }
+    else if (ss.getString('fontsize') == "조금 크게") {
+      size = 1;
+      print(44);
+    }
+    else if (ss.getString('fontsize') == "크게") {
+      size = 2;
+      print(55);
+    }
+
+
+
   }
 
 
 
   @override
   Widget build(BuildContext context) {
+
     print(_changeFontSize);
     return Center(
+
+
+
+
+
+
+
+
+
+
+
           child: Column(
             children: [
               Card(
                 margin: EdgeInsets.only(bottom: 3),
+
                 child: ListTile(
-                  title: Text("Font Size"),
+
+                  title: Text("Size"),
                   trailing: DropdownButtonHideUnderline(
+
                     child: DropdownButton(
+
                       isExpanded: false,
                       value: _changeFontSize,
                       items: _fontSizeList.map((myFontSize) {
@@ -64,10 +127,10 @@ class _MyAppState extends State<MyApp2> {
                       }).toList(),
                       onChanged: (value) async {
                         setState(() {
-                          _changeFontSize = value as int?;
+                          _changeFontSize = value as String?;
                         });
                         //Updating font size
-                        await updateFontSize(value as int);
+                        await updateFontSize(value as String);
                       },
                       hint: Text("Select FontSize"),
                     ),

@@ -145,7 +145,8 @@ class Test_Main extends StatelessWidget{
           title: Text('구구절절',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 24,
+              fontWeight: FontWeight.bold
             ),),
           centerTitle: true,
           leading: IconButton(

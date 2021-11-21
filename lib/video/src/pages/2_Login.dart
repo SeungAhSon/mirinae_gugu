@@ -11,7 +11,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../main.dart';
 import '1_Loading.dart';
 import '9_setting/9_Fontchoose.dart';
-import '9_setting/9_Select_num.dart';
 
 class Login extends StatelessWidget{
   const Login({Key? key}) : super(key: key);
@@ -20,10 +19,9 @@ class Login extends StatelessWidget{
   void load() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     select = prefs.getInt('fontchoose')!;
-
   }
+
 @override
-//
   Widget build(BuildContext context){
 
 
@@ -38,11 +36,9 @@ class Login extends StatelessWidget{
     }
     else if(select ==3){
       Q = "chosun100";
-
     }
     else if(select ==4){
       Q = "ya";
-
     }
     WidgetsFlutterBinding.ensureInitialized();
     load();
@@ -55,12 +51,14 @@ class Login extends StatelessWidget{
       },
       title: "구구절절",
       theme: ThemeData(
+        brightness: Brightness.light,
 
         fontFamily: Q,
         primaryColor: Colors.white,
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+
 
       initialBinding: InitBinding(),
       initialRoute: "/",

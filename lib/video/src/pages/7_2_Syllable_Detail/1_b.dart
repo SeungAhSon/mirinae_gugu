@@ -6,11 +6,25 @@ class B extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-          title: Text('조음 학습', style: TextStyle(color:Colors.blueAccent,fontWeight: FontWeight.bold)),
-          centerTitle: true,
-          //elevation: 0.0
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: Text('조음 학습',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),),
+        centerTitle: true,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          color: Colors.black,
+          iconSize: 24,
+          icon: Icon(Icons.arrow_back),
         ),
+     
+    ),
         body: Center(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),

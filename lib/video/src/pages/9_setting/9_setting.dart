@@ -38,8 +38,10 @@ class _Setting extends State<Setting>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 20),),
+        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,)),
+        backgroundColor: Colors.white,
         centerTitle: true,
       ),
 
@@ -57,30 +59,26 @@ class _Setting extends State<Setting>{
                 Icon(
                   Icons.app_settings_alt,
                   color: Colors.blue,
+                    size: 25,
                 ),
                 SizedBox(width:10),
-                Text("환경",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+                Text("환경",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)
               ],
             ),
             Divider(height: 20,thickness: 3,),
 
             SizedBox(height: 10,),
-            buildLanguage(context, "언어 선택"),
-
-            buildfontchoose(context, "글꼴"),
-
-            buildfontsize(context, "글자 크기"),
-
-
-
+            buildLanguage(context, "언어 설정"),
+            buildfontchoose(context, "글꼴 설정"),
+            buildfontsize(context, "글자 크기 설정"),
             buildNotificationOption("밝기 선택",valNotify1,onChangeFunction1),
             SizedBox(height: 40,),
             Row(
               children: [
-                Icon(Icons.info_outlined, color: Colors.blue,),
+                Icon(Icons.info_outlined, color: Colors.blue,size: 25,),
                 SizedBox(width: 10,),
                 Text("정보",style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold
                 ),)
               ],
@@ -88,14 +86,15 @@ class _Setting extends State<Setting>{
             Divider(height: 20,thickness: 3,),
             SizedBox(height: 10,),
             buildcontact(context, "개발자 연락처"),
-            buildAccountOption2(context, "버젼"),
-            buildLanguage(context, "평가"),
+            buildAccountOption2(context, "버전 정보"),
+
 
 
 
           ],
         ),
       ),
+
     );
   }
   Padding buildNotificationOption(String title,bool value, Function onChangeMethod){
@@ -106,8 +105,8 @@ class _Setting extends State<Setting>{
       children: [
         Text(title,style: TextStyle(
           fontSize: 20,
-          fontWeight: FontWeight.w500,
-          color: Colors.grey[800]
+          fontWeight: FontWeight.w600,
+
     )),
     Transform.scale(
       scale: 0.9,
@@ -157,10 +156,10 @@ class _Setting extends State<Setting>{
           children: [
             Text(title,style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[800]
+                fontWeight: FontWeight.w600,
+
             ),),
-            Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+            Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
           ],
         ),
       ),
@@ -179,13 +178,13 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
         children: [
           Text(title,style: TextStyle(
               fontSize: 20,
+              fontWeight: FontWeight.w600,
+
+          ),),
+          Text("현재 버전은 1.0.0",style: TextStyle(
+              fontSize: 18,
               fontWeight: FontWeight.w500,
               color: Colors.grey[800]
-          ),),
-          Text("1.0.0",style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[600]
           ),),
         ],
       ),
@@ -226,10 +225,10 @@ GestureDetector buildcontact(BuildContext context, String title)
         children: [
           Text(title,style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[800]
+              fontWeight: FontWeight.w600,
+
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
         ],
       ),
     ),
@@ -272,10 +271,10 @@ GestureDetector buildfontsize(BuildContext context, String title)
         children: [
           Text(title,style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[800]
+              fontWeight: FontWeight.w600,
+
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
         ],
       ),
     ),
@@ -311,10 +310,10 @@ GestureDetector buildfontchoose(BuildContext context, String title)
         children: [
           Text(title,style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[800]
+              fontWeight: FontWeight.w600,
+
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,)
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
         ],
       ),
     ),

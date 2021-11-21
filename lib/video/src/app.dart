@@ -36,21 +36,25 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
             type: BottomNavigationBarType.fixed,
             currentIndex: controller.currentIndex.value,
             showSelectedLabels: true,
+            unselectedFontSize: 13,
             selectedFontSize: 15,
+            backgroundColor: Colors.white,
+            unselectedItemColor:Colors.grey[800] ,
             selectedItemColor: Colors.black,
+
             onTap: controller.changePageIndex,
 
             items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home_outlined),
+                  icon: Icon(Icons.home_outlined,color: Colors.grey[800]),
                   activeIcon: Icon(Icons.home_outlined, color: Colors.blueAccent,),
                   label : "홈"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.mic_none),
+                  icon: Icon(Icons.mic_none,color: Colors.grey[800]),
                   activeIcon: Icon(Icons.mic_none, color: Colors.blueAccent,),
                   label : "녹음"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.more_horiz),
+                  icon: Icon(Icons.more_horiz, color: Colors.grey[800],),
                   activeIcon: Icon(Icons.more_horiz, color: Colors.blueAccent,),
                   label : "더보기"),
             ],),));

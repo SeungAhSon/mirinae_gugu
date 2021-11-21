@@ -300,9 +300,9 @@ class Syllable_pages extends StatelessWidget{
         backgroundColor: Colors.white,
         title: Text('조음 학습',
           style: TextStyle(
-            color: Colors.blueAccent,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontSize: 24,
           ),),
         centerTitle: true,
         leading: IconButton(
@@ -310,7 +310,7 @@ class Syllable_pages extends StatelessWidget{
             Navigator.pop(context);
           },
           color: Colors.black,
-          iconSize: 22,
+          iconSize: 24,
           icon: Icon(Icons.arrow_back),
         ),
       ),

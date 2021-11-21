@@ -519,9 +519,18 @@ class Word_Main extends StatelessWidget{
           title: Text('구구절절',
             style: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
             ),),
           centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            color: Colors.black,
+            iconSize: 24,
+            icon: Icon(Icons.arrow_back),
+          ),
         ),
       ),
     );

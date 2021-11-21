@@ -13,7 +13,7 @@ class Home extends StatelessWidget{
   static const PrimaryColor1 = const Color(0xFF5DB6F8);
   const Home({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(
@@ -22,8 +22,14 @@ class Home extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Container(
-                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
-                margin: const EdgeInsets.only(left: 15,right: 15,top: 15),
+                height: (MediaQuery
+                    .of(context)
+                    .size
+                    .height - MediaQuery
+                    .of(context)
+                    .padding
+                    .top) * 0.15,
+                margin: const EdgeInsets.only(left: 15, right: 15, top: 15),
                 padding: const EdgeInsets.all(3.0),
                 decoration: BoxDecoration(
                   color: Color(0xff9CBBF7),
@@ -42,7 +48,8 @@ class Home extends StatelessWidget{
                     children: [
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('행복한\n하루되세요~~',style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold))
+                          child: Text('행복한\n하루되세요~~', style: TextStyle(
+                              fontSize: 24.0, fontWeight: FontWeight.bold))
                       ),
                       CircleAvatar(
                         radius: 40.0,
@@ -55,41 +62,55 @@ class Home extends StatelessWidget{
               SizedBox(height: 1),
               Align(
                 alignment: Alignment.centerLeft,
-                child: Text('     학습하기', style: TextStyle(fontSize:20,fontWeight: FontWeight.bold)),
+                child: Text('     학습하기', style: TextStyle(
+                    fontSize: 20, fontWeight: FontWeight.bold)),
               ),
               FlatButton(
-                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
+                height: (MediaQuery
+                    .of(context)
+                    .size
+                    .height - MediaQuery
+                    .of(context)
+                    .padding
+                    .top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Syllable_pages()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Syllable_pages()),);
                 },
                 child: Container(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
+                      children: <Widget>[
                         Container(
                           height: 80, width: 80,
                           decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
+                            color: Color(0xff4573CB),
                             borderRadius: BorderRadius.all(Radius.circular(40)),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.8),
                                 spreadRadius: 2,
                                 blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
+                                offset: Offset(
+                                    2, 2), // changes position of shadow
                               ),
                             ],
                           ),
                           child: Center(
-                              child: Text('조음\n학습', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('조음\n학습', style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('학습하기 >',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('조음을 공부',style:TextStyle(fontSize:15, color: Colors.black45))
+                            children: [
+                              Text('학습하기 >', style: TextStyle(
+                                  fontSize: 18, color: Colors.black54)),
+                              Text('조음을 공부', style: TextStyle(
+                                  fontSize: 15, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -97,38 +118,51 @@ class Home extends StatelessWidget{
                 ),
               ),
               FlatButton(
-                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
+                height: (MediaQuery
+                    .of(context)
+                    .size
+                    .height - MediaQuery
+                    .of(context)
+                    .padding
+                    .top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Word_Main()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Word_Main()),);
                 },
                 child: Container(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
+                      children: <Widget>[
                         Container(
                           height: 80, width: 80,
                           decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
+                            color: Color(0xff4573CB),
                             borderRadius: BorderRadius.all(Radius.circular(40)),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.8),
                                 spreadRadius: 2,
                                 blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
+                                offset: Offset(
+                                    2, 2), // changes position of shadow
                               ),
                             ],
                           ),
                           child: Center(
-                              child: Text('낱말\n학습', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('낱말\n학습', style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('학습하기 >',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('낱말 별 학습',style:TextStyle(fontSize:15, color: Colors.black45))
+                            children: [
+                              Text('학습하기 >', style: TextStyle(
+                                  fontSize: 18, color: Colors.black54)),
+                              Text('낱말 별 학습', style: TextStyle(
+                                  fontSize: 15, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -136,45 +170,58 @@ class Home extends StatelessWidget{
                 ),
               ),
               FlatButton(
-                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
+                height: (MediaQuery
+                    .of(context)
+                    .size
+                    .height - MediaQuery
+                    .of(context)
+                    .padding
+                    .top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Test_Main()),);
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Test_Main()),);
                 },
                 child: Container(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children : <Widget>[
+                      children: <Widget>[
                         Container(
                           height: 80, width: 80,
                           decoration: BoxDecoration(
-                            color:Color(0xff4573CB),
+                            color: Color(0xff4573CB),
                             borderRadius: BorderRadius.all(Radius.circular(40)),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.8),
                                 spreadRadius: 2,
                                 blurRadius: 7,
-                                offset: Offset(2, 2), // changes position of shadow
+                                offset: Offset(
+                                    2, 2), // changes position of shadow
                               ),
                             ],
                           ),
                           child: Center(
-                              child: Text('복습\n시험', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('복습\n시험', style: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children:[
-                              Text('학습하기 >',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('배운 내용을 공부',style:TextStyle(fontSize:15, color: Colors.black45))
+                            children: [
+                              Text('학습하기 >', style: TextStyle(
+                                  fontSize: 18, color: Colors.black54)),
+                              Text('배운 내용을 공부', style: TextStyle(
+                                  fontSize: 15, color: Colors.black45))
                             ]
                         ),
                       ]
                   ),
                 ),
               ),
-              SizedBox(height:1)
+              SizedBox(height: 1)
             ],
           ),
         ),

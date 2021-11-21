@@ -53,6 +53,10 @@ class _Fontchoose extends State<Fontchoose> {
         select = 4;
 
       }
+      else if (prefs.getInt('fontchoose') == 5) {
+        select = 5;
+
+      }
 
       select = prefs.getInt('fontchoose')!;
 
@@ -80,6 +84,10 @@ class _Fontchoose extends State<Fontchoose> {
     }
     else if(select ==4){
       await prefs.setInt('fontchoose', 4);
+
+    }
+    else if(select ==5){
+      await prefs.setInt('fontchoose', 5);
 
     }
       select = prefs.getInt('fontchoose')!;
@@ -140,6 +148,17 @@ class _Fontchoose extends State<Fontchoose> {
           ),
           SizedBox(width: 10.0,),
           Text("야체",style: TextStyle(fontFamily: "ya"),)
+        ],),
+        Row(children: [
+          Radio(
+            value: 5,
+            groupValue: select,
+            onChanged: (value) {
+              setSelected(value as int);
+            },
+          ),
+          SizedBox(width: 10.0,),
+          Text("나눔고딕",style: TextStyle(fontFamily: "nanum"),)
         ],)
       ],
     );

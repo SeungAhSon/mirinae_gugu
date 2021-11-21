@@ -40,6 +40,9 @@ class Login extends StatelessWidget{
     else if(select ==4){
       Q = "ya";
     }
+    else if(select ==5){
+      Q ="nanum";
+    }
     WidgetsFlutterBinding.ensureInitialized();
     load();
     return GetMaterialApp(
@@ -57,6 +60,7 @@ class Login extends StatelessWidget{
         primaryColor: Colors.white,
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+
       ),
 
 

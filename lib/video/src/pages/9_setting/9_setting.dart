@@ -40,7 +40,7 @@ class _Setting extends State<Setting>{
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,)),
+        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -69,9 +69,11 @@ class _Setting extends State<Setting>{
 
             SizedBox(height: 10,),
             buildLanguage(context, "언어 설정"),
+            SizedBox(height: 10,),
             buildfontchoose(context, "글꼴 설정"),
+            SizedBox(height: 10,),
             buildfontsize(context, "글자 크기 설정"),
-            buildNotificationOption("밝기 선택",valNotify1,onChangeFunction1),
+
             SizedBox(height: 40,),
             Row(
               children: [
@@ -86,7 +88,9 @@ class _Setting extends State<Setting>{
             Divider(height: 20,thickness: 3,),
             SizedBox(height: 10,),
             buildcontact(context, "개발자 연락처"),
+            SizedBox(height: 10,),
             buildAccountOption2(context, "버전 정보"),
+            SizedBox(height: 10,),
 
 
 
@@ -97,33 +101,7 @@ class _Setting extends State<Setting>{
 
     );
   }
-  Padding buildNotificationOption(String title,bool value, Function onChangeMethod){
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-      child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title,style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w600,
 
-    )),
-    Transform.scale(
-      scale: 0.9,
-      child: CupertinoSwitch(
-        activeColor: Colors.blue,
-        trackColor: Colors.grey,
-        value: value,
-        onChanged: (bool newValue) {
-          onChangeMethod(newValue);
-  },
-      ),)
-    ],
-    ),
-
-  );
-  
-  }
   
   GestureDetector buildLanguage(BuildContext context, String title)
   {
@@ -154,9 +132,10 @@ class _Setting extends State<Setting>{
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title,style: TextStyle(
+            Text(title,textScaleFactor: 1.0,style: TextStyle(
               fontSize: 20,
                 fontWeight: FontWeight.w600,
+
 
             ),),
             Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
@@ -181,7 +160,7 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Text("현재 버전은 1.0.0",style: TextStyle(
+          Text("1.0.0",style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w500,
               color: Colors.grey[800]

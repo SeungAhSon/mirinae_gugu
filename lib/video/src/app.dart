@@ -36,8 +36,8 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
             type: BottomNavigationBarType.fixed,
             currentIndex: controller.currentIndex.value,
             showSelectedLabels: true,
-            unselectedFontSize: 13,
-            selectedFontSize: 15,
+            unselectedFontSize: 14,
+            selectedFontSize: 16,
             backgroundColor: Colors.white,
             unselectedItemColor:Colors.grey[800] ,
             selectedItemColor: Colors.black,
@@ -54,9 +54,9 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
                   activeIcon: Icon(Icons.mic_none, color: Colors.blueAccent,),
                   label : "녹음"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.more_horiz, color: Colors.grey[800],),
-                  activeIcon: Icon(Icons.more_horiz, color: Colors.blueAccent,),
-                  label : "더보기"),
+                  icon: Icon(Icons.settings_sharp, color: Colors.grey[800],),
+                  activeIcon: Icon(Icons.settings_sharp, color: Colors.blueAccent,),
+                  label : "설정"),
             ],),));
   }
 }

@@ -158,7 +158,7 @@ class _Fontchoose extends State<Fontchoose> {
             },
           ),
           SizedBox(width: 10.0,),
-          Text("나눔고딕체",style: TextStyle(fontFamily: "nanum"),)
+          Text("나눔고딕체",style: TextStyle(fontFamily: "nunum"),)
         ],)
       ],
     );

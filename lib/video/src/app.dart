@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/app_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/3_home.dart';
 import 'package:mirinae_gugu/video/src/pages/6_Record.dart';
-import 'package:mirinae_gugu/video/src/pages/9_setting/9_Add.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_setting.dart';
 
 

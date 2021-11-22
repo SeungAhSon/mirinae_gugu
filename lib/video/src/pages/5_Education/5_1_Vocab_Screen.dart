@@ -98,7 +98,7 @@ List<bool> FavoriteButtons = [
   @override
   Widget build(BuildContext context){
 
-    loadFavorite();
+
     return Scaffold(
         appBar: AppBar(
           title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),

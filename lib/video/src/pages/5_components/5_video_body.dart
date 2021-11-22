@@ -1,5 +1,6 @@
 import 'dart:async';
 
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +10,7 @@ import 'package:google_speech/google_speech.dart';
 import 'package:mirinae_gugu/video/src/components/youtube.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/Edu_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,6 +18,7 @@ import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../1_Loading.dart';
+import '5_page_finish.dart';
 import '5_pageview.dart';
 
 
@@ -32,7 +35,7 @@ class video_Body extends StatefulWidget {
 
 }
 
-class _video_Body extends State<video_Body>{
+class _video_Body extends State<video_Body> {
 
 
   CameraController controller =
@@ -40,27 +43,23 @@ class _video_Body extends State<video_Body>{
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
   final RecorderStream _recorder = RecorderStream();
-
+  bool finish = false;
+  bool start = false;
   bool recognizing = false;
   bool recognizeFinished = false;
   String text = '';
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
+
   @override
   void initState() {
     super.initState();
     _recorder.initialize();
     controller.initialize().then((_) {
-
-
       setState(() {});
     });
   }
-
-
-
-
 
 
   void dispose() {
@@ -81,7 +80,8 @@ class _video_Body extends State<video_Body>{
     });
     //서비스 계정. assets 폴더에 api key 넣음
     final serviceAccount = ServiceAccount.fromString(
-        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
+        '${(await rootBundle.loadString(
+            'assets/lejinhy-speech-to-text-11be68205205.json'))}');
     final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
     final config = _getConfig();
 
@@ -106,7 +106,6 @@ class _video_Body extends State<video_Body>{
           recognizeFinished = true;
         });
       }
-
     }, onDone: () {
       setState(() {
         recognizing = false;
@@ -125,16 +124,16 @@ class _video_Body extends State<video_Body>{
   }
 
   //google speech to text api 설정
-  RecognitionConfig _getConfig() => RecognitionConfig(
-      encoding: AudioEncoding.LINEAR16,
-      model: RecognitionModel.command_and_search,
-      enableAutomaticPunctuation: false,
-      sampleRateHertz: 16000,
-      languageCode: 'ko-KR');
+  RecognitionConfig _getConfig() =>
+      RecognitionConfig(
+          encoding: AudioEncoding.LINEAR16,
+          model: RecognitionModel.command_and_search,
+          enableAutomaticPunctuation: false,
+          sampleRateHertz: 16000,
+          languageCode: 'ko-KR');
 
 
-
-  loadFavorite() async{
+  loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
       favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
@@ -158,14 +157,56 @@ class _video_Body extends State<video_Body>{
     });
   }
 
+  void plus() async {
+    Edu_controller _questionController = Get.put(Edu_controller());
+    if (widget.index != _questionController.Video_c_1.length) {
+      if (widget.index == 10) {
+        setState(() {
+          start = true;
 
+        });
+      }
+      else
+        setState(() {
+          _questionController.pageController.jumpToPage(widget.index++);
+          start = false;
+          finish = false;
+        });
+    }
+    else{
 
+    }
+    print(_questionController.Video_c_1.length);
+    print(widget.index);
+  }
+
+  void back() async {
+    Edu_controller _questionController = Get.put(Edu_controller());
+    if (widget.index != _questionController.Video_c_1.length) {
+      if (widget.index == 1) {
+        setState(() {
+          finish = true;
+        });
+      }
+      else
+        setState(() {
+          _questionController.pageController.jumpToPage(widget.index--);
+          finish = false;
+          start = false;
+        });
+    }
+    else{
+      Get.off(ScoreScreen());
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+
     var height2 = AppBar().preferredSize.height;
     Edu_controller _questionController = Get.put(Edu_controller());
     _questionController.questionNumber.value = widget.index;
+
     if (!controller.value.isInitialized) {
       return Container();
     }
@@ -361,38 +402,53 @@ class _video_Body extends State<video_Body>{
   }
 
 
+
+
+
+
+
+
   Widget _buttonZone() {
     Edu_controller _questionController = Get.put(Edu_controller());
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(Icons.arrow_back_ios_sharp, size: 25,
-            color: Colors.black.withOpacity(0)),
 
 
-        // IconButton(
-        //     icon: Icon(Icons.arrow_back_sharp),
-        //     iconSize: 30,
-        //     color: Colors.black,
-        //     onPressed: () {
-        //       print('이전꺼');
-        //     }
-        // ),
+
+
+
+        IconButton(
+            icon: finish
+                ? Icon(Icons.arrow_back_ios_sharp, color: Colors.white.withOpacity(0), size: 30)
+                : Icon(Icons.arrow_back_ios_sharp, color: Colors.black,size: 30),
+              onPressed: () async {
+                back();
+                print(start);
+              //onPageChanged: _questionController.updateTheQnNum,
+            }
+        ),
+
+
         IconButton(
           onPressed: recognizing ? stopRecording : streamingRecognize,
           icon: recognizing
               ? Icon(Icons.mic, color: Colors.red, size: 30)
               : Icon(Icons.mic, color: Colors.blue,size: 30),
         ),
-        IconButton(
-            icon: Icon(Icons.arrow_forward_ios_sharp),
-            iconSize: 25,
-            color: Colors.black,
-            onPressed: () async {
 
-                _questionController.pageController.jumpToPage(widget.index++);
-                print(widget.index);
-                //onPageChanged: _questionController.updateTheQnNum,
+
+
+
+
+        IconButton(
+            icon: start
+                ? Icon(Icons.arrow_forward_ios_sharp, color: Colors.white.withOpacity(0), size: 30)
+                : Icon(Icons.arrow_forward_ios_sharp, color: Colors.black,size: 30),
+            onPressed: () async {
+              plus();
+              print(start);
+              //onPageChanged: _questionController.updateTheQnNum,
             }
         ),
       ],

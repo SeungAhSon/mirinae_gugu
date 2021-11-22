@@ -57,7 +57,7 @@ class _5_video_page extends State<video_page>{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-
+    print(widget.id);
     QuestionController _controller = Get.put(QuestionController());
     return Container(
       child: Column(

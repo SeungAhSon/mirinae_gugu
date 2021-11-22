@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
 
 import '5_video_list.dart';
 
@@ -49,16 +50,35 @@ class Edu_controller extends GetxController
 
 
 
-  void checkAns(VideoList_1 question, int selectedIndex) {
-    _isAnswered = true;
+  void add(VideoList_1 questionx) {
+
 
     Future.delayed(Duration(seconds: 1), () {
       if (_questionNumber.value != _Video_c_1.length) {
-        _isAnswered = false;
         _pageController.jumpToPage(_questionNumber.value++);
+        print(_Video_c_1.length);
+      }else
+        {
+          Get.off(ScoreScreen());
+        }
+    });
+  }
+
+
+  void dda(VideoList_1 question) {
+
+
+    Future.delayed(Duration(seconds: 1), () {
+      if (_questionNumber.value != _Video_c_1.length) {
+        _pageController.jumpToPage(_questionNumber.value--);
+        print(_Video_c_1.length);
+      }else
+      {
+        Get.off(ScoreScreen());
       }
     });
   }
+
 
   void updateTheQnNum(int index) {
     _questionNumber.value = index + 1;

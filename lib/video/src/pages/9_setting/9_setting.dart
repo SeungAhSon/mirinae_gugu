@@ -53,7 +53,6 @@ class _Setting extends State<Setting>{
         child: ListView(
           children: [
             SizedBox(height: 10,),
-
             Row(
               children: [
                 Icon(
@@ -66,7 +65,6 @@ class _Setting extends State<Setting>{
               ],
             ),
             Divider(height: 20,thickness: 3,),
-
             SizedBox(height: 10,),
             buildLanguage(context, "언어 설정"),
             SizedBox(height: 10,),
@@ -74,10 +72,11 @@ class _Setting extends State<Setting>{
             SizedBox(height: 10,),
             buildfontsize(context, "글자 크기 설정"),
 
-            SizedBox(height: 50,),
+            SizedBox(height: 20,),
+
             Row(
               children: [
-                Icon(Icons.info_outlined, color: Colors.blue,size: 25,),
+                Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
                 SizedBox(width: 10,),
                 Text("정보",style: TextStyle(
                   fontSize: 22,
@@ -93,6 +92,21 @@ class _Setting extends State<Setting>{
             SizedBox(height: 10,),
 
 
+
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
+                SizedBox(width: 10,),
+                Text("사용 안내", style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold
+                ),)
+              ],
+            ),
+            Divider(height: 20,thickness: 3,),
+            SizedBox(height: 10,),
+            buildcontact(context, "사용법 및 기능"),
 
 
           ],

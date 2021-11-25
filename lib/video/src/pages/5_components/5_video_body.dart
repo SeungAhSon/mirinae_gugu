@@ -26,24 +26,22 @@ import '5_pageview.dart';
 class video_Body extends StatefulWidget {
   video_Body({
     Key ?key,
-    required this.index,
+    required this.index
   }) : super(key: key);
   @override
   _video_Body createState() => _video_Body();
   int index;
 
-
 }
 
 class _video_Body extends State<video_Body> {
-
+  bool finish = false;
 
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
   final RecorderStream _recorder = RecorderStream();
-  bool finish = false;
   bool start = false;
   bool recognizing = false;
   bool recognizeFinished = false;
@@ -51,7 +49,7 @@ class _video_Body extends State<video_Body> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-
+  List<String> Questiontitle = ["ㄱ","ㄴ","ㅇㄷ"];
   @override
   void initState() {
     super.initState();
@@ -180,6 +178,23 @@ class _video_Body extends State<video_Body> {
     print(widget.index);
   }
 
+  void backplusload() async{
+    Edu_controller _questionController = Get.put(Edu_controller());
+    if (widget.index != _questionController.Video_c_1.length) {
+      if (widget.index == 1) {
+        setState(() {
+          finish = true;
+        });
+      }
+      else if (widget.index == 10) {
+        setState(() {
+          start = true;
+
+        });
+      }
+  }}
+
+
   void back() async {
     Edu_controller _questionController = Get.put(Edu_controller());
     if (widget.index != _questionController.Video_c_1.length) {
@@ -202,7 +217,7 @@ class _video_Body extends State<video_Body> {
 
   @override
   Widget build(BuildContext context) {
-
+    backplusload();
     var height2 = AppBar().preferredSize.height;
     Edu_controller _questionController = Get.put(Edu_controller());
     _questionController.questionNumber.value = widget.index;
@@ -220,17 +235,18 @@ class _video_Body extends State<video_Body> {
 
         title:
         Obx(
-
     () => Text.rich(
 
       TextSpan(
 
         text:
-        "Question ${_questionController.questionNumber.value}",
+        "${_questionController.questionNumber.value}. ",
+
         style: TextStyle(fontSize: 15, color: Colors.blue),
+
         children: [
           TextSpan(
-            text: "/10",
+            text:  '${Questiontitle[widget.index]}',
             style: TextStyle(fontSize: 15, color: Colors.blue),
           ),
 

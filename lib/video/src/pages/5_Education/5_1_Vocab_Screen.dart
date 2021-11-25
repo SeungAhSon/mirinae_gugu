@@ -1,3 +1,5 @@
+
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -122,7 +124,8 @@ List<bool> FavoriteButtons = [
                           text: '1-1',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
-                              index:5
+                              index:1,
+
                             ),));
                           }
                       ),
@@ -131,7 +134,8 @@ List<bool> FavoriteButtons = [
                         text: '1-2',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
-                              index: 9
+                              index: 9,
+
                           ),));
                               },
                       ),

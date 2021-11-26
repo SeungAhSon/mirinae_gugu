@@ -49,7 +49,7 @@ class _video_Body extends State<video_Body> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-  List<String> Questiontitle = ["ㄱ","ㄴ","ㅇㄷ"];
+  List<String> Questiontitle = ["ㄱ","안녕하세요","ㅇㄷ"];
   @override
   void initState() {
     super.initState();
@@ -233,8 +233,10 @@ class _video_Body extends State<video_Body> {
         //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
         backgroundColor: Colors.white,
 
+
         title:
-        Obx(
+        Center (
+        child: Obx(
     () => Text.rich(
 
       TextSpan(
@@ -242,19 +244,19 @@ class _video_Body extends State<video_Body> {
         text:
         "${_questionController.questionNumber.value}. ",
 
-        style: TextStyle(fontSize: 15, color: Colors.blue),
+        style: TextStyle(fontSize: 20+size, color: Colors.blue),
 
         children: [
           TextSpan(
             text:  '${Questiontitle[widget.index]}',
-            style: TextStyle(fontSize: 15, color: Colors.blue),
+            style: TextStyle(fontSize: 20+size, color: Colors.blue),
           ),
 
         ],
       ),
     ),
     ),
-
+            ),
     leading: IconButton(
     onPressed: () {
     Navigator.pop(context);

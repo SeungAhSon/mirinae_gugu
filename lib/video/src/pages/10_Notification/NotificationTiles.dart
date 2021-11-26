@@ -36,9 +36,11 @@ class NotificationTiles extends StatelessWidget {
         ],
       ),
       trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),
-      onTap: () => Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => NotificationPage(
-              title: this.title, content: this.content, date: this.date))),
+      onTap: () => Navigator.of(context).push(PageRouteBuilder(
+          pageBuilder: (context, animation1, animation2) => NotificationPage(
+              title: this.title, content: this.content, date: this.date),
+        transitionDuration: Duration(seconds: 0),
+      )),
       enabled: enable,
     )
     );

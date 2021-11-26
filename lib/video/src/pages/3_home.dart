@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
+import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
@@ -231,11 +232,23 @@ class Home extends StatelessWidget{
           title: Text('구구절절',
             style: TextStyle(
               color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 20,
             ),),
           centerTitle: true,
-        ),
+          actions : <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.notifications,
+                color: Color(0xff4573CB),
+                size : 30.0,
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Notific()),);
+              },
+
+            )
+          ]
+      ),
       ),
     );
   }

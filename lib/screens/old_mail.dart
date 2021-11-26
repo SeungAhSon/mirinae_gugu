@@ -6,6 +6,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue,),
@@ -38,6 +39,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          actions : <Widget>[
+            IconButton(
+                icon: Icon(
+                    Icons.notifications,
+                    color: Colors.blue,
+                    size : 30.0,
+                ),
+              onPressed: ()=>{},
+
+            )
+          ]
         ),
         body: _children[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(

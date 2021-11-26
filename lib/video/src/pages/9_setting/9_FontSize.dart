@@ -53,10 +53,7 @@ class _MyAppState extends State<MyApp2> {
       ss.setString('fontsize', "크게");
       print(5);
     }
-
     return ss.getString('fontsize');
-
-
   }
 
   Future<String?> updateFontSize(String updatedSize) async {
@@ -82,9 +79,6 @@ class _MyAppState extends State<MyApp2> {
       size = 2;
       print(55);
     }
-
-
-
   }
 
 
@@ -94,14 +88,6 @@ class _MyAppState extends State<MyApp2> {
 
     print(_changeFontSize);
     return Center(
-
-
-
-
-
-
-
-
 
 
 

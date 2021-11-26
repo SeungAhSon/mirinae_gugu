@@ -6,17 +6,34 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
 import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '4_Word_Main.dart';
 import '8_Test_Main.dart';
 
-class Home extends StatelessWidget{
+class Home extends StatefulWidget{
   static const PrimaryColor1 = const Color(0xFF5DB6F8);
   const Home({Key? key}) : super(key: key);
   @override
+  _Home createState() => _Home();
+}
+
+class _Home extends State<Home> {
+  @override
+
+  bool Reading = false;
+
+  void loadnotification() async{
+    SharedPreferences ssss = await SharedPreferences.getInstance();
+    Reading = false;
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-
+    loadnotification();
+    print(Reading);
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -237,16 +254,16 @@ class Home extends StatelessWidget{
           centerTitle: true,
           actions : <Widget>[
             IconButton(
-              icon: Icon(
-                Icons.notifications,
-                color: Color(0xff4573CB),
-                size : 30.0,
-              ),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => Notific()),);
-              },
-
-            )
+                icon: Reading
+                    ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
+                    : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
+                onPressed: () async {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Notific()),);
+                  print(Reading);
+                  Reading = true;
+                  //onPageChanged: _questionController.updateTheQnNum,
+                }
+            ),
           ]
       ),
       ),

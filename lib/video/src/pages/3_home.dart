@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '4_Word_Main.dart';
 import '8_Test_Main.dart';
 
+//업데이트 시 3개의 reading7를 다른 것으로 바꾸기만 하면 됩니다.
 class Home extends StatefulWidget{
   static const PrimaryColor1 = const Color(0xFF5DB6F8);
   const Home({Key? key}) : super(key: key);
@@ -24,15 +25,22 @@ class _Home extends State<Home> {
   bool Reading = false;
 
   void loadnotification() async{
-    SharedPreferences ssss = await SharedPreferences.getInstance();
-    Reading = false;
+    SharedPreferences s = await SharedPreferences.getInstance();
+    setState(() {
+      Reading = s.getBool("reading7")!;
+    });
 
   }
+@override
+  void initState() {
+    super.initState();
+    loadnotification();
+  }
+
 
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    loadnotification();
     print(Reading);
     return SafeArea(
       child: Scaffold(
@@ -258,9 +266,15 @@ class _Home extends State<Home> {
                     ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
                     : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
                 onPressed: () async {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Notific()),);
-                  print(Reading);
-                  Reading = true;
+                  SharedPreferences s = await SharedPreferences.getInstance();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
+                  )),);
+                  setState(() {
+                    s.setBool("reading7",true);
+                    Reading =  s.getBool("reading7")!;
+                    print(Reading);
+                  });
+
                   //onPageChanged: _questionController.updateTheQnNum,
                 }
             ),

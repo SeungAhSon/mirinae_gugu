@@ -335,7 +335,7 @@ class _video_Body extends State<video_Body> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(5),//
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
                                 height2 -

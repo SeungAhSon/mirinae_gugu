@@ -26,11 +26,12 @@ class video_Body extends StatefulWidget {
   @override
   _video_Body createState() => _video_Body();
   int index;
+
 }
 
 class _video_Body extends State<video_Body> {
   bool finish = false;
-
+  List<bool> favorite = <bool>[false,false,false,false,false,false,false,false,false,false,false];
   CameraController controller =
       CameraController(cameras[1], ResolutionPreset.veryHigh);
 
@@ -122,28 +123,38 @@ class _video_Body extends State<video_Body> {
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
-  loadFavorite() async {
+  Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
+      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
+
+    });
+
+  }
+
+  Future<void> delete() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      favorite[widget.index] = false;
+    });
+    await prefs.setStringList("userFavorite", favorite.map((value) => value.toString()).toList());
+    setState(() {
+      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
     });
   }
 
-  void delete() async {
+  Future<void> saved() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('_favoriteButton_0_01_01', false);
     setState(() {
-      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
+      favorite[widget.index] = true;
     });
+    await prefs.setStringList("userFavorite", favorite.map((value) => value.toString()).toList());
+    setState(() {
+      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
+    });
+
   }
 
-  void saved() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('_favoriteButton_0_01_01', true);
-    setState(() {
-      favoriteButton_0_01_01 = prefs.getBool('_favoriteButton_0_01_01')!;
-    });
-  }
 
   void plus() async {
     Edu_controller _questionController = Get.put(Edu_controller());
@@ -198,6 +209,7 @@ class _video_Body extends State<video_Body> {
 
   @override
   Widget build(BuildContext context) {
+    loadFavorite();
     backplusload();
     var height2 = AppBar().preferredSize.height;
     Edu_controller _questionController = Get.put(Edu_controller());
@@ -240,22 +252,21 @@ class _video_Body extends State<video_Body> {
 
           actions: <Widget>[
             IconButton(
-              onPressed: favoriteButton_0_01_01 ? delete : saved,
-              icon: favoriteButton_0_01_01
-                  ? Icon(Icons.bookmark_rounded,
-                      color: Colors.yellow[800], size: 30) //그대로일때
-                  : Icon(Icons.bookmark_add_outlined,
-                      color: Colors.yellow[800], size: 30),
+              onPressed: favorite[widget.index] ? delete : saved,
+              icon: favorite[widget.index]
+                  ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
+                  : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
             ),
           ],
         ),
+
         body: Stack(
           children: [
             //카메라
             Center(
                 child: Container(
                   padding: EdgeInsets.all(20),
-                  child: Container(color: Colors.purple),
+                  child: CameraPreview(controller)
               ) //CameraPreview(controller)/
             ),
 
@@ -274,7 +285,7 @@ class _video_Body extends State<video_Body> {
                             height: (MediaQuery.of(context).size.height -
                                     height2 -
                                     MediaQuery.of(context).padding.top) *
-                                0.36,
+                                0.38,
                             child: PageView.builder(
                               physics: NeverScrollableScrollPhysics(),
                               controller: _questionController.pageController,
@@ -335,7 +346,7 @@ class _video_Body extends State<video_Body> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.all(5),//
+                          padding: EdgeInsets.all(5),
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
                                 height2 -

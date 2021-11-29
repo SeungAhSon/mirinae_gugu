@@ -41,7 +41,7 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    print(Reading);
+
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -272,7 +272,7 @@ class _Home extends State<Home> {
                   setState(() {
                     s.setBool("reading7",true);
                     Reading =  s.getBool("reading7")!;
-                    print(Reading);
+
                   });
 
                   //onPageChanged: _questionController.updateTheQnNum,

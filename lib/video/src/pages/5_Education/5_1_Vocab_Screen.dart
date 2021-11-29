@@ -25,61 +25,14 @@ class Vocab_Screen_51 extends StatefulWidget {
 }
 
 class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
-
-
-
-
-
-
-
-
-List<bool> FavoriteButtons = [
-  false,false,false,false,false,false,false,false,false,false,
-  false,false,false,false,false,false,false,false,false,false,
-  false,false,false,false,false,false,false,false,false,false
-];
-
-
-
+  List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false];
   @override
-  void loadFavorite() async{
-
+  Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      FavoriteButtons[0] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[1] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[2] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[3] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[4] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[5] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[6] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[7] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[8] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[9] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[10] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[11] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[12] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[13] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[14] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[15] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[16] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[17] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[18] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[19] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[20] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[21] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[22] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[23] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[24] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[25] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[26] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[27] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[28] = prefs.getBool('_favoriteButton_0_01_01')!;
-      FavoriteButtons[29] = prefs.getBool('_favoriteButton_0_01_01')!;
-
-
-
+      FavoriteButtons = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
     });
+    print(prefs.getStringList("userFavorite"));
   }
 
   void main() {
@@ -96,11 +49,12 @@ List<bool> FavoriteButtons = [
   }
 
 
-
   @override
   Widget build(BuildContext context){
 
+    loadFavorite();
 
+    print(FavoriteButtons);
     return Scaffold(
         appBar: AppBar(
           title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -120,17 +74,18 @@ List<bool> FavoriteButtons = [
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                          color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
+                          color: FavoriteButtons[1] ? Colors.orange : Color(0xff7ba6f9),
                           text: '1-1',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
                               index:1,
 
+
                             ),));
                           }
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[9] ? Colors.orange : Color(0xff7ba6f9),
                         text: '1-2',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(

@@ -282,8 +282,8 @@ class Syllable_pages extends StatelessWidget{
           ),//ㅇ
       ),
       Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.2985,
-            left: (MediaQuery.of(context).size.width)*0.756),
+        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.38,
+            left: (MediaQuery.of(context).size.width)*0.784),
         child:SizedBox(
             child: FlatButton(
                 child: Text('ㅎ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),

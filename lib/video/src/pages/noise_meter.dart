@@ -61,17 +61,18 @@ class _Noise extends State<StatefulWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         body: Container(
           child: Column(
             children: <Widget>[
               Container(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 30),
+                  padding: EdgeInsets.only(top: 0),
                   child: Column(
                     children: [
 
                       FAProgressBar(
-                        size: 15,
+                        size: 12,
                         currentValue: currentDecibel,
                         maxValue: limitDecibel,
                         animatedDuration: const Duration(milliseconds: 300),

@@ -30,6 +30,7 @@ class video_Body extends StatefulWidget {
 }
 
 class _video_Body extends State<video_Body> {
+  List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false"];
   bool finish = false;
   List<bool> favorite = <bool>[false,false,false,false,false,false,false,false,false,false,false];
   CameraController controller =
@@ -125,11 +126,14 @@ class _video_Body extends State<video_Body> {
 
   Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
-
+    setState((){
+      favorite = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
     });
 
+    favorite = (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
+    FavoriteButton = prefs.getStringList("favorite11")!;
+    print(prefs.getStringList("favorite11"));
+    print("load");
   }
 
   Future<void> delete() async {
@@ -137,9 +141,9 @@ class _video_Body extends State<video_Body> {
     setState(() {
       favorite[widget.index] = false;
     });
-    await prefs.setStringList("userFavorite", favorite.map((value) => value.toString()).toList());
+    await prefs.setStringList("favorite11", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
+      favorite = (prefs.getStringList("favorite11")??<bool>[]).map((value) => value == 'true').toList();
     });
   }
 
@@ -148,9 +152,9 @@ class _video_Body extends State<video_Body> {
     setState(() {
       favorite[widget.index] = true;
     });
-    await prefs.setStringList("userFavorite", favorite.map((value) => value.toString()).toList());
+    await prefs.setStringList("favorite11", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
+      favorite = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
     });
 
   }
@@ -170,8 +174,8 @@ class _video_Body extends State<video_Body> {
           finish = false;
         });
     } else {}
-    print(_questionController.Video_c_1.length);
-    print(widget.index);
+
+
   }
 
   void backplusload() async {
@@ -409,6 +413,7 @@ class _video_Body extends State<video_Body> {
             ),
           ],
         ));
+
   }
 
   Widget _buttonZone() {
@@ -424,7 +429,7 @@ class _video_Body extends State<video_Body> {
                     color: Colors.black, size: 30),
             onPressed: () async {
               back();
-              print(start);
+
               //onPageChanged: _questionController.updateTheQnNum,
             }),
         IconButton(
@@ -441,7 +446,7 @@ class _video_Body extends State<video_Body> {
                     color: Colors.black, size: 30),
             onPressed: () async {
               plus();
-              print(start);
+
               //onPageChanged: _questionController.updateTheQnNum,
             }),
       ],

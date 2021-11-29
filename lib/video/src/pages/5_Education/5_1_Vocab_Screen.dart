@@ -1,5 +1,6 @@
 
 
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,14 +26,22 @@ class Vocab_Screen_51 extends StatefulWidget {
 }
 
 class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
-  List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false];
+  List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false,false];
+  List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false"];
   @override
+
+
+
   Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      FavoriteButtons = (prefs.getStringList("userFavorite") ?? <bool>[]).map((value) => value == 'true').toList();
+    setState((){
+      FavoriteButtons = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
     });
-    print(prefs.getStringList("userFavorite"));
+
+    FavoriteButtons = (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
+    FavoriteButton = prefs.getStringList("favorite11")!;
+    print(prefs.getStringList("favorite11"));
+    print("load");
   }
 
   void main() {
@@ -47,14 +56,22 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
       },
     );
   }
+  @override
+  void initState() {
+    super.initState();
+    print("gd");
+  }
+  void dispose() {
 
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context){
-
     loadFavorite();
 
-    print(FavoriteButtons);
+
+
     return Scaffold(
         appBar: AppBar(
           title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -85,11 +102,11 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                           }
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[9] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[2] ? Colors.orange : Color(0xff7ba6f9),
                         text: '1-2',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
-                              index: 9,
+                              index: 2,
 
                           ),));
                               },
@@ -341,6 +358,9 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                 ]
             )
         )
+
     );
+
   }
+
 }

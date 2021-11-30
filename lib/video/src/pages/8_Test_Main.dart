@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_2_1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
+import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
+
 class Test_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -60,7 +62,7 @@ class Test_Main extends StatelessWidget{
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Choice821()),);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()),);
                     },
                     child: Container(
                         width: 200, height: 100,

@@ -31,7 +31,7 @@ class _Home extends State<Home> {
     });
 
   }
-@override
+  @override
   void initState() {
     super.initState();
     loadnotification();
@@ -253,33 +253,33 @@ class _Home extends State<Home> {
           ),
         ),
         appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text('구구절절',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-            ),),
-          centerTitle: true,
-          actions : <Widget>[
-            IconButton(
-                icon: Reading
-                    ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
-                    : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
-                onPressed: () async {
-                  SharedPreferences s = await SharedPreferences.getInstance();
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
-                  )),);
-                  setState(() {
-                    s.setBool("reading7",true);
-                    Reading =  s.getBool("reading7")!;
+            backgroundColor: Colors.white,
+            title: Text('구구절절',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+              ),),
+            centerTitle: true,
+            actions : <Widget>[
+              IconButton(
+                  icon: Reading
+                      ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
+                      : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
+                  onPressed: () async {
+                    SharedPreferences s = await SharedPreferences.getInstance();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
+                    )),);
+                    setState(() {
+                      s.setBool("reading7",true);
+                      Reading =  s.getBool("reading7")!;
 
-                  });
+                    });
 
-                  //onPageChanged: _questionController.updateTheQnNum,
-                }
-            ),
-          ]
-      ),
+                    //onPageChanged: _questionController.updateTheQnNum,
+                  }
+              ),
+            ]
+        ),
       ),
     );
   }

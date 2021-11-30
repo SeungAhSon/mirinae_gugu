@@ -35,7 +35,7 @@ class Syllable_pages extends StatelessWidget{
         children: <Widget>[
           Align(
             alignment: Alignment.center,
-          child: Image.asset("assets/oral_structure (1).png",fit: BoxFit.fill,),
+          child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),
 
           ),
 

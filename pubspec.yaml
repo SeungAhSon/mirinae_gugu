@@ -30,7 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.0
   carousel_slider: ^4.0.0
-# flutter_linkify: ^5.0.2
+  # flutter_linkify: ^5.0.2
   rxdart: ^0.27.2
   #cloud_firestore: ^0.13.6
   font_awesome_flutter: ^9.1.0
@@ -110,6 +110,18 @@ flutter:
     - assets/mouth/17_k.png
     - assets/mouth/18_y.png
     - assets/mouth/19_h.png
+    - assets/test/1_newyear.png
+    - assets/test/2_spring.png
+    - assets/test/3_health.png
+    - assets/test/4_animal.png
+    - assets/test/5_emotion.png
+    - assets/test/6_summer.png
+    - assets/test/7_fruit.png
+    - assets/test/8_fall.png
+    - assets/test/9_work.png
+    - assets/test/10_house.png
+    - assets/test/11_winter.png
+    - assets/test/12_family.png
 
 
   fonts:
@@ -135,7 +147,7 @@ flutter:
       fonts:
         - asset: assets/fonts/NanumGothic.ttf
 
-     #- images/a_dot_ham.jpeg
+    #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

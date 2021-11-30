@@ -26,13 +26,36 @@ class video_Body extends StatefulWidget {
   @override
   _video_Body createState() => _video_Body();
   int index;
-
 }
 
 class _video_Body extends State<video_Body> {
-  List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false"];
+  List<String> FavoriteButton = [
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false",
+    "false"
+  ];
   bool finish = false;
-  List<bool> favorite = <bool>[false,false,false,false,false,false,false,false,false,false,false];
+  List<bool> favorite = <bool>[
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
   CameraController controller =
       CameraController(cameras[1], ResolutionPreset.veryHigh);
 
@@ -124,13 +147,16 @@ class _video_Body extends State<video_Body> {
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
-  Future<void> loadFavorite() async{
+  Future<void> loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState((){
-      favorite = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
+    setState(() {
+      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+          .map((value) => value == 'true')
+          .toList();
     });
 
-    favorite = (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
+    favorite =
+        (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
     FavoriteButton = prefs.getStringList("favorite11")!;
     print(prefs.getStringList("favorite11"));
     print("load");
@@ -141,9 +167,12 @@ class _video_Body extends State<video_Body> {
     setState(() {
       favorite[widget.index] = false;
     });
-    await prefs.setStringList("favorite11", favorite.map((value) => value.toString()).toList());
+    await prefs.setStringList(
+        "favorite11", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite11")??<bool>[]).map((value) => value == 'true').toList();
+      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+          .map((value) => value == 'true')
+          .toList();
     });
   }
 
@@ -152,13 +181,14 @@ class _video_Body extends State<video_Body> {
     setState(() {
       favorite[widget.index] = true;
     });
-    await prefs.setStringList("favorite11", favorite.map((value) => value.toString()).toList());
+    await prefs.setStringList(
+        "favorite11", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
+      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+          .map((value) => value == 'true')
+          .toList();
     });
-
   }
-
 
   void plus() async {
     Edu_controller _questionController = Get.put(Edu_controller());
@@ -174,8 +204,6 @@ class _video_Body extends State<video_Body> {
           finish = false;
         });
     } else {}
-
-
   }
 
   void backplusload() async {
@@ -258,21 +286,22 @@ class _video_Body extends State<video_Body> {
             IconButton(
               onPressed: favorite[widget.index] ? delete : saved,
               icon: favorite[widget.index]
-                  ? Icon(Icons.bookmark_rounded, color: Colors.yellow[800], size: 30) //그대로일때
-                  : Icon(Icons.bookmark_add_outlined, color: Colors.yellow[800],size: 30),
+                  ? Icon(Icons.bookmark_rounded,
+                      color: Colors.yellow[800], size: 30) //그대로일때
+                  : Icon(Icons.bookmark_add_outlined,
+                      color: Colors.yellow[800], size: 30),
             ),
           ],
         ),
-
         body: Stack(
           children: [
             //카메라
             Center(
                 child: Container(
-                  padding: EdgeInsets.all(20),
-                  child: CameraPreview(controller)
-              ) //CameraPreview(controller)/
-            ),
+                    padding: EdgeInsets.all(20),
+                    child:
+                        CameraPreview(controller)) //CameraPreview(controller)/
+                ),
 
             //상단 슬라이드
             Column(
@@ -309,7 +338,6 @@ class _video_Body extends State<video_Body> {
                     ),
                   ],
                 ),
-
                 SizedBox(
                   //중간 여백
                   height: (MediaQuery.of(context).size.height -
@@ -317,7 +345,6 @@ class _video_Body extends State<video_Body> {
                           MediaQuery.of(context).padding.top) *
                       0.35,
                 ),
-
                 Stack(
                   children: [
                     backcolor2(), //카메라 밑 부분 흰색 배경
@@ -353,15 +380,15 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.all(5),
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                height2 -
-                                MediaQuery.of(context).padding.top) *
+                                    height2 -
+                                    MediaQuery.of(context).padding.top) *
                                 0.04,
                             alignment: Alignment.center,
                             color: Colors.grey[200],
-                            child:  Container(
-                                alignment: Alignment.center,
-                                child: Noise(),
-                              ),
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Noise(),
+                            ),
                           ),
                         ),
 
@@ -413,7 +440,6 @@ class _video_Body extends State<video_Body> {
             ),
           ],
         ));
-
   }
 
   Widget _buttonZone() {
@@ -494,17 +520,17 @@ class _video_Body extends State<video_Body> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-      (recognizeFinished)
-          ? Text(text,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                letterSpacing: 1.0,
-                fontSize: 20.0, //사이즈 조절 필요
-                height: 1.75,
-                /*fontWeight: FontWeight.bold,*/
-              ))
-          : Text(""),
-    ]);
+          (recognizeFinished)
+              ? Text(text,
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    letterSpacing: 1.0,
+                    fontSize: 20.0, //사이즈 조절 필요
+                    height: 1.75,
+                    /*fontWeight: FontWeight.bold,*/
+                  ))
+              : Text(""),
+        ]);
   }
 }

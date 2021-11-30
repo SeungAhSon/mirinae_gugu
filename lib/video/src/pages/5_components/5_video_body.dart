@@ -20,6 +20,12 @@ import '../1_Loading.dart';
 import '5_page_finish.dart';
 import '5_pageview.dart';
 
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
+import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:permission_handler/permission_handler.dart';
+
 class video_Body extends StatefulWidget {
   video_Body({Key? key, required this.index}) : super(key: key);
 
@@ -47,6 +53,18 @@ class _video_Body extends State<video_Body> {
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = ["ㄱ", "안녕하세요", "ㅇㄷ"];
 
+  //record
+  late Directory? appDir;
+  late List<String>? records;
+
+  IconData _recordIcon = Icons.mic_none;
+  MaterialColor colo = Colors.orange;
+  RecordingStatus _currentStatus = RecordingStatus.Unset;
+  bool stop = false;
+  Recording? _current;
+  // Recorder properties
+  late FlutterAudioRecorder? audioRecorder;
+
   @override
   void initState() {
     super.initState();
@@ -54,11 +72,55 @@ class _video_Body extends State<video_Body> {
     controller.initialize().then((_) {
       setState(() {});
     });
+
+    //record
+    super.initState();
+    checkPermission();
+    records = [];
+    getExternalStorageDirectory().then((value) {
+      appDir = value!;
+      Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
+      appDir = appDirec;
+      appDir!.list().listen((onData) {
+        records!.add(onData.path);
+      }).onDone(() {
+        records = records!.reversed.toList();
+        setState(() {});
+      });
+    });
+  }
+
+  checkPermission()async{
+
+    if (await Permission.contacts.request().isGranted) {
+      // Either the permission was already granted before or the user just granted it.
+    }
+
+// You can request multiple permissions at once.
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.microphone,
+      Permission.storage,
+    ].request();
+    print(statuses[Permission.microphone]);
+    print(statuses[Permission.storage]);
+    //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
+    if (statuses[Permission.microphone]==PermissionStatus.granted) {
+      _currentStatus = RecordingStatus.Initialized;
+      _recordIcon = Icons.mic;
+    }else
+    {
+
+    }
   }
 
   void dispose() {
     controller.dispose();
     super.dispose();
+    appDir = null;
+    records = null;
+    super.dispose();
+    _currentStatus = RecordingStatus.Unset;
+    audioRecorder = null;
   }
 
   void streamingRecognize() async {
@@ -432,12 +494,67 @@ class _video_Body extends State<video_Body> {
 
               //onPageChanged: _questionController.updateTheQnNum,
             }),
+        InkWell(
+          child: RaisedButton(
+            onPressed:() {
+              reset();
+            },
+            padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
+
+            child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+
+            color: Color(0xff4573CB),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+            ),
+          ),
+        ),
+
         IconButton(
           onPressed: recognizing ? stopRecording : streamingRecognize,
           icon: recognizing
               ? Icon(Icons.mic, color: Colors.red, size: 30)
               : Icon(Icons.mic, color: Colors.blue, size: 30),
         ),
+
+        stop == false
+            ?
+        RaisedButton(
+          color: Colors.white,
+          onPressed: () async {
+            await _onRecordButtonPressed();
+            setState(() {});
+          },
+          child: Column(
+            children: [
+              Container(
+                width: 30,
+                height: 30,
+                child: Icon(
+                  _recordIcon,
+                  color: Colors.orange,
+                  size: 30,
+                ),
+              ),
+            ],
+          ),
+        )
+            :RaisedButton(
+          color: Colors.white,
+          onPressed: _currentStatus != RecordingStatus.Unset
+              ? _stop
+              : null,
+          child: Container(
+            width: 30,
+            height: 30,
+            child: Icon(
+              Icons.stop,
+              color: Colors.orange,
+              size: 30,
+            ),
+          ),
+        ),
+
         IconButton(
             icon: start
                 ? Icon(Icons.arrow_forward_ios_sharp,
@@ -506,5 +623,132 @@ class _video_Body extends State<video_Body> {
               ))
           : Text(""),
     ]);
+  }
+
+  _onFinish_test() {
+    records!.clear();
+    print(records!.length.toString());
+    appDir!.list().listen((onData) {
+      records!.add(onData.path);
+    }).onDone(() {
+      records!.sort();
+      records = records!.reversed.toList();
+      setState(() {});
+    });
+  }
+
+  Future<void> _onRecordButtonPressed() async {
+    switch (_currentStatus) {
+      case RecordingStatus.Initialized:
+        {
+          _recordo();
+          break;
+        }
+      case RecordingStatus.Stopped:
+        {
+          _recordo();
+          break;
+        }
+      default:
+        break;
+    }
+  }
+
+  _initial() async {
+    Directory? appDir = await getExternalStorageDirectory();
+    String jrecord = 'Audiorecords';
+    String dato = "${DateTime.now().millisecondsSinceEpoch.toString()}.wav";
+    Directory appDirec =
+    Directory("${appDir!.path}/$jrecord/");
+
+    bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
+    print(exists);
+    if (await appDirec.exists()) {
+      String patho = "${appDirec.path}$dato";
+      print("path for file11 ${patho}");
+      audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
+      await audioRecorder!.initialized;
+    } else {
+      appDirec.create(recursive: true);
+      Fluttertoast.showToast(msg: "Start Recording , Press Start");
+      String patho = "${appDirec.path}$dato";
+      print("path for file22 ${patho}");
+      audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
+      await audioRecorder!.initialized;
+    }
+  }
+
+  _start() async {
+    await audioRecorder!.start();
+    var recording = await audioRecorder!.current(channel: 0);
+    setState(() {
+      _current = recording!;
+    });
+
+    const tick = const Duration(milliseconds: 50);
+    new Timer.periodic(tick, (Timer t) async {
+      if (_currentStatus == RecordingStatus.Stopped) {
+        t.cancel();
+      }
+
+      var current = await audioRecorder!.current(channel: 0);
+      // print(current.status);
+      setState(() {
+        _current = current!;
+        _currentStatus = _current!.status!;
+      });
+    });
+  }
+
+  _stop() async {
+    var result = await audioRecorder!.stop();
+    Fluttertoast.showToast(msg: "Stop Recording , File Saved");
+    _onFinish_test();
+    setState(() {
+      _current = result!;
+      _currentStatus = _current!.status!;
+      _current!.duration = null;
+      _recordIcon = Icons.mic;
+      stop = false;
+    });
+  }
+
+
+  Future<void> _recordo() async {
+
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.microphone,
+      Permission.storage,
+    ].request();
+    print(statuses[Permission.microphone]);
+    print(statuses[Permission.storage]);
+    //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
+    if (statuses[Permission.microphone]==PermissionStatus.granted) {
+
+      /* }
+    bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
+
+    if (hasPermission) {*/
+      await _initial();
+      await _start();
+      Fluttertoast.showToast(msg: "Start Recording");
+      setState(() {
+        _currentStatus = RecordingStatus.Recording;
+        /*_recordIcon = Icons.pause;*/
+        /*colo = Colors.red;*/
+        stop = true;
+      });
+    } else {
+      Fluttertoast.showToast(msg: "Allow App To Use Mic");
+    }
+  }
+
+  reset()
+  {
+    setState(() {
+      //counter = 0;
+      //score =0;
+      text = '';
+    });
   }
 }

@@ -47,6 +47,7 @@ dependencies:
   image_picker: ^0.7.0
   path_provider: ^2.0.1
   sizer: ^2.0.15
+  fluttertoast: ^8.0.8
 
 
   get: 3.24.0
@@ -84,7 +85,7 @@ flutter:
     - assets/lejinhy-speech-to-text-11be68205205.json
     - assets/hedgehog.jpeg
     - assets/oral_structure.png
-    - assets/oral_structure (1).png
+    - assets/oral_structure 2.png
     - assets/1_screen_start.png
     - assets/2_screen_login.png
     - assets/icons/book.png

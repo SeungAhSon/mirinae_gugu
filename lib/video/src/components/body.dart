@@ -62,7 +62,7 @@ class _Body extends State<Body>{
 
               child: Container(
 
-                height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.85,
+                height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.88,
                 child: PageView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   controller: _questionController.pageController,

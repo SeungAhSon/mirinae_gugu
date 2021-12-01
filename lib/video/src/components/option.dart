@@ -47,9 +47,10 @@ class Option extends StatelessWidget {
             onTap: press,
             child: Container(
 
-              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.074,
-              margin: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.033),
-              padding: EdgeInsets.all((MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.02),
+              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.065,
+              margin: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.03,
+              left: 40,right: 40),
+              padding: EdgeInsets.all((MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.0),
               decoration: BoxDecoration(
                 color: getTheRightColor(),
                 borderRadius: BorderRadius.circular(20),

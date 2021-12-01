@@ -41,7 +41,8 @@ class _Fontchoose extends State<Languagechoose> {
           SizedBox(width: 10.0,),
           Text("한국어")
         ],),
-
+        SizedBox(height: 20),
+        Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
       ],
     );
   }

@@ -136,7 +136,7 @@ class _Home extends State<Home> {
                             children: [
                               Text('학습하기 >', style: TextStyle(
                                   fontSize: 18, color: Colors.black54)),
-                              Text('조음을 공부', style: TextStyle(
+                              Text('조음별 발음 학습', style: TextStyle(
                                   fontSize: 15, color: Colors.black45))
                             ]
                         ),
@@ -188,7 +188,7 @@ class _Home extends State<Home> {
                             children: [
                               Text('학습하기 >', style: TextStyle(
                                   fontSize: 18, color: Colors.black54)),
-                              Text('낱말 별 학습', style: TextStyle(
+                              Text('단원별 낱말 학습', style: TextStyle(
                                   fontSize: 15, color: Colors.black45))
                             ]
                         ),

@@ -123,6 +123,8 @@ class _MyAppState extends State<MyApp2> {
                   ),
                 ),
               ),
+              SizedBox(height: 20),
+              Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
             ],
           ),
         );

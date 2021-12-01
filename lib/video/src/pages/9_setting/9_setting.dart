@@ -135,7 +135,7 @@ class _Setting extends State<Setting>{
                 onPressed: (){
                 Navigator.of(context).pop();
               },
-                child: Text("닫기"),
+                child: Text("닫기",style: TextStyle(color: Colors.black),),
               )
             ],
           );
@@ -205,7 +205,7 @@ GestureDetector buildcontact(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기"),
+              child: Text("닫기",style: TextStyle(color: Colors.black),),
             )
           ],
         );
@@ -251,7 +251,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기"),
+              child: Text("닫기",style: TextStyle(color: Colors.black),),
             )
           ],
         );
@@ -290,7 +290,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기"),
+              child: Text("닫기",style: TextStyle(color: Colors.black),),
             )
           ],
         );

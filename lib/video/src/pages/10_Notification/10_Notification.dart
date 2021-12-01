@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/constant.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationTiles.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/components/DefaultBackButton.dart';
 
 class Notific extends StatefulWidget {
   Notific({Key? key}) : super(key: key);
@@ -16,10 +15,7 @@ class _NotificationState extends State<Notific> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: DefaultAppBar(
-        title: '공지사항',
-        child: DefaultBackButton(),
-      ),
+      appBar: DefaultAppBar(title: '공지사항'),
       body: ListView(
         physics: ClampingScrollPhysics(),
         padding: EdgeInsets.zero,

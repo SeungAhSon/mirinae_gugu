@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/0_Out.dart';
@@ -296,24 +297,7 @@ class Syllable_pages extends StatelessWidget{
       ),
         ],
       ),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('조음 학습',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-          ),),
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          color: Colors.black,
-          iconSize: 24,
-          icon: Icon(Icons.arrow_back),
-        ),
-      ),
+      appBar: DefaultAppBar(title: '조음학습'),
     );
   }
 }

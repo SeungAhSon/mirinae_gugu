@@ -252,15 +252,18 @@ class _Home extends State<Home> {
             ],
           ),
         ),
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: Text('구구절절',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-              ),),
-            centerTitle: true,
-            actions : <Widget>[
+        appBar:  AppBar(
+          title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          automaticallyImplyLeading: false,
+          iconTheme: IconThemeData(color: Colors.blue),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          actions: <Widget>[
               IconButton(
                   icon: Reading
                       ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)

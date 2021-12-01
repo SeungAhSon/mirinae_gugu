@@ -3,23 +3,25 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String title;
-  final Widget child;
   final action;
   const DefaultAppBar({
-    Key? key, required this.title, required this.child, this.action,
+    Key? key, required this.title, this.action,
   }) : super(key: key);
 
   @override
   Size get preferredSize => Size.fromHeight(56.0);
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title, style: TextStyle(color: Colors.black,fontSize: 24+size,fontWeight: FontWeight.bold)),
+      title: Text(title, style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
       centerTitle: true,
       backgroundColor: Colors.white,
       elevation: 0.0,
       automaticallyImplyLeading: false,
       iconTheme: IconThemeData(color: Colors.blue),
-      leading: child,
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+        onPressed: () => Navigator.of(context).pop(),
+      ),
       actions: action,
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_2_1_Choice.dart';
@@ -192,24 +193,7 @@ class Test_Main extends StatelessWidget{
             ],
           ),
         ),
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text('구구절절',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 24,
-              fontWeight: FontWeight.bold
-            ),),
-          centerTitle: true,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            color: Colors.black,
-            iconSize: 22,
-            icon: Icon(Icons.arrow_back),
-          ),
-        ),
+        appBar: DefaultAppBar(title: '구구절절'),
       ),
     );
   }

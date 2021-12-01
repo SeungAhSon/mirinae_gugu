@@ -58,120 +58,120 @@ class _RecordState extends State<Record> {
 
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
-    body:
-    Container(
-    padding: const EdgeInsets.all(10),
-    alignment: Alignment.topCenter,
-    child: ListView(
-    children: [
-      widget.records == null ? SizedBox() : ListView.builder(
-      itemCount: widget.records!.length,
-      shrinkWrap: true,
-      reverse: true,
-      itemBuilder: (BuildContext context, int i) {
-        return Card(
-          elevation: 5,
-          child: ExpansionTile(
-            title: Text(
-              'Record ${widget.records!.length - i}',
-              style: TextStyle(color: Colors.black),
-            ),
-            subtitle: Text(
-              _getTime(filePath: widget.records!.elementAt(i)),
-              style: TextStyle(color: Colors.black38),
-            ),
-            onExpansionChanged: ((newState) {
-              if (newState) {
-                setState(() {
-                  _selected = i;
-                });
-              }
-            }),
-            children: [
-              Container(
-                height: 100,
-                padding: const EdgeInsets.all(10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    LinearProgressIndicator(
-                      minHeight: 5,
-                      backgroundColor: Colors.black,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                      value: _selected == i ? _percent : 0,
-                    ),
-                    Row(
-                      children: [
+    return Scaffold(
+        body:
+        Container(
+          padding: const EdgeInsets.all(10),
+          alignment: Alignment.topCenter,
+          child: ListView(
+              children: [
+                widget.records == null ? SizedBox() : ListView.builder(
+                  itemCount: widget.records!.length,
+                  shrinkWrap: true,
+                  reverse: true,
+                  itemBuilder: (BuildContext context, int i) {
+                    return Card(
+                      elevation: 5,
+                      child: ExpansionTile(
+                        title: Text(
+                          'Record ${widget.records!.length - i}',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        subtitle: Text(
+                          _getTime(filePath: widget.records!.elementAt(i)),
+                          style: TextStyle(color: Colors.black38),
+                        ),
+                        onExpansionChanged: ((newState) {
+                          if (newState) {
+                            setState(() {
+                              _selected = i;
+                            });
+                          }
+                        }),
+                        children: [
+                          Container(
+                            height: 100,
+                            padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                LinearProgressIndicator(
+                                  minHeight: 5,
+                                  backgroundColor: Colors.black,
+                                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                                  value: _selected == i ? _percent : 0,
+                                ),
+                                Row(
+                                  children: [
 
 
-                        (isPlay)? _Presso(
-                            ico: Icons.pause,
-                            onPressed: () {
-                              setState(() {
-                                isPlay=false;
-                              });
-                              advancedPlayer.pause();
-                            }): _Presso(
-                            ico: Icons.play_arrow,
-                            onPressed: () {
-                              setState(() {
-                                isPlay=true;
-                              });
-                              advancedPlayer.play(widget.records!.elementAt(i),
-                                  isLocal: true);
-                              setState(() {});
-                              setState(() {
-                                _selected = i;
-                                _percent = 0.0;
-                              });
-                              advancedPlayer.onPlayerCompletion.listen((_) {
-                                setState(() {
-                                  _percent = 0.0;
-                                });
-                              });
-                              advancedPlayer.onDurationChanged.listen((duration) {
-                                setState(() {
-                                  _totalTime = duration.inMicroseconds;
-                                });
-                              });
-                              advancedPlayer.onAudioPositionChanged
-                                  .listen((duration) {
-                                setState(() {
-                                  _currentTime = duration.inMicroseconds;
-                                  _percent = _currentTime.toDouble() /
-                                      _totalTime.toDouble();
-                                });
-                              });
-                            }),
-                        _Presso(
-                            ico: Icons.stop,
-                            onPressed: () {
-                              advancedPlayer.stop();
-                              setState(() {
-                                _percent = 0.0;
-                              });
-                            }),
-                        _Presso(
-                            ico: Icons.delete,
-                            onPressed: () {
-                              Directory appDirec =
-                              Directory(widget.records!.elementAt(i));
-                              appDirec.delete(recursive: true);
-                              Fluttertoast.showToast(msg: "File Deleted");
-                              setState(() {
-                                widget.records!
-                                    .remove(widget.records!.elementAt(i));
-                              });
-                            }),
-                        FlatButton(
-                            onPressed: () {
-                              //_qnController.resetNumber();
+                                    (isPlay)? _Presso(
+                                        ico: Icons.pause,
+                                        onPressed: () {
+                                          setState(() {
+                                            isPlay=false;
+                                          });
+                                          advancedPlayer.pause();
+                                        }): _Presso(
+                                        ico: Icons.play_arrow,
+                                        onPressed: () {
+                                          setState(() {
+                                            isPlay=true;
+                                          });
+                                          advancedPlayer.play(widget.records!.elementAt(i),
+                                              isLocal: true);
+                                          setState(() {});
+                                          setState(() {
+                                            _selected = i;
+                                            _percent = 0.0;
+                                          });
+                                          advancedPlayer.onPlayerCompletion.listen((_) {
+                                            setState(() {
+                                              _percent = 0.0;
+                                            });
+                                          });
+                                          advancedPlayer.onDurationChanged.listen((duration) {
+                                            setState(() {
+                                              _totalTime = duration.inMicroseconds;
+                                            });
+                                          });
+                                          advancedPlayer.onAudioPositionChanged
+                                              .listen((duration) {
+                                            setState(() {
+                                              _currentTime = duration.inMicroseconds;
+                                              _percent = _currentTime.toDouble() /
+                                                  _totalTime.toDouble();
+                                            });
+                                          });
+                                        }),
+                                    _Presso(
+                                        ico: Icons.stop,
+                                        onPressed: () {
+                                          advancedPlayer.stop();
+                                          setState(() {
+                                            _percent = 0.0;
+                                          });
+                                        }),
+                                    _Presso(
+                                        ico: Icons.delete,
+                                        onPressed: () {
+                                          Directory appDirec =
+                                          Directory(widget.records!.elementAt(i));
+                                          appDirec.delete(recursive: true);
+                                          Fluttertoast.showToast(msg: "File Deleted");
+                                          setState(() {
+                                            widget.records!
+                                                .remove(widget.records!.elementAt(i));
+                                          });
+                                        }),
+                                    FlatButton(
+                                        onPressed: () {
+                                          //_qnController.resetNumber();
 
-                              Navigator.pop(context);},
-                            color: Colors.blue,
-                            child: Text("종료")
-                        )
+                                          Navigator.pop(context);},
+                                        color: Colors.blue,
+                                        child: Text("종료")
+                                    )
 /*                        _Presso(
                             ico: Icons.share,
                             onPressed: () {
@@ -181,22 +181,22 @@ class _RecordState extends State<Record> {
                               list.add(appDirec.path);
                               Share.shareFiles(list);
                             }),*/
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        );
-      },
+                                  ],
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
 
-    ),
-        ]
-      ),
-    )
-      );
+                ),
+              ]
+          ),
+        )
+    );
   }
 
   String _getTime({required String filePath}) {

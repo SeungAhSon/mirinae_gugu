@@ -1,6 +1,5 @@
-import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/components/DefaultBackButton.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 
 class NotificationPage extends StatefulWidget {
   final String title;
@@ -18,10 +17,7 @@ class _NotificationPageState extends State<NotificationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: DefaultAppBar(
-        title: '공지사항',
-        child: DefaultBackButton(),
-      ),
+      appBar: DefaultAppBar(title: '공지사항',),
       body: FittedBox(
         child: Container(
           // height: MediaQuery.of(context).size.height,
@@ -35,18 +31,18 @@ class _NotificationPageState extends State<NotificationPage> {
               boxShadow: [BoxShadow(color: Color(0xFF808080), blurRadius: 2.0)]),
           child: Column(
             children: [
-              Text(this.widget.title,
+              Text(widget.title,
                   style: TextStyle(fontSize: 20.0, color: Color(0xFF303030))
               ),
               SizedBox(height: 16.0),
               //Image(image: AssetImage(manShoes)),
               //SizedBox(height: 16.0),
-              Text(this.widget.content,
+              Text(widget.content,
                   style: TextStyle(color: Color(0xFF808080))),
               SizedBox(height: 16.0),
               Align(
                 alignment: Alignment.centerRight,
-                child: Text(this.widget.date,
+                child: Text(widget.date,
                     style: TextStyle(color: Color(0xFF808080))),
               )
             ],

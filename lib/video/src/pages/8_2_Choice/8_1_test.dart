@@ -1,12 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/pages/9_setting.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
-import 'package:mirinae_gugu/video/src/pages/5_Education/5_12_Vocab_Screen.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_2_1_Choice.dart';
-import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
-import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
-import 'package:mirinae_gugu/pages/5_Education/5_0_Export.dart';
 
 class Test_1 extends StatelessWidget{
   @override
@@ -50,15 +46,7 @@ class Test_1 extends StatelessWidget{
 
           ],
       ),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('구구절절',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-          ),),
-        centerTitle: true,
-      ),
+      appBar: DefaultAppBar(title: '구구절절'),
     ),
     );
   }

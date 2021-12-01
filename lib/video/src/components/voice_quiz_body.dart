@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'voice_quiz_question.dart';
 import 'dart:async';
 import 'package:sound_stream/sound_stream.dart';
@@ -191,11 +192,7 @@ class _StartPageState extends State<StartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text('복습시험',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
-        centerTitle: true,
-      ),
+      appBar: DefaultAppBar(title: '복습시험'),
       //backgroundColor: Color(0xFFF4F3E3),
 
       body: Builder(

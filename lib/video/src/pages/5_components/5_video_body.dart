@@ -17,7 +17,6 @@ import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../1_Loading.dart';
-import '5_page_finish.dart';
 import '5_pageview.dart';
 
 import 'dart:io';
@@ -25,13 +24,14 @@ import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:mirinae_gugu/video/src/pages/6_record/6_Record.dart';
 
 class video_Body extends StatefulWidget {
   video_Body({Key? key, required this.index}) : super(key: key);
-
   @override
   _video_Body createState() => _video_Body();
   int index;
+  static List<String>? records;
 }
 
 class _video_Body extends State<video_Body> {
@@ -63,7 +63,7 @@ class _video_Body extends State<video_Body> {
     false
   ];
   CameraController controller =
-      CameraController(cameras[1], ResolutionPreset.veryHigh);
+  CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
   final RecorderStream _recorder = RecorderStream();
@@ -78,7 +78,9 @@ class _video_Body extends State<video_Body> {
 
   //record
   late Directory? appDir;
-  late List<String>? records;
+  //late List<String>? records;
+  List<String>? get record => video_Body.records;
+
 
   IconData _recordIcon = Icons.mic_none;
   MaterialColor colo = Colors.orange;
@@ -99,15 +101,15 @@ class _video_Body extends State<video_Body> {
     //record
     super.initState();
     checkPermission();
-    records = [];
+    video_Body.records = [];
     getExternalStorageDirectory().then((value) {
       appDir = value!;
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
       appDir = appDirec;
       appDir!.list().listen((onData) {
-        records!.add(onData.path);
+        record!.add(onData.path);
       }).onDone(() {
-        records = records!.reversed.toList();
+        video_Body.records = record!.reversed.toList();
         setState(() {});
       });
     });
@@ -140,7 +142,7 @@ class _video_Body extends State<video_Body> {
     controller.dispose();
     super.dispose();
     appDir = null;
-    records = null;
+    video_Body.records = null;
     super.dispose();
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
@@ -171,7 +173,7 @@ class _video_Body extends State<video_Body> {
     //마이크 입력 받았을 때 출력될 텍스트 설정.
     responseStream.listen((data) {
       final currentText =
-          data.results.map((e) => e.alternatives.first.transcript).join("");
+      data.results.map((e) => e.alternatives.first.transcript).join("");
       if (data.results.first.isFinal) {
         //responseText += currentText;
         setState(() {
@@ -321,7 +323,7 @@ class _video_Body extends State<video_Body> {
 
           title: Center(
             child: Obx(
-              () => Text.rich(
+                  () => Text.rich(
                 TextSpan(
                   text: "${_questionController.questionNumber.value}. ",
                   style: TextStyle(fontSize: 20 + size, color: Colors.blue),
@@ -349,9 +351,9 @@ class _video_Body extends State<video_Body> {
               onPressed: favorite[widget.index] ? delete : saved,
               icon: favorite[widget.index]
                   ? Icon(Icons.bookmark_rounded,
-                      color: Colors.yellow[800], size: 30) //그대로일때
+                  color: Colors.yellow[800], size: 30) //그대로일때
                   : Icon(Icons.bookmark_add_outlined,
-                      color: Colors.yellow[800], size: 30),
+                  color: Colors.yellow[800], size: 30),
             ),
           ],
         ),
@@ -362,8 +364,8 @@ class _video_Body extends State<video_Body> {
                 child: Container(
                     padding: EdgeInsets.all(20),
                     child:
-                        CameraPreview(controller)) //CameraPreview(controller)/
-                ),
+                    CameraPreview(controller)) //CameraPreview(controller)/
+            ),
 
             //상단 슬라이드
             Column(
@@ -378,8 +380,8 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.only(top: 0), //상단 슬라이드 밑에 선
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                    height2 -
-                                    MediaQuery.of(context).padding.top) *
+                                height2 -
+                                MediaQuery.of(context).padding.top) *
                                 0.38,
                             child: PageView.builder(
                               physics: NeverScrollableScrollPhysics(),
@@ -388,7 +390,7 @@ class _video_Body extends State<video_Body> {
                               itemCount: _questionController.Video_c_1.length,
                               itemBuilder: (context, index) => video_page(
                                 sad:
-                                    _questionController.Video_c_1[widget.index],
+                                _questionController.Video_c_1[widget.index],
                                 id: widget.index,
                               ),
                             ),
@@ -403,8 +405,8 @@ class _video_Body extends State<video_Body> {
                 SizedBox(
                   //중간 여백
                   height: (MediaQuery.of(context).size.height -
-                          height2 -
-                          MediaQuery.of(context).padding.top) *
+                      height2 -
+                      MediaQuery.of(context).padding.top) *
                       0.35,
                 ),
                 Stack(
@@ -417,8 +419,8 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.all(10),
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                    height2 -
-                                    MediaQuery.of(context).padding.top) *
+                                height2 -
+                                MediaQuery.of(context).padding.top) *
                                 0.1,
                             alignment: Alignment.center,
                             color: Colors.grey[200],
@@ -429,7 +431,7 @@ class _video_Body extends State<video_Body> {
                                     border: Border.all(color: Colors.grey),
                                     //width:5,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
+                                    BorderRadius.all(Radius.circular(20))),
                               ),
                               Container(
                                 alignment: Alignment.center,
@@ -442,8 +444,8 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.all(5),
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                    height2 -
-                                    MediaQuery.of(context).padding.top) *
+                                height2 -
+                                MediaQuery.of(context).padding.top) *
                                 0.04,
                             alignment: Alignment.center,
                             color: Colors.grey[200],
@@ -459,8 +461,8 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.only(bottom: 0), //상단 슬라이드 밑에 선
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                    height2 -
-                                    MediaQuery.of(context).padding.top) *
+                                height2 -
+                                MediaQuery.of(context).padding.top) *
                                 0.002,
                             color: Colors.grey.withOpacity(0.5),
                           ),
@@ -470,14 +472,14 @@ class _video_Body extends State<video_Body> {
                         Padding(
                           padding: EdgeInsets.only(
                               left:
-                                  MediaQuery.of(context).size.width / (70 / 1),
+                              MediaQuery.of(context).size.width / (70 / 1),
                               right:
-                                  MediaQuery.of(context).size.width / (70 / 1)),
+                              MediaQuery.of(context).size.width / (70 / 1)),
                           //left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                           child: Container(
                               height: (MediaQuery.of(context).size.height -
-                                      height2 -
-                                      MediaQuery.of(context).padding.top) *
+                                  height2 -
+                                  MediaQuery.of(context).padding.top) *
                                   0.065, //크기 8%
                               color: Colors.white.withOpacity(0),
                               child: _buttonZone()),
@@ -488,8 +490,8 @@ class _video_Body extends State<video_Body> {
                           padding: EdgeInsets.only(bottom: 0), //0.063남음
                           child: Container(
                             height: (MediaQuery.of(context).size.height -
-                                    height2 -
-                                    MediaQuery.of(context).padding.top) *
+                                height2 -
+                                MediaQuery.of(context).padding.top) *
                                 0.002,
                             color: Colors.grey.withOpacity(0.5),
                           ),
@@ -512,14 +514,30 @@ class _video_Body extends State<video_Body> {
         IconButton(
             icon: finish
                 ? Icon(Icons.arrow_back_ios_sharp,
-                    color: Colors.white.withOpacity(0), size: 30)
+                color: Colors.white.withOpacity(0), size: 30)
                 : Icon(Icons.arrow_back_ios_sharp,
-                    color: Colors.black, size: 30),
+                color: Colors.black, size: 30),
             onPressed: () async {
               back();
 
               //onPageChanged: _questionController.updateTheQnNum,
             }),
+        Container(
+          height: 300,
+          child: IconButton(
+              onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Record(
+                      records: video_Body.records!,
+                    ),
+                  ),
+                );
+              },
+              icon: Icon(Icons.mic, color: Colors.green, size: 45)
+          ),
+        ),
         InkWell(
           child: RaisedButton(
             onPressed:() {
@@ -584,9 +602,9 @@ class _video_Body extends State<video_Body> {
         IconButton(
             icon: start
                 ? Icon(Icons.arrow_forward_ios_sharp,
-                    color: Colors.white.withOpacity(0), size: 30)
+                color: Colors.white.withOpacity(0), size: 30)
                 : Icon(Icons.arrow_forward_ios_sharp,
-                    color: Colors.black, size: 30),
+                color: Colors.black, size: 30),
             onPressed: () async {
               plus();
 
@@ -601,8 +619,8 @@ class _video_Body extends State<video_Body> {
     var height2 = AppBar().preferredSize.height;
     return Container(
       height: (MediaQuery.of(context).size.height -
-              height2 -
-              MediaQuery.of(context).padding.top) *
+          height2 -
+          MediaQuery.of(context).padding.top) *
           0.37,
       color: Colors.white,
     );
@@ -613,8 +631,8 @@ class _video_Body extends State<video_Body> {
     var height2 = AppBar().preferredSize.height;
     return Container(
       height: (MediaQuery.of(context).size.height -
-              height2 -
-              MediaQuery.of(context).padding.top) *
+          height2 -
+          MediaQuery.of(context).padding.top) *
           0.25,
       color: Colors.white,
     );
@@ -624,8 +642,8 @@ class _video_Body extends State<video_Body> {
     var height2 = AppBar().preferredSize.height;
     return Container(
       height: (MediaQuery.of(context).size.height -
-              height2 -
-              MediaQuery.of(context).padding.top) *
+          height2 -
+          MediaQuery.of(context).padding.top) *
           0.38,
       color: Colors.white,
     );
@@ -639,26 +657,26 @@ class _video_Body extends State<video_Body> {
         children: [
           (recognizeFinished)
               ? Text(text,
-                  textAlign: TextAlign.center,
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    letterSpacing: 1.0,
-                    fontSize: 20.0, //사이즈 조절 필요
-                    height: 1.75,
-                    /*fontWeight: FontWeight.bold,*/
-                  ))
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                letterSpacing: 1.0,
+                fontSize: 20.0, //사이즈 조절 필요
+                height: 1.75,
+                /*fontWeight: FontWeight.bold,*/
+              ))
               : Text(""),
         ]);
   }
 
   _onFinish_test() {
-    records!.clear();
-    print(records!.length.toString());
+    record!.clear();
+    print(record!.length.toString());
     appDir!.list().listen((onData) {
-      records!.add(onData.path);
+      record!.add(onData.path);
     }).onDone(() {
-      records!.sort();
-      records = records!.reversed.toList();
+      record!.sort();
+      video_Body.records = record!.reversed.toList();
       setState(() {});
     });
   }

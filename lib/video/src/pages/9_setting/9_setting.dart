@@ -71,9 +71,7 @@ class _Setting extends State<Setting>{
             buildfontchoose(context, "글꼴 설정"),
             SizedBox(height: 10,),
             buildfontsize(context, "글자 크기 설정"),
-
             SizedBox(height: 20,),
-
             Row(
               children: [
                 Icon(Icons.email_outlined, color: Colors.blue,size: 25,),

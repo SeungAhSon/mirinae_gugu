@@ -520,7 +520,7 @@ class Word_Main extends StatelessWidget{
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
-              fontSize: 24,
+              fontSize: 22,
             ),),
           centerTitle: true,
           leading: IconButton(

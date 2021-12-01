@@ -53,13 +53,16 @@ class _Body extends State<Body>{
                     ),
                   ),
                 ),
-              ), //번째 문제 표시
-            Padding(
 
-              padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
+              ),
+
+              Padding(
+
+              padding: EdgeInsets.only(top:5), //상단 슬라이드 밑에 선
+
               child: Container(
 
-                height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.74,
+                height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.85,
                 child: PageView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   controller: _questionController.pageController,
@@ -75,9 +78,6 @@ class _Body extends State<Body>{
 
               ),
               ),
-              SizedBox(height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.03),
-
-              Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold, color: Colors.black)),
 
 
             ],

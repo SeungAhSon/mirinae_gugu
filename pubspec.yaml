@@ -60,10 +60,11 @@ dependencies:
   camera: ^0.9.2
   google_speech: ^2.0.1
   sound_stream: ^0.3.0
+  audioplayers: ^0.19.1
 
   flutter_animation_progress_bar: ^2.0.1
   noise_meter: ^3.0.2
-
+  share: ^2.0.4
 
 dev_dependencies:
   flutter_test:

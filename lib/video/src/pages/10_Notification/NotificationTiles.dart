@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationPage.dart';
-import 'package:mirinae_gugu/video/src/components/constant.dart';
 bool temp = true;
 Color temp_color = Colors.white;
 
@@ -38,7 +37,7 @@ class NotificationTiles extends StatelessWidget {
       trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),
       onTap: () => Navigator.of(context).push(PageRouteBuilder(
           pageBuilder: (context, animation1, animation2) => NotificationPage(
-              title: this.title, content: this.content, date: this.date),
+              title: title, content: content, date: date),
         transitionDuration: Duration(seconds: 0),
       )),
       enabled: enable,

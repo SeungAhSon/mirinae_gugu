@@ -1,25 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
-import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
-
-import '5_Education/5_10_Vocab_Screen.dart';
-import '5_Education/5_11_Vocab_Screen.dart';
-import '5_Education/5_12_Vocab_Screen.dart';
-import '5_Education/5_1_Vocab_Screen.dart';
-import '5_Education/5_2_Vocab_Screen.dart';
-import '5_Education/5_3_Vocab_Screen.dart';
-import '5_Education/5_4_Vocab_Screen.dart';
-import '5_Education/5_5_Vocab_Screen.dart';
-import '5_Education/5_6_Vocab_Screen.dart';
-import '5_Education/5_7_Vocab_Screen.dart';
-import '5_Education/5_8_Vocab_Screen.dart';
-import '5_Education/5_9_Vocab_Screen.dart';
-
-
 
 class Word_Main extends StatelessWidget{
   @override

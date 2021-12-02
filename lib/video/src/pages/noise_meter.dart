@@ -11,7 +11,7 @@ class Noise extends StatefulWidget {
 }
 
 class _Noise extends State<StatefulWidget> {
-  NoiseMeter noiseMeter = new NoiseMeter((err) {});
+  NoiseMeter noiseMeter = NoiseMeter((err) {});
   StreamSubscription<NoiseReading>? subscription;
 
   final int limitDecibel = 90;
@@ -28,7 +28,7 @@ class _Noise extends State<StatefulWidget> {
   @override
   void initState() {
     super.initState();
-    this.subscription = noiseMeter.noiseStream.listen(this.onData);
+    subscription = noiseMeter.noiseStream.listen(onData);
   }
 
   // 50보다 작으면 현재 데시벨-30으로 해주고 50~60사이이면 -20 65~70 사이이면 +5, 70~75이면 +15,75이상이면 100(max)
@@ -37,7 +37,7 @@ class _Noise extends State<StatefulWidget> {
   void onData(NoiseReading sound) {
     setState(() {
       int decibel = sound.maxDecibel.toInt();
-      this.currentDecibel = decibel;
+      currentDecibel = decibel;
       if (currentDecibel < 50){
         currentDecibel = 0;
       }

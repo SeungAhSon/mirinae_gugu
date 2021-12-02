@@ -1,16 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class Vocab_Screen_54 extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-          title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
-          centerTitle: true,
-          //elevation: 0.0
-        ),
+        appBar: DefaultAppBar(title: '낱말학습'),
         body: Center(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),

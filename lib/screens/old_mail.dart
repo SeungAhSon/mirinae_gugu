@@ -59,19 +59,19 @@ class _MyHomePageState extends State<MyHomePage> {
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('MY'),
+                label: 'MY',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.menu_book),
-                title: Text('학습'),
+                  label: '학습',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.mic),
-                title: Text('녹음'),
+                  label: '녹음',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.more_horiz),
-                title: Text('더보기'),
+                label: '더보기',
                 //chat
               )
             ]));

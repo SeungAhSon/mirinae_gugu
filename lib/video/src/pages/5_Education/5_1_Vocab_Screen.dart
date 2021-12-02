@@ -4,6 +4,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/Video_0_01.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
@@ -14,13 +15,7 @@ import '../4_Word_Main.dart';
 import '../Video_0_02.dart';
 import '../favorite_global.dart';
 
-
-
-
 class Vocab_Screen_51 extends StatefulWidget {
-
-
-
   @override
   _Vocab_Screen_51 createState() => _Vocab_Screen_51();
 }
@@ -38,10 +33,8 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
       FavoriteButtons = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
     });
 
-    FavoriteButtons = (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
+    FavoriteButtons = (FavoriteButton).map((value) => value == 'true').toList();
     FavoriteButton = prefs.getStringList("favorite11")!;
-    print(prefs.getStringList("favorite11"));
-    print("load");
   }
 
   void main() {
@@ -73,11 +66,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
 
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text('구구절절', style: TextStyle(fontWeight: FontWeight.bold)),
-          centerTitle: true,
-          //elevation: 0.0
-        ),
+        appBar: DefaultAppBar(title: '낱말학습'),
         body: Center(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),

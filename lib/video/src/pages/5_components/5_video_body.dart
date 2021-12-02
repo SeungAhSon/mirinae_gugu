@@ -771,7 +771,6 @@ class _video_Body extends State<video_Body> {
 
       /* }
     bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
-
     if (hasPermission) {*/
       await _initial();
       await _start();

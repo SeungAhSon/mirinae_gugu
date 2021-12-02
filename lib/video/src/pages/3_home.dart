@@ -259,10 +259,7 @@ class _Home extends State<Home> {
           elevation: 0.0,
           automaticallyImplyLeading: false,
           iconTheme: IconThemeData(color: Colors.blue),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+          //leading:
           actions: <Widget>[
               IconButton(
                   icon: Reading

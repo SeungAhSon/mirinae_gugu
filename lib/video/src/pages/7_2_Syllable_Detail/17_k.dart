@@ -1,30 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class K extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: Text('조음 학습',
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-            ),),
-          centerTitle: true,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            color: Colors.black,
-            iconSize: 24,
-            icon: Icon(Icons.arrow_back),
-          ),
-
-        ),
+        appBar: DefaultAppBar(title: '조음학습'),
         body: Center(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),

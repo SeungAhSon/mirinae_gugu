@@ -3,27 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n.dart';
+import 'package:mirinae_gugu/video/src/widget/button_Syllable.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/0_Out.dart';
-
-import '7_2_Syllable_Detail/10_ss.dart';
-import '7_2_Syllable_Detail/11_l.dart';
-import '7_2_Syllable_Detail/12_j.dart';
-import '7_2_Syllable_Detail/13_jj.dart';
-import '7_2_Syllable_Detail/14_ts.dart';
-import '7_2_Syllable_Detail/15_g.dart';
-import '7_2_Syllable_Detail/16_gg.dart';
-import '7_2_Syllable_Detail/17_k.dart';
-import '7_2_Syllable_Detail/18_y.dart';
-import '7_2_Syllable_Detail/19_h.dart';
-import '7_2_Syllable_Detail/1_b.dart';
-import '7_2_Syllable_Detail/2_bb.dart';
-import '7_2_Syllable_Detail/3_p.dart';
-import '7_2_Syllable_Detail/4_m.dart';
-import '7_2_Syllable_Detail/5_d.dart';
-import '7_2_Syllable_Detail/6_dd.dart';
-import '7_2_Syllable_Detail/7_t.dart';
-import '7_2_Syllable_Detail/9_s.dart';
 
 class Syllable_pages extends StatelessWidget{
   @override
@@ -36,265 +18,87 @@ class Syllable_pages extends StatelessWidget{
         children: <Widget>[
           Align(
             alignment: Alignment.center,
-          child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),
-
+            child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),
           ),
-
           Padding(
-          padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height -  MediaQuery.of(context).padding.top) * 0.525,
-              left: (MediaQuery.of(context).size.width)*0.042),
-          child: SizedBox(
-              child: FlatButton(
-                child: Text('ㅂ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => B()),);
-                },
-              )
-          ),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height -  MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.042),
+            child: ButtonSyllable(text: 'ㅂ', onTap: B()),
           ),//ㅂ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525,
-            left: (MediaQuery.of(context).size.width)*0.215),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㄷ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => D()));
-                },
-              )
-          ),
-      ),//ㄷ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525,
-            left: (MediaQuery.of(context).size.width)*0.39),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅅ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => S()));
-                },
-              )
-        ),
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.215),
+            child: ButtonSyllable(text: 'ㄷ', onTap: D()),
+          ),//ㄷ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.39),
+            child: ButtonSyllable(text: 'ㅅ', onTap: S()),
           ),//ㅅ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525,
-            left: (MediaQuery.of(context).size.width)*0.565),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅈ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => J()));
-                },
-              ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.565),
+            child: ButtonSyllable(text: 'ㅈ', onTap: J()),
           ),//ㅈ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525,
-            left: (MediaQuery.of(context).size.width)*0.74),
-        child:SizedBox(
-            child: FlatButton(
-                child: Text('ㄱ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => G()));
-                },
-              ),
-        ),
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.74),
+            child:ButtonSyllable(text: 'ㄱ', onTap: G()),
           ),//ㄱ
-//1줄
-
-
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
-            left: (MediaQuery.of(context).size.width)*0.042),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅃ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => BB()),);
-                },
-              )
-          ),
-      ),//ㅃ
-
-
-
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
-            left: (MediaQuery.of(context).size.width)*0.215),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㄸ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => DD()));
-                },
-              )
-          ),
-      ),//ㄸ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
-            left: (MediaQuery.of(context).size.width)*0.39),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅆ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SS()));
-                },
-              )
-          ),
-      ),//ㅆ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
-            left: (MediaQuery.of(context).size.width)*0.565),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅉ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => JJ()));
-                },
-              )
-          ),
-      ),//ㅉ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
-            left: (MediaQuery.of(context).size.width)*0.74),
-        child:SizedBox(
-            child: FlatButton(
-                child: Text('ㄲ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => GG()));
-                },
-              )
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595, left: (MediaQuery.of(context).size.width)*0.042),
+            child: ButtonSyllable(text: 'ㅃ', onTap: BB()),
+          ),//ㅃ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595, left: (MediaQuery.of(context).size.width)*0.215),
+            child: ButtonSyllable(text: 'ㄸ', onTap: DD()),
+          ),//ㄸ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595, left: (MediaQuery.of(context).size.width)*0.39),
+            child: ButtonSyllable(text: 'ㅆ', onTap: SS()),
+          ),//ㅆ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595,
+                left: (MediaQuery.of(context).size.width)*0.565),
+            child: ButtonSyllable(text: 'ㅉ', onTap: JJ()),
+          ),//ㅉ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.595, left: (MediaQuery.of(context).size.width)*0.74),
+            child:ButtonSyllable(text: 'ㄲ', onTap: GG()), //ㄲ
           ),//ㄲ
-      ),
-
-
-
-          //2
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67,
-            left: (MediaQuery.of(context).size.width)*0.042),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅍ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => P()));
-                },
-              )
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67,
+                left: (MediaQuery.of(context).size.width)*0.042),
+            child: ButtonSyllable(text: 'ㅍ', onTap: P()),
+          ),//ㅍ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67, left: (MediaQuery.of(context).size.width)*0.215),
+            child: ButtonSyllable(text: 'ㅌ', onTap: T()),
+          ),//ㅌ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67, left: (MediaQuery.of(context).size.width)*0.565),
+            child: ButtonSyllable(text: 'ㅊ', onTap: TS()),
+          ),//ㅊ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67, left: (MediaQuery.of(context).size.width)*0.74),
+            child:ButtonSyllable(text: 'ㅋ', onTap: K()),
           ),
-      ),//ㅍ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67,
-            left: (MediaQuery.of(context).size.width)*0.215),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅌ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => T()));
-                },
-              )
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74, left: (MediaQuery.of(context).size.width)*0.042),
+            child: ButtonSyllable(text: 'ㅁ', onTap: M()),
+          ),//ㅁ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74, left: (MediaQuery.of(context).size.width)*0.215),
+            child: ButtonSyllable(text: 'ㄴ', onTap: N()),
+          ),//ㄴ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74, left: (MediaQuery.of(context).size.width)*0.39),
+            child: ButtonSyllable(text: 'ㄹ', onTap: L()),
+          ),//ㄹ
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74,
+                left: (MediaQuery.of(context).size.width)*0.74),
+            child:ButtonSyllable(text: 'ㅇ', onTap: Y()), //ㅇ
           ),
-      ),//ㅌ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67,
-            left: (MediaQuery.of(context).size.width)*0.565),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅊ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => TS()));
-                },
-              )
+          Padding(
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.38, left: (MediaQuery.of(context).size.width)*0.784),
+            child: ButtonSyllable(text: 'ㅎ', onTap: H()), //ㅎ
           ),
-      ),//ㅊ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.67,
-            left: (MediaQuery.of(context).size.width)*0.74),
-        child:SizedBox(
-            child: FlatButton(
-                child: Text('ㅋ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => K()));
-                },
-              )
-          ),//ㅋ
-      ),
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74,
-            left: (MediaQuery.of(context).size.width)*0.042),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㅁ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => M()));
-                },
-              )
-          ),
-      ),//ㅁ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74,
-            left: (MediaQuery.of(context).size.width)*0.215),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㄴ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => N()));
-                },
-              )
-          ),
-      ),//ㄴ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74,
-            left: (MediaQuery.of(context).size.width)*0.39),
-        child: SizedBox(
-            child: FlatButton(
-                child: Text('ㄹ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => L()));},
-              )
-          ),
-      ),//ㄹ
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.74,
-            left: (MediaQuery.of(context).size.width)*0.74),
-        child:SizedBox(
-            child: FlatButton(
-                child: Text('ㅇ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Y()));
-                },
-              )
-          ),//ㅇ
-      ),
-      Padding(
-        padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.38,
-            left: (MediaQuery.of(context).size.width)*0.784),
-        child:SizedBox(
-            child: FlatButton(
-                child: Text('ㅎ', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                shape: CircleBorder(),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => H()));
-                },
-              )
-          ),//ㅎ
-      ),
         ],
       ),
       appBar: DefaultAppBar(title: '조음학습'),

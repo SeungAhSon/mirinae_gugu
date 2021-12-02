@@ -21,7 +21,6 @@ class Record extends StatelessWidget{
 }*/
 import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:share/share.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body.dart';
@@ -59,8 +58,7 @@ class _RecordState extends State<Record> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-        Container(
+        body: Container(
           padding: const EdgeInsets.all(10),
           alignment: Alignment.topCenter,
           child: ListView(

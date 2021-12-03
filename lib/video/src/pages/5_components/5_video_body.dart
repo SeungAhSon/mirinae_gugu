@@ -16,6 +16,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
+import '../../app.dart';
 import '../1_Loading.dart';
 import '5_pageview.dart';
 
@@ -31,7 +32,7 @@ class video_Body extends StatefulWidget {
   @override
   _video_Body createState() => _video_Body();
   int index;
-  static List<String>? records;
+
 }
 
 class _video_Body extends State<video_Body> {
@@ -79,7 +80,7 @@ class _video_Body extends State<video_Body> {
   //record
   late Directory? appDir;
   //late List<String>? records;
-  List<String>? get record => video_Body.records;
+  List<String>? get record => records;
 
 
   IconData _recordIcon = Icons.mic_none;
@@ -101,7 +102,7 @@ class _video_Body extends State<video_Body> {
     //record
     super.initState();
     checkPermission();
-    video_Body.records = [];
+    records = [];
     getExternalStorageDirectory().then((value) {
       appDir = value!;
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
@@ -109,7 +110,7 @@ class _video_Body extends State<video_Body> {
       appDir!.list().listen((onData) {
         record!.add(onData.path);
       }).onDone(() {
-        video_Body.records = record!.reversed.toList();
+        records = record!.reversed.toList();
         setState(() {});
       });
     });
@@ -142,7 +143,7 @@ class _video_Body extends State<video_Body> {
     controller.dispose();
     super.dispose();
     appDir = null;
-    video_Body.records = null;
+    records = null;
     super.dispose();
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
@@ -222,8 +223,7 @@ class _video_Body extends State<video_Body> {
     favorite =
         (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
     FavoriteButton = prefs.getStringList("favorite11")!;
-    print(prefs.getStringList("favorite11"));
-    print("load");
+
   }
 
   Future<void> delete() async {
@@ -530,7 +530,7 @@ class _video_Body extends State<video_Body> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Record(
-                      records: video_Body.records!,
+                      records: records!,
                     ),
                   ),
                 );
@@ -676,7 +676,7 @@ class _video_Body extends State<video_Body> {
       record!.add(onData.path);
     }).onDone(() {
       record!.sort();
-      video_Body.records = record!.reversed.toList();
+      records = record!.reversed.toList();
       setState(() {});
     });
   }

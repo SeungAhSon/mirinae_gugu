@@ -12,26 +12,8 @@ class Setting extends StatefulWidget{
 }
 
 class _Setting extends State<Setting>{
-  bool valNotify1 = true;
-  bool valNotify2 = true;
-  bool valNotify3 = false;
 
-  onChangeFunction1(bool newValue1){
-    setState(() {
-      valNotify1 = newValue1;
-    });
-  }
 
-  onChangeFunction2(bool newValue2){
-    setState(() {
-      valNotify2 = newValue2;
-    });
-  }
-  onChangeFunction3(bool newValue3){
-    setState(() {
-      valNotify3 = newValue3;
-    });
-  }
 
 
 

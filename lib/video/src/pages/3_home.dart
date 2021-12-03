@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
@@ -8,6 +8,7 @@ import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
 import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '3_tutorial.dart';
 import '4_Word_Main.dart';
 import '8_Test_Main.dart';
 
@@ -21,9 +22,8 @@ class Home extends StatefulWidget{
 
 class _Home extends State<Home> {
   @override
-
+  bool? tutorial;
   bool Reading = false;
-
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     setState(() {
@@ -31,17 +31,78 @@ class _Home extends State<Home> {
     });
 
   }
+
+
+  aa(BuildContext context,String title){
+      showDialog(context: context, builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(height: 10),
+              Text("이메일 주소\njaewan0114@naver.com"),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("예",style: TextStyle(color: Colors.black),),
+            ),
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("아니요",style: TextStyle(color: Colors.black),),
+            ),
+          ],
+        );
+
+      });
+  }
+
+void local() async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  if (prefs.getBool('tutorial') == false){
+    prefs.setBool('tutorial', true);
+    print("바꾸기");
+  }
+  setState(() {
+    tutorial = prefs.getBool('tutorial')!;
+    print(5);
+  });
+
+  print(prefs.getBool('tutorial'));
+  print(tutorial);
+  WidgetsBinding.instance!.addPostFrameCallback((_) {
+    print(1);
+    print(tutorial);
+    if(tutorial != true) {
+      print(tutorial);
+      aa(context, "asd");
+    }
+    print(2);
+  });
+}
+
+
   @override
   void initState() {
     super.initState();
     loadnotification();
+    local();
+    print(3);
+
+
   }
 
 
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -283,4 +344,7 @@ class _Home extends State<Home> {
       ),
     );
   }
+
+
+
 }

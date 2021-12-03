@@ -22,7 +22,6 @@ class Home extends StatefulWidget{
 
 class _Home extends State<Home> {
   @override
-  bool? tutorial;
   bool Reading = false;
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
@@ -64,44 +63,36 @@ class _Home extends State<Home> {
       });
   }
 
-void local() async {
-  SharedPreferences prefs = await SharedPreferences.getInstance();
-  if (prefs.getBool('tutorial') == false){
-    prefs.setBool('tutorial', true);
-    print("바꾸기");
-  }
-  setState(() {
-    tutorial = prefs.getBool('tutorial')!;
-    print(5);
-  });
 
-  print(prefs.getBool('tutorial'));
-  print(tutorial);
-  WidgetsBinding.instance!.addPostFrameCallback((_) {
-    print(1);
-    print(tutorial);
-    if(tutorial != true) {
-      print(tutorial);
-      aa(context, "asd");
-    }
-    print(2);
-  });
-}
+
+  void local2() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      if (prefs.getBool('tutorial8') == null) {
+        aa(context, "asd");
+      }
+      print(2);
+      if (prefs.getBool('tutorial8') != true){
+        prefs.setBool('tutorial8', true);
+      }
+      setState(() {
+      });
+    });
+  }
+
 
 
   @override
   void initState() {
     super.initState();
     loadnotification();
-    local();
-    print(3);
-
-
+    local2();
   }
 
 
   @override
   Widget build(BuildContext context) {
+
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(

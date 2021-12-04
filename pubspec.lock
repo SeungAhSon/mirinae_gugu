@@ -437,7 +437,7 @@ packages:
     source: hosted
     version: "1.11.1"
   permission_handler:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: permission_handler
       url: "https://pub.dartlang.org"
@@ -602,6 +602,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.10.0"
+  storage_path:
+    dependency: "direct main"
+    description:
+      name: storage_path
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   stream_channel:
     dependency: transitive
     description:

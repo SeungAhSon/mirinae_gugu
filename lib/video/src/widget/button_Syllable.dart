@@ -11,14 +11,10 @@ class ButtonSyllable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      style: ButtonStyle(
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  side: BorderSide(color: Colors.red)
-              )
-          )
+    return FloatingActionButton(
+      backgroundColor: Colors.white,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12))
       ),
       child: Text(text,style: TextStyle(fontSize: 30,color:Colors.black,fontWeight: FontWeight.bold)),
     onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},

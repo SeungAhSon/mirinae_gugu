@@ -21,8 +21,7 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
               return Home();
 
             case RouteName.Record:
-              if(video_Body.records==null) print('a');
-              return Record(records: video_Body.records);
+              return Record(records: [],);
 
             case RouteName.Add:
               return Setting();

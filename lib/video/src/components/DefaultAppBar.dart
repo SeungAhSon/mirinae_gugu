@@ -15,7 +15,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
       title: Text(title, style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
       centerTitle: true,
       backgroundColor: Colors.white,
-      elevation: 0.0,
+      elevation: 3.0,
       automaticallyImplyLeading: false,
       iconTheme: IconThemeData(color: Colors.blue),
       leading: IconButton(

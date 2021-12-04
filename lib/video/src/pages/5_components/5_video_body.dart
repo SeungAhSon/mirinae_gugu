@@ -80,7 +80,6 @@ class _video_Body extends State<video_Body> {
   //record
   late Directory? appDir;
   //late List<String>? records;
-  List<String>? get record => records;
 
 
   IconData _recordIcon = Icons.mic_none;
@@ -102,15 +101,12 @@ class _video_Body extends State<video_Body> {
     //record
     super.initState();
     checkPermission();
-    records = [];
     getExternalStorageDirectory().then((value) {
       appDir = value!;
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
       appDir = appDirec;
       appDir!.list().listen((onData) {
-        record!.add(onData.path);
       }).onDone(() {
-        records = record!.reversed.toList();
         setState(() {});
       });
     });
@@ -143,7 +139,6 @@ class _video_Body extends State<video_Body> {
     controller.dispose();
     super.dispose();
     appDir = null;
-    records = null;
     super.dispose();
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
@@ -529,9 +524,7 @@ class _video_Body extends State<video_Body> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Record(
-                      records: records!,
-                    ),
+                    builder: (context) => Record(records: [],),
                   ),
                 );
               },
@@ -670,13 +663,8 @@ class _video_Body extends State<video_Body> {
   }
 
   _onFinish_test() {
-    record!.clear();
-    print(record!.length.toString());
     appDir!.list().listen((onData) {
-      record!.add(onData.path);
     }).onDone(() {
-      record!.sort();
-      records = record!.reversed.toList();
       setState(() {});
     });
   }

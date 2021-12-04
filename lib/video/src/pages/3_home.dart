@@ -8,7 +8,6 @@ import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
 import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '3_tutorial.dart';
 import '4_Word_Main.dart';
 import '8_Test_Main.dart';
 
@@ -307,8 +306,7 @@ class _Home extends State<Home> {
         appBar:  AppBar(
           title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
           centerTitle: true,
-          backgroundColor: Colors.white,
-          elevation: 0.0,
+          backgroundColor: Colors.white, elevation: 3.0,
           automaticallyImplyLeading: false,
           iconTheme: IconThemeData(color: Colors.blue),
           //leading:

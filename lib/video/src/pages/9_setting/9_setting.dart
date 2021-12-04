@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough.dart';
+import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough_item_data.dart';
 
 
 import '9_FontSize.dart';
 import '9_Fontchoose.dart';
 import '9_LanguageChoose.dart';
+import '9_Walkthrough_item_data.dart';
 
 class Setting extends StatefulWidget{
   @override
@@ -86,7 +89,7 @@ class _Setting extends State<Setting>{
             ),
             Divider(height: 20,thickness: 3,),
             SizedBox(height: 10,),
-            buildcontact(context, "사용법 및 기능"),
+            buildwalkthrough(context, "사용법 및 기능"),
 
 
           ],
@@ -190,6 +193,30 @@ GestureDetector buildcontact(BuildContext context, String title)
           ],
         );
       });
+    },
+    child: Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title,style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+
+          ),),
+          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+        ],
+      ),
+    ),
+  );
+}
+
+
+Widget buildwalkthrough(BuildContext context, String title)
+{
+  return InkWell(
+    onTap: (){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
     },
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),

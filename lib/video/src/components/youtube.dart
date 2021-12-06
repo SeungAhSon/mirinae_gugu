@@ -62,12 +62,9 @@ class ayotube extends StatefulWidget {
       child: Column(
         children: [
           Container(
-
               margin: EdgeInsets.only(left: 20,right: 20),
               height: 240,
               child: youtube(context),
-
-
           ),
           SizedBox(height: 20,),
           Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold, color: Colors.black)),//번째 문제 표

@@ -21,10 +21,6 @@ class Option extends StatelessWidget {
   final int index;
   final VoidCallback press;
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
@@ -46,7 +42,6 @@ class Option extends StatelessWidget {
           return InkWell(
             onTap: press,
             child: Container(
-
               height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.065,
               margin: EdgeInsets.only(bottom:(MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.03,
               left: 40,right: 40),

@@ -2,13 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough.dart';
-import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough_item_data.dart';
 
 
 import '9_FontSize.dart';
 import '9_Fontchoose.dart';
 import '9_LanguageChoose.dart';
-import '9_Walkthrough_item_data.dart';
 
 class Setting extends StatefulWidget{
   @override

@@ -7,8 +7,7 @@ import 'package:mirinae_gugu/video/src/widget/button_Chapter.dart';
 class Test_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         body: Center(    // <- Scaffold body만 감싼다.
           child: ListView(
@@ -69,7 +68,6 @@ class Test_Main extends StatelessWidget{
           ),
         ),
         appBar: DefaultAppBar(title: '구구절절'),
-      ),
     );
   }
 }

@@ -8,8 +8,7 @@ import '1_Loading.dart';
 class Word_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         body: Center(    // <- Scaffold body만 감싼다.
           child: ListView(
@@ -501,7 +500,6 @@ class Word_Main extends StatelessWidget{
           ),
         ),
         appBar: DefaultAppBar(title: '구구절절'),
-      ),
     );
   }
 }

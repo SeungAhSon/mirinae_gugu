@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_WalkthroughItem.dart';
-import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough_item_data.dart';
 class WalkthroughScreen extends StatefulWidget {
   const WalkthroughScreen({Key? key}) : super(key: key);
 

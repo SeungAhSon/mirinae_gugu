@@ -10,7 +10,7 @@ import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/0_Out.dart';
 class Syllable_pages extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    var height2 = AppBar().preferredSize.height;
+    //var height2 = AppBar().preferredSize.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(

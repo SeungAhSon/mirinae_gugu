@@ -21,7 +21,7 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
               return Home();
 
             case RouteName.Record:
-              return Record(records: [],);
+
 
             case RouteName.Add:
               return Setting();

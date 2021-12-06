@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '4_Word_Main.dart';
 import '8_Test_Main.dart';
+import '9_setting/9_Walkthrough.dart';
 
 //업데이트 시 3개의 reading7를 다른 것으로 바꾸기만 하면 됩니다.
 class Home extends StatefulWidget{
@@ -46,7 +47,7 @@ class _Home extends State<Home> {
           actions: [
             TextButton(
               onPressed: (){
-                Navigator.of(context).pop();
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
               },
               child: Text("예",style: TextStyle(color: Colors.black),),
             ),
@@ -67,12 +68,12 @@ class _Home extends State<Home> {
   void local2() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial8') == null) {
+      if (prefs.getBool('tutorial10') == null) {
         aa(context, "asd");
       }
       print(2);
-      if (prefs.getBool('tutorial8') != true){
-        prefs.setBool('tutorial8', true);
+      if (prefs.getBool('tutorial10') != true){
+        prefs.setBool('tutorial10', true);
       }
       setState(() {
       });

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 
+import '1_Loading.dart';
+
 class Word_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -486,7 +488,7 @@ class Word_Main extends StatelessWidget{
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('가족',style:TextStyle(fontSize:18, color: Colors.black54)),
+                              Text('가족',style:TextStyle(fontSize:18+size, color: Colors.black54)),
                               Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
                             ]
                         ),

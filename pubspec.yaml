@@ -65,9 +65,13 @@ dependencies:
   flutter_animation_progress_bar: ^2.0.1
   noise_meter: ^3.0.2
   share: ^2.0.4
+
   flutter_audio_recorder:
   permission_handler:
-  storage_path: ^0.2.0
+  storage_path:
+
+
+
 
 dependency_overrides:
   file: ^6.0.0

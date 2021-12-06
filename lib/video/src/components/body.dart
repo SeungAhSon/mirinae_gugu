@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/components/youtube.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'Questions.dart';
 import 'option.dart';
@@ -42,11 +41,11 @@ class _Body extends State<Body>{
                     TextSpan(
                       text:
                       "Question ${_questionController.questionNumber.value}",
-                      style: TextStyle(fontSize: 15, color: Colors.blue),
+                      style: TextStyle(fontSize: 15+size, color: Colors.blue),
                       children: [
                         TextSpan(
                           text: "/10",
-                          style: TextStyle(fontSize: 15, color: Colors.blue),
+                          style: TextStyle(fontSize: 15+size, color: Colors.blue),
                         ),
 
                       ],
@@ -75,11 +74,8 @@ class _Body extends State<Body>{
                 ),
 
                 //child: youtube(context),
-
               ),
               ),
-
-
             ],
           ),
         )

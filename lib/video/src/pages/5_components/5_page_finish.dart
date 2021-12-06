@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../1_Loading.dart';
+
 
 GestureDetector buildcontact(BuildContext context, String title)
 {
@@ -34,7 +36,7 @@ GestureDetector buildcontact(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20,
+            fontSize: 20+size,
             fontWeight: FontWeight.w600,
 
           ),),

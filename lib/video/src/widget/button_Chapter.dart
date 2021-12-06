@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class ButtonChapter extends StatelessWidget {
   ButtonChapter({
@@ -36,14 +37,14 @@ class ButtonChapter extends StatelessWidget {
                   ],
                 ),
                 child: Center(
-                    child: Text('$number단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                    child: Text('$number단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                 ),
               ),
               Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:[
-                    Text(text,style:TextStyle(fontSize:18, color: Colors.black54)),
-                    Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                    Text(text,style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                    Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                   ]
               ),
             ]

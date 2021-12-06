@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class Unit_Widget extends StatelessWidget {
   Unit_Widget({
@@ -81,7 +82,7 @@ class Unit_Widget extends StatelessWidget {
                   text,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20.0, fontWeight: FontWeight.bold,
+                    fontSize: 20.0+size, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

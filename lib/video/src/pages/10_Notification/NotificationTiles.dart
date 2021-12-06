@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationPage.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 bool temp = true;
 Color temp_color = Colors.white;
 
@@ -29,9 +30,9 @@ class NotificationTiles extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: TextStyle(color: Color(0xFF303030), fontSize:17, fontWeight: FontWeight.bold)),
+          Text(title, style: TextStyle(color: Color(0xFF303030), fontSize:17+size, fontWeight: FontWeight.bold)),
           SizedBox(height: 5),
-          Text(date, style: TextStyle(color: Colors.grey, fontSize:14,)),
+          Text(date, style: TextStyle(color: Colors.grey, fontSize:14+size,)),
         ],
       ),
       trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),

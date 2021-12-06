@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/constant.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationTiles.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class Notific extends StatefulWidget {
   Notific({Key? key}) : super(key: key);
@@ -41,9 +42,9 @@ class _NotificationState extends State<Notific> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('사용 방법 소개', style: TextStyle(color: Color(0xFF303030), fontSize:17, fontWeight: FontWeight.bold)),
+                Text('사용 방법 소개', style: TextStyle(color: Color(0xFF303030), fontSize:17+size, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5),
-                Text('2021.01.01', style: TextStyle(color: Colors.grey, fontSize:14,)),
+                Text('2021.01.01', style: TextStyle(color: Colors.grey, fontSize:14+size,)),
               ],
             ),
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),

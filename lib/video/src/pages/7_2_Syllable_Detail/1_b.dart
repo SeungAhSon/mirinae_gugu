@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class B extends StatelessWidget{
@@ -16,7 +17,7 @@ class B extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('입술소리',style: TextStyle(fontSize: 18.0),),
+                      Text('입술소리',style: TextStyle(fontSize: 18.0+size),),
                       SizedBox(width: 10),
                       Container(
                         height: 30,width: 30,
@@ -25,10 +26,10 @@ class B extends StatelessWidget{
                           color: Color(0xff7ba6f9),
                           shape: BoxShape.circle,
                         ),
-                        child: Text('ㅂ',style: TextStyle(fontSize: 19, fontWeight: FontWeight.bold))
+                        child: Text('ㅂ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
                       ),
                       SizedBox(width: 10),
-                      Text('발음하기',style: TextStyle(fontSize: 18.0)),
+                      Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
                     ],
                   ),
                   SizedBox(height: 5),

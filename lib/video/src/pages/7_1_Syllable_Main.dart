@@ -14,7 +14,6 @@ class Syllable_pages extends StatelessWidget{
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
-
         children: <Widget>[
           Align(
             alignment: Alignment.center,

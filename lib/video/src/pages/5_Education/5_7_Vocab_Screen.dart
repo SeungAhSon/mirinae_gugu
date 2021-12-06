@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class Vocab_Screen_57 extends StatelessWidget{
@@ -14,7 +15,7 @@ class Vocab_Screen_57 extends StatelessWidget{
                 children: <Widget>[
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('  낱말 7단원',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold))
+                      child: Text('  낱말 7단원',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
                   ),
                   SizedBox(height: 10),
                   Row(

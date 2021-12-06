@@ -10,6 +10,7 @@ import 'package:mirinae_gugu/video/src/pages/5_components/Video_0_01.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../1_Loading.dart';
 import '../3_home.dart';
 import '../4_Word_Main.dart';
 import '../Video_0_02.dart';
@@ -73,7 +74,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                 children: <Widget>[
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('  낱말 1단원',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold))
+                      child: Text('  낱말 1단원',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
                   ),
                   SizedBox(height: 10),
                   Row(

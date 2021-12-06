@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough_item_data.dart';
 
@@ -25,7 +26,7 @@ class _Setting extends State<Setting>{
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
+        title: Text("설정",style: TextStyle(fontSize: 24+size,color: Colors.black,fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -46,7 +47,7 @@ class _Setting extends State<Setting>{
                     size: 25,
                 ),
                 SizedBox(width:10),
-                Text("환경",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),)
+                Text("환경",style: TextStyle(fontSize: 22+size,fontWeight: FontWeight.bold),)
               ],
             ),
             Divider(height: 20,thickness: 3,),
@@ -62,7 +63,7 @@ class _Setting extends State<Setting>{
                 Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
                 SizedBox(width: 10,),
                 Text("정보",style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 22+size,
                   fontWeight: FontWeight.bold
                 ),)
               ],
@@ -82,7 +83,7 @@ class _Setting extends State<Setting>{
                 Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
                 SizedBox(width: 10,),
                 Text("사용 안내", style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 22+size,
                     fontWeight: FontWeight.bold
                 ),)
               ],
@@ -130,7 +131,7 @@ class _Setting extends State<Setting>{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title,textScaleFactor: 1.0,style: TextStyle(
-              fontSize: 20,
+              fontSize: 20+size,
                 fontWeight: FontWeight.w600,
 
 
@@ -153,12 +154,12 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-              fontSize: 20,
+              fontSize: 20+size,
               fontWeight: FontWeight.w600,
 
           ),),
           Text("1.0.0",style: TextStyle(
-              fontSize: 18,
+              fontSize: 18+size,
               fontWeight: FontWeight.w500,
               color: Colors.grey[800]
           ),),
@@ -200,7 +201,7 @@ GestureDetector buildcontact(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20,
+            fontSize: 20+size,
             fontWeight: FontWeight.w600,
 
           ),),
@@ -224,7 +225,7 @@ Widget buildwalkthrough(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-              fontSize: 20,
+              fontSize: 20+size,
               fontWeight: FontWeight.w600,
 
           ),),
@@ -270,7 +271,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-              fontSize: 20,
+              fontSize: 20+size,
               fontWeight: FontWeight.w600,
 
           ),),
@@ -309,7 +310,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-              fontSize: 20,
+              fontSize: 20+size,
               fontWeight: FontWeight.w600,
 
           ),),

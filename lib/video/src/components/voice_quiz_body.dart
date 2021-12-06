@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'voice_quiz_question.dart';
 import 'dart:async';
 import 'package:sound_stream/sound_stream.dart';
@@ -213,7 +214,7 @@ class _StartPageState extends State<StartPage> {
 /*                    Text("Score : $score /100",style: TextStyle(color : Colors.brown ,
                         fontSize: 20,fontWeight: FontWeight.bold),),*/
                     Text("문제 : $questionnum / 10",style: TextStyle(color : Colors.brown ,
-                        fontSize: 20,fontWeight: FontWeight.bold),),
+                        fontSize: 20+size,fontWeight: FontWeight.bold),),
 
                   ],
                 ),
@@ -235,11 +236,11 @@ class _StartPageState extends State<StartPage> {
                     Container(
                         margin: const EdgeInsets.fromLTRB(50,30,50,20),
                         child: Text(qList[counter].qText,
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0,),)),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0+size,),)),
                     Container(
                       //margin: const EdgeInsets.fromLTRB(3,3,3,3),
                         child: Text('를 읽어주세요!',
-                          style: TextStyle(fontSize: 18.0,),))
+                          style: TextStyle(fontSize: 18.0+size,),))
 
                   ],
                 ),
@@ -303,7 +304,7 @@ class _StartPageState extends State<StartPage> {
 
                     padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
 
-                    child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                    child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
 
                     color:  Color(0xff4573CB),
                     shape: RoundedRectangleBorder(
@@ -329,7 +330,7 @@ class _StartPageState extends State<StartPage> {
                       },
                       padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
 
-                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
 
                       color: Color(0xff4573CB),
                       shape: RoundedRectangleBorder(
@@ -360,7 +361,7 @@ class _StartPageState extends State<StartPage> {
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             letterSpacing: 1.0,
-            fontSize: 22.5,
+            fontSize: 22.5+size,
             height: 1.75,
           )
       );

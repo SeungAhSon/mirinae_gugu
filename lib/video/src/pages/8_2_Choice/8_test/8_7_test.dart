@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_2_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_3_Choice.dart';
@@ -19,7 +20,7 @@ class Test_7 extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 5),
-            Text('7단원. 복습 시험', style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
+            Text('7단원. 복습 시험', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 5),
             Container(
               height: 300,

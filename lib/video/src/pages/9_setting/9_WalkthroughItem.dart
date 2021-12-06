@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class WalkthroughItem extends StatefulWidget {
   final index;
@@ -102,7 +103,7 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 16),
+                    fontSize: 16+size),
               ),
             ),
           ),

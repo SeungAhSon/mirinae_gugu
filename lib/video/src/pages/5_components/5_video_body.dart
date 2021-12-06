@@ -538,7 +538,7 @@ class _video_Body extends State<video_Body> {
             },
             padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
 
-            child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+            child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
 
             color: Color(0xff4573CB),
             shape: RoundedRectangleBorder(
@@ -654,7 +654,7 @@ class _video_Body extends State<video_Body> {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 letterSpacing: 1.0,
-                fontSize: 20.0, //사이즈 조절 필요
+                fontSize: 20.0+size, //사이즈 조절 필요
                 height: 1.75,
                 /*fontWeight: FontWeight.bold,*/
               ))

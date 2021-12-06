@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class TestButton extends StatelessWidget {
   TestButton({
@@ -19,7 +20,7 @@ class TestButton extends StatelessWidget {
         color: Colors.blueAccent,
         height: 80,
         onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
-        child: Column(children: [Icon(icon, color: Colors.white,),Text(text, style: TextStyle(fontSize:14,color: Colors.white),)],),
+        child: Column(children: [Icon(icon, color: Colors.white,),Text(text, style: TextStyle(fontSize:14+size,color: Colors.white),)],),
       )
     );
   }

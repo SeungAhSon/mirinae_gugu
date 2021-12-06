@@ -140,86 +140,83 @@ class _video_Body extends State<video_Body_2>{
 
     return Scaffold(
         appBar: AppBar(
-        //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
-        //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
-        backgroundColor: Colors.white,
-        title:
-        Obx(
-    () => Text.rich(
+          //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
+          //toolbarHeight: MediaQuery.of(context).size.height/(14/1),
+          backgroundColor: Colors.white,
+          title:
+          Obx(
+                () => Text.rich(
 
-      TextSpan(
-        text:
-        "Question ${_questionController.questionNumber.value}",
-        style: TextStyle(fontSize: 15, color: Colors.blue),
-        children: [
-          TextSpan(
-            text: "/10",
-            style: TextStyle(fontSize: 15, color: Colors.blue),
-          ),
-
-        ],
-      ),
-    ),
-    ),
-
-    leading: IconButton(
-    onPressed: () {
-    Navigator.pop(context);
-    },
-    color: Colors.black,
-    iconSize: 25,
-    icon: Icon(Icons.arrow_back),
-
-    ),
-
-    actions: <Widget>[
-
-      ],
-      ),
-
-
-
-
-
-
-
-
-      body: Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
- //번째 문제 표시
-              Padding(
-                padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
-                child: Container(
-                  height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.74,
-                  child: PageView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    controller: _questionController.pageController,
-                    onPageChanged: _questionController.updateTheQnNum,
-                    itemCount: _questionController.questions.length,
-                    itemBuilder: (context, index) => ayotube(
-                      question: _questionController.questions[index],
-                      id: _questionController.questionNumber.value,
-                    ),
+              TextSpan(
+                text:
+                "Question ${_questionController.questionNumber.value}",
+                style: TextStyle(fontSize: 15+size, color: Colors.blue),
+                children: [
+                  TextSpan(
+                    text: "/10",
+                    style: TextStyle(fontSize: 15+size, color: Colors.blue),
                   ),
 
-                  //child: youtube(context),
-
-                ),
+                ],
               ),
-              SizedBox(height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.03),
-
-              Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold, color: Colors.black)),
-
-
-            ],
+            ),
           ),
+
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            color: Colors.black,
+            iconSize: 25,
+            icon: Icon(Icons.arrow_back),
+
+          ),
+
+          actions: <Widget>[
+
+          ],
+        ),
+
+
+
+
+
+
+
+
+        body: Stack(
+          children: [
+            SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //번째 문제 표시
+                  Padding(
+                    padding: EdgeInsets.only(top:0), //상단 슬라이드 밑에 선
+                    child: Container(
+                      height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.74,
+                      child: PageView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        controller: _questionController.pageController,
+                        onPageChanged: _questionController.updateTheQnNum,
+                        itemCount: _questionController.questions.length,
+                        itemBuilder: (context, index) => ayotube(
+                          question: _questionController.questions[index],
+                          id: _questionController.questionNumber.value,
+                        ),
+                      ),
+
+                      //child: youtube(context),
+
+                    ),
+                  ),
+                  SizedBox(height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.03),
+                  Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20+size, fontWeight: FontWeight.bold, color: Colors.black)),
+                ],
+              ),
+            )
+          ],
         )
-      ],
-    )
     );
   }
 }

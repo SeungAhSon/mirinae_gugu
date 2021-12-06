@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class LearnLevelButton extends StatelessWidget {
   LearnLevelButton({
@@ -29,10 +30,7 @@ class LearnLevelButton extends StatelessWidget {
       ],
     );
 
-
-
     return InkWell(
-
       onTap: onTap,
       child: Center(
         child: Padding(
@@ -84,7 +82,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20.0, fontWeight: FontWeight.bold,
+                      fontSize: 20.0+size, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

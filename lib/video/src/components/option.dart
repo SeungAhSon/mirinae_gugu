@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 import 'body.dart';
 
@@ -55,7 +56,7 @@ class Option extends StatelessWidget {
                 children: [
 
                   Text(
-                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16),
+                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16+size),
                   ),
                 ],
               ),

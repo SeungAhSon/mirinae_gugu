@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/components/Questions.dart';
 import 'package:mirinae_gugu/video/src/components/option.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ayotube extends StatefulWidget {
@@ -67,7 +68,7 @@ class ayotube extends StatefulWidget {
               child: youtube(context),
           ),
           SizedBox(height: 20,),
-          Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20, fontWeight: FontWeight.bold, color: Colors.black)),//번째 문제 표
+          Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20+size, fontWeight: FontWeight.bold, color: Colors.black)),//번째 문제 표
           SizedBox(height: 20),
           ...List.generate(
             widget.question.options.length,

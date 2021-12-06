@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class ScoreScreen extends StatelessWidget {
   @override
@@ -13,11 +14,11 @@ class ScoreScreen extends StatelessWidget {
         children: [
           Text("당신의 점수는",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: Colors.black)),
+              style: TextStyle(fontSize: 20+size, fontWeight:FontWeight.bold, color: Colors.black)),
           Text(
             "${_qnController.numOfCorrectAns * 10}/${_qnController.questions.length * 10}",
               textAlign: TextAlign.center,
-              style : TextStyle(fontSize: 20, fontWeight:FontWeight.bold, color: Colors.black)
+              style : TextStyle(fontSize: 20+size, fontWeight:FontWeight.bold, color: Colors.black)
           ),
           FlatButton(
               onPressed: () {

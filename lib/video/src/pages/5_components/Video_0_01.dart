@@ -192,7 +192,7 @@ class _Video0_01 extends State<Video0_01>{
               title: Text('1-1',
                 style: TextStyle(
                   color: Colors.blueAccent,
-                  fontSize: 20,
+                  fontSize: 20+size,
                   fontWeight: FontWeight.bold,
                 ),),
               centerTitle: true,
@@ -450,7 +450,7 @@ class _Video0_01 extends State<Video0_01>{
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 letterSpacing: 1.0,
-                fontSize: 20.0,
+                fontSize: 20.0+size,
                 height: 1.75,
                 /*fontWeight: FontWeight.bold,*/
               )

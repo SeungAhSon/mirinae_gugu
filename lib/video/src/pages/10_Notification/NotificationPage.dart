@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class NotificationPage extends StatefulWidget {
   final String title;
@@ -32,7 +33,7 @@ class _NotificationPageState extends State<NotificationPage> {
           child: Column(
             children: [
               Text(widget.title,
-                  style: TextStyle(fontSize: 20.0, color: Color(0xFF303030))
+                  style: TextStyle(fontSize: 20.0+size, color: Color(0xFF303030))
               ),
               SizedBox(height: 16.0),
               //Image(image: AssetImage(manShoes)),

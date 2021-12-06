@@ -128,7 +128,7 @@ class _Home extends State<Home> {
                       Align(
                           alignment: Alignment.centerLeft,
                           child: Text('행복한\n하루되세요~~', style: TextStyle(
-                              fontSize: 24.0, fontWeight: FontWeight.bold))
+                              fontSize: 24.0+size, fontWeight: FontWeight.bold))
                       ),
                       CircleAvatar(
                         radius: 40.0,
@@ -142,7 +142,7 @@ class _Home extends State<Home> {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('     학습하기', style: TextStyle(
-                    fontSize: 20, fontWeight: FontWeight.bold)),
+                    fontSize: 20+size, fontWeight: FontWeight.bold)),
               ),
               FlatButton(
                 height: (MediaQuery
@@ -178,7 +178,7 @@ class _Home extends State<Home> {
                           ),
                           child: Center(
                               child: Text('조음\n학습', style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 18+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -187,9 +187,9 @@ class _Home extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18, color: Colors.black54)),
+                                  fontSize: 18+size, color: Colors.black54)),
                               Text('조음별 발음 학습', style: TextStyle(
-                                  fontSize: 15, color: Colors.black45))
+                                  fontSize: 15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -230,7 +230,7 @@ class _Home extends State<Home> {
                           ),
                           child: Center(
                               child: Text('낱말\n학습', style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 18+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -239,9 +239,9 @@ class _Home extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18, color: Colors.black54)),
+                                  fontSize: 18+size, color: Colors.black54)),
                               Text('단원별 낱말 학습', style: TextStyle(
-                                  fontSize: 15, color: Colors.black45))
+                                  fontSize: 15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -282,7 +282,7 @@ class _Home extends State<Home> {
                           ),
                           child: Center(
                               child: Text('복습\n시험', style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 18+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -291,9 +291,9 @@ class _Home extends State<Home> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18, color: Colors.black54)),
+                                  fontSize: 18+size, color: Colors.black54)),
                               Text('배운 내용을 공부', style: TextStyle(
-                                  fontSize: 15, color: Colors.black45))
+                                  fontSize: 15+size, color: Colors.black45))
                             ]
                         ),
                       ]

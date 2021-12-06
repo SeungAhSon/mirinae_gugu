@@ -10,12 +10,13 @@ class Word_Main extends StatelessWidget{
   Widget build(BuildContext context){
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(    // <- Scaffold body만 감싼다.
           child: ListView(
             padding: EdgeInsets.all(10),
             children: [
               SizedBox(height: 5),
-              Text('낱말 학습', style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold)),
+              Text('낱말 학습', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
               SizedBox(height: 5),
               FlatButton(
                 height: 120,
@@ -42,14 +43,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('1단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('1단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('새학년',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('새학년',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -82,14 +83,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('2단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('2단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('봄',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('봄',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -122,14 +123,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('3단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('3단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('건강',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('건강',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -162,14 +163,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('4단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('4단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('동물 / 곤충',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('동물 / 곤충',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -202,14 +203,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('5단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('5단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('감정 / 행동',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('감정 / 행동',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -242,14 +243,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('6단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('6단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('여름',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('여름',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -282,14 +283,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('7단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('7단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('과일 / 채소',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('과일 / 채소',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -322,14 +323,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('8단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('8단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('가을',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('가을',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -362,14 +363,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('9단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('9단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('직업',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('직업',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -402,14 +403,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('10단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('10단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
-                              Text('집',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('집',style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -442,14 +443,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('11단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('11단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
                               Text('겨울',style:TextStyle(fontSize:18, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]
@@ -482,14 +483,14 @@ class Word_Main extends StatelessWidget{
                             ],
                           ),
                           child: Center(
-                              child: Text('12단원', style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold))
+                              child: Text('12단원', style: TextStyle(fontSize: 18+size, color: Colors.white, fontWeight: FontWeight.bold))
                           ),
                         ),
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children:[
                               Text('가족',style:TextStyle(fontSize:18+size, color: Colors.black54)),
-                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15, color: Colors.black45))
+                              Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
                             ]
                         ),
                       ]

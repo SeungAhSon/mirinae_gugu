@@ -12,6 +12,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_6_Choice.dart
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 
 class Test_4 extends StatelessWidget{
+  bool state1 = false;
   @override
   Widget build(BuildContext context){
     return SafeArea(
@@ -30,22 +31,22 @@ class Test_4 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', icon: Icons.camera_alt, onTap: Choice821(),),
-                TestButton(text: '목소리', icon: Icons.mic, onTap: Choice822(),), //StartPage()
+                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice821(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice822(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', icon: Icons.camera_alt, onTap: Choice823(),),
-                TestButton(text: '목소리', icon: Icons.mic, onTap: Choice824(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice823(),),
+                TestButton(text: '목소리',  color: Colors.blueAccent,icon: Icons.mic,state: state1, onTap: Choice824(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', icon: Icons.camera_alt, onTap: Choice825(),),
-                TestButton(text: '목소리', icon: Icons.mic, onTap: Choice826(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice825(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice826(),),
               ],
             ),
 

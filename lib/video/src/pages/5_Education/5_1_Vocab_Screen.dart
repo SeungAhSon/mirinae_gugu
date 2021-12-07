@@ -33,7 +33,6 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
     setState((){
       FavoriteButtons = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
     });
-
     FavoriteButtons = (FavoriteButton).map((value) => value == 'true').toList();
     FavoriteButton = prefs.getStringList("favorite11")!;
   }
@@ -104,7 +103,8 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                       LearnLevelButton(
                         color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
                         text: '1-3',
-                        onTap: () async {
+                        onTap: () async
+                        {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => Video0_01(),));
                           //Level newLevel = await gameBloc.setLevel(index + 1);
                           //Navigator.of(context).push(GamePage.route(newLevel));

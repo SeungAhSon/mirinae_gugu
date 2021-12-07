@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'voice_quiz_question.dart';
 import 'dart:async';
 import 'package:sound_stream/sound_stream.dart';
@@ -35,7 +36,7 @@ class _StartPageState extends State<StartPage> {
   @override
   void initState() {
     super.initState();
-
+    finish();
     _recorder.initialize();
   }
 
@@ -192,9 +193,6 @@ class _StartPageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: DefaultAppBar(title: '복습시험'),
-      //backgroundColor: Color(0xFFF4F3E3),
 
       body: Builder(
         builder : (BuildContext context) => Container(
@@ -369,6 +367,13 @@ class _StartPageState extends State<StartPage> {
       return Text("");
 
   }
+
+
+  void finish() async{
+    SharedPreferences s = await SharedPreferences.getInstance();
+    s.setBool("11111",false);
+  }
+
 }
 
 

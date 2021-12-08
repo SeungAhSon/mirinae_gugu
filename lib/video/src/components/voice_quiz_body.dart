@@ -131,22 +131,29 @@ class _StartPageState extends State<StartPage> {
     if(newtext==qList[counter].qText.replaceAll(' ', '')) {
       score= score+10;
       final snackbar = SnackBar(
-        margin: EdgeInsets.fromLTRB(30,300,30,300),
-        duration: Duration(milliseconds : 500),
+        margin: EdgeInsets.fromLTRB(
+            MediaQuery.of(context).size.width*0.2,
+            MediaQuery.of(context).size.height*0.3,
+            MediaQuery.of(context).size.width*0.2,
+            MediaQuery.of(context).size.height*0.4),
+        duration: Duration(milliseconds : 3000), //500
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,
         content: Container(
           child: Icon(Icons.brightness_1_outlined, color: Colors.orange, size: 170),
-          margin: const EdgeInsets.fromLTRB(0,0,0,230),
         ),);
       Scaffold.of(context).showSnackBar(snackbar);
     }
     else{
       score = score+0;
       final snackbar = SnackBar(
-        margin: EdgeInsets.fromLTRB(30,300,30,300),
-        duration: Duration(milliseconds : 500),
+        margin: EdgeInsets.fromLTRB(
+            MediaQuery.of(context).size.width*0.2,
+            MediaQuery.of(context).size.height*0.3,
+            MediaQuery.of(context).size.width*0.2,
+            MediaQuery.of(context).size.height*0.4),
+        duration: Duration(milliseconds : 3000),
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,
@@ -221,8 +228,8 @@ class _StartPageState extends State<StartPage> {
               Padding(padding: EdgeInsets.only(top: 20)),
 
               Container(
-                width: 330,
-                height: 310,
+                width: MediaQuery.of(context).size.width*0.8,
+                height: MediaQuery.of(context).size.height*0.5,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.lime[200]
@@ -237,22 +244,17 @@ class _StartPageState extends State<StartPage> {
                     Container(
                       //margin: const EdgeInsets.fromLTRB(3,3,3,3),
                         child: Text('를 읽어주세요!',
-                          style: TextStyle(fontSize: 18.0+size,),))
-
+                          style: TextStyle(fontSize: 18.0+size,),)
+                    )
                   ],
                 ),
-
               ),
-
               //Padding(padding: EdgeInsets.only(top: 30)),
-
-
               Padding(
                 padding: EdgeInsets.only(top: 30),
                 child: Container(
                     child: Stack(
                       // text 프린트 해주는 함수 호출
-
                         children: <Widget>[
                           Container(
                             width: 330,
@@ -268,7 +270,6 @@ class _StartPageState extends State<StartPage> {
                                 Container(
                                   child: textprint(),
                                 )],),),
-
 /*                  Container(
                               width: 150,
                               height: 34,
@@ -277,7 +278,6 @@ class _StartPageState extends State<StartPage> {
                                   color: Color(0xff4573CB)
                               ),
                             ),*/
-
                         ]
                     )
                 ),
@@ -296,11 +296,8 @@ class _StartPageState extends State<StartPage> {
                       Timer(Duration(seconds: 1), () {
                         nextpage();
                       });
-
                     },
-
                     padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-
                     child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
 
                     color:  Color(0xff4573CB),
@@ -338,9 +335,6 @@ class _StartPageState extends State<StartPage> {
 
                 ],
               ),
-
-
-
             ],
           ),
         ),

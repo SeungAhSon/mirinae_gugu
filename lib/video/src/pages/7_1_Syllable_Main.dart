@@ -40,58 +40,57 @@ class Syllable_pages extends StatelessWidget{
             child:ButtonSyllable(text: 'ㄱ', onTap: G()),
           ),//ㄱ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.042),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㅃ', onTap: BB()),
           ),//ㅃ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.05),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.238),
             child: ButtonSyllable(text: 'ㄸ', onTap: DD()),
           ),//ㄸ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.39),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.431),
             child: ButtonSyllable(text: 'ㅆ', onTap: SS()),
           ),//ㅆ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615,
-                left: (MediaQuery.of(context).size.width)*0.565),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.624),
             child: ButtonSyllable(text: 'ㅉ', onTap: JJ()),
           ),//ㅉ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.74),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.81),
             child:ButtonSyllable(text: 'ㄲ', onTap: GG()), //ㄲ
           ),//ㄲ
           Padding(
             padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705,
-                left: (MediaQuery.of(context).size.width)*0.042),
+                left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㅍ', onTap: P()),
           ),//ㅍ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.05),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.238),
             child: ButtonSyllable(text: 'ㅌ', onTap: T()),
           ),//ㅌ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.565),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.624),
             child: ButtonSyllable(text: 'ㅊ', onTap: TS()),
           ),//ㅊ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.74),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.81),
             child:ButtonSyllable(text: 'ㅋ', onTap: K()),
           ),
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.042),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㅁ', onTap: M()),
           ),//ㅁ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.05),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.238),
             child: ButtonSyllable(text: 'ㄴ', onTap: N()),
           ),//ㄴ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.39),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.431),
             child: ButtonSyllable(text: 'ㄹ', onTap: L()),
           ),//ㄹ
           Padding(
             padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795,
-                left: (MediaQuery.of(context).size.width)*0.74),
+                left: (MediaQuery.of(context).size.width)*0.81),
             child:ButtonSyllable(text: 'ㅇ', onTap: Y()), //ㅇ
           ),
           Padding(

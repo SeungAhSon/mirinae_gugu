@@ -1,18 +1,16 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:mirinae_gugu/video/src/components/Questions.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
 
-
-
-class QuestionController extends GetxController
-    with SingleGetTickerProviderMixin {
-
+class QuestionController extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;
-  PageController get pageController => this._pageController;
+  PageController get pageController => _pageController;
 
-  final List<Question> _questions = quiz1_1.map(
+  static const List quiz = quiz1_1;
+
+  final List<Question> _questions = quiz.map(
         (question) => Question(
         id: question['id'],
         options: question['options'],
@@ -20,26 +18,22 @@ class QuestionController extends GetxController
         VideoId: question['VideoId'],),
   ).toList();
 
-  List<Question> get questions => this._questions;
-
-
-
-
+  List<Question> get questions => _questions;
 
   bool _isAnswered = false;
-  bool get isAnswered => this._isAnswered;
+  bool get isAnswered => _isAnswered;
 
   late int _correctAns;
-  int get correctAns => this._correctAns;
+  int get correctAns => _correctAns;
 
   late int _selectedAns;
-  int get selectedAns => this._selectedAns;
+  int get selectedAns => _selectedAns;
 
   RxInt _questionNumber = 1.obs;
-  RxInt get questionNumber => this._questionNumber;
+  RxInt get questionNumber => _questionNumber;
 
   int _numOfCorrectAns = 0;
-  int get numOfCorrectAns => this._numOfCorrectAns;
+  int get numOfCorrectAns => _numOfCorrectAns;
 
 
 

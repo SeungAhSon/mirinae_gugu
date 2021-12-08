@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
-import 'package:mirinae_gugu/video/src/components/Questions.dart';
-import 'package:mirinae_gugu/video/src/components/option.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/option.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
+import 'Questions/Questions_1.dart';
 
 class ayotube extends StatefulWidget {
   const ayotube({
@@ -75,7 +76,6 @@ class ayotube extends StatefulWidget {
                 (index) => Option(
               index: index,
               text: widget.question.options[index],
-              video: widget.question.VideoId[index],
               press: () => _controller.checkAns(widget.question, index),
             ),
           ),

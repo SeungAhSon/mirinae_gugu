@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
-
 import '5_video_list.dart';
 
 
@@ -10,7 +9,7 @@ class Edu_controller extends GetxController
 
   late PageController _pageController;
 
-  PageController get pageController => this._pageController;
+  PageController get pageController => _pageController;
 
   final List<VideoList_1> _Video_c_1 = Video1_1.map(
         (sad) =>
@@ -23,11 +22,11 @@ class Edu_controller extends GetxController
   List<VideoList_1> get Video_c_1 => _Video_c_1;
 
   bool _isAnswered = false;
-  bool get isAnswered => this._isAnswered;
+  bool get isAnswered => _isAnswered;
 
 
   RxInt _questionNumber = 1.obs;
-  RxInt get questionNumber => this._questionNumber;
+  RxInt get questionNumber => _questionNumber;
 
 
 

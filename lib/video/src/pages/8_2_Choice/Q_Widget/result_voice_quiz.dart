@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 

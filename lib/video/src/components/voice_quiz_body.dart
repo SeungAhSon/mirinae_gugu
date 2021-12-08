@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'voice_quiz_question.dart';

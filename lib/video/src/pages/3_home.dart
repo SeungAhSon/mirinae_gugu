@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
@@ -14,53 +13,48 @@ import '9_setting/9_Walkthrough.dart';
 
 //업데이트 시 3개의 reading7를 다른 것으로 바꾸기만 하면 됩니다.
 class Home extends StatefulWidget{
-  static const PrimaryColor1 = const Color(0xFF5DB6F8);
   const Home({Key? key}) : super(key: key);
   @override
   _Home createState() => _Home();
 }
 
 class _Home extends State<Home> {
-  @override
   bool Reading = false;
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     setState(() {
       Reading = s.getBool("reading7")!;
-    });
-
+    }
+    );
   }
-
-
   aa(BuildContext context,String title){
-      showDialog(context: context, builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(height: 10),
-              Text("이메일 주소\njaewan0114@naver.com"),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              },
-              child: Text("예",style: TextStyle(color: Colors.black),),
-            ),
-            TextButton(
-              onPressed: (){
-                Navigator.of(context).pop();
-              },
-              child: Text("아니요",style: TextStyle(color: Colors.black),),
-            ),
+    showDialog(context: context, builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text(title),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(height: 10),
+            Text("이메일 주소\njaewan0114@naver.com"),
           ],
-        );
-
-      });
+        ),
+        actions: [
+          TextButton(
+            onPressed: (){
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
+            },
+            child: Text("예",style: TextStyle(color: Colors.black),),
+          ),
+          TextButton(
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
+            child: Text("아니요",style: TextStyle(color: Colors.black),),
+          ),
+        ],
+      );
+    });
   }
 
 
@@ -80,8 +74,6 @@ class _Home extends State<Home> {
     });
   }
 
-
-
   @override
   void initState() {
     super.initState();
@@ -89,10 +81,8 @@ class _Home extends State<Home> {
     local2();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
       child: Scaffold(
@@ -249,13 +239,7 @@ class _Home extends State<Home> {
                 ),
               ),
               FlatButton(
-                height: (MediaQuery
-                    .of(context)
-                    .size
-                    .height - MediaQuery
-                    .of(context)
-                    .padding
-                    .top) * 0.15,
+                height: (MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.15,
                 color: Color(0xffE4EDFF),
                 onPressed: () {
                   Navigator.push(context,
@@ -275,8 +259,7 @@ class _Home extends State<Home> {
                                 color: Colors.grey.withOpacity(0.8),
                                 spreadRadius: 2,
                                 blurRadius: 7,
-                                offset: Offset(
-                                    2, 2), // changes position of shadow
+                                offset: Offset(2, 2), // changes position of shadow
                               ),
                             ],
                           ),
@@ -305,27 +288,26 @@ class _Home extends State<Home> {
           ),
         ),
         appBar:  AppBar(
-          title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
-          centerTitle: true,
-          backgroundColor: Colors.white, elevation: 3.0,
-          automaticallyImplyLeading: false,
-          iconTheme: IconThemeData(color: Colors.blue),
-          //leading:
-          actions: <Widget>[
+            title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
+            centerTitle: true,
+            backgroundColor: Colors.white, elevation: 3.0,
+            automaticallyImplyLeading: false,
+            iconTheme: IconThemeData(color: Colors.blue),
+            //leading:
+            actions: <Widget>[
               IconButton(
                   icon: Reading
                       ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
                       : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
                   onPressed: () async {
                     SharedPreferences s = await SharedPreferences.getInstance();
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
+                    await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
                     )),);
                     setState(() {
                       s.setBool("reading7",true);
                       Reading =  s.getBool("reading7")!;
-
-                    });
-
+                    }
+                    );
                     //onPageChanged: _questionController.updateTheQnNum,
                   }
               ),
@@ -334,7 +316,4 @@ class _Home extends State<Home> {
       ),
     );
   }
-
-
-
 }

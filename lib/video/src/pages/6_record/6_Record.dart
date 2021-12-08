@@ -101,8 +101,6 @@ class _RecordState extends State<Record> {
                                 ),
                                 Row(
                                   children: [
-
-
                                     (isPlay)? _Presso(
                                         ico: Icons.pause,
                                         onPressed: () {

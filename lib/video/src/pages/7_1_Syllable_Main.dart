@@ -20,23 +20,23 @@ class Syllable_pages extends StatelessWidget{
             child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),
           ),
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height -  MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.042),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height -  MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㅂ', onTap: B()),
           ),//ㅂ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.215),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.238),
             child: ButtonSyllable(text: 'ㄷ', onTap: D()),
           ),//ㄷ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.39),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.431),
             child: ButtonSyllable(text: 'ㅅ', onTap: S()),
           ),//ㅅ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.565),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.624),
             child: ButtonSyllable(text: 'ㅈ', onTap: J()),
           ),//ㅈ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.74),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.525, left: (MediaQuery.of(context).size.width)*0.81),
             child:ButtonSyllable(text: 'ㄱ', onTap: G()),
           ),//ㄱ
           Padding(
@@ -44,7 +44,7 @@ class Syllable_pages extends StatelessWidget{
             child: ButtonSyllable(text: 'ㅃ', onTap: BB()),
           ),//ㅃ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.215),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.615, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㄸ', onTap: DD()),
           ),//ㄸ
           Padding(
@@ -66,7 +66,7 @@ class Syllable_pages extends StatelessWidget{
             child: ButtonSyllable(text: 'ㅍ', onTap: P()),
           ),//ㅍ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.215),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.705, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㅌ', onTap: T()),
           ),//ㅌ
           Padding(
@@ -82,7 +82,7 @@ class Syllable_pages extends StatelessWidget{
             child: ButtonSyllable(text: 'ㅁ', onTap: M()),
           ),//ㅁ
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.215),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.795, left: (MediaQuery.of(context).size.width)*0.05),
             child: ButtonSyllable(text: 'ㄴ', onTap: N()),
           ),//ㄴ
           Padding(

@@ -7,7 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:mirinae_gugu/video/src/components/youtube.dart';
-import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_widget/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/Edu_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
@@ -100,7 +100,7 @@ class _video_Body extends State<video_Body> {
 
     //record
     super.initState();
-
+    checkPermission();
     getExternalStorageDirectory().then((value) {
       appDir = value!;
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
@@ -112,11 +112,34 @@ class _video_Body extends State<video_Body> {
     });
   }
 
+  checkPermission()async{
+
+    if (await Permission.contacts.request().isGranted) {
+      // Either the permission was already granted before or the user just granted it.
+    }
+
+// You can request multiple permissions at once.
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.microphone,
+      Permission.storage,
+    ].request();
+    print(statuses[Permission.microphone]);
+    print(statuses[Permission.storage]);
+    //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
+    if (statuses[Permission.microphone]==PermissionStatus.granted) {
+      _currentStatus = RecordingStatus.Initialized;
+      _recordIcon = Icons.mic;
+    }else
+    {
+
+    }
+  }
 
   void dispose() {
     controller.dispose();
     super.dispose();
     appDir = null;
+    super.dispose();
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
   }
@@ -137,6 +160,7 @@ class _video_Body extends State<video_Body> {
         '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
     final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
     final config = _getConfig();
+
     final responseStream = speechToText.streamingRecognize(
         StreamingRecognitionConfig(config: config, interimResults: true),
         _audioStream!);

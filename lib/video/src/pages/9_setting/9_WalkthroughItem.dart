@@ -4,19 +4,19 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 List<Map<String, Object>> WALKTHROUGH_ITEMS = [
   {
     'image': 'assets/1_screen_start.png',
-    'button_text': 'Continue',
+    'button_text': '계속하기',
   },
   {
     'image': 'assets/2_screen_login.png',
-    'button_text': 'I\'m not a spammer',
+    'button_text': '계속하기',
   },
   {
     'image': 'assets/hedgehog.jpeg',
-    'button_text': 'I\'m not a scammer',
+    'button_text': '계속하기',
   },
   {
     'image': 'assets/oral_structure 2.png',
-    'button_text': 'I\'ll double check everything',
+    'button_text': '끝마치기',
   }
 ];
 
@@ -40,48 +40,16 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
   Widget build(BuildContext context) {
     Color selectedColor = Colors.blue;
     Color normalColor = Colors.grey;
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Container(
       color: Color.fromRGBO(11, 50, 118, 1),
-      width: double.infinity,
-      height: double.infinity,
       child: Stack(children: [
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
                 image: AssetImage(widget.item!['image'] ?? ''),
                 fit: BoxFit.fill),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(top: 15, bottom: 10),
-          child: Container(
-            height: 8,
-            width: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Material(
-                  color: (widget.index == 0) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 1) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 2) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 3) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-              ],
-            ),
           ),
         ),
         Container(
@@ -125,6 +93,38 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                     color: Colors.white,
                     fontSize: 16+size),
               ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: height*0.8, left: width*0.4),
+          child: Container(
+            height: 8,
+            width: 80,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Material(
+                  color: (widget.index == 0) ? selectedColor : normalColor,
+                  type: MaterialType.circle,
+                  child: Container(width: 8, height: 8),
+                ),
+                Material(
+                  color: (widget.index == 1) ? selectedColor : normalColor,
+                  type: MaterialType.circle,
+                  child: Container(width: 8, height: 8),
+                ),
+                Material(
+                  color: (widget.index == 2) ? selectedColor : normalColor,
+                  type: MaterialType.circle,
+                  child: Container(width: 8, height: 8),
+                ),
+                Material(
+                  color: (widget.index == 3) ? selectedColor : normalColor,
+                  type: MaterialType.circle,
+                  child: Container(width: 8, height: 8),
+                ),
+              ],
             ),
           ),
         ),

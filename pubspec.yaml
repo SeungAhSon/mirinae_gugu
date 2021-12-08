@@ -136,6 +136,9 @@ flutter:
     - assets/test/10_house.png
     - assets/test/11_winter.png
     - assets/test/12_family.png
+    - assets/test_achievement/bad.png
+    - assets/test_achievement/good.png
+    - assets/test_achievement/success.png
 
 
   fonts:

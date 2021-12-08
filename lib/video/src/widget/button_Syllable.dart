@@ -17,8 +17,8 @@ class ButtonSyllable extends StatelessWidget {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12))
       ),
+      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
       child: Text(text,style: TextStyle(fontSize: 30+size,color:Colors.black,fontWeight: FontWeight.bold)),
-    onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
     );
   }
 }

@@ -21,6 +21,8 @@ class _NotificationState extends State<Notific> {
         physics: ClampingScrollPhysics(),
         padding: EdgeInsets.zero,
         children: <Widget>[
+          SizedBox(height: 0.5),
+          Divider(color: Colors.white, thickness: 0.8),
           NotificationTiles(
             title: '안녕하세요',
             content:
@@ -52,6 +54,7 @@ class _NotificationState extends State<Notific> {
               print("tapped on container");
             },
           ),
+          kDivider,
         ],
       ),
     );

@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:mirinae_gugu/video/src/controller/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 import 'body.dart';
-
-
-
-
 
 class Option extends StatelessWidget {
   const Option( {
     Key? key,
     required this.text,
     required this.index,
-    required this.press, required this.video,
+    required this.press,
   }) : super(key: key);
 
-  final String video;
   final String text;
   final int index;
   final VoidCallback press;

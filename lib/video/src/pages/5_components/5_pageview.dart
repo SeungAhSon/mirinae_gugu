@@ -25,7 +25,7 @@ class _5_video_page extends State<video_page>{
     super.initState();
     _controller = YoutubePlayerController(
 
-      initialVideoId: asd[widget.id],
+      initialVideoId: asd[widget.id-1],
 
       flags: YoutubePlayerFlags(
         hideThumbnail: true,
@@ -37,7 +37,9 @@ class _5_video_page extends State<video_page>{
     );
   }
 
-  List asd = ['0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas','5gTwukGJMYk','dasdasda','sadasdas','9','9','IovzbPNQcp4','ㄴㅇㅁㄹ'];
+  List asd = ['0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas','5gTwukGJMYk','dasdasda','sadasdas','9','9','IovzbPNQcp4',
+    '0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas','5gTwukGJMYk','dasdasda','sadasdas','9','9','IovzbPNQcp4'
+        '0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas','5gTwukGJMYk','dasdasda','5gTwukGJMYk','1'];
 
   @override
   void dispose() {

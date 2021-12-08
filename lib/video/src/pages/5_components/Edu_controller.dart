@@ -15,8 +15,7 @@ class Edu_controller extends GetxController
         (sad) =>
         VideoList_1(
           id: sad['id'],
-          VideoId: sad['VideoId'],
-          favoriteButtons: sad['favoriteButtons'],),
+ ),
   ).toList();
 
   List<VideoList_1> get Video_c_1 => _Video_c_1;

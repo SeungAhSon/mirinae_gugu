@@ -37,32 +37,9 @@ class video_Body extends StatefulWidget {
 
 class _video_Body extends State<video_Body> {
   List<String> FavoriteButton = [
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false"
-  ];
+    "false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"];
   bool finish = false;
-  List<bool> favorite = <bool>[
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ];
+  List<bool> favorite = <bool>[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
@@ -75,7 +52,7 @@ class _video_Body extends State<video_Body> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-  List<String> Questiontitle = ["ㄱ", "안녕하세요", "ㅇㄷ"];
+  List<String> Questiontitle = ["1", "2", "3","4","5","6","7","8","9","10","11", "12", "13","14","15","16","17","18","19","20","21", "22", "23","24","25","26","27","28","29","30"];
 
   //record
   late Directory? appDir;
@@ -139,7 +116,6 @@ class _video_Body extends State<video_Body> {
     controller.dispose();
     super.dispose();
     appDir = null;
-    super.dispose();
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
   }
@@ -210,14 +186,14 @@ class _video_Body extends State<video_Body> {
   Future<void> loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
 
     favorite =
         (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
-    FavoriteButton = prefs.getStringList("favorite11")!;
+    FavoriteButton = prefs.getStringList("favorite15")!;
 
   }
 
@@ -227,9 +203,9 @@ class _video_Body extends State<video_Body> {
       favorite[widget.index] = false;
     });
     await prefs.setStringList(
-        "favorite11", favorite.map((value) => value.toString()).toList());
+        "favorite15", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
@@ -241,9 +217,9 @@ class _video_Body extends State<video_Body> {
       favorite[widget.index] = true;
     });
     await prefs.setStringList(
-        "favorite11", favorite.map((value) => value.toString()).toList());
+        "favorite15", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite11") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
@@ -252,7 +228,7 @@ class _video_Body extends State<video_Body> {
   void plus() async {
     Edu_controller _questionController = Get.put(Edu_controller());
     if (widget.index != _questionController.Video_c_1.length) {
-      if (widget.index == 10) {
+      if (widget.index == 30) {
         setState(() {
           start = true;
         });
@@ -272,7 +248,7 @@ class _video_Body extends State<video_Body> {
         setState(() {
           finish = true;
         });
-      } else if (widget.index == 10) {
+      } else if (widget.index == 30) {
         setState(() {
           start = true;
         });
@@ -281,7 +257,9 @@ class _video_Body extends State<video_Body> {
   }
 
   void back() async {
+
     Edu_controller _questionController = Get.put(Edu_controller());
+    print(_questionController.Video_c_1.length);
     if (widget.index != _questionController.Video_c_1.length) {
       if (widget.index == 1) {
         setState(() {
@@ -293,8 +271,6 @@ class _video_Body extends State<video_Body> {
           finish = false;
           start = false;
         });
-    } else {
-      Get.off(ScoreScreen());
     }
   }
 
@@ -324,7 +300,7 @@ class _video_Body extends State<video_Body> {
                   style: TextStyle(fontSize: 20 + size, color: Colors.blue),
                   children: [
                     TextSpan(
-                      text: '${Questiontitle[widget.index]}',
+                      text: '${Questiontitle[widget.index-1]}',
                       style: TextStyle(fontSize: 20 + size, color: Colors.blue),
                     ),
                   ],
@@ -384,8 +360,7 @@ class _video_Body extends State<video_Body> {
                               onPageChanged: _questionController.updateTheQnNum,
                               itemCount: _questionController.Video_c_1.length,
                               itemBuilder: (context, index) => video_page(
-                                sad:
-                                _questionController.Video_c_1[widget.index],
+                                sad: _questionController.Video_c_1[widget.index],
                                 id: widget.index,
                               ),
                             ),

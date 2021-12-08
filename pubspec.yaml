@@ -64,6 +64,7 @@ dependencies:
   flutter_animation_progress_bar: ^2.0.1
   noise_meter: ^3.0.2
   share: ^2.0.4
+  flutter_inappwebview: ^5.3.2
 
   flutter_audio_recorder:
   permission_handler:

@@ -19,8 +19,8 @@ class Vocab_Screen_51 extends StatefulWidget {
 }
 
 class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
-  List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false,false];
-  List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false"];
+  List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
+  List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"];
   @override
 
 
@@ -28,10 +28,10 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
   Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState((){
-      FavoriteButtons = (prefs.getStringList("favorite11") ?? <bool>[]).map((value) => value == 'true').toList();
+      FavoriteButtons = (prefs.getStringList("favorite15") ?? <bool>[]).map((value) => value == 'true').toList();
     });
     FavoriteButtons = (FavoriteButton).map((value) => value == 'true').toList();
-    FavoriteButton = prefs.getStringList("favorite11")!;
+    FavoriteButton = prefs.getStringList("favorite15")!;
   }
 
   void main() {
@@ -81,8 +81,6 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
                               index:1,
-
-
                             ),));
                           }
                       ),
@@ -92,259 +90,329 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
                               index: 2,
-
                           ),));
                               },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[0] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[3] ? Colors.orange : Color(0xff7ba6f9),
                         text: '1-3',
-                        onTap: () async
-                        {
-                          await Navigator.push(context, MaterialPageRoute(builder: (context) => Video0_01(),));
-                          //Level newLevel = await gameBloc.setLevel(index + 1);
-                          //Navigator.of(context).push(GamePage.route(newLevel));
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 3,
+                          ),));
+                        },
+                              ),
+                            ],
+                          ),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[4] ? Colors.orange : Color(0xff7ba6f9),
+                          text: '1-4',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 4,
+                          ),));
                         },
                       ),
- //1~3
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_04 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-4',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_05 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-5',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_06 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-6',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //4~6
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_07 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-7',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_08 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-8',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_09 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-9',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //7~9
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_10 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-10',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_11 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-11',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_12 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-12',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //10~12
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_13 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-13',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_14 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-14',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_15 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-15',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //13~15
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_16 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-16',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_17 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-17',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_18 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-18',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //16~18
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_19 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-19',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_20 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-20',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_21 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-21',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //19~21
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_22 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-22',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_23 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-23',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_24 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-24',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //22~24
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_25 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-25',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_26 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-26',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_27 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-27',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //   ],
-                  // ), //25~27
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  //   children: <Widget>[
-                  //     LearnLevelButton(
-                  //         color: favoriteButton_0_01_28 ? Colors.orange : Color(0xff7ba6f9),
-                  //         text: '1-28',
-                  //         onTap: () async {}
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_29 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-29',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-                  //     ),
-                  //     LearnLevelButton(
-                  //       color: favoriteButton_0_01_30 ? Colors.orange : Color(0xff7ba6f9),
-                  //       text: '1-30',
-                  //       onTap: () async {
-                  //         //Level newLevel = await gameBloc.setLevel(index + 1);
-                  //         //Navigator.of(context).push(GamePage.route(newLevel));
-                  //       },
-
+                      LearnLevelButton(
+                        color: FavoriteButtons[5] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-5',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 5,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[6] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-6',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 6,
+                          ),));
+                        },
+                      ),
                     ],
-                  ), //28~30
-                ]
-            )
-        )
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[7] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-7',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 7,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[8] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-8',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 8,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[9] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-9',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 9,
+                          ),));
+                        },
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[10] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-10',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 10,
+                          ),));
+                        },
+                      ),
 
+                      LearnLevelButton(
+                        color: FavoriteButtons[11] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-11',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 11,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[12] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-12',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 12,
+                          //Level newLevel = await gameBloc.setLevel(index + 1);
+                          //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ), //10~12
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[13] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-13',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 13,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[14] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-14',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 14,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[15] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-15',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 15,
+                            //Level newLevel = await gameBloc.setLevel(index + 1);
+                            //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ),  //13~15
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[16] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-16',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 16,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[17] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-17',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 17,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[18] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-18',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 18,
+                            //Level newLevel = await gameBloc.setLevel(index + 1);
+                            //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ),  //16~18
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[19] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-19',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 19,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[20] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-20',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 20,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[21] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-21',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 21,
+                            //Level newLevel = await gameBloc.setLevel(index + 1);
+                            //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ),  //19~21
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[22] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-22',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 22,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[23] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-23',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 23,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[24] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-24',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 24,
+                            //Level newLevel = await gameBloc.setLevel(index + 1);
+                            //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ), //22~24
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                        color: FavoriteButtons[25] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-25',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 25,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[26] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-26',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 26,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[27] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-27',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 27,
+                            //Level newLevel = await gameBloc.setLevel(index + 1);
+                            //Navigator.of(context).push(GamePage.route(newLevel));
+                          ),));
+                        },
+                      ),
+                    ],
+                  ),  //25~27
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      LearnLevelButton(
+                  color: FavoriteButtons[28] ? Colors.orange : Color(0xff7ba6f9),
+          text: '1-28',
+          onTap: () async {
+            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+              index: 28,
+            ),));
+          },
+        ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[29] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-29',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 29,
+                          ),));
+                        },
+                      ),
+                      LearnLevelButton(
+                        color: FavoriteButtons[30] ? Colors.orange : Color(0xff7ba6f9),
+                        text: '1-30',
+                        onTap: () async {
+                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
+                            index: 30,
+                          ),));
+                        },
+                      ),
+
+      ],
+
+                    //28~30
+
+            )
+            ]
+        )
+        )
     );
 
   }

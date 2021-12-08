@@ -1,6 +1,3 @@
-
-
-
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +52,6 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
     print("gd");
   }
   void dispose() {
-
     super.dispose();
   }
 

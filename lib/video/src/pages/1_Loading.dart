@@ -1,8 +1,12 @@
 import 'dart:async';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mirinae_gugu/video/src/pages/2_Login.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '6_record/6_audio_recorder.dart';
 
 
 List<CameraDescription> cameras = List.empty(growable: true);//
@@ -19,6 +23,7 @@ class _Loading extends State<Loading> {
     super.initState();
     load();
     loadsize();
+
     Timer(
       Duration(seconds: 4),
           () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Login()),),
@@ -61,10 +66,38 @@ class _Loading extends State<Loading> {
       ss.setString('fontsize', "크게");
     }
   }
+  RecordingStatus _currentStatus = RecordingStatus.Unset;
+  IconData _recordIcon = Icons.mic_none;
+  var status = Permission.camera.status;
 
+  checkPermission()async{
+
+    if (await Permission.contacts.request().isGranted) {
+      // Either the permission was already granted before or the user just granted it.
+    }
+// You can request multiple permissions at once.
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.microphone,
+      Permission.storage,
+      Permission.camera
+    ].request();
+    print(statuses[Permission.microphone]);
+    print(statuses[Permission.storage]);
+    if ((statuses[Permission.microphone]==PermissionStatus.granted) && (statuses[Permission.storage]==PermissionStatus.granted) && (statuses[Permission.camera]==PermissionStatus.granted)){
+      return true;
+    }else if((statuses[Permission.microphone]!=PermissionStatus.granted) || (statuses[Permission.storage]!=PermissionStatus.granted) || (statuses[Permission.camera]!=PermissionStatus.granted)){
+      SystemNavigator.pop();
+      return false;
+    }
+  }
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    checkPermission();
     print(size);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

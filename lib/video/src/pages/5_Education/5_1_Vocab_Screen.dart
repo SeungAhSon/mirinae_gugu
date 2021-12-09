@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body.dart';
-import 'package:mirinae_gugu/video/src/pages/5_components/Video_0_01.dart';
+
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -404,7 +404,6 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                           ),));
                         },
                       ),
-
       ],
 
                     //28~30

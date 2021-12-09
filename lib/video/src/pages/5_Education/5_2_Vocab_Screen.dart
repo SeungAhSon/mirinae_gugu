@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body_2.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class Vocab_Screen_52 extends StatelessWidget{
@@ -25,17 +24,17 @@ class Vocab_Screen_52 extends StatelessWidget{
                       LearnLevelButton(
                           text: '2-1',
                           onTap: () async {
-                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_2(
-                                index: 1,
-                            )));
+                          //   await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_2(
+                          //       index: 1,
+                          //   )));
                           }
                       ),
                       LearnLevelButton(
                         text: '2-2',
                         onTap: () async {
-                          await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_2(
-                            index: 2,
-                          )));
+                        //   await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_2(
+                        //     index: 2,
+                        //   )));
                         },
                       ),
                       LearnLevelButton(

@@ -1,45 +1,39 @@
+
+
 import 'dart:async';
+import 'dart:io';
 
 import 'package:camera/camera.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
-import 'package:google_speech/google_speech.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_youtube.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_result.dart';
-import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
-import 'package:rxdart/rxdart.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sound_stream/sound_stream.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../app.dart';
-import '../1_Loading.dart';
-import '5_pageview.dart';
-
-import 'dart:io';
-import 'package:path_provider/path_provider.dart';
-import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:google_speech/config/streaming_recognition_config.dart';
+import 'package:google_speech/google_speech.dart';
+import 'package:google_speech/speech_to_text.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_Record.dart';
+import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
+import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/15_g/15_g_youtube.dart';
+import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:rxdart/rxdart.dart';
+import 'package:sound_stream/sound_stream.dart';
 
-class video_Body extends StatefulWidget {
-  video_Body({Key? key, required this.index}) : super(key: key);
+import '../../1_Loading.dart';
+
+class video_Body_15 extends StatefulWidget {
+  video_Body_15({Key? key, required this.index}) : super(key: key);
   @override
   _video_Body createState() => _video_Body();
   int index;
 
 }
 
-class _video_Body extends State<video_Body> {
+class _video_Body extends State<video_Body_15> {
   late PageController _pageController;
-  List<String> FavoriteButton = [
-    "false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"];
   bool finish = false;
-  List<bool> favorite = <bool>[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
-  CameraController controller =
+   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
@@ -184,51 +178,11 @@ class _video_Body extends State<video_Body> {
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
-  Future<void> loadFavorite() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
 
-    favorite =
-        (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
-    FavoriteButton = prefs.getStringList("favorite15")!;
-
-  }
-
-  Future<void> delete() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = false;
-    });
-    await prefs.setStringList(
-        "favorite15", favorite.map((value) => value.toString()).toList());
-    setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
-
-  Future<void> saved() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = true;
-    });
-    await prefs.setStringList(
-        "favorite15", favorite.map((value) => value.toString()).toList());
-    setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
 
   void plus() async {
-    if (widget.index != 31) {
-      if (widget.index == 30) {
+    if (widget.index != 11) {
+      if (widget.index == 10) {
         setState(() {
           start = true;
         });
@@ -243,12 +197,12 @@ class _video_Body extends State<video_Body> {
   }
 
   void backplusload() async {
-    if (widget.index != 31) {
+    if (widget.index != 11) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
         });
-      } else if (widget.index == 30) {
+      } else if (widget.index == 10) {
         setState(() {
           start = true;
         });
@@ -258,7 +212,7 @@ class _video_Body extends State<video_Body> {
 
   void back() async {
 
-    if (widget.index != 31) {
+    if (widget.index != 11) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
@@ -275,7 +229,6 @@ class _video_Body extends State<video_Body> {
 
   @override
   Widget build(BuildContext context) {
-    loadFavorite();
     backplusload();
     var height2 = AppBar().preferredSize.height;
 
@@ -290,10 +243,10 @@ class _video_Body extends State<video_Body> {
           backgroundColor: Colors.white,
 
           title: Center(
-                    child: Text(
-                      '${Questiontitle[widget.index-1]}',
-                      style: TextStyle(fontSize: 20 + size, color: Colors.blue),
-                    ),
+            child: Text(
+              '${Questiontitle[widget.index-1]}',
+              style: TextStyle(fontSize: 20 + size, color: Colors.blue),
+            ),
           ),
           leading: IconButton(
             onPressed: () {
@@ -305,14 +258,6 @@ class _video_Body extends State<video_Body> {
           ),
 
           actions: <Widget>[
-            IconButton(
-              onPressed: favorite[widget.index] ? delete : saved,
-              icon: favorite[widget.index]
-                  ? Icon(Icons.bookmark_rounded,
-                  color: Colors.yellow[800], size: 30) //그대로일때
-                  : Icon(Icons.bookmark_add_outlined,
-                  color: Colors.yellow[800], size: 30),
-            ),
           ],
         ),
         body: Stack(
@@ -345,7 +290,7 @@ class _video_Body extends State<video_Body> {
                               physics: NeverScrollableScrollPhysics(),
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
-                              itemCount: 30,
+                              itemCount: 10,
                               itemBuilder: (context, index) => video_page(
                                 id: widget.index,
                               ),
@@ -694,7 +639,7 @@ class _video_Body extends State<video_Body> {
 
   _stop() async {
     var result = await audioRecorder!.stop();
-    Fluttertoast.showToast(msg: "Stop Recording , File Saved");
+    await Fluttertoast.showToast(msg: "Stop Recording , File Saved");
     _onFinish_test();
     setState(() {
       _current = result!;

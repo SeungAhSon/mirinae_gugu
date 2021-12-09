@@ -12,7 +12,7 @@ export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/11_l.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/12_j.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/13_jj.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/14_ts.dart';
-export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/15_g.dart';
+export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/15_g/15_g.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/16_gg.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/17_k.dart';
 export 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/18_y.dart';

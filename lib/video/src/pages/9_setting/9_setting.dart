@@ -134,7 +134,11 @@ class _Setting extends State<Setting>{
 
 
             ),),
-            Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+            Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+              fontSize: 17+size,
+
+
+            ),),
           ],
         ),
       ),
@@ -203,7 +207,10 @@ GestureDetector buildcontact(BuildContext context, String title)
             fontWeight: FontWeight.w600,
 
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+            fontSize: 17+size,
+
+          ),),
         ],
       ),
     ),
@@ -227,7 +234,10 @@ Widget buildwalkthrough(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+            fontSize: 17+size,
+
+          ),),
         ],
       ),
     ),
@@ -273,7 +283,10 @@ GestureDetector buildfontsize(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+            fontSize: 17+size,
+
+          ),),
         ],
       ),
     ),
@@ -312,7 +325,10 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 28,)
+          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+            fontSize: 17+size,
+
+          ),),
         ],
       ),
     ),

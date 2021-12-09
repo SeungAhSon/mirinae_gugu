@@ -296,30 +296,38 @@ class _Home extends State<Home> {
             //leading:
             actions: <Widget>[
               Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  IconButton(
-                    constraints: BoxConstraints(),
-                      padding: EdgeInsets.only(top:5, left: 5, right: 15,bottom: 5),
-                      icon: Reading
-                          ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
-                          : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
-                      onPressed: () async {
-                        SharedPreferences s = await SharedPreferences.getInstance();
-                        await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
-                        )),);
-                        setState(() {
-                          s.setBool("reading7",true);
-                          Reading =  s.getBool("reading7")!;
-                        }
-                        );
-                        //onPageChanged: _questionController.updateTheQnNum,
-                      }
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.only(right: 20, bottom:5),
+                        alignment: Alignment.center,
+                        child:IconButton(
+                          padding: EdgeInsets.all(0),
+                          constraints: BoxConstraints(),
+                          icon: Reading
+                              ? Icon(Icons. email_outlined, color: Colors.blueAccent, size: 35)
+                              : Icon(Icons.mark_email_unread, color: Colors.blueAccent,size: 35),
+                          onPressed: () async {
+                            SharedPreferences s = await SharedPreferences.getInstance();
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
+                            )),);
+                            setState(() {
+                              s.setBool("reading7",true);
+                              Reading =  s.getBool("reading7")!;
+                            }
+                            );
+                            //onPageChanged: _questionController.updateTheQnNum,
+                          }
+                      ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child:Text("공지사항", style: TextStyle(fontSize: 10),textAlign: TextAlign.center),
+                      )
+                    ],
                   ),
-                  Text("공지사항", style: TextStyle(fontSize: 10),textAlign: TextAlign.center),
-                ],
-              ),
             ]
         ),
       ),

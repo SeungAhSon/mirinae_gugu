@@ -136,9 +136,9 @@ class _StartPageState_2 extends State<StartPage_2> {
       final snackbar = SnackBar(
         margin: EdgeInsets.fromLTRB(
             MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.3,
+            MediaQuery.of(context).size.height*0.25,
             MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.4),
+            MediaQuery.of(context).size.height*0.5),
         duration: Duration(milliseconds : 3000), //500
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
@@ -153,9 +153,9 @@ class _StartPageState_2 extends State<StartPage_2> {
       final snackbar = SnackBar(
         margin: EdgeInsets.fromLTRB(
             MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.3,
+            MediaQuery.of(context).size.height*0.25,
             MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.4),
+            MediaQuery.of(context).size.height*0.5),
         duration: Duration(milliseconds : 3000),
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
@@ -197,8 +197,6 @@ class _StartPageState_2 extends State<StartPage_2> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -232,7 +230,7 @@ class _StartPageState_2 extends State<StartPage_2> {
 
               Container(
                 width: MediaQuery.of(context).size.width*0.8,
-                height: MediaQuery.of(context).size.height*0.5,
+                height: MediaQuery.of(context).size.height*0.45,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.lime[200]
@@ -260,8 +258,8 @@ class _StartPageState_2 extends State<StartPage_2> {
                       // text 프린트 해주는 함수 호출
                         children: <Widget>[
                           Container(
-                            width: 330,
-                            height: 100,
+                            width: MediaQuery.of(context).size.width*0.8,
+                            height: MediaQuery.of(context).size.height*0.1,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10), //모서리를 둥글게
                                 border: Border.all(color: Colors.black12, width: 3),
@@ -286,12 +284,11 @@ class _StartPageState_2 extends State<StartPage_2> {
                 ),
               ),
 
-              Padding(padding: EdgeInsets.only(top: 50)),
+              Padding(padding: EdgeInsets.only(top: 30)),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-
                   RaisedButton(
                     onPressed:() {
                       checkWin(realtext.replaceAll(' ', ''), context);
@@ -342,8 +339,6 @@ class _StartPageState_2 extends State<StartPage_2> {
           ),
         ),
       ),
-
-
     );
   }
 

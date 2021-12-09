@@ -18,6 +18,7 @@ class ButtonSyllable extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(12))
       ),
       onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
+      heroTag: text,
       child: Text(text,style: TextStyle(fontSize: 30+size,color:Colors.black,fontWeight: FontWeight.bold)),
     );
   }

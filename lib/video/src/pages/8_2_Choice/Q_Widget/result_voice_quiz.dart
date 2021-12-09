@@ -25,10 +25,10 @@ class _ScorePageState extends State<ScorePage> {
 
   @override
   void initState(){
-    if(this.widget.lastscore<3){
+    if(this.widget.lastscore<30){
       image = images[2];
       message = "조금 더 노력하세요..";
-    }else if(this.widget.lastscore<8){
+    }else if(this.widget.lastscore<80){
       image = images[1];
       message = "화이팅!";
     }else{
@@ -83,7 +83,7 @@ class _ScorePageState extends State<ScorePage> {
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
-                                  "${this.widget.lastscore * 10}",
+                                  "${this.widget.lastscore}",
                                   style: TextStyle(color: Colors.indigo, fontSize: 25.0+size, fontWeight: FontWeight.bold,),
                                   textAlign: TextAlign.center,
                                 ),

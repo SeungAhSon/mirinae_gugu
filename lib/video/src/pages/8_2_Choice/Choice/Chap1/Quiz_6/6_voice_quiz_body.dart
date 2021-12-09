@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'voice_quiz_question.dart';
 import 'dart:async';
 import 'package:sound_stream/sound_stream.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,12 +9,17 @@ import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result_voice_quiz.dart';
 
-class StartPage extends StatefulWidget {
-  @override
-  _StartPageState createState() => _StartPageState();
+class Questions{
+  String qText;
+  Questions(this.qText);
 }
 
-class _StartPageState extends State<StartPage> {
+class StartPage_6 extends StatefulWidget {
+  @override
+  _StartPageState_6 createState() => _StartPageState_6();
+}
+
+class _StartPageState_6 extends State<StartPage_6> {
   final RecorderStream _recorder = RecorderStream();
 
   bool recognizing = false;
@@ -110,17 +114,17 @@ class _StartPageState extends State<StartPage> {
   var questionnum = 1;
 
   List qList =[
-    Questions("안녕하세요"),
-    Questions("반갑습니다"),
-    Questions("강아지"),
-    Questions("멋있어요"),
-    Questions("감사합니다"),
-    Questions("만나서 반갑습니다"),
-    Questions("무엇이 필요한가요"),
-    Questions("귀여운 강아지"),
-    Questions("밥 먹었어"),
-    Questions("누구세요"),
-
+    Questions("청소도구"),
+    Questions("발표"),
+    Questions("일기"),
+    Questions("숙제"),
+    Questions("교복"),
+    Questions("우유"),
+    Questions("책가방"),
+    Questions("급식"),
+    Questions("교훈"),
+    Questions("칠판"),
+    Questions("공책"),
   ];
 
   var score=0;

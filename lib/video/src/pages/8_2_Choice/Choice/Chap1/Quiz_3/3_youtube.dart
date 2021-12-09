@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/option.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_option.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_option.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import 'Questions/Questions_1.dart';
+import '../../../../../components/Questions/Questions_1.dart';
 
-class ayotube extends StatefulWidget {
-  const ayotube({
+class ayotube_3 extends StatefulWidget {
+  const ayotube_3({
     Key ?key,
     required this.question,required this.id,
   }) : super(key: key);
@@ -16,18 +17,15 @@ class ayotube extends StatefulWidget {
   final Question question;
   final int id;
 
-  _ayotube createState() => _ayotube();
+  _ayotube_3 createState() => _ayotube_3();
 }
-  class _ayotube extends State<ayotube>{
-
+  class _ayotube_3 extends State<ayotube_3>{
     late final YoutubePlayerController _controller;
     @override
     void initState() {
       super.initState();
       _controller = YoutubePlayerController(
-
         initialVideoId: asd[widget.id],
-
         flags: YoutubePlayerFlags(
           hideThumbnail: true,
           //isLive: true,
@@ -59,7 +57,7 @@ class ayotube extends StatefulWidget {
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
     print(widget.id);
-    QuestionController _controller = Get.put(QuestionController());
+    QuestionController_3 _controller = Get.put(QuestionController_3());
     return Container(
       child: Column(
         children: [
@@ -73,7 +71,7 @@ class ayotube extends StatefulWidget {
           SizedBox(height: 20),
           ...List.generate(
             widget.question.options.length,
-                (index) => Option(
+                (index) => Option_3(
               index: index,
               text: widget.question.options[index],
               press: () => _controller.checkAns(widget.question, index),

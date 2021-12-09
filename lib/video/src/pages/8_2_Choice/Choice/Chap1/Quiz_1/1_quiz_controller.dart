@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_result.dart';
 
-class QuestionController extends GetxController with SingleGetTickerProviderMixin {
+class QuestionController_1 extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;
   PageController get pageController => _pageController;
 

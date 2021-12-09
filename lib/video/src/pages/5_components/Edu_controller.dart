@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_result.dart';
 import '5_video_list.dart';
 
 

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/components/voice_quiz_body.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_1_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_2_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_3_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_4_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_5_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/8_2_6_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/2_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/8_2_4_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/8_2_6_Choice.dart';
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 
 class Test_6 extends StatelessWidget{

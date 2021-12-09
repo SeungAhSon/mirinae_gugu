@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
 
-class ScoreScreen extends StatefulWidget {
-  ScoreScreen({Key? key}) : super(key : key);
+class ScoreScreen_3 extends StatefulWidget {
+  ScoreScreen_3({Key? key}) : super(key : key);
   @override
   _ScoreScreenState createState() => _ScoreScreenState();
 }
 
-class _ScoreScreenState extends State<ScoreScreen> {
+class _ScoreScreenState extends State<ScoreScreen_3> {
 
   List<String> images = [
     "assets/test_achievement/success.png",
@@ -35,7 +36,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
     super.initState();
   }
 
-  QuestionController _qnController = Get.put(QuestionController());
+  QuestionController_3 _qnController = Get.put(QuestionController_3());
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(title: '결과'),

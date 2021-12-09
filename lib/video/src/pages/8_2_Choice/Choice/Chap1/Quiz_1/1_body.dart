@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/components/youtube.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_youtube.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'option.dart';
+import '1_option.dart';
 
 
-class Body extends StatefulWidget {
-  const Body({
+class Body_1 extends StatefulWidget {
+  const Body_1({
     Key ?key,
   }) : super(key: key);
   @override
-  _Body createState() => _Body();
+  _Body_1 createState() => _Body_1();
 }
 
-class _Body extends State<Body>{
+class _Body_1 extends State<Body_1>{
 
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
 
-    QuestionController _questionController = Get.put(QuestionController());
+    QuestionController_1 _questionController = Get.put(QuestionController_1());
     return Stack(
       children: [
         SafeArea(

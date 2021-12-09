@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
 
-import 'body.dart';
+import '3_body.dart';
 
-class Option extends StatelessWidget {
-  const Option( {
+class Option_3 extends StatelessWidget {
+  const Option_3( {
     Key? key,
     required this.text,
     required this.index,
@@ -20,8 +20,8 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    return GetBuilder<QuestionController>(
-        init: QuestionController(),
+    return GetBuilder<QuestionController_3>(
+        init: QuestionController_3(),
         builder: (qnController) {
           Color getTheRightColor() {
             if (qnController.isAnswered) {

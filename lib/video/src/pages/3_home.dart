@@ -324,7 +324,7 @@ class _Home extends State<Home> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(right: 10),
-                        child:Text("공지사항", style: TextStyle(fontSize: 10),textAlign: TextAlign.center),
+                        child:Text("공지사항", style: TextStyle(fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
                       )
                     ],
                   ),

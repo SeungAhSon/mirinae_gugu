@@ -322,8 +322,9 @@ class _Home extends State<Home> {
                           }
                       ),
                       ),
+                      SizedBox(height: 3,),
                       Padding(
-                        padding: EdgeInsets.only(right: 10),
+                        padding: EdgeInsets.only(right: 15,),
                         child:Text("공지사항", style: TextStyle(fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
                       )
                     ],

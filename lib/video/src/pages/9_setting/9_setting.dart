@@ -49,11 +49,11 @@ class _Setting extends State<Setting>{
               ],
             ),
             Divider(height: 20,thickness: 3,),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildLanguage(context, "언어 설정"),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildfontchoose(context, "글꼴 설정"),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildfontsize(context, "글자 크기 설정"),
             SizedBox(height: 20,),
             Row(
@@ -67,19 +67,19 @@ class _Setting extends State<Setting>{
               ],
             ),
             Divider(height: 20,thickness: 3,),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildcontact(context, "개발자 연락처"),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildAccountOption2(context, "버전 정보"),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
 
 
 
             SizedBox(height: 20,),
             Row(
               children: [
-                Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
-                SizedBox(width: 10,),
+                Icon(Icons.search_sharp, color: Colors.blue,size: 25,),
+                SizedBox(width: 7,),
                 Text("사용 안내", style: TextStyle(
                     fontSize: 22+size,
                     fontWeight: FontWeight.bold
@@ -87,7 +87,7 @@ class _Setting extends State<Setting>{
               ],
             ),
             Divider(height: 20,thickness: 3,),
-            SizedBox(height: 10,),
+            SizedBox(height: 7,),
             buildwalkthrough(context, "사용법 및 기능"),
 
 
@@ -134,11 +134,20 @@ class _Setting extends State<Setting>{
 
 
             ),),
-            Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
-              fontSize: 17+size,
-
-
-            ),),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+                  border: Border.all(color: Colors.black12, width: 5)), //테두리
+              child: Padding(
+                padding: EdgeInsets.only(left:3,right: 3),
+                child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+                  color: Colors.black54,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17+size,
+                ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -160,11 +169,17 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Text("1.0.0",style: TextStyle(
-              fontSize: 18+size,
-              fontWeight: FontWeight.w500,
-              color: Colors.grey[800]
-          ),),
+          Container(
+            child: Padding(
+              padding: EdgeInsets.only(left:3,right: 5),
+              child: Text("1.0.0",style: TextStyle(
+                  fontSize: 18+size,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey[800]
+              ),),
+            ),
+          ),
+
         ],
       ),
     ),
@@ -207,10 +222,20 @@ GestureDetector buildcontact(BuildContext context, String title)
             fontWeight: FontWeight.w600,
 
           ),),
-          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
-            fontSize: 17+size,
-
-          ),),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+                border: Border.all(color: Colors.black12, width: 5)), //테두리
+            child: Padding(
+              padding: EdgeInsets.only(left:3,right: 3),
+              child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.w600,
+                fontSize: 17+size,
+              ),
+              ),
+            ),
+          ),
         ],
       ),
     ),
@@ -232,12 +257,21 @@ Widget buildwalkthrough(BuildContext context, String title)
           Text(title,style: TextStyle(
               fontSize: 20+size,
               fontWeight: FontWeight.w600,
-
           ),),
-          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
-            fontSize: 17+size,
-
-          ),),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+                border: Border.all(color: Colors.black12, width: 5)), //테두리
+            child: Padding(
+              padding: EdgeInsets.only(left:3,right: 3),
+              child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.w600,
+                fontSize: 17+size,
+              ),
+              ),
+            ),
+          ),
         ],
       ),
     ),
@@ -283,10 +317,21 @@ GestureDetector buildfontsize(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
-            fontSize: 17+size,
 
-          ),),
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+                border: Border.all(color: Colors.black12, width: 5)), //테두리
+            child: Padding(
+              padding: EdgeInsets.only(left:3,right: 3),
+              child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+                color: Colors.black54,
+                fontWeight: FontWeight.w600,
+                fontSize: 17+size,
+              ),
+              ),
+            ),
+          ),
         ],
       ),
     ),
@@ -325,10 +370,20 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               fontWeight: FontWeight.w600,
 
           ),),
-          Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+      Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30), //모서리를 둥글게
+            border: Border.all(color: Colors.black12, width: 5)), //테두리
+        child: Padding(
+          padding: EdgeInsets.only(left:3,right: 3),
+          child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
+            color: Colors.black54,
+            fontWeight: FontWeight.w600,
             fontSize: 17+size,
-
-          ),),
+          ),
+        ),
+      ),
+      ),
         ],
       ),
     ),

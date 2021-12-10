@@ -23,7 +23,7 @@ class _Home extends State<Home> {
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     setState(() {
-      Reading = s.getBool("reading7")!;
+      Reading = s.getBool("reading8")!;
     }
     );
   }
@@ -314,8 +314,8 @@ class _Home extends State<Home> {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
                             )),);
                             setState(() {
-                              s.setBool("reading7",true);
-                              Reading =  s.getBool("reading7")!;
+                              s.setBool("reading8",true);
+                              Reading =  s.getBool("reading8")!;
                             }
                             );
                             //onPageChanged: _questionController.updateTheQnNum,

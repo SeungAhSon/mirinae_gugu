@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Q_Widget/result_voice_quiz.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_voice_quiz.dart';
 
 class Questions{
   String qText;

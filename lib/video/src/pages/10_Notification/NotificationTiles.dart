@@ -8,7 +8,6 @@ class NotificationTiles extends StatelessWidget {
   final String title, content, date;
   final bool enable;
 
-
   const NotificationTiles({
     Key? key,
     required this.title,

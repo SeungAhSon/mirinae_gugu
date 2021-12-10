@@ -70,7 +70,6 @@ class _Noise extends State<StatefulWidget> {
                   padding: EdgeInsets.only(top: 0),
                   child: Column(
                     children: [
-
                       FAProgressBar(
                         size: 12,
                         currentValue: currentDecibel,

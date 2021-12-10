@@ -57,7 +57,6 @@ class _Noise extends State<StatefulWidget> {
     return currentDecibel < limitDecibel && currentDecibel > minlimitDecibel;
   }*/
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

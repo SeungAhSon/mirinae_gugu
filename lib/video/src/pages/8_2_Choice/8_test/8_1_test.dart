@@ -55,7 +55,7 @@ void dispose() {
             SizedBox(height: 5),
             Container(
               height: 300,
-              child:Image.asset('assets/test/1_newyear.png'),
+              child:Image.asset('assets/test_chapter/1_newyear.png'),
             ),
             SizedBox(height: 10),
             Row(

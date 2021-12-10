@@ -25,7 +25,7 @@ class Test_2 extends StatelessWidget{
             SizedBox(height: 5),
             Container(
               height: 300,
-              child:Image.asset('assets/test/2_spring.png'),
+              child:Image.asset('assets/test_chapter/2_spring.png'),
             ),
             SizedBox(height: 10),
             Row(

@@ -25,7 +25,7 @@ class Test_9 extends StatelessWidget{
             SizedBox(height: 5),
             Container(
               height: 300,
-              child:Image.asset('assets/test/9_work.png'),
+              child:Image.asset('assets/test_chapter/9_work.png'),
             ),
             SizedBox(height: 5),
             Row(

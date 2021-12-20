@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
@@ -20,37 +21,56 @@ class Home extends StatefulWidget{
 
 class _Home extends State<Home> {
   bool Reading = false;
+
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
+
     setState(() {
       Reading = s.getBool("reading8")!;
     }
     );
   }
+
+
   aa(BuildContext context,String title){
-    showDialog(context: context, builder: (BuildContext context) {
+    showDialog(context: context,barrierDismissible: false,
+        barrierColor: Colors.grey,builder: (BuildContext context) {
       return AlertDialog(
-        title: Text(title),
+        title:
+        Center(child: Text(title,style: TextStyle(fontSize: 24),)),
         content: Column(
           mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             SizedBox(height: 10),
-            Text("구구절절의 기능과 사용법을 확인하겠습니까?"),
+            Text("원활한 사용을 위한 사용 안내입니다.",style: TextStyle(fontSize: 15),),
+
+
           ],
         ),
         actions: [
           TextButton(
-            onPressed: (){
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
+              if (prefs.getBool('tutorial17') != true){
+                prefs.setBool('tutorial17', true);
+                print(333);
+              }
             },
-            child: Text("예",style: TextStyle(color: Colors.black),),
+            child: Text("확인",style: TextStyle(color: Colors.black),),
           ),
           TextButton(
-            onPressed: (){
+            onPressed: () async {
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+          if (prefs.getBool('tutorial17') != true){
+          prefs.setBool('tutorial17', true);
+          print(333);
+          }
               Navigator.of(context).pop();
             },
-            child: Text("아니요",style: TextStyle(color: Colors.black),),
+            child: Text("SKIP",style: TextStyle(color: Colors.black),),
           ),
         ],
       );
@@ -62,13 +82,11 @@ class _Home extends State<Home> {
   void local2() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial10') == null) {
-        aa(context, "asd");
+      if (prefs.getBool('tutorial17') == null) {
+        aa(context, "사용 가이드");
       }
+
       print(2);
-      if (prefs.getBool('tutorial10') != true){
-        prefs.setBool('tutorial10', true);
-      }
       setState(() {
       });
     });
@@ -152,6 +170,8 @@ class _Home extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Container(
+
+                      margin: EdgeInsets.only(left: 30),
                           height: 80, width: 80,
                           decoration: BoxDecoration(
                             color: Color(0xff4573CB),
@@ -167,21 +187,45 @@ class _Home extends State<Home> {
                             ],
                           ),
                           child: Center(
+
                               child: Text('조음\n학습', style: TextStyle(
                                   fontSize: 18+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
+
                         ),
+
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18+size, color: Colors.black54)),
-                              Text('조음별 발음 학습', style: TextStyle(
-                                  fontSize: 15+size, color: Colors.black45))
+                              Container(
+                                  margin: EdgeInsets.only(left: 50),
+                         child: Column(children: <Widget>[
+                              Text('학습하기', style: TextStyle(
+                                  fontSize: 18+size, color: Colors.black87)),
+                                Text('', style: TextStyle(
+                                  fontSize: 1,)),
+                                Text('조음별 발음 학습', style: TextStyle(
+                                  fontSize: 15+size, color: Colors.black54)),
+                                ]
+                        )
+    )
                             ]
+
                         ),
+                      Row(
+//
+                    children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 30),
+                          child: Container(
+                                child: Icon(Icons.arrow_forward_ios_sharp,size: 35,color: Colors.black54,),
+                              ),
+    )
+
+]
+                        )
                       ]
                   ),
                 ),

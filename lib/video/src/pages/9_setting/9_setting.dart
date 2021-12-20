@@ -20,7 +20,7 @@ class _Setting extends State<Setting>{
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 24+size,color: Colors.black,fontWeight: FontWeight.bold)),
+        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -51,7 +51,7 @@ class _Setting extends State<Setting>{
             buildfontchoose(context, "글꼴 설정"),
             SizedBox(height: 5,),
             buildfontsize(context, "글자 크기 설정"),
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
             Row(
               children: [
                 Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
@@ -67,10 +67,8 @@ class _Setting extends State<Setting>{
             buildcontact(context, "개발자 연락처"),
             SizedBox(height: 5,),
             buildAccountOption2(context, "버전 정보"),
-            SizedBox(height: 5,),
 
-
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
             Row(
               children: [
                 Icon(Icons.search_sharp, color: Colors.blue,size: 25,),
@@ -136,7 +134,7 @@ class _Setting extends State<Setting>{
                 child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                   color: Colors.black54,
                   fontWeight: FontWeight.w600,
-                  fontSize: 15+size,
+                  fontSize: 18+size,
                 ),
                 ),
               ),
@@ -224,7 +222,7 @@ GestureDetector buildcontact(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 15+size,
+                fontSize: 18+size,
               ),
               ),
             ),
@@ -261,7 +259,7 @@ Widget buildwalkthrough(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 15+size,
+                fontSize: 18+size,
               ),
               ),
             ),
@@ -321,7 +319,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 15+size,
+                fontSize: 18+size,
               ),
               ),
             ),
@@ -373,7 +371,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 15+size,
+                fontSize: 18+size,
               ),
               ),
             ),

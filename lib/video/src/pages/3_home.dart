@@ -36,7 +36,7 @@ class _Home extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(height: 10),
-            Text("이메일 주소\njaewan0114@naver.com"),
+            Text("구구절절의 기능과 사용법을 확인하겠습니까?"),
           ],
         ),
         actions: [
@@ -128,7 +128,7 @@ class _Home extends State<Home> {
                     ]
                 ),
               ),
-              SizedBox(height: 1),
+              SizedBox(height: 0.5),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('     학습하기', style: TextStyle(
@@ -288,7 +288,7 @@ class _Home extends State<Home> {
           ),
         ),
         appBar:  AppBar(
-            title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 22+size,fontWeight: FontWeight.bold)),
+            title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold)),
             centerTitle: true,
             backgroundColor: Colors.white, elevation: 3.0,
             automaticallyImplyLeading: false,
@@ -325,7 +325,7 @@ class _Home extends State<Home> {
                       SizedBox(height: 3,),
                       Padding(
                         padding: EdgeInsets.only(right: 15,),
-                        child:Text("공지사항", style: TextStyle(fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
+                        child:Text("공지사항", style: TextStyle(fontSize: 11,color: Colors.black),textAlign: TextAlign.center,),
                       )
                     ],
                   ),

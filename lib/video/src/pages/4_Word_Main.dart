@@ -15,8 +15,8 @@ class Word_Main extends StatelessWidget{
             padding: EdgeInsets.all(10),
             children: [
               SizedBox(height: 5),
-              Text('낱말 학습', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(height: 5),
+              Text('낱말 학습', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(height: 8),
               FlatButton(
                 height: 120,
                 color: Color(0xffE4EDFF),

@@ -67,11 +67,12 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
             child: ListView(
                 padding: const EdgeInsets.all(10.0),
                 children: <Widget>[
+                  SizedBox(height: 5),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Text('  낱말 1단원',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

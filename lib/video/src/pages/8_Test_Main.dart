@@ -14,8 +14,8 @@ class Test_Main extends StatelessWidget{
             padding: EdgeInsets.all(10),
             children: [
               SizedBox(height: 5),
-              Text('복습 시험', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
-              SizedBox(height: 5),
+              Text('복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+              SizedBox(height: 8),
               ButtonChapter(onTap: Test_1(), number: 1, text: '새학년'),
               ButtonChapter(onTap: Test_2(), number: 2, text: '봄'),
               ButtonChapter(onTap: Test_3(), number: 3, text: '건강'),

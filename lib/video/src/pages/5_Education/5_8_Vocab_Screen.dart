@@ -13,11 +13,12 @@ class Vocab_Screen_58 extends StatelessWidget{
             child: ListView(
                 padding: const EdgeInsets.all(10.0),
                 children: <Widget>[
+                  SizedBox(height: 5),
                   Align(
                       alignment: Alignment.centerLeft,
                       child: Text('  낱말 8단원',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

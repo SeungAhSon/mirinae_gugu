@@ -14,7 +14,7 @@ class MyApp2 extends StatefulWidget {
 
 class _MyAppState extends State<MyApp2> {
   String? _changeFontSize;
-  final List<String> _fontSizeList = ['크게','조금 크게','보통','조금 작게','작게'];
+  final List<String> _fontSizeList = ['크게 (+4)','조금 크게 (+2)','보통','조금 작게 (-2)','작게 (-4)'];
 
   @override
   void initState() {

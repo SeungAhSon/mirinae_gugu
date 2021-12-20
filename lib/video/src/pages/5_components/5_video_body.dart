@@ -3,17 +3,12 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:google_speech/google_speech.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_youtube.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_result.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../app.dart';
 import '../1_Loading.dart';
 import '5_pageview.dart';
 
@@ -22,7 +17,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:mirinae_gugu/video/src/pages/6_record/6_Record.dart';
+
 
 class video_Body extends StatefulWidget {
   video_Body({Key? key, required this.index}) : super(key: key);
@@ -30,6 +25,7 @@ class video_Body extends StatefulWidget {
   @override
   _video_Body createState() => _video_Body();
   int index;
+
 }
 
 class _video_Body extends State<video_Body> {
@@ -162,13 +158,14 @@ class _video_Body extends State<video_Body> {
 
   @override
   void initState() {
+
     super.initState();
     _recorder.initialize();
     controller.initialize().then((_) {
-      setState(() {});
+        setState(() {});
     });
-    _pageController = PageController();
 
+    _pageController = PageController();
     //record
     super.initState();
     checkPermission();
@@ -177,13 +174,17 @@ class _video_Body extends State<video_Body> {
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
       appDir = appDirec;
       appDir!.list().listen((onData) {}).onDone(() {
-        setState(() {});
+        if (!mounted) return;
+          setState(() {});
+
       });
     });
   }
 
   checkPermission() async {
-    if (await Permission.contacts.request().isGranted) {
+    if (await Permission.contacts
+        .request()
+        .isGranted) {
       // Either the permission was already granted before or the user just granted it.
     }
 
@@ -201,68 +202,84 @@ class _video_Body extends State<video_Body> {
     } else {}
   }
 
+  @override
   void dispose() {
+
+
+    _recorder.stop();
+    _audioStreamSubscription?.cancel();
+    _audioStream?.close();
     controller.dispose();
-    super.dispose();
+
     appDir = null;
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
     _pageController.dispose();
+    super.dispose();
   }
 
   void streamingRecognize() async {
+    if (mounted){
     _audioStream = BehaviorSubject<List<int>>();
     _audioStreamSubscription = _recorder.audioStream.listen((event) {
       _audioStream?.add(event);
     });
 
     await _recorder.start();
-
-    setState(() {
-      recognizing = true;
-    });
-    //서비스 계정. assets 폴더에 api key 넣음
-    final serviceAccount = ServiceAccount.fromString(
-        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
-    final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
-    final config = _getConfig();
-
-    final responseStream = speechToText.streamingRecognize(
-        StreamingRecognitionConfig(config: config, interimResults: true),
-        _audioStream!);
-
-    var responseText = '';
-    //마이크 입력 받았을 때 출력될 텍스트 설정.
-    responseStream.listen((data) {
-      final currentText =
-      data.results.map((e) => e.alternatives.first.transcript).join("");
-      if (data.results.first.isFinal) {
-        //responseText += currentText;
-        setState(() {
-          //text = responseText;
-          recognizeFinished = true;
-        });
-      } else {
-        setState(() {
-          text = currentText;
-          recognizeFinished = true;
-        });
-      }
-    }, onDone: () {
+    if (!mounted) return;
       setState(() {
-        recognizing = false;
+        recognizing = true;
       });
-    });
+
+
+      //서비스 계정. assets 폴더에 api key 넣음
+      final serviceAccount = ServiceAccount.fromString(
+          '${(await rootBundle.loadString(
+              'assets/lejinhy-speech-to-text-11be68205205.json'))}');
+      final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
+      final config = _getConfig();
+
+      final responseStream = speechToText.streamingRecognize(
+          StreamingRecognitionConfig(config: config, interimResults: true),
+          _audioStream!);
+
+      var responseText = '';
+      //마이크 입력 받았을 때 출력될 텍스트 설정.
+      responseStream.listen((data) {
+        final currentText =
+        data.results.map((e) => e.alternatives.first.transcript).join("");
+
+        if (data.results.first.isFinal) {
+          //responseText += currentText;
+          setState(() {
+            //text = responseText;
+            recognizeFinished = true;
+          });
+        } else {
+          setState(() {
+            text = currentText;
+            recognizeFinished = true;
+          });
+        }
+      }, onDone: () {
+        setState(() {
+          recognizing = false;
+        });
+      });
+}
   }
+
 
   //마이크 stop 했을 때
   void stopRecording() async {
     await _recorder.stop();
     await _audioStreamSubscription?.cancel();
     await _audioStream?.close();
-    setState(() {
-      recognizing = false;
-    });
+    if (!mounted) return;
+      setState(() {
+        recognizing = false;
+      });
+
   }
 
   //google speech to text api 설정
@@ -620,8 +637,11 @@ class _video_Body extends State<video_Body> {
               IconButton(
                 padding: EdgeInsets.zero,
               onPressed: () async {
+
                 await _onRecordButtonPressed();
-                setState(() {});
+                if (!mounted) return;
+                  setState(() {});
+
               }, icon: Icon(_recordIcon, color: Colors.green, size: 28,
             ),
             ),
@@ -771,12 +791,14 @@ class _video_Body extends State<video_Body> {
   _start() async {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
-    setState(() {
-      _current = recording!;
-    });
+    if (!mounted) return;
+      setState(() {
+        _current = recording!;
+      });
+
 
     const tick = const Duration(milliseconds: 50);
-    new Timer.periodic(tick, (Timer t) async {
+    Timer.periodic(tick, (Timer t) async {
       if (_currentStatus == RecordingStatus.Stopped) {
         t.cancel();
       }
@@ -788,6 +810,7 @@ class _video_Body extends State<video_Body> {
         _currentStatus = _current!.status!;
       });
     });
+
   }
 
   _stop() async {
@@ -830,11 +853,13 @@ class _video_Body extends State<video_Body> {
   }
 
   reset() {
-    setState(() {
-      //counter = 0;
-      //score =0;
-      text = '';
-    });
+
+      setState(() {
+        //counter = 0;
+        //score =0;
+        text = '';
+      });
+
   }
 
   void updateTheQnNum(int index) {

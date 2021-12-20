@@ -94,7 +94,7 @@ class Syllable_pages extends StatelessWidget{
             child:ButtonSyllable(text: 'ㅇ', onTap: Y()), //ㅇ
           ),
           Padding(
-            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.38, left: (MediaQuery.of(context).size.width)*0.8),
+            padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top) * 0.38, left: (MediaQuery.of(context).size.width)*0.81),
             child: ButtonSyllable(text: 'ㅎ', onTap: H()), //ㅎ
           ),
         ],

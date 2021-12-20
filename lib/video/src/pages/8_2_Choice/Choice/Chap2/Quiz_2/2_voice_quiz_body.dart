@@ -42,7 +42,15 @@ class _StartPageState_2 extends State<StartPage_2> {
     finish();
     _recorder.initialize();
   }
+  @override
+  void dispose() {
 
+
+    _recorder.stop();
+    _audioStreamSubscription?.cancel();
+    _audioStream?.close();
+    super.dispose();
+  }
 //
   void streamingRecognize() async {
     _audioStream = BehaviorSubject<List<int>>();

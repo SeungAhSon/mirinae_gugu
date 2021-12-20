@@ -14,12 +14,12 @@ class Questions{
   Questions(this.qText);
 }
 
-class StartPage_4 extends StatefulWidget {
+class StartPage_6 extends StatefulWidget {
   @override
-  _StartPageState_4 createState() => _StartPageState_4();
+  _StartPageState_6 createState() => _StartPageState_6();
 }
 
-class _StartPageState_4 extends State<StartPage_4> {
+class _StartPageState_6 extends State<StartPage_6> {
   final RecorderStream _recorder = RecorderStream();
 
   bool recognizing = false;
@@ -114,15 +114,16 @@ class _StartPageState_4 extends State<StartPage_4> {
   var questionnum = 1;
 
   List qList =[
-  Questions("수업"),
-  Questions("교과서"),
-  Questions("연필"),
-  Questions("낙서"),
-  Questions("등교"),
-  Questions("사물함"),
-  Questions("실내화"),
-  Questions("수돗가"),
-  Questions("교무실"),
+    Questions("세균"),
+    Questions("통증"),
+    Questions("휴식"),
+    Questions("주사"),
+    Questions("기침"),
+    Questions("약국"),
+    Questions("화상"),
+    Questions("질병"),
+    Questions("아프다"),
+    Questions("수영"),
   ];
 
   var score=0;

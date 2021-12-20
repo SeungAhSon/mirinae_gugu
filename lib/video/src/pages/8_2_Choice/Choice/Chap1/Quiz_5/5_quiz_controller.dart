@@ -73,7 +73,7 @@ class QuestionController_5 extends GetxController with SingleGetTickerProviderMi
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
     update();
 
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(milliseconds: 500), () {
       if (_questionNumber.value != _questions.length) {
         _isAnswered = false;
         _pageController.jumpToPage(_questionNumber.value++);

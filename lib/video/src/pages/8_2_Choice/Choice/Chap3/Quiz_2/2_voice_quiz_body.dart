@@ -14,12 +14,12 @@ class Questions{
   Questions(this.qText);
 }
 
-class StartPage_4 extends StatefulWidget {
+class StartPage_2 extends StatefulWidget {
   @override
-  _StartPageState_4 createState() => _StartPageState_4();
+  _StartPageState_2 createState() => _StartPageState_2();
 }
 
-class _StartPageState_4 extends State<StartPage_4> {
+class _StartPageState_2 extends State<StartPage_2> {
   final RecorderStream _recorder = RecorderStream();
 
   bool recognizing = false;
@@ -114,15 +114,16 @@ class _StartPageState_4 extends State<StartPage_4> {
   var questionnum = 1;
 
   List qList =[
-  Questions("수업"),
-  Questions("교과서"),
-  Questions("연필"),
-  Questions("낙서"),
-  Questions("등교"),
-  Questions("사물함"),
-  Questions("실내화"),
-  Questions("수돗가"),
-  Questions("교무실"),
+    Questions("건강"),
+    Questions("운동"),
+    Questions("야구"),
+    Questions("배구"),
+    Questions("축구"),
+    Questions("농구"),
+    Questions("달리기"),
+    Questions("다치다"),
+    Questions("병원"),
+    Questions("감기"),
   ];
 
   var score=0;
@@ -195,8 +196,6 @@ class _StartPageState_4 extends State<StartPage_4> {
       realtext = '';
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -290,7 +289,6 @@ class _StartPageState_4 extends State<StartPage_4> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-
                   RaisedButton(
                     onPressed:() {
                       checkWin(realtext.replaceAll(' ', ''), context);
@@ -334,15 +332,12 @@ class _StartPageState_4 extends State<StartPage_4> {
                       ),
                     ),
                   )
-
                 ],
               ),
             ],
           ),
         ),
       ),
-
-
     );
   }
 
@@ -360,15 +355,12 @@ class _StartPageState_4 extends State<StartPage_4> {
       );
     else
       return Text("");
-
   }
-
 
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     s.setBool("11111",false);
   }
-
 }
 
 

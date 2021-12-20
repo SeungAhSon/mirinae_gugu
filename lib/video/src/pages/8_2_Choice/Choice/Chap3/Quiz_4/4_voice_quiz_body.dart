@@ -114,15 +114,16 @@ class _StartPageState_4 extends State<StartPage_4> {
   var questionnum = 1;
 
   List qList =[
-  Questions("수업"),
-  Questions("교과서"),
-  Questions("연필"),
-  Questions("낙서"),
-  Questions("등교"),
-  Questions("사물함"),
-  Questions("실내화"),
-  Questions("수돗가"),
-  Questions("교무실"),
+    Questions("보건소"),
+    Questions("근육"),
+    Questions("사고"),
+    Questions("상처"),
+    Questions("알��"),
+    Questions("진단"),
+    Questions("열"),
+    Questions("토하다"),
+    Questions("치료"),
+    Questions("회복"),
   ];
 
   var score=0;

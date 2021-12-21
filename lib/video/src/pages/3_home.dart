@@ -54,8 +54,8 @@ class _Home extends State<Home> {
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              if (prefs.getBool('tutorial17') != true){
-                prefs.setBool('tutorial17', true);
+              if (prefs.getBool('tutorial19') != true){
+                prefs.setBool('tutorial19', true);
                 print(333);
               }
             },
@@ -64,8 +64,8 @@ class _Home extends State<Home> {
           TextButton(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-          if (prefs.getBool('tutorial17') != true){
-          prefs.setBool('tutorial17', true);
+          if (prefs.getBool('tutorial19') != true){
+          prefs.setBool('tutorial19', true);
           print(333);
           }
               Navigator.of(context).pop();
@@ -81,9 +81,16 @@ class _Home extends State<Home> {
 
   void local2() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    SharedPreferences s = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial17') == null) {
+      if (prefs.getBool('tutorial19') == null) {
         aa(context, "사용 가이드");
+        s.setBool("reading1_1_",false);
+        s.setBool("reading1_2_",false);
+        s.setBool("reading1_3",false);
+        s.setBool("speaking1_1",false);
+        s.setBool("speaking1_2",false);
+        s.setBool("speaking1_3",false);
       }
 
       print(2);
@@ -210,20 +217,17 @@ class _Home extends State<Home> {
                                   fontSize: 15+size, color: Colors.black54)),
                                 ]
                         )
-    )
+                      )
                             ]
-
                         ),
                       Row(
-//
-                    children: [
+                      children: [
                         Padding(
-                          padding: EdgeInsets.only(right: 30),
+                          padding: EdgeInsets.only(right: 10),
                           child: Container(
                                 child: Icon(Icons.arrow_forward_ios_sharp,size: 35,color: Colors.black54,),
                               ),
     )
-
 ]
                         )
                       ]
@@ -248,6 +252,7 @@ class _Home extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Container(
+                          margin: EdgeInsets.only(left: 30),
                           height: 80, width: 80,
                           decoration: BoxDecoration(
                             color: Color(0xff4573CB),
@@ -272,12 +277,30 @@ class _Home extends State<Home> {
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18+size, color: Colors.black54)),
-                              Text('단원별 낱말 학습', style: TextStyle(
-                                  fontSize: 15+size, color: Colors.black45))
+                              Container(
+                                  margin: EdgeInsets.only(left: 50),
+                                  child: Column(children: <Widget>[
+                                    Text('학습하기', style: TextStyle(
+                                        fontSize: 18+size, color: Colors.black87)),
+                                    Text('', style: TextStyle(
+                                      fontSize: 1,)),
+                                    Text('단원별 발음 학습', style: TextStyle(
+                                        fontSize: 15+size, color: Colors.black54)),
+                                  ]
+                                  )
+                              )
                             ]
                         ),
+                        Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Container(
+                                  child: Icon(Icons.arrow_forward_ios_sharp,size: 35,color: Colors.black54,),
+                                ),
+                              )
+                            ]
+                        )
                       ]
                   ),
                 ),
@@ -294,6 +317,7 @@ class _Home extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         Container(
+                          margin: EdgeInsets.only(left: 30),
                           height: 80, width: 80,
                           decoration: BoxDecoration(
                             color: Color(0xff4573CB),
@@ -317,12 +341,30 @@ class _Home extends State<Home> {
                         Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text('학습하기 >', style: TextStyle(
-                                  fontSize: 18+size, color: Colors.black54)),
-                              Text('배운 내용을 공부', style: TextStyle(
-                                  fontSize: 15+size, color: Colors.black45))
+                              Container(
+                                  margin: EdgeInsets.only(left: 50),
+                                  child: Column(children: <Widget>[
+                                    Text('학습하기', style: TextStyle(
+                                        fontSize: 18+size, color: Colors.black87)),
+                                    Text('', style: TextStyle(
+                                      fontSize: 1,)),
+                                    Text('배운 내용을 복습', style: TextStyle(
+                                        fontSize: 15+size, color: Colors.black54)),
+                                  ]
+                                  )
+                              )
                             ]
                         ),
+                        Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(right: 10),
+                                child: Container(
+                                  child: Icon(Icons.arrow_forward_ios_sharp,size: 35,color: Colors.black54,),
+                                ),
+                              )
+                            ]
+                        )
                       ]
                   ),
                 ),

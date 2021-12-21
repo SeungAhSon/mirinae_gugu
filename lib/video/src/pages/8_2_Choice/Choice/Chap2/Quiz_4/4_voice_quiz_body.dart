@@ -376,7 +376,7 @@ class _StartPageState_4 extends State<StartPage_4> {
 
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("11111",false);
+    s.setBool("speaking2_2",true);
   }
 
 }

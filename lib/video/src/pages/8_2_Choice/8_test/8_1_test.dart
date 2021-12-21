@@ -13,6 +13,12 @@ import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
+bool speaking1_1 = false;
+bool speaking1_2 = false;
+bool speaking1_3 = false;
+bool reading1_1 = false;
+bool reading1_2 = false;
+bool reading1_3 = false;
 class Test_1 extends StatefulWidget {
   const Test_1({
   Key ?key,
@@ -23,13 +29,20 @@ class Test_1 extends StatefulWidget {
   class _Test_1 extends State<Test_1>{
 
 
-bool state1 = false;
+
 void loadnotification() async{
   SharedPreferences s = await SharedPreferences.getInstance();
   setState(() {
-      state1 = s.getBool("11111")!;
+    speaking1_1 = s.getBool("speaking1_1")!;
+    speaking1_2 = s.getBool("speaking1_2")!;
+    speaking1_3 = s.getBool("speaking1_3")!;
+    reading1_1 = s.getBool("reading1_1_")!;
+    reading1_2 = s.getBool("reading1_2_")!;
+    reading1_3 = s.getBool("reading1_3")!;
   });
 }
+
+
 
 @override
 void initState() {
@@ -44,15 +57,18 @@ void dispose() {
 
   @override
   Widget build(BuildContext context){
-    loadnotification();
+
+  loadnotification();
+
+
     return SafeArea(
       child: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 5),
-            Text('1단원. 복습 시험', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 5),
+            SizedBox(height: 7),
+            Text('1단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            SizedBox(height: 7),
             Container(
               height: 300,
               child:Image.asset('assets/test_chapter/1_newyear.png'),
@@ -61,9 +77,9 @@ void dispose() {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기1',color: Colors.blueAccent,  icon: Icons.camera_alt, state: state1,
+                TestButton(text: '읽기1',color: Colors.blueAccent,  icon: Icons.camera_alt, state: reading1_1,
                   onTap: Choice821(),),
-                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: state1,
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_1,
                   onTap: Choice12()), //StartPage()
               ],
             ),
@@ -72,8 +88,8 @@ void dispose() {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
               children: [
-                TestButton(text: '읽기2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: state1, onTap: Choice823()),
-                TestButton(text: '말하기2',color: Colors.blueAccent,  icon: Icons.mic,state: state1, onTap: Choice14(),),
+                TestButton(text: '읽기2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: reading1_2, onTap: Choice823()),
+                TestButton(text: '말하기2',color: Colors.blueAccent,  icon: Icons.mic,state: speaking1_2, onTap: Choice14(),),
               ],
 
 
@@ -81,8 +97,8 @@ void dispose() {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: state1, onTap: Choice825(),),
-                TestButton(text: '말하기3',color: Colors.blueAccent,  icon: Icons.mic, state: state1,onTap: Choice16(),),
+                TestButton(text: '읽기3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: reading1_3, onTap: Choice825(),),
+                TestButton(text: '말하기3',color: Colors.blueAccent,  icon: Icons.mic, state: speaking1_3,onTap: Choice16(),),
               ],
             ),
 

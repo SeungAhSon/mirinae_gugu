@@ -23,9 +23,9 @@ class Test_10 extends StatelessWidget{
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 5),
-            Text('10단원. 복습 시험', style: TextStyle(fontSize: 18+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 5),
+            SizedBox(height: 7),
+            Text('10단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            SizedBox(height: 7),
             Container(
               height: 300,
               child:Image.asset('assets/test_chapter/10_house.png'),

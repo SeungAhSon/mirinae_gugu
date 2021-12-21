@@ -20,7 +20,7 @@ class TestButton extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         child: MaterialButton(
           shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10)),
-          color: state ? Colors.orange : Color(0xff7ba6f9),
+          color: state ? Colors.grey : Color(0xff7ba6f9),
           height: 80,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));

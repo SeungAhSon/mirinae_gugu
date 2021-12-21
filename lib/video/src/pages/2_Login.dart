@@ -44,6 +44,7 @@ class Login extends StatelessWidget{
       Q ="nunum";
     }
     WidgetsFlutterBinding.ensureInitialized();
+
     load();
     print(Q);
     return GetMaterialApp(

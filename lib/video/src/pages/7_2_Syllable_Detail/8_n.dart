@@ -41,9 +41,10 @@ class N extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 방법'),
+                    child: Text('발음 방법',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('비음 : 입을 막고 코로 공기를 내보내면서 내는 소리',textAlign: TextAlign.center,),
+                  Text('비음 : 입을 막고 코로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 5),
                   Container(
                     alignment: Alignment.center,
                     margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
@@ -52,10 +53,10 @@ class N extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 동작'),
+                    child: Text('발음 동작',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('잇몸소리 : 혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',textAlign: TextAlign.center,),
-                  SizedBox(height: 10),
+                  Text('잇몸소리 : 혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

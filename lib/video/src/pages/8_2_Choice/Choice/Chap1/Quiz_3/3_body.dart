@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_youtube.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_youtube.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '3_option.dart';
-
 
 class Body_3 extends StatefulWidget {
   const Body_3({
@@ -18,8 +13,6 @@ class Body_3 extends StatefulWidget {
 }
 
 class _Body_3 extends State<Body_3>{
-
-
 
   @override
   Widget build(BuildContext context) {

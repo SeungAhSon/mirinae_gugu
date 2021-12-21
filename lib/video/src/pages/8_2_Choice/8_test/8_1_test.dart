@@ -61,9 +61,9 @@ void dispose() {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상1',color: Colors.blueAccent,  icon: Icons.camera_alt, state: state1,
+                TestButton(text: '읽기1',color: Colors.blueAccent,  icon: Icons.camera_alt, state: state1,
                   onTap: Choice821(),),
-                TestButton(text: '목소리1', color: Colors.blueAccent, icon: Icons.mic,state: state1,
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: state1,
                   onTap: Choice12()), //StartPage()
               ],
             ),
@@ -72,8 +72,8 @@ void dispose() {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
               children: [
-                TestButton(text: '동영상2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: state1, onTap: Choice823()),
-                TestButton(text: '목소리2',color: Colors.blueAccent,  icon: Icons.mic,state: state1, onTap: Choice14(),),
+                TestButton(text: '읽기2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: state1, onTap: Choice823()),
+                TestButton(text: '말하기2',color: Colors.blueAccent,  icon: Icons.mic,state: state1, onTap: Choice14(),),
               ],
 
 
@@ -81,8 +81,8 @@ void dispose() {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: state1, onTap: Choice825(),),
-                TestButton(text: '목소리3',color: Colors.blueAccent,  icon: Icons.mic, state: state1,onTap: Choice16(),),
+                TestButton(text: '읽기3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: state1, onTap: Choice825(),),
+                TestButton(text: '말하기3',color: Colors.blueAccent,  icon: Icons.mic, state: state1,onTap: Choice16(),),
               ],
             ),
 

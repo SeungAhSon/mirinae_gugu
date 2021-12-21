@@ -627,8 +627,6 @@ class _video_Body extends State<video_Body> {
             Text("받아쓰기", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
           ],
         ),
-
-
         stop == false
             ? Column(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -24,6 +24,7 @@ class ButtonChapter extends StatelessWidget {
                 children : <Widget>[
                   Container(
                     height: 80, width: 80,
+                    margin: EdgeInsets.only(left:30),
                     decoration: BoxDecoration(
                       color:Color(0xff4573CB),
                       borderRadius: BorderRadius.all(Radius.circular(40)),
@@ -41,12 +42,30 @@ class ButtonChapter extends StatelessWidget {
                     ),
                   ),
                   Column(
+
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children:[
-                        Text(text,style:TextStyle(fontSize:18+size, color: Colors.black54)),
-                        Text('이어서 학습하기 >',style:TextStyle(fontSize:15+size, color: Colors.black45))
+                        Container(
+                            margin: EdgeInsets.only(left: 50),
+                            child: Column(children: <Widget>[
+                              Text(text,style:TextStyle(fontSize:18+size, color: Colors.black54)),
+                              Text('이어서 학습하기',style:TextStyle(fontSize:15+size, color: Colors.black45))
                       ]
+                            )
+          )
+            ]
+
                   ),
+                  Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Container(
+                            child: Icon(Icons.arrow_forward_ios_sharp,size: 35,color: Colors.black54,),
+                          ),
+                        )
+                      ]
+                  )
                 ]
             ),
           ),

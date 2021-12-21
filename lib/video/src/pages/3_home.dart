@@ -54,8 +54,8 @@ class _Home extends State<Home> {
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              if (prefs.getBool('tutorial19') != true){
-                prefs.setBool('tutorial19', true);
+              if (prefs.getBool('tutorial20') != true){
+                prefs.setBool('tutorial20', true);
                 print(333);
               }
             },
@@ -64,8 +64,8 @@ class _Home extends State<Home> {
           TextButton(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-          if (prefs.getBool('tutorial19') != true){
-          prefs.setBool('tutorial19', true);
+          if (prefs.getBool('tutorial20') != true){
+          prefs.setBool('tutorial20', true);
           print(333);
           }
               Navigator.of(context).pop();
@@ -82,8 +82,9 @@ class _Home extends State<Home> {
   void local2() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     SharedPreferences s = await SharedPreferences.getInstance();
+    SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial19') == null) {
+      if (prefs.getBool('tutorial20') == null) {
         aa(context, "사용 가이드");
         s.setBool("reading1_1_",false);
         s.setBool("reading1_2_",false);
@@ -91,6 +92,9 @@ class _Home extends State<Home> {
         s.setBool("speaking1_1",false);
         s.setBool("speaking1_2",false);
         s.setBool("speaking1_3",false);
+        prefs.setInt('fontchoose',0);
+        ss.setString('fontsize',"origin");
+
       }
 
       print(2);

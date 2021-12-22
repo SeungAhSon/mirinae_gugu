@@ -28,10 +28,9 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
   Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState((){
-      FavoriteButtons = (prefs.getStringList("favorite15") ?? <bool>[]).map((value) => value == 'true').toList();
+      FavoriteButtons = (prefs.getStringList("favorite_1_") ?? <bool>[]).map((value) => value == 'true').toList();
     });
-    FavoriteButtons = (FavoriteButton).map((value) => value == 'true').toList();
-    FavoriteButton = prefs.getStringList("favorite15")!;
+
   }
 
   void main() {

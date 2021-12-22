@@ -21,7 +21,39 @@ class Home extends StatefulWidget{
 
 class _Home extends State<Home> {
   bool Reading = false;
-
+  List<bool> favorite = <bool>[
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ];
   void loadnotification() async{
     SharedPreferences s = await SharedPreferences.getInstance();
 
@@ -54,8 +86,8 @@ class _Home extends State<Home> {
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              if (prefs.getBool('tutorial20') != true){
-                prefs.setBool('tutorial20', true);
+              if (prefs.getBool('tutorial23') != true){
+                prefs.setBool('tutorial23', true);
                 print(333);
               }
             },
@@ -64,8 +96,8 @@ class _Home extends State<Home> {
           TextButton(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-          if (prefs.getBool('tutorial20') != true){
-          prefs.setBool('tutorial20', true);
+          if (prefs.getBool('tutorial23') != true){
+          prefs.setBool('tutorial23', true);
           print(333);
           }
               Navigator.of(context).pop();
@@ -84,8 +116,9 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial20') == null) {
+      if (prefs.getBool('tutorial23') == null) {
         aa(context, "사용 가이드");
+        s.setBool("reading8",false);
         s.setBool("reading1_1_",false);
         s.setBool("reading1_2_",false);
         s.setBool("reading1_3",false);
@@ -94,7 +127,7 @@ class _Home extends State<Home> {
         s.setBool("speaking1_3",false);
         prefs.setInt('fontchoose',0);
         ss.setString('fontsize',"origin");
-
+        prefs.setStringList("favorite_1_", favorite.map((value) => value.toString()).toList());
       }
 
       print(2);

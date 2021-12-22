@@ -204,8 +204,6 @@ class _video_Body extends State<video_Body> {
 
   @override
   void dispose() {
-
-
     _recorder.stop();
     _audioStreamSubscription?.cancel();
     _audioStream?.close();
@@ -293,14 +291,10 @@ class _video_Body extends State<video_Body> {
   Future<void> loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
-
-    favorite =
-        (FavoriteButton ?? <bool>[]).map((value) => value == 'true').toList();
-    FavoriteButton = prefs.getStringList("favorite15")!;
   }
 
   Future<void> delete() async {
@@ -309,9 +303,9 @@ class _video_Body extends State<video_Body> {
       favorite[widget.index] = false;
     });
     await prefs.setStringList(
-        "favorite15", favorite.map((value) => value.toString()).toList());
+        "favorite_1_", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
@@ -323,9 +317,9 @@ class _video_Body extends State<video_Body> {
       favorite[widget.index] = true;
     });
     await prefs.setStringList(
-        "favorite15", favorite.map((value) => value.toString()).toList());
+        "favorite_1_", favorite.map((value) => value.toString()).toList());
     setState(() {
-      favorite = (prefs.getStringList("favorite15") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });

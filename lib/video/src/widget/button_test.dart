@@ -25,7 +25,9 @@ class TestButton extends StatelessWidget {
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));
           },
-          child: Column(children: [Icon(icon, color: Colors.white,),Text(text, style: TextStyle(fontSize:14+size,color: Colors.white),)],),
+          child: Column(children: [Icon(icon, color: Colors.white,),
+            Text(text, style: TextStyle(fontSize:14+size,color: Colors.white),)
+          ],),
         )
     );
   }

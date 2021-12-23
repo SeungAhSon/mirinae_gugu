@@ -48,8 +48,8 @@ class ButtonChapter extends StatelessWidget {
                         Container(
                             margin: EdgeInsets.only(left: 50),
                             child: Column(children: <Widget>[
-                              Text(text,style:TextStyle(fontSize:18+size, color: Colors.black54)),
-                              Text('이어서 학습하기',style:TextStyle(fontSize:15+size, color: Colors.black45))
+                              Text(text,style:TextStyle(fontSize:18+size, color: Colors.black87)),
+                              Text('이어서 학습하기',style:TextStyle(fontSize:15+size, color: Colors.black54))
                       ]
                             )
           )

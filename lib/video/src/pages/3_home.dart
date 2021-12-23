@@ -67,7 +67,7 @@ class _Home extends State<Home> {
   aa(BuildContext context,String title){
     showDialog(context: context,barrierDismissible: false,
         barrierColor: Colors.grey,builder: (BuildContext context) {
-      return AlertDialog(
+        return CupertinoAlertDialog(
         title:
         Center(child: Text(title,style: TextStyle(fontSize: 24),)),
         content: Column(
@@ -81,23 +81,23 @@ class _Home extends State<Home> {
 
           ],
         ),
-        actions: [
-          TextButton(
+        actions: <Widget>[
+          CupertinoDialogAction(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              if (prefs.getBool('tutorial23') != true){
-                prefs.setBool('tutorial23', true);
+              if (prefs.getBool('tutorial24') != true){
+                prefs.setBool('tutorial24', true);
                 print(333);
               }
             },
             child: Text("확인",style: TextStyle(color: Colors.black),),
           ),
-          TextButton(
+          CupertinoDialogAction(
             onPressed: () async {
               SharedPreferences prefs = await SharedPreferences.getInstance();
-          if (prefs.getBool('tutorial23') != true){
-          prefs.setBool('tutorial23', true);
+          if (prefs.getBool('tutorial24') != true){
+          prefs.setBool('tutorial24', true);
           print(333);
           }
               Navigator.of(context).pop();
@@ -116,7 +116,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial23') == null) {
+      if (prefs.getBool('tutorial24') == null) {
         aa(context, "사용 가이드");
         s.setBool("reading8",false);
         s.setBool("reading1_1_",false);

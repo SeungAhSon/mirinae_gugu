@@ -13,11 +13,57 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_2/2_Ch
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_4/4_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_6/6_Choice.dart';
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class Test_2 extends StatelessWidget{
-  bool state1 = false;
+
+
+class Test_2 extends StatefulWidget {
+  const Test_2({
+    Key ?key,
+  }) : super(key: key);
+  @override
+  _Test_2 createState() => _Test_2();
+}
+class _Test_2 extends State<Test_2>{
+  bool speaking1_1 = false;
+  bool speaking1_2 = false;
+  bool speaking1_3 = false;
+  bool reading1_1 = false;
+  bool reading1_2 = false;
+  bool reading1_3 = false;
+
+
+  void loadnotification() async{
+    SharedPreferences s = await SharedPreferences.getInstance();
+    setState(() {
+      speaking1_1 = s.getBool("speaking2_1")!;
+      speaking1_2 = s.getBool("speaking2_2")!;
+      speaking1_3 = s.getBool("speaking2_3")!;
+      reading1_1 = s.getBool("reading2_1")!;
+      reading1_2 = s.getBool("reading2_2")!;
+      reading1_3 = s.getBool("reading2_3")!;
+    });
+  }
+
+
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+  @override
+  void dispose() {
+    super.dispose();
+
+  }
+
   @override
   Widget build(BuildContext context){
+
+    loadnotification();
+
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -34,22 +80,22 @@ class Test_2 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice821(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice22(),), //StartPage()
+                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_1,onTap: Choice821(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_1, onTap: Choice22(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice823(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice24(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: Choice823(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_2,onTap: Choice24(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice825(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice26(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_3,onTap: Choice825(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_3, onTap: Choice26(),),
               ],
             ),
 

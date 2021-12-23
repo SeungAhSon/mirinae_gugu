@@ -67,46 +67,46 @@ class _Home extends State<Home> {
   aa(BuildContext context,String title){
     showDialog(context: context,barrierDismissible: false,
         barrierColor: Colors.grey,builder: (BuildContext context) {
-        return CupertinoAlertDialog(
-        title:
-        Center(child: Text(title,style: TextStyle(fontSize: 24),)),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+          return CupertinoAlertDialog(
+            title:
+            Center(child: Text(title,style: TextStyle(fontSize: 24),)),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
-            SizedBox(height: 10),
-            Text("원활한 사용을 위한 사용 안내입니다.",style: TextStyle(fontSize: 15),),
+              children: [
+                SizedBox(height: 10),
+                Text("원활한 사용을 위한 사용 안내입니다.",style: TextStyle(fontSize: 15),),
 
 
-          ],
-        ),
-        actions: <Widget>[
-          CupertinoDialogAction(
-            onPressed: () async {
-              SharedPreferences prefs = await SharedPreferences.getInstance();
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-              if (prefs.getBool('tutorial24') != true){
-                prefs.setBool('tutorial24', true);
-                print(333);
-              }
-            },
-            child: Text("확인",style: TextStyle(color: Colors.black),),
-          ),
-          CupertinoDialogAction(
-            onPressed: () async {
-              SharedPreferences prefs = await SharedPreferences.getInstance();
-          if (prefs.getBool('tutorial24') != true){
-          prefs.setBool('tutorial24', true);
-          print(333);
-          }
-              Navigator.of(context).pop();
-            },
-            child: Text("SKIP",style: TextStyle(color: Colors.black),),
-          ),
-        ],
-      );
-    });
+              ],
+            ),
+            actions: <Widget>[
+              CupertinoDialogAction(
+                onPressed: () async {
+                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
+                  if (prefs.getBool('tutorial24') != true){
+                    prefs.setBool('tutorial24', true);
+                    print(333);
+                  }
+                },
+                child: Text("확인",style: TextStyle(color: Colors.black),),
+              ),
+              CupertinoDialogAction(
+                onPressed: () async {
+                  SharedPreferences prefs = await SharedPreferences.getInstance();
+                  if (prefs.getBool('tutorial24') != true){
+                    prefs.setBool('tutorial24', true);
+                    print(333);
+                  }
+                  Navigator.of(context).pop();
+                },
+                child: Text("SKIP",style: TextStyle(color: Colors.black),),
+              ),
+            ],
+          );
+        });
   }
 
 
@@ -125,6 +125,12 @@ class _Home extends State<Home> {
         s.setBool("speaking1_1",false);
         s.setBool("speaking1_2",false);
         s.setBool("speaking1_3",false);
+        s.setBool("reading2_1",false);
+        s.setBool("reading2_2",false);
+        s.setBool("reading2_3",false);
+        s.setBool("speaking2_1",false);
+        s.setBool("speaking2_2",false);
+        s.setBool("speaking2_3",false);
         prefs.setInt('fontchoose',0);
         ss.setString('fontsize',"origin");
         prefs.setStringList("favorite_1_", favorite.map((value) => value.toString()).toList());

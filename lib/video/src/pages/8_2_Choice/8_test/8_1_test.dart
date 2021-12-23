@@ -13,12 +13,7 @@ import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-bool speaking1_1 = false;
-bool speaking1_2 = false;
-bool speaking1_3 = false;
-bool reading1_1 = false;
-bool reading1_2 = false;
-bool reading1_3 = false;
+
 class Test_1 extends StatefulWidget {
   const Test_1({
   Key ?key,
@@ -27,7 +22,12 @@ class Test_1 extends StatefulWidget {
   _Test_1 createState() => _Test_1();
   }
   class _Test_1 extends State<Test_1>{
-
+    bool speaking1_1 = false;
+    bool speaking1_2 = false;
+    bool speaking1_3 = false;
+    bool reading1_1 = false;
+    bool reading1_2 = false;
+    bool reading1_3 = false;
 
 
 void loadnotification() async{

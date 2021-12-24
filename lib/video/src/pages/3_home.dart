@@ -21,7 +21,7 @@ class Home extends StatefulWidget{
 
 class _Home extends State<Home> {
   bool Reading = false;
-  List<bool> favorite = <bool>[
+  List<bool> favorite_1 = <bool>[
     false,
     false,
     false,
@@ -86,8 +86,8 @@ class _Home extends State<Home> {
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-                  if (prefs.getBool('tutorial24') != true){
-                    prefs.setBool('tutorial24', true);
+                  if (prefs.getBool('tutorial30') != true){
+                    prefs.setBool('tutorial30', true);
                     print(333);
                   }
                 },
@@ -96,8 +96,8 @@ class _Home extends State<Home> {
               CupertinoDialogAction(
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
-                  if (prefs.getBool('tutorial24') != true){
-                    prefs.setBool('tutorial24', true);
+                  if (prefs.getBool('tutorial30') != true){
+                    prefs.setBool('tutorial30', true);
                     print(333);
                   }
                   Navigator.of(context).pop();
@@ -116,7 +116,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial24') == null) {
+      if (prefs.getBool('tutorial30') == null) {
         aa(context, "사용 가이드");
         s.setBool("reading8",false);
         s.setBool("reading1_1_",false);
@@ -133,7 +133,7 @@ class _Home extends State<Home> {
         s.setBool("speaking2_3",false);
         prefs.setInt('fontchoose',0);
         ss.setString('fontsize',"origin");
-        prefs.setStringList("favorite_1_", favorite.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_1_", favorite_1.map((value) => value.toString()).toList());
       }
 
       print(2);

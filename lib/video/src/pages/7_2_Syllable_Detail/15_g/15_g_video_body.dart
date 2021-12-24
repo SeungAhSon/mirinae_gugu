@@ -6,12 +6,10 @@ import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_speech/config/streaming_recognition_config.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:google_speech/speech_to_text.dart';
-import 'package:mirinae_gugu/video/src/pages/6_record/6_Record.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/15_g/15_g_youtube.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
@@ -45,7 +43,7 @@ class _video_Body extends State<video_Body_15> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-  List<String> Questiontitle = ["1. 아니 진짜ㅋㅋ", "2. 이제되네", "3","4","5","6","7","8","9","10","11", "12", "13","14","15","16","17","18","19","20","21", "22", "23","24","25","26","27","28","29","30"];
+  List<String> Questiontitle = ["1. 가", "2. 갸", "3. 거","4. 겨","5. 고","6. 교","7. 구","8. 규","9. 그","10. 기"];
 
   //record
   late Directory? appDir;
@@ -179,7 +177,6 @@ class _video_Body extends State<video_Body_15> {
       languageCode: 'ko-KR');
 
 
-
   void plus() async {
     if (widget.index != 11) {
       if (widget.index == 10) {
@@ -211,7 +208,6 @@ class _video_Body extends State<video_Body_15> {
   }
 
   void back() async {
-
     if (widget.index != 11) {
       if (widget.index == 1) {
         setState(() {
@@ -244,10 +240,11 @@ class _video_Body extends State<video_Body_15> {
 
           title: Center(
             child: Text(
-              '${Questiontitle[widget.index-1]}',
+              '${Questiontitle[widget.index - 1]}',
               style: TextStyle(fontSize: 20 + size, color: Colors.blue),
             ),
           ),
+
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -256,8 +253,13 @@ class _video_Body extends State<video_Body_15> {
             iconSize: 25,
             icon: Icon(Icons.arrow_back),
           ),
-
           actions: <Widget>[
+            IconButton(
+                onPressed: (){
+                },
+              icon: Icon(Icons.arrow_back,color: Colors.white.withOpacity(0)),
+
+            ),
           ],
         ),
         body: Stack(
@@ -290,7 +292,7 @@ class _video_Body extends State<video_Body_15> {
                               physics: NeverScrollableScrollPhysics(),
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
-                              itemCount: 10,
+                              itemCount: 30,
                               itemBuilder: (context, index) => video_page(
                                 id: widget.index,
                               ),
@@ -324,21 +326,38 @@ class _video_Body extends State<video_Body_15> {
                                 MediaQuery.of(context).padding.top) *
                                 0.1,
                             alignment: Alignment.center,
-                            color: Colors.grey[200],
-                            child: Stack(children: <Widget>[
-                              Container(
-                                //color: Colors.white,
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.grey),
-                                    //width:5,
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                child: textprint(),
-                              ),
-                            ]),
+                            child: Stack(
+                                children: <Widget>[
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        border: Border.all(color: Colors.grey),
+                                        //width:5,
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.85, 0, 0, 10),
+                                    child:Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children:[
+                                        IconButton(
+                                          padding: EdgeInsets.zero,
+                                          icon:ImageIcon(AssetImage('assets/retry.png'),color:Colors.black,size:15),
+                                          onPressed: () {
+                                            reset();
+                                          },
+                                        ),
+                                        Text("다시", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black), textAlign: TextAlign.center),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    child: textprint(),
+                                  ),
+                                ]),
                           ),
                         ),
                         Padding(
@@ -378,10 +397,11 @@ class _video_Body extends State<video_Body_15> {
                               MediaQuery.of(context).size.width / (70 / 1)),
                           //left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                           child: Container(
+                              padding: EdgeInsets.zero,
                               height: (MediaQuery.of(context).size.height -
                                   height2 -
                                   MediaQuery.of(context).padding.top) *
-                                  0.065, //크기 8%
+                                  0.08, //크기 8%
                               color: Colors.white.withOpacity(0),
                               child: _buttonZone()),
                         ),
@@ -393,7 +413,7 @@ class _video_Body extends State<video_Body_15> {
                             height: (MediaQuery.of(context).size.height -
                                 height2 -
                                 MediaQuery.of(context).padding.top) *
-                                0.002,
+                                0.001,
                             color: Colors.grey.withOpacity(0.5),
                           ),
                         ),
@@ -410,104 +430,98 @@ class _video_Body extends State<video_Body_15> {
   Widget _buttonZone() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        IconButton(
-            icon: finish
-                ? Icon(Icons.arrow_back_ios_sharp,
-                color: Colors.white.withOpacity(0), size: 30)
-                : Icon(Icons.arrow_back_ios_sharp,
-                color: Colors.black, size: 30),
-            onPressed: () async {
-              back();
-
-              //onPageChanged: _questionController.updateTheQnNum,
-            }),
-        Container(
-          height: 300,
-          child: IconButton(
-              onPressed: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Record(records: [],),
-                  ),
-                );
-              },
-              icon: Icon(Icons.mic, color: Colors.green, size: 45)
-          ),
-        ),
-        InkWell(
-          child: RaisedButton(
-            onPressed:() {
-              reset();
-            },
-            padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-
-            child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
-
-            color: Color(0xff4573CB),
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10)
-            ),
-          ),
-        ),
-
-        IconButton(
-          onPressed: recognizing ? stopRecording : streamingRecognize,
-          icon: recognizing
-              ? Icon(Icons.mic, color: Colors.red, size: 30)
-              : Icon(Icons.mic, color: Colors.blue, size: 30),
-        ),
-
-        stop == false
-            ?
-        RaisedButton(
-          color: Colors.white,
-          onPressed: () async {
-            await _onRecordButtonPressed();
-            setState(() {});
-          },
-          child: Column(
-            children: [
+        Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:[
+              IconButton(
+                  icon: finish
+                      ? Icon(Icons.arrow_back_ios_sharp,
+                      color: Colors.white.withOpacity(0), size: 30)
+                      : Icon(Icons.arrow_back_ios_sharp,
+                      color: Colors.black, size: 30),
+                  onPressed: () async {
+                    back();
+                    //onPageChanged: _questionController.updateTheQnNum,
+                  }),
               Container(
-                width: 30,
-                height: 30,
-                child: Icon(
-                  _recordIcon,
-                  color: Colors.orange,
-                  size: 30,
-                ),
-              ),
-            ],
-          ),
-        )
-            :RaisedButton(
-          color: Colors.white,
-          onPressed: _currentStatus != RecordingStatus.Unset
-              ? _stop
-              : null,
-          child: Container(
-            width: 30,
-            height: 30,
-            child: Icon(
-              Icons.stop,
-              color: Colors.orange,
-              size: 30,
+                  padding:EdgeInsets.zero,
+                  child: finish
+                      ? Text("이전", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      : Text("이전", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+
+              )
+
+            ]),
+
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:[
+            IconButton(
+              padding: EdgeInsets.zero,
+              onPressed: recognizing ? stopRecording : streamingRecognize,
+              icon: recognizing
+                  ? Icon(Icons.mic, color: Colors.red, size: 28)
+                  : Icon(Icons.mic, color: Colors.blue, size: 28),
             ),
-          ),
+            Text("받아쓰기", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
+          ],
         ),
+        stop == false
+            ? Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:[
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed: () async {
 
-        IconButton(
-            icon: start
-                ? Icon(Icons.arrow_forward_ios_sharp,
-                color: Colors.white.withOpacity(0), size: 30)
-                : Icon(Icons.arrow_forward_ios_sharp,
-                color: Colors.black, size: 30),
-            onPressed: () async {
-              plus();
+                  await _onRecordButtonPressed();
+                  if (!mounted) return;
+                  setState(() {});
 
-              //onPageChanged: _questionController.updateTheQnNum,
-            }),
+                }, icon: Icon(_recordIcon, color: Colors.green, size: 28,
+              ),
+              ),
+              Text("녹음하기", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
+            ]
+        )
+            : Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:[
+              IconButton(
+                padding: EdgeInsets.zero,
+                onPressed:
+                _currentStatus != RecordingStatus.Unset ? _stop : null,
+                icon: Icon(Icons.stop, color: Colors.green, size: 28),
+              ),
+              Text("녹음하기", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,),
+            ]),
+        Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:[
+              IconButton(
+                  icon: start
+                      ? Icon(Icons.arrow_forward_ios_sharp,
+                      color: Colors.white.withOpacity(0), size: 30)
+                      : Icon(Icons.arrow_forward_ios_sharp,
+                      color: Colors.black, size: 30),
+                  onPressed: () async {
+                    plus();
+                    //onPageChanged: _questionController.updateTheQnNum,
+                  }),
+              Container(padding:EdgeInsets.zero,
+                  child: start
+                      ? Text("다음", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      : Text("다음", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+              )
+
+            ])
       ],
     );
   }
@@ -559,7 +573,7 @@ class _video_Body extends State<video_Body_15> {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 letterSpacing: 1.0,
-                fontSize: 20.0+size, //사이즈 조절 필요
+                fontSize: 20.0 + size, //사이즈 조절 필요
                 height: 1.75,
                 /*fontWeight: FontWeight.bold,*/
               ))
@@ -568,8 +582,7 @@ class _video_Body extends State<video_Body_15> {
   }
 
   _onFinish_test() {
-    appDir!.list().listen((onData) {
-    }).onDone(() {
+    appDir!.list().listen((onData) {}).onDone(() {
       setState(() {});
     });
   }
@@ -595,10 +608,11 @@ class _video_Body extends State<video_Body_15> {
     Directory? appDir = await getExternalStorageDirectory();
     String jrecord = 'Audiorecords';
     String dato = "${DateTime.now().millisecondsSinceEpoch.toString()}.wav";
-    Directory appDirec =
-    Directory("${appDir!.path}/$jrecord/");
+    Directory appDirec = Directory("${appDir!.path}/$jrecord/");
 
-    bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
+    bool exists = await Directory(
+        '/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/')
+        .exists();
     print(exists);
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
@@ -618,12 +632,14 @@ class _video_Body extends State<video_Body_15> {
   _start() async {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
+    if (!mounted) return;
     setState(() {
       _current = recording!;
     });
 
+
     const tick = const Duration(milliseconds: 50);
-    new Timer.periodic(tick, (Timer t) async {
+    Timer.periodic(tick, (Timer t) async {
       if (_currentStatus == RecordingStatus.Stopped) {
         t.cancel();
       }
@@ -635,11 +651,12 @@ class _video_Body extends State<video_Body_15> {
         _currentStatus = _current!.status!;
       });
     });
+
   }
 
   _stop() async {
     var result = await audioRecorder!.stop();
-    await Fluttertoast.showToast(msg: "Stop Recording , File Saved");
+    Fluttertoast.showToast(msg: "Stop Recording , File Saved");
     _onFinish_test();
     setState(() {
       _current = result!;
@@ -650,9 +667,7 @@ class _video_Body extends State<video_Body_15> {
     });
   }
 
-
   Future<void> _recordo() async {
-
     Map<Permission, PermissionStatus> statuses = await [
       Permission.microphone,
       Permission.storage,
@@ -660,8 +675,7 @@ class _video_Body extends State<video_Body_15> {
     print(statuses[Permission.microphone]);
     print(statuses[Permission.storage]);
     //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
-    if (statuses[Permission.microphone]==PermissionStatus.granted) {
-
+    if (statuses[Permission.microphone] == PermissionStatus.granted) {
       /* }
     bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
     if (hasPermission) {*/
@@ -679,16 +693,17 @@ class _video_Body extends State<video_Body_15> {
     }
   }
 
-  reset()
-  {
+  reset() {
+
     setState(() {
       //counter = 0;
       //score =0;
       text = '';
     });
+
   }
+
   void updateTheQnNum(int index) {
     index = index + 1;
   }
-
 }

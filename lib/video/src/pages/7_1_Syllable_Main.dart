@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n.dart';
+import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n.dart';
 import 'package:mirinae_gugu/video/src/widget/button_Syllable.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/0_Out.dart';

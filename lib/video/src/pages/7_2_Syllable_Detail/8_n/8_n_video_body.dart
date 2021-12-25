@@ -1,103 +1,37 @@
+
+
 import 'dart:async';
+import 'dart:io';
+
 import 'package:camera/camera.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_speech/config/streaming_recognition_config.dart';
 import 'package:google_speech/google_speech.dart';
+import 'package:google_speech/speech_to_text.dart';
+import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
+import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n_youtube.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
-import '../1_Loading.dart';
-import '5_pageview.dart';
+import '../../1_Loading.dart';
 
-import 'dart:io';
-import 'package:path_provider/path_provider.dart';
-import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
-import 'package:fluttertoast/fluttertoast.dart';
-import 'package:permission_handler/permission_handler.dart';
-
-
-class video_Body extends StatefulWidget {
-  video_Body({Key? key, required this.index}) : super(key: key);
-
+class video_Body_8 extends StatefulWidget {
+  video_Body_8({Key? key, required this.index}) : super(key: key);
   @override
   _video_Body createState() => _video_Body();
   int index;
 
 }
 
-class _video_Body extends State<video_Body> {
+class _video_Body extends State<video_Body_8> {
   late PageController _pageController;
-  List<String> FavoriteButton = [
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false"
-  ];
   bool finish = false;
-  List<bool> favorite = <bool>[
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
-  ];
-  CameraController controller =
+   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
@@ -109,63 +43,30 @@ class _video_Body extends State<video_Body> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-  List<String> Questiontitle = [
-    "1. 아니 진짜ㅋㅋ",
-    "2. 이제되네",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30"
-  ];
+  List<String> Questiontitle = ["1. 나", "2. 냐", "3. 너","4. 녀","5. 노","6. 뇨","7. 누","8. 뉴","9. 느","10. 니"];
 
   //record
   late Directory? appDir;
-
   //late List<String>? records;
 
-  IconData _recordIcon = Icons.mic;
-  MaterialColor colo = Colors.green;
+
+  IconData _recordIcon = Icons.mic_none;
+  MaterialColor colo = Colors.orange;
   RecordingStatus _currentStatus = RecordingStatus.Unset;
   bool stop = false;
   Recording? _current;
-
   // Recorder properties
   late FlutterAudioRecorder? audioRecorder;
 
   @override
   void initState() {
-
     super.initState();
     _recorder.initialize();
     controller.initialize().then((_) {
-        setState(() {});
+      setState(() {});
     });
-
     _pageController = PageController();
+
     //record
     super.initState();
     checkPermission();
@@ -173,18 +74,16 @@ class _video_Body extends State<video_Body> {
       appDir = value!;
       Directory appDirec = Directory("${appDir!.path}/Audiorecords/");
       appDir = appDirec;
-      appDir!.list().listen((onData) {}).onDone(() {
-        if (!mounted) return;
-          setState(() {});
-
+      appDir!.list().listen((onData) {
+      }).onDone(() {
+        setState(() {});
       });
     });
   }
 
-  checkPermission() async {
-    if (await Permission.contacts
-        .request()
-        .isGranted) {
+  checkPermission()async{
+
+    if (await Permission.contacts.request().isGranted) {
       // Either the permission was already granted before or the user just granted it.
     }
 
@@ -196,10 +95,13 @@ class _video_Body extends State<video_Body> {
     print(statuses[Permission.microphone]);
     print(statuses[Permission.storage]);
     //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
-    if (statuses[Permission.microphone] == PermissionStatus.granted) {
+    if (statuses[Permission.microphone]==PermissionStatus.granted) {
       _currentStatus = RecordingStatus.Initialized;
       _recordIcon = Icons.mic;
-    } else {}
+    }else
+    {
+
+    }
   }
 
   @override
@@ -217,67 +119,58 @@ class _video_Body extends State<video_Body> {
   }
 
   void streamingRecognize() async {
-    if (mounted){
     _audioStream = BehaviorSubject<List<int>>();
     _audioStreamSubscription = _recorder.audioStream.listen((event) {
       _audioStream?.add(event);
     });
 
     await _recorder.start();
-    if (!mounted) return;
-      setState(() {
-        recognizing = true;
-      });
 
+    setState(() {
+      recognizing = true;
+    });
+    //서비스 계정. assets 폴더에 api key 넣음
+    final serviceAccount = ServiceAccount.fromString(
+        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
+    final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
+    final config = _getConfig();
 
-      //서비스 계정. assets 폴더에 api key 넣음
-      final serviceAccount = ServiceAccount.fromString(
-          '${(await rootBundle.loadString(
-              'assets/lejinhy-speech-to-text-11be68205205.json'))}');
-      final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
-      final config = _getConfig();
+    final responseStream = speechToText.streamingRecognize(
+        StreamingRecognitionConfig(config: config, interimResults: true),
+        _audioStream!);
 
-      final responseStream = speechToText.streamingRecognize(
-          StreamingRecognitionConfig(config: config, interimResults: true),
-          _audioStream!);
-
-      var responseText = '';
-      //마이크 입력 받았을 때 출력될 텍스트 설정.
-      responseStream.listen((data) {
-        final currentText =
-        data.results.map((e) => e.alternatives.first.transcript).join("");
-
-        if (data.results.first.isFinal) {
-          //responseText += currentText;
-          setState(() {
-            //text = responseText;
-            recognizeFinished = true;
-          });
-        } else {
-          setState(() {
-            text = currentText;
-            recognizeFinished = true;
-          });
-        }
-      }, onDone: () {
+    var responseText = '';
+    //마이크 입력 받았을 때 출력될 텍스트 설정.
+    responseStream.listen((data) {
+      final currentText =
+      data.results.map((e) => e.alternatives.first.transcript).join("");
+      if (data.results.first.isFinal) {
+        //responseText += currentText;
         setState(() {
-          recognizing = false;
+          //text = responseText;
+          recognizeFinished = true;
         });
+      } else {
+        setState(() {
+          text = currentText;
+          recognizeFinished = true;
+        });
+      }
+    }, onDone: () {
+      setState(() {
+        recognizing = false;
       });
-}
+    });
   }
-
 
   //마이크 stop 했을 때
   void stopRecording() async {
     await _recorder.stop();
     await _audioStreamSubscription?.cancel();
     await _audioStream?.close();
-    if (!mounted) return;
-      setState(() {
-        recognizing = false;
-      });
-
+    setState(() {
+      recognizing = false;
+    });
   }
 
   //google speech to text api 설정
@@ -288,46 +181,10 @@ class _video_Body extends State<video_Body> {
       sampleRateHertz: 16000,
       languageCode: 'ko-KR');
 
-  Future<void> loadFavorite() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
-
-  Future<void> delete() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = false;
-    });
-    await prefs.setStringList(
-        "favorite_1_", favorite.map((value) => value.toString()).toList());
-    setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
-
-  Future<void> saved() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = true;
-    });
-    await prefs.setStringList(
-        "favorite_1_", favorite.map((value) => value.toString()).toList());
-    setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
 
   void plus() async {
-    if (widget.index != 31) {
-      if (widget.index == 30) {
+    if (widget.index != 11) {
+      if (widget.index == 10) {
         setState(() {
           start = true;
         });
@@ -342,12 +199,12 @@ class _video_Body extends State<video_Body> {
   }
 
   void backplusload() async {
-    if (widget.index != 31) {
+    if (widget.index != 11) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
         });
-      } else if (widget.index == 30) {
+      } else if (widget.index == 10) {
         setState(() {
           start = true;
         });
@@ -356,7 +213,7 @@ class _video_Body extends State<video_Body> {
   }
 
   void back() async {
-    if (widget.index != 31) {
+    if (widget.index != 11) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
@@ -373,7 +230,6 @@ class _video_Body extends State<video_Body> {
 
   @override
   Widget build(BuildContext context) {
-    loadFavorite();
     backplusload();
     var height2 = AppBar().preferredSize.height;
 
@@ -393,6 +249,7 @@ class _video_Body extends State<video_Body> {
               style: TextStyle(fontSize: 20 + size, color: Colors.blue),
             ),
           ),
+
           leading: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -401,15 +258,12 @@ class _video_Body extends State<video_Body> {
             iconSize: 25,
             icon: Icon(Icons.arrow_back),
           ),
-
           actions: <Widget>[
             IconButton(
-              onPressed: favorite[widget.index] ? delete : saved,
-              icon: favorite[widget.index]
-                  ? Icon(Icons.bookmark_rounded,
-                  color: Colors.yellow[800], size: 30) //그대로일때
-                  : Icon(Icons.bookmark_add_outlined,
-                  color: Colors.yellow[800], size: 30),
+                onPressed: (){
+                },
+              icon: Icon(Icons.arrow_back,color: Colors.white.withOpacity(0)),
+
             ),
           ],
         ),
@@ -479,14 +333,14 @@ class _video_Body extends State<video_Body> {
                             alignment: Alignment.center,
                             child: Stack(
                                 children: <Widget>[
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.grey[200],
-                                    border: Border.all(color: Colors.grey),
-                                    //width:5,
-                                    borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-                              ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.grey[200],
+                                        border: Border.all(color: Colors.grey),
+                                        //width:5,
+                                        borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.85, 0, 0, 10),
                                     child:Column(
@@ -504,11 +358,11 @@ class _video_Body extends State<video_Body> {
                                       ],
                                     ),
                                   ),
-                              Container(
-                                alignment: Alignment.center,
-                                child: textprint(),
-                              ),
-                            ]),
+                                  Container(
+                                    alignment: Alignment.center,
+                                    child: textprint(),
+                                  ),
+                                ]),
                           ),
                         ),
                         Padding(
@@ -548,7 +402,7 @@ class _video_Body extends State<video_Body> {
                               MediaQuery.of(context).size.width / (70 / 1)),
                           //left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                           child: Container(
-                            padding: EdgeInsets.zero,
+                              padding: EdgeInsets.zero,
                               height: (MediaQuery.of(context).size.height -
                                   height2 -
                                   MediaQuery.of(context).padding.top) *
@@ -587,25 +441,25 @@ class _video_Body extends State<video_Body> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
-          IconButton(
-              icon: finish
-                  ? Icon(Icons.arrow_back_ios_sharp,
-                  color: Colors.white.withOpacity(0), size: 30)
-                  : Icon(Icons.arrow_back_ios_sharp,
-                  color: Colors.black, size: 30),
-              onPressed: () async {
-                back();
-                //onPageChanged: _questionController.updateTheQnNum,
-              }),
-          Container(
-              padding: EdgeInsets.only(bottom: 5,),
-              child: finish
-              ? Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                  : Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+              IconButton(
+                  icon: finish
+                      ? Icon(Icons.arrow_back_ios_sharp,
+                      color: Colors.white.withOpacity(0), size: 30)
+                      : Icon(Icons.arrow_back_ios_sharp,
+                      color: Colors.black, size: 30),
+                  onPressed: () async {
+                    back();
+                    //onPageChanged: _questionController.updateTheQnNum,
+                  }),
+              Container(
+                  padding: EdgeInsets.only(bottom: 5,),
+                  child: finish
+                      ? Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      : Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
 
-          )
+              )
 
-        ]),
+            ]),
 
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -619,7 +473,7 @@ class _video_Body extends State<video_Body> {
                   : Icon(Icons.mic, color: Colors.blue, size: 28),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 3),
+              padding: EdgeInsets.only(bottom: 3,),
               child: Text("받아쓰기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
             )
           ],
@@ -630,16 +484,16 @@ class _video_Body extends State<video_Body> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
               IconButton(
-                padding: EdgeInsets.only(bottom: 3,),
-              onPressed: () async {
+                padding: EdgeInsets.zero,
+                onPressed: () async {
 
-                await _onRecordButtonPressed();
-                if (!mounted) return;
+                  await _onRecordButtonPressed();
+                  if (!mounted) return;
                   setState(() {});
 
-              }, icon: Icon(_recordIcon, color: Colors.green, size: 28,
-            ),
-            ),
+                }, icon: Icon(_recordIcon, color: Colors.green, size: 28,
+              ),
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
                 child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
@@ -651,11 +505,11 @@ class _video_Body extends State<video_Body> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
               IconButton(
-              padding: EdgeInsets.zero,
-              onPressed:
-              _currentStatus != RecordingStatus.Unset ? _stop : null,
-              icon: Icon(Icons.stop, color: Colors.green, size: 28),
-            ),
+                padding: EdgeInsets.only(bottom: 3,),
+                onPressed:
+                _currentStatus != RecordingStatus.Unset ? _stop : null,
+                icon: Icon(Icons.stop, color: Colors.green, size: 28),
+              ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
                 child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
@@ -675,15 +529,15 @@ class _video_Body extends State<video_Body> {
                     plus();
                     //onPageChanged: _questionController.updateTheQnNum,
                   }),
-    Padding(
-    padding: EdgeInsets.only(bottom: 5,),
-              child: Container(padding:EdgeInsets.zero,
-              child: start
-                  ? Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                  : Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+              Padding(
+                  padding: EdgeInsets.only(bottom: 5,),
+                  child: Container(padding:EdgeInsets.zero,
+                      child: start
+                          ? Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                          : Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+                  )
               )
-    )
-        ])
+            ])
       ],
     );
   }
@@ -795,9 +649,9 @@ class _video_Body extends State<video_Body> {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
     if (!mounted) return;
-      setState(() {
-        _current = recording!;
-      });
+    setState(() {
+      _current = recording!;
+    });
 
 
     const tick = const Duration(milliseconds: 50);
@@ -857,11 +711,11 @@ class _video_Body extends State<video_Body> {
 
   reset() {
 
-      setState(() {
-        //counter = 0;
-        //score =0;
-        text = '';
-      });
+    setState(() {
+      //counter = 0;
+      //score =0;
+      text = '';
+    });
 
   }
 

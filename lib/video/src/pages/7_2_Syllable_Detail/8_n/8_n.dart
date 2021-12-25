@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n_video_body.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class N extends StatelessWidget{
@@ -62,15 +63,27 @@ class N extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '나',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:1,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '냐',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:2,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '너',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:3,
+                            ),));
+                          }
                       ),
                     ],
                   ), //바뱌버
@@ -79,15 +92,27 @@ class N extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '녀',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:4,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '노',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:5,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '뇨',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:6,
+                            ),));
+                          }
                       ),
                     ],
                   ), //벼부뷰
@@ -96,15 +121,28 @@ class N extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '누',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:7,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '뉴',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:8,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '느',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:9,
+                            ),));
+
+                          }
                       ),
                     ],
                   ), //보뵤브
@@ -113,7 +151,11 @@ class N extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '니',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_8(
+                              index:10,
+                            ),));
+                          }
                       ),
                     ],
                   ), //비

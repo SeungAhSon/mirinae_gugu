@@ -4,6 +4,8 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
+import '16_gg_video_body.dart';
+
 class GG extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -62,15 +64,27 @@ class GG extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '까',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:1,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '꺄',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:2,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '꺼',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:3,
+                            ),));
+                          }
                       ),
                     ],
                   ), //바뱌버
@@ -79,15 +93,27 @@ class GG extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '껴',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:4,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '꼬',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:5,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '꾜',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:6,
+                            ),));
+                          }
                       ),
                     ],
                   ), //벼부뷰
@@ -96,15 +122,27 @@ class GG extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '꾸',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:7,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '뀨',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:8,
+                            ),));
+                          }
                       ),
                       LearnLevelButton(
                           text: '끄',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:9,
+                            ),));
+                          }
                       ),
                     ],
                   ), //보뵤브
@@ -113,7 +151,11 @@ class GG extends StatelessWidget{
                     children: <Widget>[
                       LearnLevelButton(
                           text: '끼',
-                          onTap: () async {}
+                          onTap: () async {
+                            await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_16(
+                              index:10,
+                            ),));
+                          }
                       ),
                     ],
                   ), //비

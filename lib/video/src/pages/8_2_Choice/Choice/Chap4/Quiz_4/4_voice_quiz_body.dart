@@ -147,7 +147,7 @@ class _StartPageState_4 extends State<StartPage_4> {
             MediaQuery.of(context).size.height*0.25,
             MediaQuery.of(context).size.width*0.2,
             MediaQuery.of(context).size.height*0.5),
-        duration: Duration(milliseconds : 3000), //500
+        duration: Duration(milliseconds : 800), //500
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,
@@ -164,7 +164,7 @@ class _StartPageState_4 extends State<StartPage_4> {
             MediaQuery.of(context).size.height*0.25,
             MediaQuery.of(context).size.width*0.2,
             MediaQuery.of(context).size.height*0.5),
-        duration: Duration(milliseconds : 3000),
+        duration: Duration(milliseconds : 800),
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,

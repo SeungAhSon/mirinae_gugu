@@ -38,7 +38,7 @@ class _5_video_page extends State<video_page>{
   @override
   void dispose() {
 
-    _controller.pause();
+    _controller.dispose();
     super.dispose();
   }
 

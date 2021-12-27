@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/controller/app_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/3_home.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_Record.dart';
+import 'package:mirinae_gugu/video/src/pages/6_record/6_gorecord.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_setting.dart';
 import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body.dart';
 
@@ -21,6 +22,7 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
               return Home();
 
             case RouteName.Record:
+              return GoRecord();
 
             case RouteName.Add:
               return Setting();

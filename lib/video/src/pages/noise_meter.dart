@@ -19,6 +19,10 @@ class _Noise extends State<StatefulWidget> {
   int currentDecibel = 0;
   double a = 0;
 
+  bool? get isInfinite => null;
+
+  bool? get isNaN => null;
+
   @override
   void dispose() {
     subscription!.cancel();
@@ -36,8 +40,13 @@ class _Noise extends State<StatefulWidget> {
 
   void onData(NoiseReading sound) {
     setState(() {
-      int decibel = sound.maxDecibel.toInt();
-      currentDecibel = decibel;
+      if (sound.maxDecibel.isNaN || sound.maxDecibel.isInfinite){
+        print('인식없음');
+      }
+      else{
+        int decibel = sound.maxDecibel.toInt();
+        currentDecibel = decibel;
+      }
       if (currentDecibel < 50){
         currentDecibel = 0;
       }
@@ -47,6 +56,7 @@ class _Noise extends State<StatefulWidget> {
       else{
         a = (currentDecibel-50)*(85/50);
         currentDecibel = a.toInt();
+
       }
     });
   }
@@ -57,10 +67,11 @@ class _Noise extends State<StatefulWidget> {
     return currentDecibel < limitDecibel && currentDecibel > minlimitDecibel;
   }*/
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         body: Container(
           child: Column(
             children: <Widget>[
@@ -69,6 +80,7 @@ class _Noise extends State<StatefulWidget> {
                   padding: EdgeInsets.only(top: 0),
                   child: Column(
                     children: [
+
                       FAProgressBar(
                         size: 12,
                         currentValue: currentDecibel,

@@ -31,7 +31,7 @@ class video_Body_16 extends StatefulWidget {
 class _video_Body extends State<video_Body_16> {
   late PageController _pageController;
   bool finish = false;
-   CameraController controller =
+  CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
 
   //final VideoHomeController controller= Get.put(VideoHomeController());
@@ -260,8 +260,8 @@ class _video_Body extends State<video_Body_16> {
           ),
           actions: <Widget>[
             IconButton(
-                onPressed: (){
-                },
+              onPressed: (){
+              },
               icon: Icon(Icons.arrow_back,color: Colors.white.withOpacity(0)),
 
             ),
@@ -598,8 +598,11 @@ class _video_Body extends State<video_Body_16> {
   }
 
   _onFinish_test() {
-    appDir!.list().listen((onData) {}).onDone(() {
-      setState(() {});
+    appDir!.list().listen((onData) {
+    }).onDone(() {
+      if (this.mounted) {
+        setState(() {});
+      }
     });
   }
 
@@ -622,68 +625,81 @@ class _video_Body extends State<video_Body_16> {
 
   _initial() async {
     Directory? appDir = await getExternalStorageDirectory();
-    String jrecord = 'Audiorecords';
-    String dato = "${DateTime.now().millisecondsSinceEpoch.toString()}.wav";
-    Directory appDirec = Directory("${appDir!.path}/$jrecord/");
 
-    bool exists = await Directory(
-        '/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/')
-        .exists();
+    String jrecord = "Audiorecords";
+    String dato = "${(DateTime.now().millisecondsSinceEpoch -  54000000).toString()}.wav";
+    //String dato = "${(detroitTime.millisecondsSinceEpoch).toString()}.wav";
+    print('날짜임');
+    print(dato);
+    print(DateTime.now().millisecondsSinceEpoch-32400000);
+    Directory appDirec =
+    Directory("${appDir!.path}/$jrecord/");
+
+    bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
     print(exists);
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
       print("path for file11 ${patho}");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
+      bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
+      print(Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/'));
     } else {
       appDirec.create(recursive: true);
-      Fluttertoast.showToast(msg: "Start Recording , Press Start");
+      //Fluttertoast.showToast(msg: "Start Recording , Press Start");
       String patho = "${appDirec.path}$dato";
       print("path for file22 ${patho}");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     }
+    print('end');
   }
 
   _start() async {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
-    if (!mounted) return;
-    setState(() {
-      _current = recording!;
-    });
-
+    if (this.mounted) {
+      setState(() {
+        _current = recording!;
+      });
+    }
 
     const tick = const Duration(milliseconds: 50);
-    Timer.periodic(tick, (Timer t) async {
+    new Timer.periodic(tick, (Timer t) async {
       if (_currentStatus == RecordingStatus.Stopped) {
         t.cancel();
       }
 
       var current = await audioRecorder!.current(channel: 0);
       // print(current.status);
-      setState(() {
-        _current = current!;
-        _currentStatus = _current!.status!;
-      });
+      if (this.mounted) {
+        setState(() {
+          _current = current!;
+          _currentStatus = _current!.status!;
+        });
+      }
     });
-
+    print('start');
   }
 
   _stop() async {
     var result = await audioRecorder!.stop();
-    Fluttertoast.showToast(msg: "Stop Recording , File Saved");
+    Fluttertoast.showToast(msg: "녹음 파일이 저장되었습니다");
     _onFinish_test();
-    setState(() {
-      _current = result!;
-      _currentStatus = _current!.status!;
-      _current!.duration = null;
-      _recordIcon = Icons.mic;
-      stop = false;
-    });
+    if (this.mounted) {
+      setState(() {
+        _current = result!;
+        _currentStatus = _current!.status!;
+        _current!.duration = null;
+        _recordIcon = Icons.mic;
+        stop = false;
+      });
+    }
   }
 
+
   Future<void> _recordo() async {
+
     Map<Permission, PermissionStatus> statuses = await [
       Permission.microphone,
       Permission.storage,
@@ -691,21 +707,24 @@ class _video_Body extends State<video_Body_16> {
     print(statuses[Permission.microphone]);
     print(statuses[Permission.storage]);
     //bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
-    if (statuses[Permission.microphone] == PermissionStatus.granted) {
+    if (statuses[Permission.microphone]==PermissionStatus.granted) {
+
       /* }
     bool hasPermission = await FlutterAudioRecorder.hasPermissions ?? false;
     if (hasPermission) {*/
       await _initial();
       await _start();
-      Fluttertoast.showToast(msg: "Start Recording");
-      setState(() {
-        _currentStatus = RecordingStatus.Recording;
-        /*_recordIcon = Icons.pause;*/
-        /*colo = Colors.red;*/
-        stop = true;
-      });
+      Fluttertoast.showToast(msg: "녹음 시작");
+      if (this.mounted) {
+        setState(() {
+          _currentStatus = RecordingStatus.Recording;
+          /*_recordIcon = Icons.pause;*/
+          /*colo = Colors.red;*/
+          stop = true;
+        });
+      }
     } else {
-      Fluttertoast.showToast(msg: "Allow App To Use Mic");
+      Fluttertoast.showToast(msg: "마이크 사용을 허용해주세요");
     }
   }
 

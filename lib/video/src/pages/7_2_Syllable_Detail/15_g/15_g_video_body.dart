@@ -42,7 +42,6 @@ class _video_Body extends State<video_Body_15> {
   String text = '';
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
-  late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = ["1. 가", "2. 갸", "3. 거","4. 겨","5. 고","6. 교","7. 구","8. 규","9. 그","10. 기"];
 
   //record
@@ -660,7 +659,7 @@ class _video_Body extends State<video_Body_15> {
       setState(() {
         _current = recording!;
       });
-
+//
 
       const tick = const Duration(milliseconds: 50);
       Timer.periodic(tick, (Timer t) async {

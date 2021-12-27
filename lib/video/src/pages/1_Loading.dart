@@ -102,15 +102,21 @@ class _Loading extends State<Loading> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
 
-    return Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/1_screen_start.png"), fit: BoxFit.fill
-            ),
-        ),
+    return Scaffold(
+      backgroundColor: Color(0xff489bfb),
 
-      child:Scaffold(
-        backgroundColor: Colors.transparent,
+      body: Align(
+        alignment: Alignment.center,
+        child:Container(
+            height: MediaQuery.of(context).size.width*0.5,
+            width: MediaQuery.of(context).size.width*0.5,
+            decoration: BoxDecoration(
+              //color: Color(0xff489bfb),
+              image: DecorationImage(image:AssetImage("assets/GGJJ_logo.JPG"),
+                fit: BoxFit.fill,
+              ),
+            )
+        ),
       ),
     );
   }

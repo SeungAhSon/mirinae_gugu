@@ -23,16 +23,12 @@ class Login extends StatelessWidget{
 
 @override
   Widget build(BuildContext context){
-
-
     String? Q;
     if (select==1){
       Q = "origin";
-
     }
     else if(select ==2){
       Q = "bmjua";
-
     }
     else if(select ==3){
       Q = "chosun100";

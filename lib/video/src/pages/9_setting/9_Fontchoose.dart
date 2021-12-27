@@ -37,12 +37,9 @@ class _Fontchoose extends State<Fontchoose> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
       if (prefs.getInt('fontchoose') == 1) {
         select = 1;
-
       }
       else if (prefs.getInt('fontchoose') == 2) {
         select = 2;
-
-
       }
       else if (prefs.getInt('fontchoose') == 3) {
         select = 3;

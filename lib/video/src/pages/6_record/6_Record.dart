@@ -34,6 +34,7 @@ class _RecordState extends State<Record> {
 
   @override
   void dispose() {
+    advancedPlayer.pause();
     super.dispose();
   }
 

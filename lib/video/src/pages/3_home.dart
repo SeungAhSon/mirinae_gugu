@@ -131,7 +131,7 @@ class _Home extends State<Home> {
         s.setBool("speaking2_1",false);
         s.setBool("speaking2_2",false);
         s.setBool("speaking2_3",false);
-        prefs.setInt('fontchoose',0);
+        prefs.setInt('fontchoose',1);
         ss.setString('fontsize',"origin");
         prefs.setStringList("favorite_1_", favorite_1.map((value) => value.toString()).toList());
       }

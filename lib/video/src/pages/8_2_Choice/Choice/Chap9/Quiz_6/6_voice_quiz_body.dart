@@ -91,11 +91,14 @@ class _StartPageState_6 extends State<StartPage_6> {
           recognizeFinished = true;
         });
       }
-    }, onDone: () {
-      setState(() {
-        recognizing = false;
-      });
-    });
+    },onDone: () {
+      if (this.mounted) {
+        setState(() {
+
+          recognizing = false;
+
+        });
+      }});
   }
 
   //마이크 stop 했을 때

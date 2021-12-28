@@ -150,16 +150,18 @@ class _video_Body extends State<video_Body_16> {
         data.results.map((e) => e.alternatives.first.transcript).join("");
 
         if (data.results.first.isFinal) {
+          if (this.mounted) {
           //responseText += currentText;
           setState(() {
             //text = responseText;
             recognizeFinished = true;
-          });
+          });}
         } else {
+          if (this.mounted) {
           setState(() {
             text = currentText;
             recognizeFinished = true;
-          });
+          });}
         }
 
       },

@@ -76,7 +76,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                          color: FavoriteButtons[1] ? Colors.orange : Color(0xff7ba6f9),
+                          color: FavoriteButtons[1] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                           text: '1-1',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -85,7 +85,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                           }
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[2] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[2] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-2',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -94,7 +94,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                               },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[3] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[3] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-3',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -109,7 +109,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[4] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[4] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                           text: '1-4',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -118,7 +118,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[5] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[5] ?Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-5',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -127,7 +127,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[6] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[6] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-6',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -141,7 +141,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[7] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[7] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-7',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -150,7 +150,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[8] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[8] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-8',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -159,7 +159,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[9] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[9] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-9',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -173,7 +173,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[10] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[10] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-10',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -183,7 +183,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                       ),
 
                       LearnLevelButton(
-                        color: FavoriteButtons[11] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[11] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-11',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -192,7 +192,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[12] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[12] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-12',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -208,7 +208,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[13] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[13] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-13',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -217,7 +217,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[14] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[14] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-14',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -226,7 +226,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[15] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[15] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-15',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -242,7 +242,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[16] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[16] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-16',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -251,7 +251,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[17] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[17] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-17',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -260,7 +260,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[18] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[18] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-18',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -276,7 +276,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[19] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[19] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-19',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -285,7 +285,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[20] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[20] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-20',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -294,7 +294,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[21] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[21] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-21',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -310,7 +310,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[22] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[22] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-22',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -319,7 +319,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[23] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[23] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-23',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -328,7 +328,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[24] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[24] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-24',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -344,7 +344,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                        color: FavoriteButtons[25] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[25] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-25',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -353,7 +353,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[26] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[26] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-26',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -362,7 +362,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[27] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[27] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-27',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -378,7 +378,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
-                  color: FavoriteButtons[28] ? Colors.orange : Color(0xff7ba6f9),
+                  color: FavoriteButtons[28] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
           text: '1-28',
           onTap: () async {
             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -387,7 +387,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
           },
         ),
                       LearnLevelButton(
-                        color: FavoriteButtons[29] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[29] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
                         text: '1-29',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
@@ -396,7 +396,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                         },
                       ),
                       LearnLevelButton(
-                        color: FavoriteButtons[30] ? Colors.orange : Color(0xff7ba6f9),
+                        color: FavoriteButtons[30] ? Color(0xfff5ab39): Color(0xff7ba6f9),
                         text: '1-30',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(

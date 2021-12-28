@@ -80,21 +80,22 @@ class _StartPageState_2 extends State<StartPage_2> {
       final currentText =
       data.results.map((e) => e.alternatives.first.transcript).join("");
       if (data.results.first.isFinal) {
+        if (this.mounted) {
         //responseText += currentText;
         setState(() {
           //text = responseText;
           recognizeFinished = true;
-        });
+        });}
       } else {
+        if (this.mounted) {
         setState(() {
           realtext = currentText;
           recognizeFinished = true;
         });
-      }
+      }}
     },onDone: () {
       if (this.mounted) {
         setState(() {
-
           recognizing = false;
 
         });
@@ -181,11 +182,11 @@ class _StartPageState_2 extends State<StartPage_2> {
   }
 
   nextpage() {
+    if (this.mounted) {
     setState(() {
       realtext = '';
       if(counter<qList.length-1) {
         questionnum = questionnum + 1;
-        print(questionnum);
         counter = counter +1;
       }
       else if (counter == qList.length-1){
@@ -196,7 +197,7 @@ class _StartPageState_2 extends State<StartPage_2> {
           ),
         );
       }
-    });
+    });}
   }
 
   reset()

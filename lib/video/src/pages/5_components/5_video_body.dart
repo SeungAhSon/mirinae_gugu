@@ -154,7 +154,7 @@ class _video_Body extends State<video_Body> {
   Recording? _current;
 
   // Recorder properties
-  late FlutterAudioRecorder? audioRecorder;
+  FlutterAudioRecorder? audioRecorder;
 
   @override
   void initState() {
@@ -208,6 +208,8 @@ class _video_Body extends State<video_Body> {
     controller.dispose();
 
 
+
+
     appDir = null;
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
@@ -248,16 +250,19 @@ class _video_Body extends State<video_Body> {
         data.results.map((e) => e.alternatives.first.transcript).join("");
 
         if (data.results.first.isFinal) {
-          //responseText += currentText;
-          setState(() {
-            //text = responseText;
-            recognizeFinished = true;
-          });
+          if (this.mounted) {
+            //responseText += currentText;
+            setState(() {
+              //text = responseText;
+              recognizeFinished = true;
+            });
+          }
         } else {
+          if (this.mounted) {
           setState(() {
             text = currentText;
             recognizeFinished = true;
-          });
+          });}
         }
 
       },
@@ -819,18 +824,22 @@ class _video_Body extends State<video_Body> {
     }
 
     const tick = const Duration(milliseconds: 50);
-    new Timer.periodic(tick, (Timer t) async {
-      if (_currentStatus == RecordingStatus.Stopped) {
-        t.cancel();
-      }
 
-      var current = await audioRecorder!.current(channel: 0);
-      // print(current.status);
-      if (this.mounted) {
-        setState(() {
-          _current = current!;
-          _currentStatus = _current!.status!;
-        });
+    new Timer.periodic(tick, (Timer t) async {
+
+      if (mounted) {
+        if (_currentStatus == RecordingStatus.Stopped) {
+          t.cancel();
+        }
+
+        var current = await audioRecorder!.current(channel: 0);
+        // print(current.status);
+        if (this.mounted) {
+          setState(() {
+            _current = current!;
+            _currentStatus = _current!.status!;
+          });
+        }
       }
     });
     print('start');

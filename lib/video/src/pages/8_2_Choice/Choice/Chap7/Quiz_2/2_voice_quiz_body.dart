@@ -181,22 +181,22 @@ class _StartPageState_2 extends State<StartPage_2> {
   }
 
   nextpage() {
-    setState(() {
-      realtext = '';
-      if(counter<qList.length-1) {
-        questionnum = questionnum + 1;
-        print(questionnum);
-        counter = counter +1;
-      }
-      else if (counter == qList.length-1){
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ScorePage(lastscore: score),
-          ),
-        );
-      }
-    });
+    if (this.mounted) {
+      setState(() {
+        realtext = '';
+        if(counter<qList.length-1) {
+          questionnum = questionnum + 1;
+          counter = counter +1;
+        }
+        else if (counter == qList.length-1){
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ScorePage(lastscore: score),
+            ),
+          );
+        }
+      });}
   }
 
   reset()

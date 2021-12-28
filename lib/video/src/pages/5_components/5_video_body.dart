@@ -164,7 +164,6 @@ class _video_Body extends State<video_Body> {
     controller.initialize().then((_) {
       setState(() {});
     });
-
     _pageController = PageController();
     //record
     super.initState();
@@ -207,14 +206,15 @@ class _video_Body extends State<video_Body> {
     _audioStreamSubscription?.cancel();
     _audioStream?.close();
     controller.dispose();
-    stop = true;
-    _stop();
+
+
     appDir = null;
     _currentStatus = RecordingStatus.Unset;
     audioRecorder = null;
     _pageController.dispose();
     super.dispose();
   }
+
 
   void streamingRecognize() async {
     if (mounted){
@@ -259,11 +259,17 @@ class _video_Body extends State<video_Body> {
             recognizeFinished = true;
           });
         }
-      }, onDone: () {
+
+      },
+
+          onDone: () {
+            if (this.mounted) {
         setState(() {
+
           recognizing = false;
+
         });
-      });
+      }});
     }
   }
 

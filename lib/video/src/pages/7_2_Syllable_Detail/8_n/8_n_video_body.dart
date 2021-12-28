@@ -42,7 +42,6 @@ class _video_Body extends State<video_Body_8> {
   String text = '';
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
-  late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = ["1. 나", "2. 냐", "3. 너","4. 녀","5. 노","6. 뇨","7. 누","8. 뉴","9. 느","10. 니"];
 
   //record
@@ -119,49 +118,62 @@ class _video_Body extends State<video_Body_8> {
   }
 
   void streamingRecognize() async {
-    _audioStream = BehaviorSubject<List<int>>();
-    _audioStreamSubscription = _recorder.audioStream.listen((event) {
-      _audioStream?.add(event);
-    });
-
-    await _recorder.start();
-
-    setState(() {
-      recognizing = true;
-    });
-    //서비스 계정. assets 폴더에 api key 넣음
-    final serviceAccount = ServiceAccount.fromString(
-        '${(await rootBundle.loadString('assets/lejinhy-speech-to-text-11be68205205.json'))}');
-    final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
-    final config = _getConfig();
-
-    final responseStream = speechToText.streamingRecognize(
-        StreamingRecognitionConfig(config: config, interimResults: true),
-        _audioStream!);
-
-    var responseText = '';
-    //마이크 입력 받았을 때 출력될 텍스트 설정.
-    responseStream.listen((data) {
-      final currentText =
-      data.results.map((e) => e.alternatives.first.transcript).join("");
-      if (data.results.first.isFinal) {
-        //responseText += currentText;
-        setState(() {
-          //text = responseText;
-          recognizeFinished = true;
-        });
-      } else {
-        setState(() {
-          text = currentText;
-          recognizeFinished = true;
-        });
-      }
-    }, onDone: () {
-      setState(() {
-        recognizing = false;
+    if (mounted){
+      _audioStream = BehaviorSubject<List<int>>();
+      _audioStreamSubscription = _recorder.audioStream.listen((event) {
+        _audioStream?.add(event);
       });
-    });
+
+      await _recorder.start();
+      if (!mounted) return;
+      setState(() {
+        recognizing = true;
+      });
+
+
+      //서비스 계정. assets 폴더에 api key 넣음
+      final serviceAccount = ServiceAccount.fromString(
+          '${(await rootBundle.loadString(
+              'assets/lejinhy-speech-to-text-11be68205205.json'))}');
+      final speechToText = SpeechToText.viaServiceAccount(serviceAccount);
+      final config = _getConfig();
+
+      final responseStream = speechToText.streamingRecognize(
+          StreamingRecognitionConfig(config: config, interimResults: true),
+          _audioStream!);
+
+      var responseText = '';
+      //마이크 입력 받았을 때 출력될 텍스트 설정.
+      responseStream.listen((data) {
+        final currentText =
+        data.results.map((e) => e.alternatives.first.transcript).join("");
+
+        if (data.results.first.isFinal) {
+          //responseText += currentText;
+          setState(() {
+            //text = responseText;
+            recognizeFinished = true;
+          });
+        } else {
+          setState(() {
+            text = currentText;
+            recognizeFinished = true;
+          });
+        }
+
+      },
+
+          onDone: () {
+            if (this.mounted) {
+              setState(() {
+
+                recognizing = false;
+
+              });
+            }});
+    }
   }
+
 
   //마이크 stop 했을 때
   void stopRecording() async {
@@ -484,7 +496,7 @@ class _video_Body extends State<video_Body_8> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
               IconButton(
-                padding: EdgeInsets.zero,
+                padding: EdgeInsets.only(bottom: 3,),
                 onPressed: () async {
 
                   await _onRecordButtonPressed();

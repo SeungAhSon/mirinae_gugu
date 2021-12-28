@@ -117,16 +117,19 @@ class _video_Body extends State<video_Body_15> {
   }
 
   void streamingRecognize() async {
-    _audioStream = BehaviorSubject<List<int>>();
-    _audioStreamSubscription = _recorder.audioStream.listen((event) {
-      _audioStream?.add(event);
-    });
+    if (mounted){
+      _audioStream = BehaviorSubject<List<int>>();
+      _audioStreamSubscription = _recorder.audioStream.listen((event) {
+        _audioStream?.add(event);
+      });
 
-    await _recorder.start();
-    if(mounted) {
+      await _recorder.start();
+      if (!mounted) return;
       setState(() {
         recognizing = true;
       });
+
+
       //서비스 계정. assets 폴더에 api key 넣음
       final serviceAccount = ServiceAccount.fromString(
           '${(await rootBundle.loadString(
@@ -143,6 +146,7 @@ class _video_Body extends State<video_Body_15> {
       responseStream.listen((data) {
         final currentText =
         data.results.map((e) => e.alternatives.first.transcript).join("");
+
         if (data.results.first.isFinal) {
           //responseText += currentText;
           setState(() {
@@ -155,11 +159,17 @@ class _video_Body extends State<video_Body_15> {
             recognizeFinished = true;
           });
         }
-      }, onDone: () {
-        setState(() {
-          recognizing = false;
-        });
-      });
+
+      },
+
+          onDone: () {
+            if (this.mounted) {
+              setState(() {
+
+                recognizing = false;
+
+              });
+            }});
     }
   }
 

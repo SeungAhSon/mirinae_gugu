@@ -206,9 +206,9 @@ class _video_Body extends State<video_Body> {
     _audioStreamSubscription?.cancel();
     _audioStream?.close();
     controller.dispose();
-
-
-
+    if(audioRecorder != null){
+      audioRecorder!.stop();
+    }
 
     appDir = null;
     _currentStatus = RecordingStatus.Unset;

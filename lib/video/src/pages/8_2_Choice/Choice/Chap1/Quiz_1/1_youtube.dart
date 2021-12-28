@@ -58,14 +58,13 @@ class ayotube extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-    print(widget.id);
     QuestionController_1 _controller = Get.put(QuestionController_1());
     return Container(
       child: Column(
         children: [
           Container(
               margin: EdgeInsets.only(left: 20,right: 20),
-              height: 240,
+              height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31,
               child: youtube(context),
           ),
           SizedBox(height: 20,),

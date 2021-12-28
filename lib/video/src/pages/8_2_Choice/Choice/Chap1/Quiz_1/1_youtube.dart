@@ -43,7 +43,7 @@ class ayotube extends StatefulWidget {
     @override
     void dispose() {
 
-      _controller.pause();
+      _controller.dispose();
       super.dispose();
     }
 

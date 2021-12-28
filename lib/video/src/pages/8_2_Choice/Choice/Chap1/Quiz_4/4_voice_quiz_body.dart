@@ -55,7 +55,8 @@ class _StartPageState_4 extends State<StartPage_4> {
   void streamingRecognize() async {
     _audioStream = BehaviorSubject<List<int>>();
     _audioStreamSubscription = _recorder.audioStream.listen((event) {
-      _audioStream?.add(event);
+      if (!_audioStream!.isClosed)
+        _audioStream?.add(event);
     });
 
     await _recorder.start();
@@ -80,27 +81,27 @@ class _StartPageState_4 extends State<StartPage_4> {
       final currentText =
       data.results.map((e) => e.alternatives.first.transcript).join("");
       if (data.results.first.isFinal) {
-        //responseText += currentText;
-        setState(() {
-          //text = responseText;
-          recognizeFinished = true;
-        });
+        if (this.mounted) {
+          //responseText += currentText;
+          setState(() {
+            //text = responseText;
+            recognizeFinished = true;
+          });}
       } else {
-        setState(() {
-          realtext = currentText;
-          recognizeFinished = true;
-        });
-      }
+        if (this.mounted) {
+          setState(() {
+            realtext = currentText;
+            recognizeFinished = true;
+          });
+        }}
     },onDone: () {
       if (this.mounted) {
         setState(() {
-
           recognizing = false;
 
         });
       }});
   }
-
   //마이크 stop 했을 때
   void stopRecording() async {
     await _recorder.stop();

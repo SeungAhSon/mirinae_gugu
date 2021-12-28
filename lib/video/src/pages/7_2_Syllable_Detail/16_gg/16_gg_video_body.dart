@@ -122,6 +122,7 @@ class _video_Body extends State<video_Body_16> {
     if (mounted){
       _audioStream = BehaviorSubject<List<int>>();
       _audioStreamSubscription = _recorder.audioStream.listen((event) {
+        if (!_audioStream!.isClosed)
         _audioStream?.add(event);
       });
 

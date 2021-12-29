@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough.dart';
 
@@ -110,7 +111,7 @@ class _Setting extends State<Setting>{
                 onPressed: (){
                   Navigator.of(context).pop();
                 },
-                child: Text("닫기",style: TextStyle(color: Colors.black),),
+                child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14),),
               )
             ],
           );

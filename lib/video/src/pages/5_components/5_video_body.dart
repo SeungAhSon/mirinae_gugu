@@ -159,8 +159,9 @@ class _video_Body extends State<video_Body> {
 
   @override
   void initState() {
-
+    loadFavorite();
     super.initState();
+    saved();
     _recorder.initialize();
     controller.initialize().then((_) {
       setState(() {});
@@ -309,21 +310,19 @@ class _video_Body extends State<video_Body> {
           .toList();
     });
   }
-
-  Future<void> delete() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = false;
-    });
-    await prefs.setStringList(
-        "favorite_1_", favorite.map((value) => value.toString()).toList());
-    setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
-          .map((value) => value == 'true')
-          .toList();
-    });
-  }
-
+  // Future<void> delete() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     favorite[widget.index] = false;
+  //   });
+  //   await prefs.setStringList(
+  //       "favorite_1_", favorite.map((value) => value.toString()).toList());
+  //   setState(() {
+  //     favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
+  //         .map((value) => value == 'true')
+  //         .toList();
+  //   });
+  // }
   Future<void> saved() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -386,7 +385,7 @@ class _video_Body extends State<video_Body> {
 
   @override
   Widget build(BuildContext context) {
-    loadFavorite();
+    saved();
     backplusload();
     var height2 = AppBar().preferredSize.height;
 
@@ -406,7 +405,10 @@ class _video_Body extends State<video_Body> {
               style: TextStyle(fontSize: 20.sp + size, color: Colors.blue),
             ),
           ),
-          leading: IconButton(
+
+          leading: Semantics(
+            label: "이전 페이지로 나가기",
+    child: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
@@ -414,15 +416,13 @@ class _video_Body extends State<video_Body> {
             iconSize: 25,
             icon: Icon(Icons.arrow_back),
           ),
-
+          ),
           actions: <Widget>[
             IconButton(
-              onPressed: favorite[widget.index] ? delete : saved,
-              icon: favorite[widget.index]
-                  ? Icon(Icons.bookmark_rounded,
-                  color: Colors.yellow[800], size: 30) //그대로일때
-                  : Icon(Icons.bookmark_add_outlined,
-                  color: Colors.yellow[800], size: 30),
+              onPressed: (){
+              },
+              icon: Icon(Icons.arrow_back,color: Colors.white.withOpacity(0)),
+
             ),
           ],
         ),

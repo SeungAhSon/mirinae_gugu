@@ -271,13 +271,16 @@ class _video_Body extends State<video_Body_15> {
             ),
           ),
 
-          leading: IconButton(
+          leading: Semantics(
+            label: "이전 페이지로 나가기",
+          child: IconButton(
             onPressed: () {
               Navigator.pop(context);
             },
             color: Colors.black,
             iconSize: 25,
             icon: Icon(Icons.arrow_back),
+          ),
           ),
           actions: <Widget>[
             IconButton(

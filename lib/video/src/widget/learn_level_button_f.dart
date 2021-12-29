@@ -6,18 +6,15 @@ class LearnLevelButton extends StatelessWidget {
   LearnLevelButton({
     Key ?key,
     this.text = '',
-    this.width = 80.0,
-    this.height = 80.0,
-    this.borderRadius = 50.0,
-    required this.onTap, required this.color,
+    required this.onTap, required this.state
   }) : super(key: key);
 
-  final color;
+  final bool state;
   final String text;
   final VoidCallback onTap;
-  final double width;
-  final double height;
-  final double borderRadius;
+  final double borderRadius = 50.0;
+  final double width = 80.0.w;
+  final double height = 80.0.h;
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +26,8 @@ class LearnLevelButton extends StatelessWidget {
         //Color(0xff9cbbf6),linkwell
 
         //Color(0xff7ba6f9),
-        color,
-        color,
+        state ?Colors.grey : Color(0xff7ba6f9),
+        state ?Colors.grey: Color(0xff7ba6f9),
 
       ],
     );
@@ -60,7 +57,7 @@ class LearnLevelButton extends StatelessWidget {
                 BoxShadow(
                   blurRadius: 10.0,
                   offset: Offset(5.0, 5.0),
-                  color: Color.fromRGBO(0, 0, 0, 0.3),
+                  color: Color.fromRGBO(0, 0, 0, 0.2),
 
                 ),
               ],
@@ -78,9 +75,9 @@ class LearnLevelButton extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 1.0,
+                    blurRadius: 0.5,
                     offset: Offset(1.0, 1.5),
-                    color: Color.fromRGBO(0, 0, 0, 0.3),
+                    color: Color.fromRGBO(0, 0, 0, 0.2),
                   ),
                 ],
                 gradient: gradient,
@@ -90,7 +87,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24.0.sp+size, fontWeight: FontWeight.bold,
+                      fontSize: 22.0.sp+size, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/video/src/app.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
@@ -187,7 +187,7 @@ class _Home extends State<Home> {
                       Align(
                           alignment: Alignment.centerLeft,
                           child: Text('행복한\n하루되세요~~', style: TextStyle(
-                              fontSize: 24.0+size, fontWeight: FontWeight.bold))
+                              fontSize: 24.0.sp+size, fontWeight: FontWeight.bold))
                       ),
                       CircleAvatar(
                         radius: 40.0,
@@ -202,7 +202,7 @@ class _Home extends State<Home> {
 
                 alignment: Alignment.centerLeft,
                 child: Text('     학습하기', style: TextStyle(
-                    fontSize: 20+size, fontWeight: FontWeight.bold)),
+                    fontSize: 20.sp+size, fontWeight: FontWeight.bold)),
               ),
               FlatButton(
                 height: (MediaQuery

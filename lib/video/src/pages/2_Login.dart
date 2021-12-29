@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,6 @@ import '9_setting/9_Fontchoose.dart';
 
 class Login extends StatelessWidget{
   const Login({Key? key}) : super(key: key);
-
 
   void load() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -42,37 +42,46 @@ class Login extends StatelessWidget{
     WidgetsFlutterBinding.ensureInitialized();
 
     load();
-    print(Q);
-    return GetMaterialApp(
-      builder: (context, child) {
-        return MediaQuery(
-          child: child,
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-        );
-      },
-      title: "구구절절",
-      theme: ThemeData(
-        brightness: Brightness.light,
 
-        fontFamily: Q,
-        primaryColor: Colors.white,
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return ScreenUtilInit(
+        designSize: Size(411.4, 866.3),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: () => GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: '구구절절',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            textTheme: TextTheme(button: TextStyle(fontSize: 45.sp)),
+            brightness: Brightness.light,
+            fontFamily: Q,
+            primaryColor: Colors.white,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
 
-      ),
+            initialBinding: InitBinding(),
+            initialRoute: "/",
+            getPages: [
+              GetPage(name: '/', page: ()=>App())
 
 
-      initialBinding: InitBinding(),
-      initialRoute: "/",
+            ],
 
-      debugShowCheckedModeBanner: false,
-
-      getPages: [
-        GetPage(name: '/', page: ()=>App())
-
-      ],
-
-    );
+          builder: (context, widget) {
+            return MediaQuery(
+              //Setting font does not change with system font size
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget,
+            );
   }
+
+
+
+
+
+        )
+
+  );
+}
 }
 

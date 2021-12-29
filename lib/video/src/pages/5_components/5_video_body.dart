@@ -3,6 +3,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
@@ -402,7 +403,7 @@ class _video_Body extends State<video_Body> {
           title: Center(
             child: Text(
               '${Questiontitle[widget.index - 1]}',
-              style: TextStyle(fontSize: 20 + size, color: Colors.blue),
+              style: TextStyle(fontSize: 20.sp + size, color: Colors.blue),
             ),
           ),
           leading: IconButton(
@@ -512,7 +513,7 @@ class _video_Body extends State<video_Body> {
                                             reset();
                                           },
                                         ),
-                                        Text("다시", style: TextStyle(height: 0.2,fontSize: 10,color: Colors.black), textAlign: TextAlign.center),
+                                        Text("다시", style: TextStyle(height: 0.2,fontSize: 10.sp,color: Colors.black), textAlign: TextAlign.center),
                                       ],
                                     ),
                                   ),
@@ -612,8 +613,8 @@ class _video_Body extends State<video_Body> {
               Container(
                   padding: EdgeInsets.only(bottom: 5,),
                   child: finish
-                      ? Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                      : Text("이전", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+                      ? Text("이전", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      : Text("이전", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
 
               )
 
@@ -632,7 +633,7 @@ class _video_Body extends State<video_Body> {
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 3),
-              child: Text("받아쓰기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
+              child: Text("받아쓰기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
             )
           ],
         ),
@@ -654,7 +655,7 @@ class _video_Body extends State<video_Body> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
-                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
+                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]
         )
@@ -670,7 +671,7 @@ class _video_Body extends State<video_Body> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
-                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12,color: Colors.black),textAlign: TextAlign.center,),
+                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]),
 
@@ -693,8 +694,8 @@ class _video_Body extends State<video_Body> {
                   padding: EdgeInsets.only(bottom: 5,),
                   child: Container(padding:EdgeInsets.zero,
                       child: start
-                          ? Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                          : Text("다음", style: TextStyle(height: 0.05,fontSize: 10,color: Colors.black),textAlign: TextAlign.center,)
+                          ? Text("다음", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                          : Text("다음", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
                   )
               )
             ])
@@ -749,7 +750,7 @@ class _video_Body extends State<video_Body> {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 letterSpacing: 1.0,
-                fontSize: 20.0 + size, //사이즈 조절 필요
+                fontSize: 20.0.sp + size, //사이즈 조절 필요
                 height: 1.75,
                 /*fontWeight: FontWeight.bold,*/
               ))

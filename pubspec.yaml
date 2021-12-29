@@ -65,7 +65,7 @@ dependencies:
   permission_handler:
   storage_path:
 
-
+  flutter_screenutil: ^5.0.2
 
 
 

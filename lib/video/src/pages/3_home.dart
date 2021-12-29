@@ -153,6 +153,7 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
     return SafeArea(
+
       child: Scaffold(
         body: Center(
           child: Column(
@@ -198,6 +199,7 @@ class _Home extends State<Home> {
               ),
               SizedBox(height: 0.5),
               Align(
+
                 alignment: Alignment.centerLeft,
                 child: Text('     학습하기', style: TextStyle(
                     fontSize: 20+size, fontWeight: FontWeight.bold)),
@@ -416,21 +418,30 @@ class _Home extends State<Home> {
             ],
           ),
         ),
+
         appBar:  AppBar(
-            title: Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold)),
+
+            title:
+            Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold)),
             centerTitle: true,
             backgroundColor: Colors.white, elevation: 3.0,
             automaticallyImplyLeading: false,
             iconTheme: IconThemeData(color: Colors.blue),
             //leading:
             actions: <Widget>[
-              Column(
+
+
+        Semantics(
+              label: "",
+
+          child: Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
+
                       Container(
-                        padding: EdgeInsets.only(right: 20, bottom:5),
+                        padding: EdgeInsets.only(right: 25, bottom:5),
                         alignment: Alignment.center,
                         child:IconButton(
                           padding: EdgeInsets.all(0),
@@ -451,6 +462,7 @@ class _Home extends State<Home> {
                           }
                       ),
                       ),
+
                       SizedBox(height: 3,),
                       Padding(
                         padding: EdgeInsets.only(right: 15,),
@@ -458,6 +470,7 @@ class _Home extends State<Home> {
                       )
                     ],
                   ),
+        ),
             ]
         ),
       ),

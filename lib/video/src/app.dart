@@ -49,7 +49,7 @@ class App extends GetView<AppController>{ //루트 경로로  만듦
               BottomNavigationBarItem(
                   icon: Icon(Icons.mic_none,color: Colors.grey[800]),
                   activeIcon: Icon(Icons.mic_none, color: Colors.blueAccent,),
-                  label : "녹음"),
+                  label : "녹음 목록"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.settings_sharp, color: Colors.grey[800],),
                   activeIcon: Icon(Icons.settings_sharp, color: Colors.blueAccent,),

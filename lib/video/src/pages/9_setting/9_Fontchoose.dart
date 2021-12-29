@@ -100,7 +100,9 @@ class _Fontchoose extends State<Fontchoose> {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Row(children: [
+      Semantics(
+      label: "",
+        child: Row(children: [
           Radio(
             value: 1,
             groupValue: select,
@@ -111,8 +113,10 @@ class _Fontchoose extends State<Fontchoose> {
 
           SizedBox(width: 10.0,),
           Text("ROBOTO(기본)",style: TextStyle(fontFamily: "origin"),)
-        ],),
-        Row(children: [
+        ],),),
+        Semantics(
+          label: "",
+        child: Row(children: [
           Radio(
             value: 2,
             groupValue: select,
@@ -123,8 +127,10 @@ class _Fontchoose extends State<Fontchoose> {
           SizedBox(width: 10.0,),
           Text("주아체",style: TextStyle(fontFamily: "bmjua"),)
 
-        ],),
-        Row(children: [
+        ],),),
+        Semantics(
+          label: "",
+        child: Row(children: [
           Radio(
             value: 3,
             groupValue: select,
@@ -134,8 +140,13 @@ class _Fontchoose extends State<Fontchoose> {
           ),
           SizedBox(width: 10.0,),
           Text("조선100년체",style: TextStyle(fontFamily: "chosun100"),)
-        ],),
-        Row(children: [
+        ],),),
+        Semantics(
+          label: "",
+        child: Row(
+          children: [
+
+
           Radio(
             value: 4,
             groupValue: select,
@@ -146,7 +157,10 @@ class _Fontchoose extends State<Fontchoose> {
           SizedBox(width: 10.0,),
           Text("야체",style: TextStyle(fontFamily: "ya"),)
         ],),
-        Row(children: [
+        ),
+    Semantics(
+    label: "",
+        child: Row(children: [
           Radio(
             value: 5,
             groupValue: select,
@@ -158,8 +172,12 @@ class _Fontchoose extends State<Fontchoose> {
           Text("나눔고딕체",style: TextStyle(fontFamily: "nunum"),)
         ],
         ),
+    ),
         SizedBox(height: 20),
-        Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
+        Semantics(
+          label: "",
+        child: Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
+    )
       ],
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
+import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
 
 import '16_gg_video_body.dart';
 
@@ -147,7 +148,7 @@ class GG extends StatelessWidget{
                     ],
                   ), //보뵤브
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
                           text: '끼',
@@ -157,6 +158,8 @@ class GG extends StatelessWidget{
                             ),));
                           }
                       ),
+                      Dumybutton(),
+                      Dumybutton(),
                     ],
                   ), //비
                 ]

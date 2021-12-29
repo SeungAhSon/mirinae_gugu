@@ -4,6 +4,7 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n_video_body.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
+import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
 
 class N extends StatelessWidget{
   @override
@@ -147,7 +148,7 @@ class N extends StatelessWidget{
                     ],
                   ), //보뵤브
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
                           text: '니',
@@ -157,6 +158,8 @@ class N extends StatelessWidget{
                             ),));
                           }
                       ),
+                      Dumybutton(),
+                      Dumybutton(),
                     ],
                   ), //비
                 ]

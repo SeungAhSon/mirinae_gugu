@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
+import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
 
 class H extends StatelessWidget{
   @override
@@ -109,12 +110,14 @@ class H extends StatelessWidget{
                     ],
                   ), //보뵤브
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       LearnLevelButton(
                           text: '히',
                           onTap: () async {}
                       ),
+                      Dumybutton(),
+                      Dumybutton(),
                     ],
                   ), //비
                 ]

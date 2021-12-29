@@ -5,8 +5,36 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 
 class Vocab_Screen_511 extends StatelessWidget{
+  aa(BuildContext context,String title){
+    showDialog(context: context,barrierDismissible: false,
+        builder: (BuildContext context) {
+          return CupertinoAlertDialog(
+            title: Center(child: Text(title,style: TextStyle(fontSize: 24),)),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 10),
+                Text("추후 업데이트 예정입니다 !!",style: TextStyle(fontSize: 15),),
+              ],
+            ),
+            actions: <Widget>[
+              CupertinoDialogAction(
+                onPressed: () async {
+                  Navigator.of(context).pop();
+
+                },
+                child: Text("확인",style: TextStyle(color: Colors.black),),
+              ),
+            ],
+          );
+        });
+  }
   @override
   Widget build(BuildContext context){
+    WidgetsBinding.instance!.addPostFrameCallback((_) {
+      aa(context, "안내");
+    });
     return Scaffold(
         appBar: DefaultAppBar(title: '낱말학습'),
         body: Center(

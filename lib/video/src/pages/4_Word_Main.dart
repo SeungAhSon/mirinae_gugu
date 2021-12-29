@@ -5,6 +5,7 @@ import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 import 'package:mirinae_gugu/video/src/widget/button_Chapter.dart';
 
 import '1_Loading.dart';
+import '5_Education/update.dart';
 
 class Word_Main extends StatelessWidget{
   @override
@@ -26,6 +27,7 @@ class Word_Main extends StatelessWidget{
             ButtonChapter(onTap: Vocab_Screen_56(), number: 6, text: '여름'),
             ButtonChapter(onTap: Vocab_Screen_57(), number: 7, text: '과일&채소'),
             ButtonChapter(onTap: Vocab_Screen_58(), number: 8, text: '가을'),
+            //업데이트 예정
             ButtonChapter(onTap: Vocab_Screen_59(), number: 9, text: '직업'),
             ButtonChapter(onTap: Vocab_Screen_510(), number: 10, text: '집'),
             ButtonChapter(onTap: Vocab_Screen_511(), number: 11, text: '겨울'),

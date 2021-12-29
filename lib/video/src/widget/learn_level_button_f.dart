@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class LearnLevelButton extends StatelessWidget {
@@ -89,7 +90,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20.0+size, fontWeight: FontWeight.bold,
+                      fontSize: 24.0.sp+size, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

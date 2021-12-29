@@ -10,6 +10,7 @@ class Vocab_Screen_57 extends StatelessWidget{
     return Scaffold(
         appBar: DefaultAppBar(title: '낱말학습'),
         body: Center(
+        child: Scrollbar(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),
                 children: <Widget>[
@@ -250,7 +251,7 @@ class Vocab_Screen_57 extends StatelessWidget{
                     ],
                   ), //28~30
                 ]
-            )
+            ))
         )
     );
   }

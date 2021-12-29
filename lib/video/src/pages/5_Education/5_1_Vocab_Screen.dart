@@ -63,13 +63,14 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
     return Scaffold(
         appBar: DefaultAppBar(title: '낱말학습'),
         body: Center(
+          child: Scrollbar(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),
                 children: <Widget>[
                   SizedBox(height: 5),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('  낱말 1단원',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
+                      child: Text('  낱말 1단원 (30)',style: TextStyle(fontSize: 20.0+size,fontWeight: FontWeight.bold))
                   ),
                   SizedBox(height: 5),
                   Row(
@@ -86,7 +87,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
                       ),
                       LearnLevelButton(
                         color: FavoriteButtons[2] ? Color(0xfff5ab39) : Color(0xff7ba6f9),
-                        text: '1-2',
+                        text: FavoriteButtons[2] ? '1-2 ✓' : '1-2',
                         onTap: () async {
                           await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body(
                               index: 2,
@@ -411,6 +412,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
             )
             ]
         )
+          )
         )
     );
 

@@ -12,6 +12,7 @@ class B extends StatelessWidget{
       appBar: DefaultAppBar(title: '조음학습'),
 
         body: Center(
+        child: Scrollbar(
             child: ListView(
                 padding: const EdgeInsets.all(10.0),
                 children: <Widget>[
@@ -123,7 +124,7 @@ class B extends StatelessWidget{
                   ), //비
                 ]
             )
-        )
+        ))
     );
   }
 }

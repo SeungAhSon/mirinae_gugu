@@ -48,7 +48,7 @@ class LearnLevelButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(borderRadius),
 
               border: Border.all(
-                width: 0.3,
+                width: 0.3.w,
                 color: Colors.black26,
               ),
               boxShadow: [
@@ -68,7 +68,7 @@ class LearnLevelButton extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(borderRadius),
                 border: Border.all(
-                  width: 0.3,
+                  width: 0.3.w,
                   color: Colors.black26,
                 ),
                 boxShadow: [

@@ -30,6 +30,8 @@ class _RecordState extends State<Record> {
   AudioPlayer advancedPlayer = AudioPlayer();
 
   int? oneopen;
+  Duration currentTime = Duration();
+  Duration totalTime = Duration(seconds: 1);
 
 
   @override
@@ -54,20 +56,21 @@ class _RecordState extends State<Record> {
           key: Key('builder ${oneopen.toString()}'),
           itemCount: widget.records!.length,
           shrinkWrap: true,
-          reverse: true,
+          reverse: false,
           itemBuilder: (BuildContext context, int i) {
             return Card(
               elevation: 5,
               child: ExpansionTile(
-                key: Key(i.toString()), //attention
-                initiallyExpanded: i == oneopen, //attention
+                key: Key(i.toString()),
+                initiallyExpanded: i == oneopen,
 
                 title: Text(
-                  '녹음 파일 ${widget.records!.length - i}',
+                  _getTime(filePath: widget.records![i].toString()),
                   style: TextStyle(color: Colors.black),
                 ),
                 subtitle: Text(
-                  _getTime(filePath: widget.records![i].toString()),
+                  //_setupAudioPlayer(widget.records![i]),
+                  'd',
                   style: TextStyle(color: Colors.black38),
                 ),
                 onExpansionChanged: ((newState) {
@@ -78,6 +81,9 @@ class _RecordState extends State<Record> {
                       advancedPlayer.stop();
                       isPlay=false;
                       _percent = 0.0;
+                      _getDuration(totalTime);
+                      print('all');
+                      print(totalTime);
 
                     });
                   }
@@ -99,8 +105,27 @@ class _RecordState extends State<Record> {
                           backgroundColor: Colors.black,
                           valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
                           value: _selected == i ? _percent : 0,
+                          //value: (currentTime.inMilliseconds / totalTime.inMilliseconds) * 1.0,
+
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: <Widget>[
+                              Text(
+                                _getDuration(currentTime),
+                                style: TextStyle(color: Colors.blue),
+                              ),
+                              Text(
+                                _getDuration(totalTime),
+                                style: TextStyle(color: Colors.black),
+                              )
+                            ],
+                          ),
                         ),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             (isPlay)? _Presso(
                                 ico: Icons.pause,
@@ -114,6 +139,7 @@ class _RecordState extends State<Record> {
                                 onPressed: () {
                                   setState(() {
                                     isPlay=true;
+                                    currentTime = new Duration(seconds: 0);
                                   });
                                   advancedPlayer.play(widget.records!.elementAt(i),
                                       isLocal: true);
@@ -129,13 +155,19 @@ class _RecordState extends State<Record> {
                                   });
                                   advancedPlayer.onDurationChanged.listen((duration) {
                                     setState(() {
+                                      print('chdtlrks');
                                       _totalTime = duration.inMicroseconds;
+                                      totalTime = duration;
+                                      print( _totalTime);
                                     });
                                   });
                                   advancedPlayer.onAudioPositionChanged
                                       .listen((duration) {
                                     setState(() {
                                       _currentTime = duration.inMicroseconds;
+                                      currentTime = duration;
+                                      print('tlrks');
+                                      print(_currentTime);
                                       _percent = _currentTime.toDouble() /
                                           _totalTime.toDouble();
                                     });
@@ -146,6 +178,7 @@ class _RecordState extends State<Record> {
                                 onPressed: () {
                                   advancedPlayer.stop();
                                   setState(() {
+                                    currentTime = new Duration();
                                     _percent = 0.0;
                                   });
                                 }),
@@ -159,10 +192,12 @@ class _RecordState extends State<Record> {
                                   setState(() {
                                     widget.records
                                         .remove(widget.records.elementAt(i));
+                                    advancedPlayer.stop();
+                                    _percent = 0.0;
+                                    oneopen = -1;
                                   });
                                 }),
                           ],
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         ),
                       ],
                     ),
@@ -189,13 +224,44 @@ class _RecordState extends State<Record> {
       int day = dateTime.day;
       int hour = dateTime.hour;
       int min = dateTime.minute;
-      String dato = '$year-$month-$day--$hour:$min';
+      int sec = dateTime.second;
+      String dato = '$year-$month-$day--$hour:$min:$sec';
       return dato;
     } else {
       return "No Date";
     }
   }
 
+  String _getDuration(Duration duration) {
+    String twoDigits(int n) {
+      if (n >= 10) return "$n";
+      return "0$n";
+    }
+
+    String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60));
+    String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60));
+    return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
+  }
+
+  _setupAudioPlayer(filePath) async {
+    currentTime = new Duration(seconds: 0);
+    print(filePath);
+    await advancedPlayer.setUrl(filePath);
+    print(advancedPlayer.setUrl(filePath));
+    //await advancedPlayer.setUrl(widget.records.path);
+    await advancedPlayer.setReleaseMode(ReleaseMode.STOP);
+
+    advancedPlayer.onAudioPositionChanged.listen((Duration p) {
+      print('Current position: $p');
+      setState(() => currentTime = p);
+    });
+
+    advancedPlayer.onDurationChanged.listen((Duration d) {
+      print('Max duration: $d');
+      setState(() => totalTime = d);
+    });
+    return totalTime;
+  }
 
 
 }

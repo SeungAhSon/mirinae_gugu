@@ -651,31 +651,23 @@ class _video_Body extends State<video_Body_15> {
 
     String jrecord = "Audiorecords";
     String dato = "${(DateTime.now().millisecondsSinceEpoch -  54000000).toString()}.wav";
-    //String dato = "${(detroitTime.millisecondsSinceEpoch).toString()}.wav";
-    print('날짜임');
-    print(dato);
-    print(DateTime.now().millisecondsSinceEpoch-32400000);
     Directory appDirec =
     Directory("${appDir!.path}/$jrecord/");
 
     bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
-    print(exists);
+
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
       print("path for file11 ${patho}");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
-      bool exists = await Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/').exists();
-      print(Directory('/storage/emulated/0/Android/data/com.example.recorder_ttest/files/Audiorecords/'));
     } else {
       appDirec.create(recursive: true);
-      //Fluttertoast.showToast(msg: "Start Recording , Press Start");
+      Fluttertoast.showToast(msg: "마이크를 누르면 녹음이 시작됩니다.");
       String patho = "${appDirec.path}$dato";
-      print("path for file22 ${patho}");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     }
-    print('end');
   }
 
   _start() async {

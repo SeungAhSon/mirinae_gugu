@@ -75,7 +75,7 @@ class _Home extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
 
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Text("원활한 사용을 위한 사용 안내입니다.",style: TextStyle(fontSize: 15),),
 
 
@@ -116,7 +116,10 @@ class _Home extends State<Home> {
     WidgetsBinding.instance!.addPostFrameCallback((_) {
       if (prefs.getBool('tutorial31') == null) {
         aa(context, "사용 가이드");
+
         s.setBool("reading9",false);
+
+
         s.setBool("reading1_1_",false);
         s.setBool("reading1_2_",false);
         s.setBool("reading1_3",false);
@@ -129,8 +132,13 @@ class _Home extends State<Home> {
         s.setBool("speaking2_1",false);
         s.setBool("speaking2_2",false);
         s.setBool("speaking2_3",false);
+
         prefs.setInt('fontchoose',1);
+
         ss.setString('fontsize',"origin");
+        //조음학습
+
+        //낱말학습
         prefs.setStringList("favorite_1_", favorite_1.map((value) => value.toString()).toList());
       }
       setState(() {
@@ -193,7 +201,7 @@ class _Home extends State<Home> {
                     ]
                 ),
               ),
-              SizedBox(height: 0.5),
+              SizedBox(height: 0.5.h),
               Align(
 
                 alignment: Alignment.centerLeft,
@@ -410,7 +418,7 @@ class _Home extends State<Home> {
                   ),
                 ),
               ),
-              SizedBox(height: 1)
+              SizedBox(height: 1.h)
             ],
           ),
         ),
@@ -459,7 +467,7 @@ class _Home extends State<Home> {
                       ),
                       ),
 
-                      SizedBox(height: 3,),
+                      SizedBox(height: 3.h,),
                       Padding(
                         padding: EdgeInsets.only(right: 15,),
                         child:Text("공지사항", style: TextStyle(fontSize: 11.sp,color: Colors.black),textAlign: TextAlign.center,),

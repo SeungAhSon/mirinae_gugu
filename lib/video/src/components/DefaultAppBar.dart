@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
@@ -14,7 +15,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title, style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold)),
+      title: Text(title, style: TextStyle(color: Colors.black,fontSize: 24.sp,fontWeight: FontWeight.bold)),
       centerTitle: true,
       backgroundColor: Colors.white,
       elevation: 3.0,

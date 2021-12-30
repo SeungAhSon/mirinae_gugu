@@ -88,7 +88,6 @@ class _Home extends State<Home> {
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
                   if (prefs.getBool('tutorial31') != true){
                     prefs.setBool('tutorial31', true);
-                    print(333);
                   }
                 },
                 child: Text("확인",style: TextStyle(color: Colors.black),),
@@ -98,7 +97,6 @@ class _Home extends State<Home> {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   if (prefs.getBool('tutorial31') != true){
                     prefs.setBool('tutorial31', true);
-                    print(333);
                   }
                   Navigator.of(context).pop();
                 },
@@ -135,8 +133,6 @@ class _Home extends State<Home> {
         ss.setString('fontsize',"origin");
         prefs.setStringList("favorite_1_", favorite_1.map((value) => value.toString()).toList());
       }
-
-      print(2);
       setState(() {
       });
     });

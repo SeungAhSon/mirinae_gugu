@@ -1,11 +1,3 @@
-class Question {
-  final int id, answer;
-  final List<String> options;
-  final List<String> VideoId;
-
-  Question({required this.id, required this.answer, required this.options, required this.VideoId});
-}
-
 const List quiz2 = [{
 "id": 1,
 "options": ['웃다', '새싹', '갈색', '�기심'],

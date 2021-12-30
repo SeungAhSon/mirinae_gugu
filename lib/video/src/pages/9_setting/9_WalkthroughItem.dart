@@ -3,19 +3,39 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 List<Map<String, Object>> WALKTHROUGH_ITEMS = [
   {
-    'image': 'assets/1_screen_start.png',
+    'image': 'assets/Walkthrough/Walkthrough-1.png',
     'button_text': '계속하기',
   },
   {
-    'image': 'assets/2_screen_login.png',
+    'image': 'assets/Walkthrough/Walkthrough-2.png',
     'button_text': '계속하기',
   },
   {
-    'image': 'assets/hedgehog.jpeg',
+    'image': 'assets/Walkthrough/Walkthrough-3.png',
     'button_text': '계속하기',
   },
   {
-    'image': 'assets/oral_structure 2.png',
+    'image': 'assets/Walkthrough/Walkthrough-4.png',
+    'button_text': '끝마치기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-5.png',
+    'button_text': '끝마치기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-6.png',
+    'button_text': '끝마치기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-7.png',
+    'button_text': '끝마치기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-8.png',
+    'button_text': '끝마치기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-9.png',
     'button_text': '끝마치기',
   }
 ];
@@ -96,38 +116,70 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
             ),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(top: height*0.8, left: width*0.4),
-          child: Container(
-            height: 8,
-            width: 80,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Material(
-                  color: (widget.index == 0) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 1) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 2) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-                Material(
-                  color: (widget.index == 3) ? selectedColor : normalColor,
-                  type: MaterialType.circle,
-                  child: Container(width: 8, height: 8),
-                ),
-              ],
+        Center(
+          child: Padding(
+            padding: EdgeInsets.only(top: height*0.7),
+            child: Container(
+              height: 8,
+              width: MediaQuery.of(context).size.width*0.5,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Material(
+                    color: (widget.index == 0) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 1) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 2) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 3) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 4) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 5) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 6) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 7) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 8) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 9) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
+        )
       ]),
     );
   }

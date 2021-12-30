@@ -23,7 +23,7 @@ class Test_3 extends StatelessWidget{
             Text('3단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 7),
             Container(
-              height: 300,
+              height: MediaQuery.of(context).size.height*0.35,
               child:Image.asset('assets/test_chapter/3_health.png'),
             ),
             SizedBox(height: 5),

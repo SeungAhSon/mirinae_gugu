@@ -41,7 +41,6 @@ class _Noise extends State<StatefulWidget> {
   void onData(NoiseReading sound) {
     setState(() {
       if (sound.maxDecibel.isNaN || sound.maxDecibel.isInfinite){
-        print('인식없음');
       }
       else{
         int decibel = sound.maxDecibel.toInt();

@@ -70,7 +70,7 @@ void dispose() {
             Text('1단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 7),
             Container(
-              height: 300,
+              height: MediaQuery.of(context).size.height*0.35,
               child:Image.asset('assets/test_chapter/1_newyear.png'),
             ),
             SizedBox(height: 10),

@@ -501,7 +501,7 @@ class _video_Body extends State<video_Body> {
                                         BorderRadius.all(Radius.circular(20))),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.85, 0, 0, 10),
+                                    padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.83, 0, 0, 10),
                                     child:Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -562,10 +562,7 @@ class _video_Body extends State<video_Body> {
                           //left:MediaQuery.of(context).size.width/(12/1),right: MediaQuery.of(context).size.width/(12/1),),
                           child: Container(
                               padding: EdgeInsets.zero,
-                              height: (MediaQuery.of(context).size.height -
-                                  height2 -
-                                  MediaQuery.of(context).padding.top) *
-                                  0.08, //크기 8%
+                              height: MediaQuery.of(context).size.height * 0.08, //크기 8%
                               color: Colors.white.withOpacity(0),
                               child: _buttonZone()),
                         ),

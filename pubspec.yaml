@@ -139,6 +139,15 @@ flutter:
     - assets/test_achievement/bad.png
     - assets/test_achievement/good.png
     - assets/test_achievement/success.png
+    - assets/Walkthrough/Walkthrough-1.png
+    - assets/Walkthrough/Walkthrough-2.png
+    - assets/Walkthrough/Walkthrough-3.png
+    - assets/Walkthrough/Walkthrough-4.png
+    - assets/Walkthrough/Walkthrough-5.png
+    - assets/Walkthrough/Walkthrough-6.png
+    - assets/Walkthrough/Walkthrough-7.png
+    - assets/Walkthrough/Walkthrough-8.png
+    - assets/Walkthrough/Walkthrough-9.png
 
 
   fonts:

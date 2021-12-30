@@ -9,8 +9,6 @@ class tutorial extends StatefulWidget{
 class _Setting extends State<tutorial> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    print("aa");
     return aa("튜토리얼");
   }
 

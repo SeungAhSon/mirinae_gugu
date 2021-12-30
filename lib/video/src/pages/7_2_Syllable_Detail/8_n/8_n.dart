@@ -5,6 +5,7 @@ import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n_video_body.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class N extends StatelessWidget{
   @override
@@ -20,9 +21,9 @@ class N extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('잇몸소리',style: TextStyle(fontSize: 18.0+size),),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Container(
-                          height: 30,width: 30,
+                          height: 30.h,width: 30.w,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Color(0xff7ba6f9),
@@ -30,11 +31,11 @@ class N extends StatelessWidget{
                           ),
                           child: Text('ㄴ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
                     ],
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Image(image: AssetImage('assets/mouth/8_n.png')),
                   Container(
                     alignment: Alignment.center,
@@ -44,10 +45,10 @@ class N extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 방법',style:TextStyle(fontSize: 16+size)),
+                    child: Text('비음',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('비음 : 입을 막고 코로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
-                  SizedBox(height: 5),
+                  Text('입을 막고 코로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
                     margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
@@ -56,10 +57,10 @@ class N extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 동작',style:TextStyle(fontSize: 16+size)),
+                    child: Text('잇몸소리',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('잇몸소리 : 혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
-                  SizedBox(height: 5),
+                  Text('혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 5.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

@@ -4,7 +4,7 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '15_g_video_body.dart';
 
 class G extends StatelessWidget{
@@ -21,9 +21,9 @@ class G extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('여린입천장소리',style: TextStyle(fontSize: 18.0+size),),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Container(
-                          height: 30,width: 30,
+                          height: 30.h,width: 30.w,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Color(0xff7ba6f9),
@@ -31,11 +31,11 @@ class G extends StatelessWidget{
                           ),
                           child: Text('ㄱ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
                     ],
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Image(image: AssetImage('assets/mouth/15_g.png')),
                   Container(
                     alignment: Alignment.center,
@@ -45,22 +45,23 @@ class G extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 방법',style:TextStyle(fontSize: 16+size)),
+                    child: Text('파열음',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('파열음 : 폐에서 나오는 공기를 막았다가 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
-                  SizedBox(height: 5),
+                  Text('폐에서 나오는 공기를 막았다가 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
+                    width: MediaQuery.of(context).size.width.w,
+                    margin: const EdgeInsets.symmetric(horizontal:120,vertical: 10),
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 동작',style:TextStyle(fontSize: 16+size)),
+                    child: Text('여린입천장소리',style:TextStyle(fontSize: 16+size)),
                   ),
-                  Text('여린입천장소리 : 혀의 뒷부분을 입안 뒤쪽에\n붙였다가 떼면서 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
-                  SizedBox(height: 10),
+                  Text('혀의 뒷부분을 입안 뒤쪽에 붙였다가 떼면서 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

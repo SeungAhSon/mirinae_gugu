@@ -68,11 +68,6 @@ class _RecordState extends State<Record> {
                   _getTime(filePath: widget.records![i].toString()),
                   style: TextStyle(color: Colors.black),
                 ),
-                subtitle: Text(
-                  //_setupAudioPlayer(widget.records![i]),
-                  'd',
-                  style: TextStyle(color: Colors.black38),
-                ),
                 onExpansionChanged: ((newState) {
                   if (newState) {
                     setState(() {
@@ -109,7 +104,7 @@ class _RecordState extends State<Record> {
 
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
@@ -206,9 +201,7 @@ class _RecordState extends State<Record> {
               ),
             );
           },
-
         ),
-
       ),
     );
   }

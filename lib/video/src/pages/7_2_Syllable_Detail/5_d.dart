@@ -4,6 +4,7 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_dumy.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class D extends StatelessWidget{
   @override
@@ -19,9 +20,9 @@ class D extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('잇몸소리',style: TextStyle(fontSize: 18.0+size),),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Container(
-                          height: 30,width: 30,
+                          height: 30.h,width: 30.w,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Color(0xff7ba6f9),
@@ -29,11 +30,11 @@ class D extends StatelessWidget{
                           ),
                           child: Text('ㄷ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
                     ],
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Image(image: AssetImage('assets/mouth/5_d.png')),
                   Container(
                     alignment: Alignment.center,
@@ -45,7 +46,7 @@ class D extends StatelessWidget{
                     ),
                     child: Text('발음 방법',style:TextStyle(fontSize: 16+size)),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Text('파열음 : 폐에서 나오는 공기를 막았다가 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
                   Container(
                     alignment: Alignment.center,
@@ -58,7 +59,7 @@ class D extends StatelessWidget{
                     child: Text('발음 동작',style:TextStyle(fontSize: 16+size)),
                   ),
                   Text('잇몸소리 : 혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[

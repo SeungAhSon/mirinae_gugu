@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Unit_Widget extends StatelessWidget {
   Unit_Widget({

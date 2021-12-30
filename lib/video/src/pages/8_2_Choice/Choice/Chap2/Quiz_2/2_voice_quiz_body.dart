@@ -8,6 +8,7 @@ import 'package:google_speech/google_speech.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_voice_quiz.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Questions{
   String qText;
@@ -55,8 +56,9 @@ class _StartPageState_2 extends State<StartPage_2> {
   void streamingRecognize() async {
     _audioStream = BehaviorSubject<List<int>>();
     _audioStreamSubscription = _recorder.audioStream.listen((event) {
-      if (!_audioStream!.isClosed)
+      if (!_audioStream!.isClosed) {
         _audioStream?.add(event);
+      }
     });
 
     await _recorder.start();
@@ -75,27 +77,26 @@ class _StartPageState_2 extends State<StartPage_2> {
         StreamingRecognitionConfig(config: config, interimResults: true),
         _audioStream!);
 
-    var responseText = '';
     //마이크 입력 받았을 때 출력될 텍스트 설정.
     responseStream.listen((data) {
       final currentText =
       data.results.map((e) => e.alternatives.first.transcript).join("");
       if (data.results.first.isFinal) {
-        if (this.mounted) {
+        if (mounted) {
           //responseText += currentText;
           setState(() {
             //text = responseText;
             recognizeFinished = true;
           });}
       } else {
-        if (this.mounted) {
+        if (mounted) {
           setState(() {
             realtext = currentText;
             recognizeFinished = true;
           });
         }}
     },onDone: () {
-      if (this.mounted) {
+      if (mounted) {
         setState(() {
           recognizing = false;
 
@@ -141,7 +142,7 @@ class _StartPageState_2 extends State<StartPage_2> {
 
   var score=0;
 
-  checkWin(String userChoice , BuildContext context)
+  void checkWin(String userChoice , BuildContext context)
   {
     String newtext = userChoice.replaceAll(' ', '');
     if(newtext==qList[counter].qText.replaceAll(' ', '')) {
@@ -174,16 +175,16 @@ class _StartPageState_2 extends State<StartPage_2> {
         behavior: SnackBarBehavior.floating,
         elevation: 0,
         content: Container(
-          child: Icon(Icons.clear_rounded, color: Colors.orange, size: 170),
           margin: const EdgeInsets.fromLTRB(0,0,0,230),
+          child: Icon(Icons.clear_rounded, color: Colors.orange, size: 170),
         ),
       );
       Scaffold.of(context).showSnackBar(snackbar);
     }
   }
 
-  nextpage() {
-    if (this.mounted) {
+  void nextpage() {
+    if (mounted) {
       setState(() {
         realtext = '';
         if(counter<qList.length-1) {
@@ -201,7 +202,7 @@ class _StartPageState_2 extends State<StartPage_2> {
       });}
   }
 
-  reset()
+  void reset()
   {
     setState(() {
       //counter = 0;
@@ -229,10 +230,8 @@ class _StartPageState_2 extends State<StartPage_2> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-/*                    Text("Score : $score /100",style: TextStyle(color : Colors.brown ,
-                        fontSize: 20,fontWeight: FontWeight.bold),),*/
                     Text("문제 : $questionnum / 10",style: TextStyle(color : Colors.brown ,
-                        fontSize: 20+size,fontWeight: FontWeight.bold),),
+                        fontSize: 20.sp+size,fontWeight: FontWeight.bold),),
 
                   ],
                 ),
@@ -254,11 +253,11 @@ class _StartPageState_2 extends State<StartPage_2> {
                     Container(
                         margin: const EdgeInsets.fromLTRB(50,30,50,20),
                         child: Text(qList[counter].qText,
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0+size,),)),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0.sp+size,),)),
                     Container(
                       //margin: const EdgeInsets.fromLTRB(3,3,3,3),
                         child: Text('를 읽어주세요!',
-                          style: TextStyle(fontSize: 18.0+size,),)
+                          style: TextStyle(fontSize: 18.0.sp+size,),)
                     )
                   ],
                 ),
@@ -311,12 +310,12 @@ class _StartPageState_2 extends State<StartPage_2> {
                       });
                     },
                     padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-                    child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
 
                     color:  Color(0xff4573CB),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
                     ),
+                    child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
                   ),
 
                   Container(
@@ -337,12 +336,12 @@ class _StartPageState_2 extends State<StartPage_2> {
                       },
                       padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
 
-                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16+size,fontWeight: FontWeight.bold),),
-
                       color: Color(0xff4573CB),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
+
+                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
                     ),
                   )
                 ],
@@ -355,24 +354,25 @@ class _StartPageState_2 extends State<StartPage_2> {
   }
 
   Widget textprint() {
-    if(recognizeFinished)
+    if(recognizeFinished) {
       return Text(
           realtext,
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             letterSpacing: 1.0,
-            fontSize: 22.5+size,
+            fontSize: 22.5.sp+size,
             height: 1.75,
           )
       );
-    else
+    } else {
       return Text("");
+    }
   }
 
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("speaking2_1",true);
+    await s.setBool("speaking2_1",true);
   }
 }
 

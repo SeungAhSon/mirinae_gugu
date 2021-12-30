@@ -6,6 +6,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_qu
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../components/Questions/Questions_1.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ayotube_3 extends StatefulWidget {
   const ayotube_3({
@@ -54,19 +55,19 @@ class ayotube_3 extends StatefulWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height2 = AppBar().preferredSize.height;
+    var height2 = AppBar().preferredSize.height.h;
     QuestionController_3 _controller = Get.put(QuestionController_3());
     return Container(
       child: Column(
         children: [
           Container(
               margin: EdgeInsets.only(left: 20,right: 20),
-            height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31,
+            height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31.h,
               child: youtube(context),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20.h),
           Text("영상 속 단어를 골라주세요", style: TextStyle(fontSize:20.sp+size, fontWeight: FontWeight.bold, color: Colors.black)),//번째 문제 표
-          SizedBox(height: 20),
+          SizedBox(height: 20.h),
           ...List.generate(
             widget.question.options.length,
                 (index) => Option_3(

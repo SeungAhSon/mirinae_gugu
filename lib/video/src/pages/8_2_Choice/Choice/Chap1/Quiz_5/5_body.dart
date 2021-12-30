@@ -17,7 +17,7 @@ class _Body_5 extends State<Body_5>{
 
   @override
   Widget build(BuildContext context) {
-    var height2 = AppBar().preferredSize.height;
+    var height2 = AppBar().preferredSize.height.h;
 
     QuestionController_5 _questionController = Get.put(QuestionController_5());
     return Stack(
@@ -48,7 +48,7 @@ class _Body_5 extends State<Body_5>{
               Padding(
                 padding: EdgeInsets.only(top:5), //상단 슬라이드 밑에 선
                 child: Container(
-                  height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.87,
+                  height: (MediaQuery.of(context).size.height - height2-MediaQuery.of(context).padding.top) * 0.87.h,
                   child: PageView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     controller: _questionController.pageController,

@@ -48,11 +48,11 @@ class _ScoreScreenState extends State<ScoreScreen_5> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height:25),
+                    SizedBox(height:25.h),
                     Material(
                       child: Container(
-                        width: 300.0,
-                        height: 300.0,
+                        width: 300.0.w,
+                        height: 300.0.h,
                         child: ClipRect(
                           child: Image(
                             image: AssetImage(image,),

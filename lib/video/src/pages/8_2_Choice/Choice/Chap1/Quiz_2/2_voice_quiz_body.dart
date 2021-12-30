@@ -9,6 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_voice_quiz.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Questions{
   String qText;
@@ -143,17 +144,17 @@ class _StartPageState_2 extends State<StartPage_2> {
 
   var score=0;
 
-  checkWin(String userChoice , BuildContext context)
+  void checkWin(String userChoice , BuildContext context)
   {
     String newtext = userChoice.replaceAll(' ', '');
     if(newtext==qList[counter].qText.replaceAll(' ', '')) {
       score= score+10;
       final snackbar = SnackBar(
         margin: EdgeInsets.fromLTRB(
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.25,
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.5),
+            MediaQuery.of(context).size.width*0.2.w,
+            MediaQuery.of(context).size.height*0.25.h,
+            MediaQuery.of(context).size.width*0.2.w,
+            MediaQuery.of(context).size.height*0.5.h),
         duration: Duration(milliseconds :800 ), //500
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
@@ -167,10 +168,10 @@ class _StartPageState_2 extends State<StartPage_2> {
       score = score+0;
       final snackbar = SnackBar(
         margin: EdgeInsets.fromLTRB(
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.25,
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.5),
+            MediaQuery.of(context).size.width*0.2.w,
+            MediaQuery.of(context).size.height*0.25.h,
+            MediaQuery.of(context).size.width*0.2.w,
+            MediaQuery.of(context).size.height*0.5.h),
         duration: Duration(milliseconds : 800),
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
@@ -184,7 +185,7 @@ class _StartPageState_2 extends State<StartPage_2> {
     }
   }
 
-  nextpage() {
+  void nextpage() {
     if (mounted) {
     setState(() {
       realtext = '';
@@ -203,7 +204,7 @@ class _StartPageState_2 extends State<StartPage_2> {
     });}
   }
 
-  reset()
+  void reset()
   {
     setState(() {
       //counter = 0;
@@ -244,8 +245,8 @@ class _StartPageState_2 extends State<StartPage_2> {
               Padding(padding: EdgeInsets.only(top: 20)),
 
               Container(
-                width: MediaQuery.of(context).size.width*0.8,
-                height: MediaQuery.of(context).size.height*0.45,
+                width: MediaQuery.of(context).size.width*0.8.w,
+                height: MediaQuery.of(context).size.height*0.45.h,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.lime[200]
@@ -273,8 +274,8 @@ class _StartPageState_2 extends State<StartPage_2> {
                       // text 프린트 해주는 함수 호출
                         children: <Widget>[
                           Container(
-                            width: MediaQuery.of(context).size.width*0.8,
-                            height: MediaQuery.of(context).size.height*0.1,
+                            width: MediaQuery.of(context).size.width*0.8.w,
+                            height: MediaQuery.of(context).size.height*0.1.h,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10), //모서리를 둥글게
                                 border: Border.all(color: Colors.black12, width: 3),
@@ -286,14 +287,6 @@ class _StartPageState_2 extends State<StartPage_2> {
                                 Container(
                                   child: textprint(),
                                 )],),),
-/*                  Container(
-                              width: 150,
-                              height: 34,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30), //모서리를 둥글게
-                                  color: Color(0xff4573CB)
-                              ),
-                            ),*/
                         ]
                     )
                 ),
@@ -322,8 +315,6 @@ class _StartPageState_2 extends State<StartPage_2> {
                   ),
 
                   Container(
-                    //height: 150,
-                    //width: 100,
                     child: IconButton(
                       onPressed: recognizing ? stopRecording : streamingRecognize,
                       icon: recognizing
@@ -365,7 +356,7 @@ class _StartPageState_2 extends State<StartPage_2> {
           style: TextStyle(
             letterSpacing: 1.0,
             fontSize: 22.5.sp+size,
-            height: 1.75,
+            height: 1.75.h,
           )
       );
     } else {

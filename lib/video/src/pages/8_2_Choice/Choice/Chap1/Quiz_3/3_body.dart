@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_youtube.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Body_3 extends StatefulWidget {
   const Body_3({
@@ -32,11 +33,11 @@ class _Body_3 extends State<Body_3>{
                   TextSpan(
                     text:
                     "Question ${_questionController.questionNumber.value}",
-                    style: TextStyle(fontSize: 15+size, color: Colors.blue),
+                    style: TextStyle(fontSize: 15.sp+size, color: Colors.blue),
                     children: [
                       TextSpan(
                         text: "/10",
-                        style: TextStyle(fontSize: 15+size, color: Colors.blue),
+                        style: TextStyle(fontSize: 15.sp+size, color: Colors.blue),
                       ),
                     ],
                   ),

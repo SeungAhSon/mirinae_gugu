@@ -4,6 +4,7 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_quiz_controller.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScoreScreen_3 extends StatefulWidget {
   ScoreScreen_3({Key? key}) : super(key : key);
@@ -70,7 +71,7 @@ class _ScoreScreenState extends State<ScoreScreen_3> {
                           children: [
                             Text(
                             message,
-                            style: TextStyle(fontSize: 20.0+size, fontWeight: FontWeight.bold,),
+                            style: TextStyle(fontSize: 20.0.sp+size, fontWeight: FontWeight.bold,),
                             textAlign: TextAlign.center,
                           ),
                             Row(
@@ -78,17 +79,17 @@ class _ScoreScreenState extends State<ScoreScreen_3> {
                               children:[
                                 Text(
                                   "당신의 점수는  ",
-                                  style: TextStyle(fontSize: 20.0+size, fontWeight: FontWeight.bold,),
+                                  style: TextStyle(fontSize: 20.0.sp+size, fontWeight: FontWeight.bold,),
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
                                   "${_qnController.numOfCorrectAns * 10}",
-                                  style: TextStyle(color: Colors.indigo, fontSize: 25.0+size, fontWeight: FontWeight.bold,),
+                                  style: TextStyle(color: Colors.indigo, fontSize: 25.0.sp+size, fontWeight: FontWeight.bold,),
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
                                   " 점 입니다",
-                                  style: TextStyle(fontSize: 20.0+size, fontWeight: FontWeight.bold,),
+                                  style: TextStyle(fontSize: 20.0.sp+size, fontWeight: FontWeight.bold,),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -106,17 +107,12 @@ class _ScoreScreenState extends State<ScoreScreen_3> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                OutlineButton(
-                  onPressed: () {
-                    _qnController.resetNumber();
-                    Navigator.pop(context);},
-                  padding: EdgeInsets.symmetric(
-                    vertical: 10.0,
-                    horizontal: 25.0,
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(width: 3.0, color: Colors.indigo),
                   ),
-                  borderSide: BorderSide(width: 3.0, color: Colors.indigo),
-                  splashColor: Colors.indigoAccent,
-                  child: Text("종료하기", style: TextStyle(fontSize: 18.0+size)),
+                  onPressed: () {Navigator.pop(context);},
+                  child: Text("종료하기", style: TextStyle(fontSize: 18.0.sp+size, color: Colors.black)),
                 )
               ],
             ),

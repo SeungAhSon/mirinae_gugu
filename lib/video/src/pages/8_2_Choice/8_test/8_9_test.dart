@@ -9,6 +9,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap9/Quiz_2/2_Ch
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap9/Quiz_4/4_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap9/Quiz_6/6_Choice.dart';
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Test_9 extends StatelessWidget{
   bool state1 = false;
@@ -20,7 +21,7 @@ class Test_9 extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 7),
-            Text('9단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            Text('9단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 7),
             Container(
               height: MediaQuery.of(context).size.height*0.35,

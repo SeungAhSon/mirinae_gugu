@@ -15,7 +15,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_4/4_Ch
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_6/6_Choice.dart';
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class Test_2 extends StatefulWidget {
@@ -71,7 +71,7 @@ class _Test_2 extends State<Test_2>{
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 7),
-            Text('2단원. 복습 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            Text('2단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 7),
             Container(
               height: MediaQuery.of(context).size.height*0.35,

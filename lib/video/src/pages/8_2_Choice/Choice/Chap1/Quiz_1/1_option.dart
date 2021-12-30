@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-
-import '1_body.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Option extends StatelessWidget {
   const Option( {
@@ -49,9 +48,8 @@ class Option extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-
                   Text(
-                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16+size),
+                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16.sp+size),
                   ),
                 ],
               ),

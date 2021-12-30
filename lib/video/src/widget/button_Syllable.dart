@@ -12,14 +12,18 @@ class ButtonSyllable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12))
-      ),
-      onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
-      heroTag: text,
-      child: Text(text,style: TextStyle(fontSize: 30+size,color:Colors.black,fontWeight: FontWeight.bold)),
+    return SizedBox(
+      width: 50,
+      height: 50,
+      child: RaisedButton(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+            side: BorderSide(color: Colors.black),
+        ),
+        onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
+        child: Text(text,textAlign:TextAlign.center, style: TextStyle(fontSize: 30+size,color:Colors.black,fontWeight: FontWeight.bold)),
+        )
     );
   }
 }

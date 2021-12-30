@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_quiz_controller.dart';
-
-import '5_body.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Option_5 extends StatelessWidget {
   const Option_5( {
@@ -51,7 +50,7 @@ class Option_5 extends StatelessWidget {
                 children: [
 
                   Text(
-                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16+size),
+                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16.sp+size),
                   ),
                 ],
               ),

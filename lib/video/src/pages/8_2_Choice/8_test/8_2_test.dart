@@ -59,7 +59,7 @@ class _Test_2 extends State<Test_2>{
     return SafeArea(
       child: Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(height: 7.h),
             Text('2단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
@@ -90,7 +90,7 @@ class _Test_2 extends State<Test_2>{
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_3, onTap: Choice26(),),
               ],
             ),
-
+            SizedBox(height: 30.h),
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),

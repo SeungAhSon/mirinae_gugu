@@ -18,7 +18,7 @@ class Test_12 extends StatelessWidget{
     return SafeArea(
       child: Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             SizedBox(height: 7.h),
             Text('12단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
@@ -49,7 +49,7 @@ class Test_12 extends StatelessWidget{
                 TestButton(text: '목소리', icon: Icons.mic,  state: state1,color: Colors.blueAccent,onTap: Choice126(),),
               ],
             ),
-
+            SizedBox(height: 30.h),
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),

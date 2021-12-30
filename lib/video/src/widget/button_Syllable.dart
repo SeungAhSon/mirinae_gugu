@@ -15,7 +15,7 @@ class ButtonSyllable extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 50.0.w,
-      height: 50.0.h,
+      height: 50.0.w,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),

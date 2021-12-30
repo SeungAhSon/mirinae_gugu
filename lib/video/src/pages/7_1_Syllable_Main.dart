@@ -6,16 +6,18 @@ import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/8_n/8_n.dart';
 import 'package:mirinae_gugu/video/src/widget/button_Syllable.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button.dart';
 import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/0_Out.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Syllable_pages extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    var width_1= (MediaQuery.of(context).size.width-250)/6;
-    var width_2 = (MediaQuery.of(context).size.width-250)/6*2+50;
-    var width_3 = (MediaQuery.of(context).size.width-250)/6*3+100;
-    var width_4 = (MediaQuery.of(context).size.width-250)/6*4+150;
-    var width_5 = (MediaQuery.of(context).size.width-250)/6*5+200;
-    var height_temp = MediaQuery.of(context).size.height-250;
+    var width_1= (MediaQuery.of(context).size.width-250.w)/6;
+    var width_2 = (MediaQuery.of(context).size.width-250.w)/6*2+50.w;
+    var width_3 = (MediaQuery.of(context).size.width-250.w)/6*3+100.w;
+    var width_4 = (MediaQuery.of(context).size.width-250.w)/6*4+150.w;
+    var width_5 = (MediaQuery.of(context).size.width-250.w)/6*5+200.w;
+
+    var height_temp = MediaQuery.of(context).size.height-250.w;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(

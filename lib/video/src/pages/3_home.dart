@@ -237,7 +237,7 @@ class _Home extends State<Home> {
                           child: Center(
 
                               child: Text('조음\n학습', style: TextStyle(
-                                  fontSize: 18+size,
+                                  fontSize: 18.sp+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -251,11 +251,11 @@ class _Home extends State<Home> {
                                   margin: EdgeInsets.only(left: 50),
                          child: Column(children: <Widget>[
                               Text('학습하기', style: TextStyle(
-                                  fontSize: 18+size, color: Colors.black87)),
+                                  fontSize: 18.sp+size, color: Colors.black87)),
                                 Text('', style: TextStyle(
-                                  fontSize: 1,)),
+                                  fontSize: 1.sp,)),
                                 Text('조음별 발음 학습', style: TextStyle(
-                                  fontSize: 15+size, color: Colors.black54)),
+                                  fontSize: 15.sp+size, color: Colors.black54)),
                                 ]
                         )
                       )
@@ -310,7 +310,7 @@ class _Home extends State<Home> {
                           ),
                           child: Center(
                               child: Text('낱말\n학습', style: TextStyle(
-                                  fontSize: 18+size,
+                                  fontSize: 18.sp+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -322,11 +322,11 @@ class _Home extends State<Home> {
                                   margin: EdgeInsets.only(left: 50),
                                   child: Column(children: <Widget>[
                                     Text('학습하기', style: TextStyle(
-                                        fontSize: 18+size, color: Colors.black87)),
+                                        fontSize: 18.sp+size, color: Colors.black87)),
                                     Text('', style: TextStyle(
                                       fontSize: 1,)),
                                     Text('단원별 발음 학습', style: TextStyle(
-                                        fontSize: 15+size, color: Colors.black54)),
+                                        fontSize: 15.sp+size, color: Colors.black54)),
                                   ]
                                   )
                               )
@@ -374,7 +374,7 @@ class _Home extends State<Home> {
                           ),
                           child: Center(
                               child: Text('복습\n시험', style: TextStyle(
-                                  fontSize: 18+size,
+                                  fontSize: 18.sp+size,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold))
                           ),
@@ -386,11 +386,11 @@ class _Home extends State<Home> {
                                   margin: EdgeInsets.only(left: 50),
                                   child: Column(children: <Widget>[
                                     Text('학습하기', style: TextStyle(
-                                        fontSize: 18+size, color: Colors.black87)),
+                                        fontSize: 18.sp+size, color: Colors.black87)),
                                     Text('', style: TextStyle(
-                                      fontSize: 1,)),
+                                      fontSize: 1.sp,)),
                                     Text('배운 내용을 복습', style: TextStyle(
-                                        fontSize: 15+size, color: Colors.black54)),
+                                        fontSize: 15.sp+size, color: Colors.black54)),
                                   ]
                                   )
                               )
@@ -418,7 +418,7 @@ class _Home extends State<Home> {
         appBar:  AppBar(
 
             title:
-            Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold)),
+            Text('구구절절', style: TextStyle(color: Colors.black,fontSize: 24.sp,fontWeight: FontWeight.bold)),
             centerTitle: true,
             backgroundColor: Colors.white, elevation: 3.0,
             automaticallyImplyLeading: false,
@@ -462,7 +462,7 @@ class _Home extends State<Home> {
                       SizedBox(height: 3,),
                       Padding(
                         padding: EdgeInsets.only(right: 15,),
-                        child:Text("공지사항", style: TextStyle(fontSize: 11,color: Colors.black),textAlign: TextAlign.center,),
+                        child:Text("공지사항", style: TextStyle(fontSize: 11.sp,color: Colors.black),textAlign: TextAlign.center,),
                       )
                     ],
                   ),

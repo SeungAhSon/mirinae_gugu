@@ -111,36 +111,36 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 아니 진짜ㅋㅋ",
-    "2. 이제되네",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18",
-    "19",
-    "20",
-    "21",
-    "22",
-    "23",
-    "24",
-    "25",
-    "26",
-    "27",
-    "28",
-    "29",
-    "30"
+    "1. 공책",
+    "2. 교실",
+    "3. 교과서",
+    "4. 교무실",
+    "5. 교복",
+    "6. 교훈",
+    "7. 급식",
+    "8. 낙서",
+    "9. 대화",
+    "10. 등교",
+    "11. 발표",
+    "12. 사물함",
+    "13. 선생님",
+    "14. 소개",
+    "15. 수돗가",
+    "16. 수업",
+    "17. 숙제",
+    "18. 실내화",
+    "19. 연필",
+    "20. 우유",
+    "21. 운동장",
+    "22. 이름",
+    "23. 일기",
+    "24. 지우개",
+    "25. 짝",
+    "26. 책가방",
+    "27. 청소도구",
+    "28. 친구",
+    "29. 칠판",
+    "30. 학년"
   ];
 
   //record
@@ -402,7 +402,7 @@ class _video_Body extends State<video_Body> {
           title: Center(
             child: Text(
               '${Questiontitle[widget.index - 1]}',
-              style: TextStyle(fontSize: 20.sp + size, color: Colors.blue),
+              style: TextStyle(fontSize: 24.sp + size, color: Colors.blue),
             ),
           ),
 
@@ -474,7 +474,7 @@ class _video_Body extends State<video_Body> {
                   height: (MediaQuery.of(context).size.height -
                       height2 -
                       MediaQuery.of(context).padding.top) *
-                      0.35,
+                      0.349,
                 ),
                 Stack(
                   children: [
@@ -513,7 +513,7 @@ class _video_Body extends State<video_Body> {
                                             reset();
                                           },
                                         ),
-                                        Text("다시", style: TextStyle(height: 0.2,fontSize: 10.sp,color: Colors.black), textAlign: TextAlign.center),
+                                        Text("다시", style: TextStyle(height: 0.2.h,fontSize: 10.sp,color: Colors.black), textAlign: TextAlign.center),
                                       ],
                                     ),
                                   ),
@@ -574,7 +574,7 @@ class _video_Body extends State<video_Body> {
                             height: (MediaQuery.of(context).size.height -
                                 height2 -
                                 MediaQuery.of(context).padding.top) *
-                                0.001,
+                                0.002,
                             color: Colors.grey.withOpacity(0.5),
                           ),
                         ),
@@ -610,8 +610,8 @@ class _video_Body extends State<video_Body> {
               Container(
                   padding: EdgeInsets.only(bottom: 5,),
                   child: finish
-                      ? Text("이전", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                      : Text("이전", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
+                      ? Text("이전", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      : Text("이전", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
 
               )
 
@@ -630,7 +630,7 @@ class _video_Body extends State<video_Body> {
             ),
             Padding(
               padding: EdgeInsets.only(bottom: 3),
-              child: Text("받아쓰기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+              child: Text("받아쓰기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
             )
           ],
         ),
@@ -652,7 +652,7 @@ class _video_Body extends State<video_Body> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
-                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+                child: Text("녹음하기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]
         )
@@ -668,7 +668,7 @@ class _video_Body extends State<video_Body> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
-                child: Text("녹음하기", style: TextStyle(height: 0.05,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+                child: Text("녹음하기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]),
 
@@ -691,8 +691,8 @@ class _video_Body extends State<video_Body> {
                   padding: EdgeInsets.only(bottom: 5,),
                   child: Container(padding:EdgeInsets.zero,
                       child: start
-                          ? Text("다음", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
-                          : Text("다음", style: TextStyle(height: 0.05,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
+                          ? Text("다음", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                          : Text("다음", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
                   )
               )
             ])
@@ -707,7 +707,7 @@ class _video_Body extends State<video_Body> {
       height: (MediaQuery.of(context).size.height -
           height2 -
           MediaQuery.of(context).padding.top) *
-          0.37,
+          0.38,
       color: Colors.white,
     );
   }
@@ -719,18 +719,7 @@ class _video_Body extends State<video_Body> {
       height: (MediaQuery.of(context).size.height -
           height2 -
           MediaQuery.of(context).padding.top) *
-          0.25,
-      color: Colors.white,
-    );
-  }
-
-  Widget backcolor3() {
-    var height2 = AppBar().preferredSize.height;
-    return Container(
-      height: (MediaQuery.of(context).size.height -
-          height2 -
-          MediaQuery.of(context).padding.top) *
-          0.38,
+          0.27,
       color: Colors.white,
     );
   }
@@ -748,7 +737,7 @@ class _video_Body extends State<video_Body> {
               style: TextStyle(
                 letterSpacing: 1.0,
                 fontSize: 20.0.sp + size, //사이즈 조절 필요
-                height: 1.75,
+                height: 1.75.h,
                 /*fontWeight: FontWeight.bold,*/
               ))
               : Text(""),

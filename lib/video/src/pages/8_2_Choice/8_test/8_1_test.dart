@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_2/2_voice_quiz_body.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_2/2_Choice.dart';
@@ -63,16 +62,16 @@ void dispose() {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 7),
+            SizedBox(height: 7.h),
             Text('1단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 7),
+            SizedBox(height: 7.h),
             Container(
-              height: MediaQuery.of(context).size.height*0.35,
+              height: MediaQuery.of(context).size.height*0.35.h,
               child:Image.asset('assets/test_chapter/1_newyear.png'),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -100,7 +99,7 @@ void dispose() {
                 TestButton(text: '말하기3',color: Colors.blueAccent,  icon: Icons.mic, state: speaking1_3,onTap: Choice16(),),
               ],
             ),
-
+            SizedBox(height: 30.h),
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),

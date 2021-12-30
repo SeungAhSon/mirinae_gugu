@@ -1,14 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_2/2_voice_quiz_body.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_2/2_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_4/4_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_6/6_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_1/1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_2/2_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_4/4_Choice.dart';
@@ -16,7 +11,6 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_6/6_Ch
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class Test_2 extends StatefulWidget {
   const Test_2({
@@ -61,23 +55,20 @@ class _Test_2 extends State<Test_2>{
 
   @override
   Widget build(BuildContext context){
-
     loadnotification();
-
-
     return SafeArea(
       child: Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 7),
+            SizedBox(height: 7.h),
             Text('2단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 7),
+            SizedBox(height: 7.h),
             Container(
-              height: MediaQuery.of(context).size.height*0.35,
+              height: MediaQuery.of(context).size.height*0.35.h,
               child:Image.asset('assets/test_chapter/2_spring.png'),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

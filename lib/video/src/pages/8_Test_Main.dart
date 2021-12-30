@@ -4,6 +4,8 @@ import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_0_Export.dart';
 import 'package:mirinae_gugu/video/src/widget/button_Chapter.dart';
+
+import '5_Education/update.dart';
 class Test_Main extends StatelessWidget{
   @override
   Widget build(BuildContext context){
@@ -24,10 +26,11 @@ class Test_Main extends StatelessWidget{
               ButtonChapter(onTap: Test_6(), number: 6, text: '여름'),
               ButtonChapter(onTap: Test_7(), number: 7, text: '과일&채소'),
               ButtonChapter(onTap: Test_8(), number: 8, text: '가을'),
-              ButtonChapter(onTap: Test_9(), number: 9, text: '직업'),
-              ButtonChapter(onTap: Test_10(), number: 10, text: '집'),
-              ButtonChapter(onTap: Test_11(), number: 11, text: '겨울'),
-              ButtonChapter(onTap: Test_12(), number: 12, text: '가족'),
+              ButtonChapter(onTap: update(), number: 9, text: '직업'),
+              ButtonChapter(onTap: update(), number: 10, text: '집'),
+              ButtonChapter(onTap: update(), number: 11, text: '겨울'),
+              ButtonChapter(onTap: update(), number: 12, text: '가족'),
+              ButtonChapter(onTap: update(), number: 13, text: '외래어 1'),
             ],
           ),
         ),

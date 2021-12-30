@@ -21,7 +21,7 @@ class _Setting extends State<Setting>{
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 24,color: Colors.black,fontWeight: FontWeight.bold)),
+        title: Text("설정",style: TextStyle(fontSize: 24.sp,color: Colors.black,fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
@@ -33,7 +33,7 @@ class _Setting extends State<Setting>{
         alignment: Alignment.topCenter,
         child: ListView(
           children: [
-            SizedBox(height: 8,),
+            SizedBox(height: 8.h,),
             Row(
               children: [
                 Icon(
@@ -41,47 +41,47 @@ class _Setting extends State<Setting>{
                   color: Colors.blue,
                   size: 25,
                 ),
-                SizedBox(width:10),
-                Text("환경",style: TextStyle(fontSize: 22+size,fontWeight: FontWeight.bold),)
+                SizedBox(width:10.w),
+                Text("환경",style: TextStyle(fontSize: 22.sp+size,fontWeight: FontWeight.bold),)
               ],
             ),
-            Divider(height: 20,thickness: 3,),
-            SizedBox(height: 5,),
+            Divider(height: 20.h,thickness: 3,),
+            SizedBox(height: 5.h,),
             buildLanguage(context, "언어 설정"),
-            SizedBox(height: 5,),
+            SizedBox(height: 5.h,),
             buildfontchoose(context, "글꼴 설정"),
-            SizedBox(height: 5,),
+            SizedBox(height: 5.h,),
             buildfontsize(context, "글자 크기 설정"),
-            SizedBox(height: 25,),
+            SizedBox(height: 25.h,),
             Row(
               children: [
                 Icon(Icons.email_outlined, color: Colors.blue,size: 25,),
                 SizedBox(width: 10,),
                 Text("정보",style: TextStyle(
-                    fontSize: 22+size,
+                    fontSize: 22.sp+size,
                     fontWeight: FontWeight.bold
                 ),)
               ],
             ),
-            Divider(height: 20,thickness: 3,),
-            SizedBox(height: 5,),
+            Divider(height: 20.h,thickness: 3,),
+            SizedBox(height: 5.h,),
             buildcontact(context, "개발자 연락처"),
-            SizedBox(height: 5,),
+            SizedBox(height: 5.h,),
             buildAccountOption2(context, "버전 정보"),
 
-            SizedBox(height: 25,),
+            SizedBox(height: 25.h,),
             Row(
               children: [
                 Icon(Icons.search_sharp, color: Colors.blue,size: 25,),
-                SizedBox(width: 7,),
+                SizedBox(width: 7.w,),
                 Text("사용 안내", style: TextStyle(
-                    fontSize: 22+size,
+                    fontSize: 22.sp+size,
                     fontWeight: FontWeight.bold
                 ),)
               ],
             ),
-            Divider(height: 20,thickness: 3,),
-            SizedBox(height: 7,),
+            Divider(height: 20.h,thickness: 3,),
+            SizedBox(height: 7.h,),
             buildwalkthrough(context, "사용법 및 기능"),
 
 
@@ -111,7 +111,7 @@ class _Setting extends State<Setting>{
                 onPressed: (){
                   Navigator.of(context).pop();
                 },
-                child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14),),
+                child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14.sp),),
               )
             ],
           );
@@ -123,7 +123,7 @@ class _Setting extends State<Setting>{
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(title,textScaleFactor: 1.0,style: TextStyle(
-              fontSize: 20+size,
+              fontSize: 20.sp+size,
               fontWeight: FontWeight.w600,
             ),),
             Container(
@@ -135,7 +135,7 @@ class _Setting extends State<Setting>{
                 child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                   color: Colors.black54,
                   fontWeight: FontWeight.w600,
-                  fontSize: 18+size,
+                  fontSize: 18.sp+size,
                 ),
                 ),
               ),
@@ -157,7 +157,7 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20+size,
+            fontSize: 20.sp+size,
             fontWeight: FontWeight.w600,
 
           ),),
@@ -165,7 +165,7 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
             child: Padding(
               padding: EdgeInsets.only(left:3,right: 5),
               child: Text("1.0.0+1",style: TextStyle(
-                  fontSize: 18+size,
+                  fontSize: 18.sp+size,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey[800]
               ),),
@@ -189,7 +189,7 @@ GestureDetector buildcontact(BuildContext context, String title)
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Text("이메일 주소\njaewan0114@naver.com"),
             ],
           ),
@@ -198,7 +198,7 @@ GestureDetector buildcontact(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기",style: TextStyle(color: Colors.black),),
+              child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14.sp),),
             )
           ],
         );
@@ -210,7 +210,7 @@ GestureDetector buildcontact(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20+size,
+            fontSize: 20.sp+size,
             fontWeight: FontWeight.w600,
 
           ),),
@@ -223,7 +223,7 @@ GestureDetector buildcontact(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 18+size,
+                fontSize: 18.sp+size,
               ),
               ),
             ),
@@ -247,7 +247,7 @@ Widget buildwalkthrough(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20+size,
+            fontSize: 20.sp+size,
             fontWeight: FontWeight.w600,
           ),),
           Container(
@@ -260,7 +260,7 @@ Widget buildwalkthrough(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 18+size,
+                fontSize: 18.sp+size,
               ),
               ),
             ),
@@ -294,7 +294,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기",style: TextStyle(color: Colors.black),),
+              child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14.sp),),
             )
           ],
         );
@@ -306,7 +306,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20+size,
+            fontSize: 20.sp+size,
             fontWeight: FontWeight.w600,
 
           ),),
@@ -320,7 +320,7 @@ GestureDetector buildfontsize(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 18+size,
+                fontSize: 18.sp+size,
               ),
               ),
             ),
@@ -347,7 +347,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               onPressed: (){
                 Navigator.of(context).pop();
               },
-              child: Text("닫기",style: TextStyle(color: Colors.black),),
+              child: Text("닫기",style: TextStyle(color: Colors.black,fontSize: 14.sp),),
             )
           ],
         );
@@ -359,7 +359,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,style: TextStyle(
-            fontSize: 20+size,
+            fontSize: 20.sp+size,
             fontWeight: FontWeight.w600,
 
           ),),
@@ -372,7 +372,7 @@ GestureDetector buildfontchoose(BuildContext context, String title)
               child: Text("상세 보기",textScaleFactor: 1.0,style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w600,
-                fontSize: 18+size,
+                fontSize: 18.sp+size,
               ),
               ),
             ),

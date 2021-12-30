@@ -325,16 +325,20 @@ class _video_Body extends State<video_Body> {
   // }
   Future<void> saved() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      favorite[widget.index] = true;
-    });
+    if (this.mounted) {
+      setState(() {
+        favorite[widget.index] = true;
+      });
+    }
     await prefs.setStringList(
         "favorite_1_", favorite.map((value) => value.toString()).toList());
+    if (this.mounted) {
     setState(() {
       favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
-    });
+
+    });}
   }
 
   void plus() async {
@@ -407,7 +411,7 @@ class _video_Body extends State<video_Body> {
           ),
 
           leading: Semantics(
-            label: "이전 페이지로 나가기",
+            label: "이전 페이지로 이동",
     child: IconButton(
             onPressed: () {
               Navigator.pop(context);
@@ -441,7 +445,7 @@ class _video_Body extends State<video_Body> {
               children: [
                 Stack(
                   children: [
-                    backcolor1(), //유튜브 뒤에 흰색 배경
+                    backcolor1(),//유튜브 뒤에 흰색 배경
                     Column(
                       children: [
                         //여긴 유튜브 영상
@@ -453,6 +457,7 @@ class _video_Body extends State<video_Body> {
                                 MediaQuery.of(context).padding.top) *
                                 0.38,
                             child: PageView.builder(
+
                               physics: NeverScrollableScrollPhysics(),
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
@@ -461,7 +466,6 @@ class _video_Body extends State<video_Body> {
                                 id: widget.index,
                               ),
                             ),
-
                             //child: youtube(context),
                           ),
                         ),
@@ -469,13 +473,17 @@ class _video_Body extends State<video_Body> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  //중간 여백
+                Semantics(
+                    label: "전면 카메라",
+                    child: SizedBox(
+
                   height: (MediaQuery.of(context).size.height -
                       height2 -
                       MediaQuery.of(context).padding.top) *
                       0.349,
-                ),
+                  child: backcolor3(),
+                ),),
+
                 Stack(
                   children: [
                     backcolor2(), //카메라 밑 부분 흰색 배경
@@ -492,20 +500,27 @@ class _video_Body extends State<video_Body> {
                             alignment: Alignment.center,
                             child: Stack(
                                 children: <Widget>[
-                                  Container(
+                                  Semantics(
+                                    label: "받아쓰기 노트",
+                                  child: Container(
                                     decoration: BoxDecoration(
                                         color: Colors.grey[200],
                                         border: Border.all(color: Colors.grey),
                                         //width:5,
                                         borderRadius:
                                         BorderRadius.all(Radius.circular(20))),
-                                  ),
+                                  ),),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(MediaQuery.of(context).size.width*0.83, 0, 0, 10),
-                                    child:Column(
+                                    child:Semantics(
+                                      label: "",
+
+                                    child:
+                                    Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       crossAxisAlignment: CrossAxisAlignment.center,
                                       children:[
+
                                         IconButton(
                                           padding: EdgeInsets.zero,
                                           icon:ImageIcon(AssetImage('assets/retry.png'),color:Colors.black,size:15),
@@ -515,9 +530,10 @@ class _video_Body extends State<video_Body> {
                                         ),
                                         Text("다시", style: TextStyle(height: 0.2.h,fontSize: 10.sp,color: Colors.black), textAlign: TextAlign.center),
                                       ],
-                                    ),
+                                    ),)
                                   ),
                                   Container(
+                                    margin: const EdgeInsets.only(left: 30, right: 30,),
                                     alignment: Alignment.center,
                                     child: textprint(),
                                   ),
@@ -533,9 +549,11 @@ class _video_Body extends State<video_Body> {
                                 0.03,
                             alignment: Alignment.center,
                             color: Colors.grey[200],
+                            child: Semantics(
+                                label: "성량 확인 바",
                             child: Container(
                               alignment: Alignment.center,
-                              child: Noise(),
+                              child: Noise(),)
                             ),
                           ),
                         ),
@@ -593,7 +611,9 @@ class _video_Body extends State<video_Body> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Column(
+      Semantics(
+      label: "",
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
@@ -615,9 +635,10 @@ class _video_Body extends State<video_Body> {
 
               )
 
-            ]),
-
-        Column(
+            ]),),
+    Semantics(
+    label: "",
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children:[
@@ -633,9 +654,11 @@ class _video_Body extends State<video_Body> {
               child: Text("받아쓰기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
             )
           ],
-        ),
+        ),),
         stop == false
-            ? Column(
+            ? Semantics(
+            label: "",
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
@@ -655,8 +678,11 @@ class _video_Body extends State<video_Body> {
                 child: Text("녹음하기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]
-        )
-            : Column(
+        ))
+            :
+    Semantics(
+    label: "",
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
@@ -668,12 +694,13 @@ class _video_Body extends State<video_Body> {
               ),
               Padding(
                 padding: EdgeInsets.only(bottom: 3,),
-                child: Text("녹음하기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+                child: Text("녹음중", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
               )
             ]),
 
-
-        Column(
+    ),    Semantics(
+            label: "",
+        child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
@@ -696,7 +723,7 @@ class _video_Body extends State<video_Body> {
                   )
               )
             ])
-      ],
+        )],
     );
   }
 
@@ -724,6 +751,14 @@ class _video_Body extends State<video_Body> {
     );
   }
 
+  Widget backcolor3() {
+    //카메라 아래
+    return Container(
+      color: Colors.white.withOpacity(0),
+    );
+  }
+  
+
 //텍스트 프린트
   Widget textprint() {
     return Column(
@@ -737,7 +772,7 @@ class _video_Body extends State<video_Body> {
               style: TextStyle(
                 letterSpacing: 1.0,
                 fontSize: 20.0.sp + size, //사이즈 조절 필요
-                height: 1.75.h,
+                height: 1.h,
                 /*fontWeight: FontWeight.bold,*/
               ))
               : Text(""),
@@ -774,7 +809,7 @@ class _video_Body extends State<video_Body> {
     Directory? appDir = await getExternalStorageDirectory();
 
     String jrecord = "Audiorecords";
-    String dato = "${(DateTime.now().millisecondsSinceEpoch -  54000000).toString()}.wav";
+    String dato = "${(DateTime.now().millisecondsSinceEpoch + 32400000).toString()}.wav";
     Directory appDirec =
     Directory("${appDir!.path}/$jrecord/");
 

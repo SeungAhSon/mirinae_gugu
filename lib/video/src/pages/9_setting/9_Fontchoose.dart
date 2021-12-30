@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/screens/old_mail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -111,8 +112,8 @@ class _Fontchoose extends State<Fontchoose> {
             },
           ),
 
-          SizedBox(width: 10.0,),
-          Text("ROBOTO(기본)",style: TextStyle(fontFamily: "origin"),)
+          SizedBox(width: 10.0.w,),
+          Text("ROBOTO(기본)",style: TextStyle(fontFamily: "origin",fontSize: 16.sp),)
         ],),),
         Semantics(
           label: "",
@@ -124,8 +125,8 @@ class _Fontchoose extends State<Fontchoose> {
               setSelected(value as int);
             },
           ),
-          SizedBox(width: 10.0,),
-          Text("주아체",style: TextStyle(fontFamily: "bmjua"),)
+          SizedBox(width: 10.0.w,),
+          Text("주아체",style: TextStyle(fontFamily: "bmjua",fontSize: 16.sp),)
 
         ],),),
         Semantics(
@@ -138,8 +139,8 @@ class _Fontchoose extends State<Fontchoose> {
               setSelected(value as int);
             },
           ),
-          SizedBox(width: 10.0,),
-          Text("조선100년체",style: TextStyle(fontFamily: "chosun100"),)
+          SizedBox(width: 10.0.w,),
+          Text("조선100년체",style: TextStyle(fontFamily: "chosun100",fontSize: 16.sp),)
         ],),),
         Semantics(
           label: "",
@@ -154,8 +155,8 @@ class _Fontchoose extends State<Fontchoose> {
               setSelected(value as int);
             },
           ),
-          SizedBox(width: 10.0,),
-          Text("야체",style: TextStyle(fontFamily: "ya"),)
+          SizedBox(width: 10.0.w,),
+          Text("야체",style: TextStyle(fontFamily: "ya",fontSize: 16.sp),)
         ],),
         ),
     Semantics(
@@ -168,15 +169,15 @@ class _Fontchoose extends State<Fontchoose> {
               setSelected(value as int);
             },
           ),
-          SizedBox(width: 10.0,),
-          Text("나눔고딕체",style: TextStyle(fontFamily: "nunum"),)
+          SizedBox(width: 10.0.w,),
+          Text("나눔고딕체",style: TextStyle(fontFamily: "nunum",fontSize: 16.sp),)
         ],
         ),
     ),
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
         Semantics(
           label: "",
-        child: Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
+        child: Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12.sp),),
     )
       ],
     );

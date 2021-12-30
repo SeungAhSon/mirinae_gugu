@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,7 +22,7 @@ class TestButton extends StatelessWidget {
         child: MaterialButton(
           shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10)),
           color: state ? Colors.grey : Color(0xff7ba6f9),
-          height: 80,
+          height: 80.h,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));
           },

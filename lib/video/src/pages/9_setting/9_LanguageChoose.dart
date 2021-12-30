@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/screens/old_mail.dart';
 
 class Languagechoose extends StatefulWidget{
@@ -39,10 +40,10 @@ class _Fontchoose extends State<Languagechoose> {
             },
           ),
           SizedBox(width: 10.0,),
-          Text("한국어")
+          Text("한국어",style: TextStyle(fontSize: 16.sp),)
         ],),
         SizedBox(height: 20),
-        Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
+        Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12.sp),),
       ],
     );
   }

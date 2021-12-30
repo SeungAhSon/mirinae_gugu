@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/screens/old_mail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -98,7 +99,7 @@ class _MyAppState extends State<MyApp2> {
 
                 child: ListTile(
 
-                  title: Text("Size"),
+                  title: Text("Size",style: TextStyle(fontSize: 16.sp),),
                   trailing: DropdownButtonHideUnderline(
 
                     child: DropdownButton(
@@ -124,7 +125,7 @@ class _MyAppState extends State<MyApp2> {
                 ),
               ),
               SizedBox(height: 20),
-              Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12),),
+              Text("※ 변경 내용을 적용하려면 앱을 다시 시작하세요", style: TextStyle(fontSize: 12.sp),),
             ],
           ),
         );

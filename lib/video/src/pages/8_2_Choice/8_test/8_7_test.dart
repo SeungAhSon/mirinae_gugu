@@ -22,7 +22,7 @@ class Test_7 extends StatelessWidget{
           children: [
             SizedBox(height: 7.h),
             Text('7단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 7.h),
+
             Container(
               height: MediaQuery.of(context).size.height*0.35.h,
               child:Image.asset('assets/test_chapter/7_fruit.png'),

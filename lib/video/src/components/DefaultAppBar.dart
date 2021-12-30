@@ -21,11 +21,15 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
       elevation: 3.0,
       automaticallyImplyLeading: false,
       iconTheme: IconThemeData(color: Colors.blue),
-      leading: IconButton(
+      leading: Semantics(
+      label: "이전 페이지로 이동",
+      child: IconButton(
         icon: Icon(Icons.arrow_back_ios, color: Colors.black),
         onPressed: () => Navigator.of(context).pop(),
       ),
+      ),
       actions: action,
+
     );
   }
 }

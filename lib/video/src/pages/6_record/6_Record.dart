@@ -59,7 +59,7 @@ class _RecordState extends State<Record> {
           reverse: false,
           itemBuilder: (BuildContext context, int i) {
             return Card(
-              elevation: 5,
+              elevation: 20,
               child: ExpansionTile(
                 key: Key(i.toString()),
                 initiallyExpanded: i == oneopen,
@@ -77,20 +77,16 @@ class _RecordState extends State<Record> {
                       isPlay=false;
                       _percent = 0.0;
                       _getDuration(totalTime);
-                      print('all');
-                      print(totalTime);
-
                     });
                   }
                   else
                     setState(() {
-                      print('아닐때');
                       oneopen = -1;
                     });
                 }),
                 children: [
                   Container(
-                    height: 100,
+                    height: 120,
                     padding: const EdgeInsets.all(10),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -150,10 +146,8 @@ class _RecordState extends State<Record> {
                                   });
                                   advancedPlayer.onDurationChanged.listen((duration) {
                                     setState(() {
-                                      print('chdtlrks');
                                       _totalTime = duration.inMicroseconds;
                                       totalTime = duration;
-                                      print( _totalTime);
                                     });
                                   });
                                   advancedPlayer.onAudioPositionChanged
@@ -161,8 +155,6 @@ class _RecordState extends State<Record> {
                                     setState(() {
                                       _currentTime = duration.inMicroseconds;
                                       currentTime = duration;
-                                      print('tlrks');
-                                      print(_currentTime);
                                       _percent = _currentTime.toDouble() /
                                           _totalTime.toDouble();
                                     });
@@ -238,19 +230,17 @@ class _RecordState extends State<Record> {
 
   _setupAudioPlayer(filePath) async {
     currentTime = new Duration(seconds: 0);
-    print(filePath);
     await advancedPlayer.setUrl(filePath);
-    print(advancedPlayer.setUrl(filePath));
     //await advancedPlayer.setUrl(widget.records.path);
     await advancedPlayer.setReleaseMode(ReleaseMode.STOP);
 
     advancedPlayer.onAudioPositionChanged.listen((Duration p) {
-      print('Current position: $p');
+      //print('Current position: $p');
       setState(() => currentTime = p);
     });
 
     advancedPlayer.onDurationChanged.listen((Duration d) {
-      print('Max duration: $d');
+      //print('Max duration: $d');
       setState(() => totalTime = d);
     });
     return totalTime;
@@ -268,7 +258,7 @@ class _Presso extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-      minWidth: 48.0,
+      minWidth: 30.0,
       child: RaisedButton(
           child: Icon(
             ico,

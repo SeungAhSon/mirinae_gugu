@@ -22,7 +22,7 @@ class ButtonSyllable extends StatelessWidget {
           side: BorderSide(color: Colors.black),
         ),
         onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));},
-        child: Text(text,textAlign:TextAlign.center, style: TextStyle(fontSize: 30+size,color:Colors.black,fontWeight: FontWeight.bold)),
+        child: Text(text,textAlign:TextAlign.center, style: TextStyle(fontSize: 30.sp+size,color:Colors.black,fontWeight: FontWeight.bold)),
       ),
     );
   }

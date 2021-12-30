@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/5_Education/5_0_Export.dart';
 import 'package:mirinae_gugu/video/src/widget/button_Chapter.dart';
@@ -12,13 +13,14 @@ class Word_Main extends StatelessWidget{
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(    // <- Scaffold body만 감싼다.
+      body: Center(
+        child: Scrollbar(// <- Scaffold body만 감싼다.
         child: ListView(
           padding: EdgeInsets.all(10),
           children: [
-            SizedBox(height: 5),
-            Text('낱말 시험', style: TextStyle(fontSize: 20+size, color: Colors.black, fontWeight: FontWeight.bold)),
-            SizedBox(height: 8),
+            SizedBox(height: 5.h),
+            Text('낱말 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            SizedBox(height: 8.h),
             ButtonChapter(onTap: Vocab_Screen_51(), number: 1, text: '새학년'),
             ButtonChapter(onTap: Vocab_Screen_52(), number: 2, text: '봄'),
             ButtonChapter(onTap: Vocab_Screen_53(), number: 3, text: '건강'),
@@ -32,9 +34,10 @@ class Word_Main extends StatelessWidget{
             ButtonChapter(onTap: update(), number: 10, text: '집'),
             ButtonChapter(onTap: update(), number: 11, text: '겨울'),
             ButtonChapter(onTap: update(), number: 12, text: '가족'),
+            ButtonChapter(onTap: update(), number: 13, text: '외래어 1'),
           ],
         ),
-      ),
+      ),),
       appBar: DefaultAppBar(title: '구구절절'),
     );
   }

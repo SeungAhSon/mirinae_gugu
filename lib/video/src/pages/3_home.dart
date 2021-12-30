@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/10_Notification.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
-import 'package:mirinae_gugu/video/src/widget/unit_widget.dart';
 import 'package:mirinae_gugu/video/src/pages/7_1_Syllable_Main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

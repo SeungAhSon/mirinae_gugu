@@ -28,8 +28,8 @@ class LearnLevelButton extends StatelessWidget {
         //Color(0xff7ba6f9),
         state ?Colors.grey : Color(0xff7ba6f9),
         state ?Colors.grey: Color(0xff7ba6f9),
-
       ],
+
     );
 
 
@@ -85,7 +85,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22.0.sp+size, fontWeight: FontWeight.bold,
+                      fontSize: 20.0.sp, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

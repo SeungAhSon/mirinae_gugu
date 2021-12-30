@@ -71,8 +71,12 @@ class _5_video_page extends State<video_page>{
             ),
           ),
           Container(
+
               height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31,
+    child: Semantics(
+    label: "유튜브 영상",
               child: youtube(context)
+    )
           )
         ],
       ),

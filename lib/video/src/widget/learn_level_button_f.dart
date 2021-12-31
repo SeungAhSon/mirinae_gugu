@@ -33,7 +33,9 @@ class LearnLevelButton extends StatelessWidget {
     );
 
 
-    return InkWell(
+    return Semantics(
+      label: state ? "완료된" : "미완료된",
+      child: InkWell(
       onTap: onTap,
       child: Center(
         child: Padding(
@@ -93,6 +95,6 @@ class LearnLevelButton extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }

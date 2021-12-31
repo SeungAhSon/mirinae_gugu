@@ -22,11 +22,12 @@ class Test_6 extends StatelessWidget{
           children: [
             SizedBox(height: 7.h),
             Text('6단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
-
-            Container(
+        Semantics(
+          label: "여름 ",
+            child: Container(
               height: MediaQuery.of(context).size.height*0.35.h,
               child:Image.asset('assets/test_chapter/6_summer.png'),
-            ),
+            )),
             SizedBox(height: 5.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

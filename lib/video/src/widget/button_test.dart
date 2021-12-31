@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
@@ -17,19 +19,24 @@ class TestButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return
+      Padding(
         padding: const EdgeInsets.all(5),
-        child: MaterialButton(
+        child:
+        MaterialButton(
           shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(10)),
           color: state ? Colors.grey : Color(0xff7ba6f9),
           height: 80.h,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => onTap));
           },
-          child: Column(children: [Icon(icon, color: Colors.white,),
-            Text(text, style: TextStyle(fontSize:14+size,color: Colors.white),)
+          child: Semantics(
+    label: state ? "완료된" : "미완료된",
+    child: Column(children: [
+      Icon(state ? Icons.check_sharp : icon, color: Colors.white,),
+            Text(text, style: TextStyle(fontSize:14.sp+size,color: Colors.white),)
           ],),
-        )
-    );
+        ))
+      );
   }
 }

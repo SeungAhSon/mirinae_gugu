@@ -22,11 +22,12 @@ class Test_8 extends StatelessWidget{
           children: [
             SizedBox(height: 7.h),
             Text('8단원. 복습 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
-
-            Container(
+        Semantics(
+          label: "가을 ",
+            child: Container(
               height: MediaQuery.of(context).size.height*0.35.h,
               child:Image.asset('assets/test_chapter/8_fall.png'),
-            ),
+            )),
             SizedBox(height: 5.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

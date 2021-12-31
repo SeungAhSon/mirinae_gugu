@@ -343,7 +343,7 @@ class _video_Body extends State<video_Body_8> {
                     height: (MediaQuery.of(context).size.height -
                         height2 -
                         MediaQuery.of(context).padding.top) *
-                        0.349,
+                        0.341,
                     child: backcolor3(),
                   ),),
 

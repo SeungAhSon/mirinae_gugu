@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_speech/google_speech.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -480,7 +482,7 @@ class _video_Body extends State<video_Body> {
                   height: (MediaQuery.of(context).size.height -
                       height2 -
                       MediaQuery.of(context).padding.top) *
-                      0.349,
+                      0.341,
                   child: backcolor3(),
                 ),),
 
@@ -804,12 +806,26 @@ class _video_Body extends State<video_Body> {
         break;
     }
   }
-
   _initial() async {
     Directory? appDir = await getExternalStorageDirectory();
 
     String jrecord = "Audiorecords";
-    String dato = "${(DateTime.now().millisecondsSinceEpoch + 32400000).toString()}.wav";
+    //var DATE = DateFormat.yMd('ko_KR').add_jm();
+    //String dato2 = "${DATE.toString()}.wav";
+    //print(DateFormat.yMd('ko_KR'));
+    //String dato = "${(DateTime.now().millisecondsSinceEpoch + 32400000).toString()}.wav";
+    initializeDateFormatting('ko_KR', null);
+
+    var test = DateFormat.yMd('ko_KR');
+    print(new DateFormat.yMMMd('ko_KR').add_jm().format(new DateTime.now()));
+
+    var timeZoneOffset = DateTime.now().timeZoneOffset.inMilliseconds;
+    var localTimestamp = (DateTime.now().millisecondsSinceEpoch);
+    print('local Timestamp : $localTimestamp');
+    String dato = "${localTimestamp.toString()}.wav";
+
+    print('날짜');
+    print(dato);
     Directory appDirec =
     Directory("${appDir!.path}/$jrecord/");
 

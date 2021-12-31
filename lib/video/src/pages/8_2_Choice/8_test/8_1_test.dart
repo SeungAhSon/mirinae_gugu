@@ -59,8 +59,7 @@ void dispose() {
   loadnotification();
 
 
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -102,7 +101,7 @@ void dispose() {
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),
-    ),
+
     );
   }
 }

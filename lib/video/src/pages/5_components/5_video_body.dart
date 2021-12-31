@@ -622,7 +622,7 @@ class _video_Body extends State<video_Body> {
               IconButton(
                   icon: finish
                       ? Icon(Icons.arrow_back_ios_sharp,
-                      color: Colors.white.withOpacity(0), size: 30)
+                      color: Colors.white.withOpacity(0), size: 30,semanticLabel: "첫번째 페이지 입니다",)
                       : Icon(Icons.arrow_back_ios_sharp,
                       color: Colors.black, size: 30),
                   onPressed: () async {
@@ -632,7 +632,7 @@ class _video_Body extends State<video_Body> {
               Container(
                   padding: EdgeInsets.only(bottom: 5,),
                   child: finish
-                      ? Text("이전", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                      ? Text("", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
                       : Text("이전", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
 
               )
@@ -709,7 +709,7 @@ class _video_Body extends State<video_Body> {
               IconButton(
                   icon: start
                       ? Icon(Icons.arrow_forward_ios_sharp,
-                      color: Colors.white.withOpacity(0), size: 30)
+                      color: Colors.white.withOpacity(0), size: 30,semanticLabel: "마지막 페이지 입니다")
                       : Icon(Icons.arrow_forward_ios_sharp,
                       color: Colors.black, size: 30),
                   onPressed: () async {
@@ -720,7 +720,7 @@ class _video_Body extends State<video_Body> {
                   padding: EdgeInsets.only(bottom: 5,),
                   child: Container(padding:EdgeInsets.zero,
                       child: start
-                          ? Text("다음", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
+                          ? Text("", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.white.withOpacity(0)),textAlign: TextAlign.center,)
                           : Text("다음", style: TextStyle(height: 0.05.h,fontSize: 10.sp,color: Colors.black),textAlign: TextAlign.center,)
                   )
               )

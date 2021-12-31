@@ -83,9 +83,9 @@ class _5_video_page extends State<video_page>{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
-
     return Container(
-      child: Column(
+      child:
+        Column(
         children: [
           Padding(
             padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(30/(30-widget.id)),), //상단 슬라이드
@@ -111,6 +111,6 @@ class _5_video_page extends State<video_page>{
           ))
         ],
       ),
-    );
+        );
   }
 }

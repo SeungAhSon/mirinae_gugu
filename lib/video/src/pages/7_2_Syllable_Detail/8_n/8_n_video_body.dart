@@ -285,11 +285,10 @@ class _video_Body extends State<video_Body_8> {
             ),
           ),
           actions: <Widget>[
-            IconButton(
-              onPressed: (){
-              },
-              icon: Icon(Icons.arrow_back,color: Colors.white.withOpacity(0)),
-
+            Container(
+                height: 47.h,
+                width: 47.w,
+                color: Colors.white.withOpacity(0)
             ),
           ],
         ),

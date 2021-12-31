@@ -291,8 +291,8 @@ class _video_Body extends State<video_Body_15> {
           ),
           actions: <Widget>[
             Container(
-              height: 50.h,
-                width: 50.w,
+              height: 47.h,
+                width: 47.w,
                 color: Colors.white.withOpacity(0)
             ),
           ],

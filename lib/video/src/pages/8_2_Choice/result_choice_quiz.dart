@@ -53,10 +53,12 @@ class _ScoreScreenState extends State<ScoreScreen> {
                         width: 300.0.w,
                         height: 300.0.h,
                         child: ClipRect(
+                          child: Semantics(
+                            label: message,
                           child: Image(
                             image: AssetImage(image,),
                           ),
-                        ),
+                        )),
                       ),
                     ),
                     Padding(
@@ -64,7 +66,9 @@ class _ScoreScreenState extends State<ScoreScreen> {
                           vertical: 5.0,
                           horizontal: 15.0,
                         ),
-                        child: Column(
+                        child: Semantics(
+                            label: "",
+                            child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
@@ -93,7 +97,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                               ],
                             ),
                           ],
-                        )
+                        ))
                     ),
                   ],
                 ),

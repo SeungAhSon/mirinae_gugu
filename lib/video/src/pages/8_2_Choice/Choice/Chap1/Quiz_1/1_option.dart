@@ -36,13 +36,14 @@ class Option extends StatelessWidget {
           Icon getTheRightIcon() {
             if (qnController.isAnswered) {
               if (index == qnController.correctAns) {
-                return Icon(Icons.brightness_1_outlined,color: Colors.white, size: 20);//right
+                return
+                  Icon(Icons.brightness_1_outlined,color: Colors.white, size: 25,);//right
               } else if (index == qnController.selectedAns &&
                   qnController.selectedAns != qnController.correctAns) {
-                return Icon(Icons.clear_rounded,color: Colors.white, size: 20); // wrong
+                return Icon(Icons.clear_rounded,color: Colors.white, size: 25); // wrong
               }
             }
-            return Icon(Icons.question_answer,color: Colors.transparent, size: 20);
+            return Icon(Icons.question_answer,color: Colors.transparent, size: 25);
           };
 
           return InkWell(
@@ -63,12 +64,12 @@ class Option extends StatelessWidget {
                   Stack(
                     children: <Widget>[
                       Positioned.fill(
-                        child: Align(                        alignment: Alignment.center,
+                        child: Align(alignment: Alignment.center,
                           child: Text("$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16.sp+size),),),
                       ),
                       Padding(
                           padding: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.5),
-                          child: getTheRightIcon()
+                              child: getTheRightIcon()
                       ),
                     ],
                   ),

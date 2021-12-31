@@ -52,11 +52,15 @@ class _ScorePageState extends State<ScorePage> {
                       child: Container(
                         width: 300.0,
                         height: 300.0,
-                        child: ClipRect(
+                        child: Semantics(
+                        label: message,
+                        child:
+                        ClipRect(
                           child: Image(
+
                             image: AssetImage(image,),
                           ),
-                        ),
+                        )),
                       ),
                     ),
                     Padding(
@@ -64,7 +68,9 @@ class _ScorePageState extends State<ScorePage> {
                           vertical: 5.0,
                           horizontal: 15.0,
                         ),
-                        child: Column(
+                        child: Semantics(
+                            label: "",
+                            child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
@@ -95,7 +101,7 @@ class _ScorePageState extends State<ScorePage> {
                           ],
                         )
                     ),
-                  ],
+                    )],
                 ),
               ),
             ),

@@ -1,3 +1,4 @@
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
@@ -76,6 +77,7 @@ class QuestionController_1 extends GetxController with SingleGetTickerProviderMi
     Future.delayed(Duration(milliseconds: 500), () {
       if (_questionNumber.value != _questions.length) {
         _isAnswered = false;
+
         _pageController.jumpToPage(_questionNumber.value++);
       } else {
         Get.off(ScoreScreen(lastscore: numOfCorrectAns*10));

@@ -149,37 +149,41 @@ class _StartPageState_6 extends State<StartPage_6> {
     if(newtext==qList[counter].qText.replaceAll(' ', '')) {
       score= score+10;
       final snackbar = SnackBar(
-        margin: EdgeInsets.fromLTRB(
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.25,
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.5),
-        duration: Duration(milliseconds : 800), //500
-        backgroundColor: Colors.lime[200],
-        behavior: SnackBarBehavior.floating,
-        elevation: 0,
-        content: Container(
-          child: Icon(Icons.brightness_1_outlined, color: Colors.orange, size: 170),
-        ),);
+          margin: EdgeInsets.fromLTRB(
+              MediaQuery.of(context).size.width*0.2.w,
+              MediaQuery.of(context).size.height*0.25.h,
+              MediaQuery.of(context).size.width*0.2.w,
+              MediaQuery.of(context).size.height*0.5.h),
+          duration: Duration(milliseconds :800 ), //500
+          backgroundColor: Colors.lime[200],
+          behavior: SnackBarBehavior.floating,
+          elevation: 0,
+          content: Semantics(
+            label: "정답입니다.",
+            child: Container(
+              child: Icon(Icons.brightness_1_outlined, color: Colors.orange, size: 170),
+            ),));
       Scaffold.of(context).showSnackBar(snackbar);
     }
     else{
       score = score+0;
       final snackbar = SnackBar(
-        margin: EdgeInsets.fromLTRB(
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.25,
-            MediaQuery.of(context).size.width*0.2,
-            MediaQuery.of(context).size.height*0.5),
-        duration: Duration(milliseconds : 800),
-        backgroundColor: Colors.lime[200],
-        behavior: SnackBarBehavior.floating,
-        elevation: 0,
-        content: Container(
-          margin: const EdgeInsets.fromLTRB(0,0,0,230),
-          child: Icon(Icons.clear_rounded, color: Colors.orange, size: 170),
-        ),
-      );
+          margin: EdgeInsets.fromLTRB(
+              MediaQuery.of(context).size.width*0.2.w,
+              MediaQuery.of(context).size.height*0.25.h,
+              MediaQuery.of(context).size.width*0.2.w,
+              MediaQuery.of(context).size.height*0.5.h),
+          duration: Duration(milliseconds : 800),
+          backgroundColor: Colors.lime[200],
+          behavior: SnackBarBehavior.floating,
+          elevation: 0,
+          content: Semantics(
+            label: "오답입니다.",
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(0,0,0,230),
+              child: Icon(Icons.clear_rounded, color: Colors.orange, size: 170),
+            ),
+          ));
       Scaffold.of(context).showSnackBar(snackbar);
     }
   }
@@ -212,8 +216,6 @@ class _StartPageState_6 extends State<StartPage_6> {
     });
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -233,6 +235,8 @@ class _StartPageState_6 extends State<StartPage_6> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
+/*                    Text("Score : $score /100",style: TextStyle(color : Colors.brown ,
+                        fontSize: 20,fontWeight: FontWeight.bold),),*/
                     Text("문제 : $questionnum / 10",style: TextStyle(color : Colors.brown ,
                         fontSize: 20.sp+size,fontWeight: FontWeight.bold),),
 
@@ -242,27 +246,29 @@ class _StartPageState_6 extends State<StartPage_6> {
               ),
 
               Padding(padding: EdgeInsets.only(top: 20)),
-
-              Container(
-                width: MediaQuery.of(context).size.width*0.8,
-                height: MediaQuery.of(context).size.height*0.45,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.lime[200]
-                ),
-                child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                        margin: const EdgeInsets.fromLTRB(50,30,50,20),
-                        child: Text(qList[counter].qText,
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0.sp+size,),)),
-                    Container(
-                      //margin: const EdgeInsets.fromLTRB(3,3,3,3),
-                        child: Text('를 읽어주세요!',
-                          style: TextStyle(fontSize: 18.0.sp+size,),)
-                    )
-                  ],
+              Semantics(
+                label: "문제입니다.",
+                child: Container(
+                  width: MediaQuery.of(context).size.width*0.8.w,
+                  height: MediaQuery.of(context).size.height*0.45.h,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.lime[200]
+                  ),
+                  child: Column(
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                          margin: const EdgeInsets.fromLTRB(50,30,50,20),
+                          child: Text(qList[counter].qText,
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25.0.sp+size,),)),
+                      Container(
+                        //margin: const EdgeInsets.fromLTRB(3,3,3,3),
+                          child: Text('를 읽어주세요!',
+                            style: TextStyle(fontSize: 18.0.sp+size,),)
+                      )
+                    ],
+                  ),
                 ),
               ),
               //Padding(padding: EdgeInsets.only(top: 30)),
@@ -272,29 +278,23 @@ class _StartPageState_6 extends State<StartPage_6> {
                     child: Stack(
                       // text 프린트 해주는 함수 호출
                         children: <Widget>[
-                          Container(
-                            width: MediaQuery.of(context).size.width*0.8,
-                            height: MediaQuery.of(context).size.height*0.1,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10), //모서리를 둥글게
-                                border: Border.all(color: Colors.black12, width: 3),
-                                color: Color(0xffE4EDFF)
-                            ), //테두리
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Container(
-                                  child: textprint(),
-                                )],),),
-/*                  Container(
-                              width: 150,
-                              height: 34,
+                          Semantics(
+                            label: "받아쓰기 노트",
+                            child: Container(
+                              width: MediaQuery.of(context).size.width*0.8.w,
+                              height: MediaQuery.of(context).size.height*0.1.h,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30), //모서리를 둥글게
-                                  color: Color(0xff4573CB)
-                              ),
-                            ),*/
-                        ]
+                                  borderRadius: BorderRadius.circular(10), //모서리를 둥글게
+                                  border: Border.all(color: Colors.black12, width: 3),
+                                  color: Color(0xffE4EDFF)
+                              ), //테두리
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Container(
+                                    child: textprint(),
+                                  )],),),
+                          )]
                     )
                 ),
               ),
@@ -304,7 +304,6 @@ class _StartPageState_6 extends State<StartPage_6> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-
                   RaisedButton(
                     onPressed:() {
                       checkWin(realtext.replaceAll(' ', ''), context);
@@ -319,20 +318,31 @@ class _StartPageState_6 extends State<StartPage_6> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
+                    child: Semantics(
+                      label: "다음 문제로 이동",
+                      child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
+                    ),
                   ),
 
-                  Container(
-                    //height: 150,
-                    //width: 100,
-                    child: IconButton(
-                      onPressed: recognizing ? stopRecording : streamingRecognize,
-                      icon: recognizing
-                          ? Icon(Icons.mic, color: Colors.red, size: 45)
-                          : Icon(Icons.mic, color: Color(0xff4573cb), size: 45),
-                    ),
-                    //margin: const EdgeInsets.fromLTRB(0,40.0,0,0),
-                  ),
+                  Semantics(
+                    label: "",
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children:[
+                        IconButton(
+                          padding: EdgeInsets.only(bottom: 3,),
+                          onPressed: recognizing ? stopRecording : streamingRecognize,
+                          icon: recognizing
+                              ? Icon(Icons.mic, color: Colors.red, size: 28)
+                              : Icon(Icons.mic, color: Colors.blue, size: 28),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 3),
+                          child: Text("받아쓰기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+                        )
+                      ],
+                    ),),
                   InkWell(
                     child: RaisedButton(
                       onPressed:() {
@@ -345,18 +355,15 @@ class _StartPageState_6 extends State<StartPage_6> {
                           borderRadius: BorderRadius.circular(10)
                       ),
 
-                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
+                      child: Text("다시 쓰기",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
                     ),
                   )
-
                 ],
               ),
             ],
           ),
         ),
       ),
-
-
     );
   }
 
@@ -369,13 +376,12 @@ class _StartPageState_6 extends State<StartPage_6> {
           style: TextStyle(
             letterSpacing: 1.0,
             fontSize: 22.5.sp+size,
-            height: 1.75,
+            height: 1.25.h,
           )
       );
     } else {
       return Text("");
     }
-
   }
 
   void finish() async{

@@ -32,7 +32,18 @@ class Option extends StatelessWidget {
               }
             }
             return Colors.black38;
-          }
+          };
+          Icon getTheRightIcon() {
+            if (qnController.isAnswered) {
+              if (index == qnController.correctAns) {
+                return Icon(Icons.brightness_1_outlined,color: Colors.white, size: 20);//right
+              } else if (index == qnController.selectedAns &&
+                  qnController.selectedAns != qnController.correctAns) {
+                return Icon(Icons.clear_rounded,color: Colors.white, size: 20); // wrong
+              }
+            }
+            return Icon(Icons.question_answer,color: Colors.transparent, size: 20);
+          };
 
           return InkWell(
             onTap: press,
@@ -46,12 +57,22 @@ class Option extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16.sp+size),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children:[
+                  Stack(
+                    children: <Widget>[
+                      Positioned.fill(
+                        child: Align(                        alignment: Alignment.center,
+                          child: Text("$text", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 16.sp+size),),),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left:MediaQuery.of(context).size.width*0.5),
+                          child: getTheRightIcon()
+                      ),
+                    ],
                   ),
-                ],
+                ]
               ),
             ),
           );

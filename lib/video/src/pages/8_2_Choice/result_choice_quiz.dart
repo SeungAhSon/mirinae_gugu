@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_1/1_quiz_controller.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScoreScreen extends StatefulWidget {
-  ScoreScreen({Key? key}) : super(key : key);
+  ScoreScreen({Key? key, required this.lastscore}) : super(key : key);
+  final int lastscore;
   @override
   _ScoreScreenState createState() => _ScoreScreenState();
 }
@@ -23,10 +23,10 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   @override
   void initState(){
-    if(_qnController.numOfCorrectAns<3){
+    if(widget.lastscore<30){
       image = images[2];
       message = "조금 더 노력하세요..";
-    }else if(_qnController.numOfCorrectAns<8){
+    }else if(widget.lastscore<80){
       image = images[1];
       message = "화이팅!";
     }else{
@@ -36,7 +36,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
     super.initState();
   }
 
-  QuestionController_1 _qnController = Get.put(QuestionController_1());
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(title: '결과'),
@@ -48,11 +47,11 @@ class _ScoreScreenState extends State<ScoreScreen> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height:25),
+                    SizedBox(height:25.h),
                     Material(
                       child: Container(
-                        width: 300.0,
-                        height: 300.0,
+                        width: 300.0.w,
+                        height: 300.0.h,
                         child: ClipRect(
                           child: Image(
                             image: AssetImage(image,),
@@ -82,7 +81,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                                   textAlign: TextAlign.center,
                                 ),
                                 Text(
-                                  "${_qnController.numOfCorrectAns * 10}",
+                                  "${widget.lastscore}",
                                   style: TextStyle(color: Colors.indigo, fontSize: 25.0.sp+size, fontWeight: FontWeight.bold,),
                                   textAlign: TextAlign.center,
                                 ),

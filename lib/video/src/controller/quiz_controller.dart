@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_result.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_choice_quiz.dart';
 
 class QuestionController extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;
@@ -78,7 +78,7 @@ class QuestionController extends GetxController with SingleGetTickerProviderMixi
         _isAnswered = false;
         _pageController.jumpToPage(_questionNumber.value++);
       } else {
-        Get.off(ScoreScreen());
+        Get.off(ScoreScreen(lastscore: numOfCorrectAns*10));
       }
     });
   }

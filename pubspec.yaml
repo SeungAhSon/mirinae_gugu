@@ -64,9 +64,7 @@ dependencies:
   flutter_audio_recorder:
   permission_handler:
   storage_path:
-
   flutter_screenutil: ^5.0.2
-
 
 
 
@@ -96,7 +94,6 @@ flutter:
     - assets/lejinhy-speech-to-text-11be68205205.json
     - assets/hedgehog.jpeg
     - assets/retry.png
-    - assets/oral_structure.png
     - assets/oral_structure 2.png
     - assets/1_screen_start.png
     - assets/2_screen_login.png

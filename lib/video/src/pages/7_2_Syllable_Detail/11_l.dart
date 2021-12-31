@@ -19,7 +19,7 @@ class L extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('잇몸소리',style: TextStyle(fontSize: 18.0+size),),
+                      Text('잇몸소리',style: TextStyle(fontSize: 18.0.sp+size),),
                       SizedBox(width: 10.w),
                       Container(
                           height: 30.h,width: 30.w,
@@ -28,10 +28,10 @@ class L extends StatelessWidget{
                             color: Color(0xff7ba6f9),
                             shape: BoxShape.circle,
                           ),
-                          child: Text('ㄹ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
+                          child: Text('ㄹ',style: TextStyle(fontSize: 19.sp+size, fontWeight: FontWeight.bold))
                       ),
                       SizedBox(width: 10.w),
-                      Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
+                      Text('발음하기',style: TextStyle(fontSize: 18.0.sp+size)),
                     ],
                   ),
                   SizedBox(height: 5.h),
@@ -44,9 +44,9 @@ class L extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('유음',style:TextStyle(fontSize: 16+size)),
+                    child: Text('유음',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('혀 끝을 잇몸에 가볍게 대어\n공기를 양쪽으로 흘려보내면서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('혀 끝을 잇몸에 가볍게 대어\n공기를 양쪽으로 흘려보내면서 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
@@ -56,9 +56,9 @@ class L extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('잇몸소리',style:TextStyle(fontSize: 16+size)),
+                    child: Text('잇몸소리',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

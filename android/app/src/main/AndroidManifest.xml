@@ -9,8 +9,8 @@
     <uses-feature android:name="android.hardware.camera.autofocus"/>
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <application
-        android:label="mirinae_gugu"
-        android:icon="@mipmap/ic_launcher">
+        android:label="구구절절"
+        android:icon="@mipmap/ggjj">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

@@ -23,8 +23,10 @@ class Syllable_pages extends StatelessWidget{
       body: Stack(
         children: <Widget>[
           Align(
-            alignment: Alignment.center,
-            child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),
+              alignment: Alignment.center,
+              child: Semantics(
+                label: "소리 나는 위치",
+            child: Image.asset("assets/oral_structure 2.png",fit: BoxFit.fill,),)
           ),
           Padding(
             padding: EdgeInsets.only(top:(MediaQuery.of(context).size.height -  MediaQuery.of(context).padding.top) * 0.525,

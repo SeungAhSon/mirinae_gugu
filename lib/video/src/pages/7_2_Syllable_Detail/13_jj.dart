@@ -19,7 +19,7 @@ class JJ extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('센입천장소리',style: TextStyle(fontSize: 18.0+size),),
+                      Text('센입천장소리',style: TextStyle(fontSize: 18.0.sp+size),),
                       SizedBox(width: 10.w),
                       Container(
                           height: 30.h,width: 30.w,
@@ -28,10 +28,10 @@ class JJ extends StatelessWidget{
                             color: Color(0xff7ba6f9),
                             shape: BoxShape.circle,
                           ),
-                          child: Text('ㅉ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
+                          child: Text('ㅉ',style: TextStyle(fontSize: 19.sp+size, fontWeight: FontWeight.bold))
                       ),
                       SizedBox(width: 10.w),
-                      Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
+                      Text('발음하기',style: TextStyle(fontSize: 18.0.sp+size)),
                     ],
                   ),
                   SizedBox(height: 5.h),
@@ -44,9 +44,9 @@ class JJ extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('파찰음',style:TextStyle(fontSize: 16+size)),
+                    child: Text('파찰음',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('폐에서 나오는 공기를 막았다가\n서서히 마찰을 일으켜서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('폐에서 나오는 공기를 막았다가\n서서히 마찰을 일으켜서 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
@@ -56,9 +56,9 @@ class JJ extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('센입천장소리',style:TextStyle(fontSize: 16+size)),
+                    child: Text('센입천장소리',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('혓바닥을 입안 앞쪽에 붙였다가 떼면서 발음',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('혓바닥을 입안 앞쪽에 붙였다가 떼면서 발음',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

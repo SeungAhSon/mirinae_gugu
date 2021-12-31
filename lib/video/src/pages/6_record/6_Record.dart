@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Record extends StatefulWidget {
@@ -44,10 +45,10 @@ class _RecordState extends State<Record> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        title: Text(
-          "Audio List",
-        ),
+        title: Text("설정",style: TextStyle(fontSize: 24.sp,color: Colors.black,fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.white,
+        centerTitle: true,
+
       ),
       body: Container(
         padding: const EdgeInsets.all(10),

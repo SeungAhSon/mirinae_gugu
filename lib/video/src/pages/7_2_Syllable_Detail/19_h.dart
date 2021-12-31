@@ -19,7 +19,7 @@ class H extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('목청소리',style: TextStyle(fontSize: 18.0+size),),
+                      Text('목청소리',style: TextStyle(fontSize: 18.0.sp+size),),
                       SizedBox(width: 10.w),
                       Container(
                           height: 30.h,width: 30.w,
@@ -28,10 +28,10 @@ class H extends StatelessWidget{
                             color: Color(0xff7ba6f9),
                             shape: BoxShape.circle,
                           ),
-                          child: Text('ㅎ',style: TextStyle(fontSize: 19+size, fontWeight: FontWeight.bold))
+                          child: Text('ㅎ',style: TextStyle(fontSize: 19.sp+size, fontWeight: FontWeight.bold))
                       ),
                       SizedBox(width: 10.w),
-                      Text('발음하기',style: TextStyle(fontSize: 18.0+size)),
+                      Text('발음하기',style: TextStyle(fontSize: 18.0.sp+size)),
                     ],
                   ),
                   SizedBox(height: 5.h),
@@ -44,9 +44,9 @@ class H extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('마찰음',style:TextStyle(fontSize: 16+size)),
+                    child: Text('마찰음',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('입안이나 목청 사이의 통로를 좁혀\n그 사이로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('입안이나 목청 사이의 통로를 좁혀\n그 사이로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
@@ -56,9 +56,9 @@ class H extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('목청소리',style:TextStyle(fontSize: 16+size)),
+                    child: Text('목청소리',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('목구멍에서 나는 소리',style:TextStyle(fontSize: 15+size),textAlign: TextAlign.center,),
+                  Text('목구멍에서 나는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 10.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

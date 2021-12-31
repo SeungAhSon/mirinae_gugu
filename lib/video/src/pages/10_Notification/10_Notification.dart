@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/components/constant.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationTiles.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
@@ -40,15 +41,17 @@ class _NotificationState extends State<Notific> {
           ),
           kDivider,
           ListTile(
-            title: Column(
+            title: Semantics(
+            label: "제목",
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('사용 방법 소개', style: TextStyle(color: Color(0xFF303030), fontSize:17+size, fontWeight: FontWeight.bold)),
+                Text('사용 방법 소개', style: TextStyle(color: Color(0xFF303030), fontSize:18.sp+size, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5),
-                Text('2021.01.01', style: TextStyle(color: Colors.grey, fontSize:14+size,)),
+                Text('2021.01.01', style: TextStyle(color: Colors.grey, fontSize:14.sp+size,)),
               ],
-            ),
+            )),
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),
             onTap: () {
               print("tapped on container");

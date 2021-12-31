@@ -131,7 +131,7 @@ class _RecordState extends State<Record> {
                           children: [
                             (isPlay)?
                             _Presso(
-                              label: "재생 일시 정지",
+                              label: "일시 정지",
                                 ico: Icons.pause,
                                 onPressed: () {
                                   setState(() {
@@ -176,7 +176,7 @@ class _RecordState extends State<Record> {
                                 }),
 
                             _Presso(
-                                label:"재생 중지",
+                                label:"중지",
                                 ico: Icons.stop,
                                 onPressed: () {
                                   advancedPlayer.stop();

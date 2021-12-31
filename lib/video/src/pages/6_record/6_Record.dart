@@ -45,7 +45,7 @@ class _RecordState extends State<Record> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("설정",style: TextStyle(fontSize: 24.sp,color: Colors.black,fontWeight: FontWeight.bold)),
+        title: Text("녹음 목록",style: TextStyle(fontSize: 24.sp,color: Colors.black,fontWeight: FontWeight.bold)),
         backgroundColor: Colors.white,
         centerTitle: true,
 
@@ -58,9 +58,16 @@ class _RecordState extends State<Record> {
           itemCount: widget.records!.length,
           shrinkWrap: true,
           reverse: false,
+
           itemBuilder: (BuildContext context, int i) {
             return Card(
-              elevation: 20,
+              elevation: 3,
+              shape: RoundedRectangleBorder(
+                  side:  BorderSide(color: Colors.black,width: 1),
+                  borderRadius: BorderRadius.all(Radius.circular(9))
+              ),
+              child:Semantics(
+              label: "녹음 ${i+1}",
               child: ExpansionTile(
                 key: Key(i.toString()),
                 initiallyExpanded: i == oneopen,
@@ -75,7 +82,7 @@ class _RecordState extends State<Record> {
                       _selected = i;
                       oneopen = i;
                       advancedPlayer.stop();
-                      isPlay=false;
+                      isPlay = false;
                       _percent = 0.0;
                       _getDuration(totalTime);
                     });
@@ -83,6 +90,8 @@ class _RecordState extends State<Record> {
                   else
                     setState(() {
                       oneopen = -1;
+                      advancedPlayer.stop();
+                      isPlay = false;
                     });
                 }),
                 children: [
@@ -92,6 +101,7 @@ class _RecordState extends State<Record> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+
                         LinearProgressIndicator(
                           minHeight: 5,
                           backgroundColor: Colors.black,
@@ -101,7 +111,7 @@ class _RecordState extends State<Record> {
 
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
@@ -119,7 +129,9 @@ class _RecordState extends State<Record> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            (isPlay)? _Presso(
+                            (isPlay)?
+                            _Presso(
+                              label: "재생 일시 정지",
                                 ico: Icons.pause,
                                 onPressed: () {
                                   setState(() {
@@ -127,6 +139,7 @@ class _RecordState extends State<Record> {
                                   });
                                   advancedPlayer.pause();
                                 }): _Presso(
+                                label: "재생",
                                 ico: Icons.play_arrow,
                                 onPressed: () {
                                   setState(() {
@@ -161,7 +174,9 @@ class _RecordState extends State<Record> {
                                     });
                                   });
                                 }),
+
                             _Presso(
+                                label:"재생 중지",
                                 ico: Icons.stop,
                                 onPressed: () {
                                   advancedPlayer.stop();
@@ -171,6 +186,7 @@ class _RecordState extends State<Record> {
                                   });
                                 }),
                             _Presso(
+                                label:"녹음 삭제",
                                 ico: Icons.delete,
                                 onPressed: () {
                                   Directory appDirec =
@@ -192,9 +208,11 @@ class _RecordState extends State<Record> {
                   ),
                 ],
               ),
-            );
+              ));
           },
+
         ),
+
       ),
     );
   }
@@ -205,13 +223,13 @@ class _RecordState extends State<Record> {
     if (fromPath.startsWith("1", 0)) {
       DateTime dateTime =
       DateTime.fromMillisecondsSinceEpoch(int.parse(fromPath));
-      int year = dateTime.year;
-      int month = dateTime.month;
-      int day = dateTime.day;
-      int hour = dateTime.hour;
-      int min = dateTime.minute;
-      int sec = dateTime.second;
-      String dato = '$year-$month-$day--$hour:$min:$sec';
+      String year = dateTime.year.toString();
+      String month = (dateTime.month.toString().length < 2)?'0'+dateTime.month.toString():dateTime.month.toString();
+      String day = (dateTime.day.toString().length < 2)?'0'+dateTime.day.toString():dateTime.day.toString();
+      String hour = (dateTime.hour.toString().length < 2)?'0'+dateTime.hour.toString():dateTime.hour.toString();
+      String min = (dateTime.minute.toString().length < 2)?'0'+dateTime.minute.toString():dateTime.minute.toString();
+      String sec = (dateTime.second.toString().length < 2)?'0'+dateTime.second.toString():dateTime.second.toString();
+      String dato = '$year년 $month월 $day일 $hour시 $min분 $sec초';
       return dato;
     } else {
       return "No Date";
@@ -229,20 +247,32 @@ class _RecordState extends State<Record> {
     return "${twoDigits(duration.inHours)}:$twoDigitMinutes:$twoDigitSeconds";
   }
 
-  _setupAudioPlayer(filePath) async {
-    currentTime = new Duration(seconds: 0);
-    await advancedPlayer.setUrl(filePath);
-    //await advancedPlayer.setUrl(widget.records.path);
-    await advancedPlayer.setReleaseMode(ReleaseMode.STOP);
-
-    advancedPlayer.onAudioPositionChanged.listen((Duration p) {
-      //print('Current position: $p');
-      setState(() => currentTime = p);
+  returntotal(int i) {
+    setState(() {
+      isPlay=true;
+      currentTime = new Duration(seconds: 0);
     });
-
-    advancedPlayer.onDurationChanged.listen((Duration d) {
-      //print('Max duration: $d');
-      setState(() => totalTime = d);
+    advancedPlayer.play(widget.records!.elementAt(i),
+        isLocal: true);
+    setState(() {});
+    setState(() {
+    });
+    advancedPlayer.onPlayerCompletion.listen((_) {
+      setState(() {
+      });
+    });
+    advancedPlayer.onDurationChanged.listen((duration) {
+      setState(() {
+        _totalTime = duration.inMicroseconds;
+        totalTime = duration;
+      });
+    });
+    advancedPlayer.onAudioPositionChanged
+        .listen((duration) {
+      setState(() {
+        _currentTime = duration.inMicroseconds;
+        currentTime = duration;
+      });
     });
     return totalTime;
   }
@@ -253,18 +283,21 @@ class _RecordState extends State<Record> {
 class _Presso extends StatelessWidget {
   final IconData ico;
   final VoidCallback onPressed;
+  final String label;
 
-  const _Presso({Key? key, required this.ico,required this.onPressed}) : super(key: key);
+  const _Presso({Key? key, required this.ico,required this.onPressed,required this.label}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
       minWidth: 30.0,
       child: RaisedButton(
-          child: Icon(
-            ico,
-            color: Colors.white,
-          ),
+          child:
+          Semantics(
+            label: label,
+              child: Icon(
+            ico, color: Colors.white,
+          )),
           onPressed: onPressed),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
@@ -159,9 +160,11 @@ class _StartPageState_2 extends State<StartPage_2> {
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,
-        content: Container(
+        content: Semantics(
+        label: "정답입니다.",
+        child: Container(
           child: Icon(Icons.brightness_1_outlined, color: Colors.orange, size: 170),
-        ),);
+        ),));
       Scaffold.of(context).showSnackBar(snackbar);
     }
     else{
@@ -176,11 +179,13 @@ class _StartPageState_2 extends State<StartPage_2> {
         backgroundColor: Colors.lime[200],
         behavior: SnackBarBehavior.floating,
         elevation: 0,
-        content: Container(
+        content: Semantics(
+          label: "오답입니다.",
+          child: Container(
           margin: const EdgeInsets.fromLTRB(0,0,0,230),
           child: Icon(Icons.clear_rounded, color: Colors.orange, size: 170),
         ),
-      );
+      ));
       Scaffold.of(context).showSnackBar(snackbar);
     }
   }
@@ -243,8 +248,9 @@ class _StartPageState_2 extends State<StartPage_2> {
               ),
 
               Padding(padding: EdgeInsets.only(top: 20)),
-
-              Container(
+              Semantics(
+                label: "문제입니다.",
+              child: Container(
                 width: MediaQuery.of(context).size.width*0.8.w,
                 height: MediaQuery.of(context).size.height*0.45.h,
                 decoration: BoxDecoration(
@@ -266,6 +272,7 @@ class _StartPageState_2 extends State<StartPage_2> {
                   ],
                 ),
               ),
+    ),
               //Padding(padding: EdgeInsets.only(top: 30)),
               Padding(
                 padding: EdgeInsets.only(top: 30),
@@ -273,7 +280,9 @@ class _StartPageState_2 extends State<StartPage_2> {
                     child: Stack(
                       // text 프린트 해주는 함수 호출
                         children: <Widget>[
-                          Container(
+                          Semantics(
+                            label: "받아쓰기 노트",
+                          child: Container(
                             width: MediaQuery.of(context).size.width*0.8.w,
                             height: MediaQuery.of(context).size.height*0.1.h,
                             decoration: BoxDecoration(
@@ -287,7 +296,7 @@ class _StartPageState_2 extends State<StartPage_2> {
                                 Container(
                                   child: textprint(),
                                 )],),),
-                        ]
+                          )]
                     )
                 ),
               ),
@@ -311,18 +320,31 @@ class _StartPageState_2 extends State<StartPage_2> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
                     ),
+                      child: Semantics(
+                        label: "다음 문제로 이동",
                     child: Text("채점",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
                   ),
-
-                  Container(
-                    child: IconButton(
-                      onPressed: recognizing ? stopRecording : streamingRecognize,
-                      icon: recognizing
-                          ? Icon(Icons.mic, color: Colors.red, size: 45)
-                          : Icon(Icons.mic, color: Color(0xff4573cb), size: 45),
-                    ),
-                    //margin: const EdgeInsets.fromLTRB(0,40.0,0,0),
                   ),
+
+                  Semantics(
+                    label: "",
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children:[
+                        IconButton(
+                          padding: EdgeInsets.only(bottom: 3,),
+                          onPressed: recognizing ? stopRecording : streamingRecognize,
+                          icon: recognizing
+                              ? Icon(Icons.mic, color: Colors.red, size: 28)
+                              : Icon(Icons.mic, color: Colors.blue, size: 28),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(bottom: 3),
+                          child: Text("받아쓰기", style: TextStyle(height: 0.05.h,fontSize: 12.sp,color: Colors.black),textAlign: TextAlign.center,),
+                        )
+                      ],
+                    ),),
                   InkWell(
                     child: RaisedButton(
                       onPressed:() {
@@ -335,7 +357,7 @@ class _StartPageState_2 extends State<StartPage_2> {
                           borderRadius: BorderRadius.circular(10)
                       ),
 
-                      child: Text("글씨 지우개",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
+                      child: Text("다시 쓰기",style: TextStyle(color: Colors.white,fontSize: 16.sp+size,fontWeight: FontWeight.bold),),
                     ),
                   )
                 ],
@@ -356,7 +378,7 @@ class _StartPageState_2 extends State<StartPage_2> {
           style: TextStyle(
             letterSpacing: 1.0,
             fontSize: 22.5.sp+size,
-            height: 1.75.h,
+            height: 1.25.h,
           )
       );
     } else {

@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:mirinae_gugu/video/src/pages/2_Login.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '6_record/6_audio_recorder.dart';
 
 
@@ -107,15 +106,26 @@ class _Loading extends State<Loading> {
 
       body: Align(
         alignment: Alignment.center,
-        child:Container(
-            height: MediaQuery.of(context).size.width*0.5,
-            width: MediaQuery.of(context).size.width*0.5,
-            decoration: BoxDecoration(
-              //color: Color(0xff489bfb),
-              image: DecorationImage(image:AssetImage("assets/GGJJ_logo.JPG"),
-                fit: BoxFit.fill,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children:[
+            Container(
+              height: MediaQuery.of(context).size.width*0.5,
+              width: MediaQuery.of(context).size.width*0.5,
+              decoration: BoxDecoration(
+                //color: Color(0xff489bfb),
+                image: DecorationImage(image:AssetImage("assets/GGJJ_logo.JPG"),
+                  fit: BoxFit.fill,
+                ),
               ),
-            )
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.2),
+            Padding(
+                padding: EdgeInsets.only(left : width*0.1, right: width*0.1),
+                child: Text('※ 이 앱은 현대오토에버와 서울사회복지공동모금회가\n지원하는 배리어프리 앱 개발 콘테스트의 출품작입니다', style: TextStyle(color: Colors.white, fontSize: 14), textAlign: TextAlign.center)
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.1),
+          ],
         ),
       ),
     );

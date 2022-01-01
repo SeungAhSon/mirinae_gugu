@@ -47,7 +47,7 @@ class _ScorePageState extends State<ScorePage> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height:25),
+                    SizedBox(height:MediaQuery.of(context).size.height*0.15.h),
                     Material(
                       child: Container(
                         width: 300.0,

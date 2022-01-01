@@ -123,7 +123,7 @@ class _Loading extends State<Loading> {
             SizedBox(height: MediaQuery.of(context).size.height*0.2),
             Padding(
                 padding: EdgeInsets.only(left : width*0.1, right: width*0.1),
-                child: Text('※ 이 앱은 현대오토에버와 서울사회복지공동모금회가\n지원하는 배리어프리 앱 개발 콘테스트의 출품작입니다',textScaleFactor: 1.0, style: TextStyle(color: Colors.white, fontSize: 14 ), textAlign: TextAlign.center)
+                child: Text('※ 이 앱은 현대오토에버와 서울사회복지공동모금회가\n지원하는 배리어프리 앱 개발 콘테스트의 출품작입니다', textScaleFactor: 1.0,style: TextStyle(color: Colors.white, fontSize: 14), textAlign: TextAlign.center)
             ),
             SizedBox(height: MediaQuery.of(context).size.height*0.1),
           ],

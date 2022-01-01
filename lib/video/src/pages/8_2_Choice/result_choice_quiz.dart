@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,6 +35,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: DefaultAppBar(title: '결과'),
@@ -47,7 +47,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
               child: Container(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height:25.h),
+                    SizedBox(height:MediaQuery.of(context).size.height*0.15.h),
                     Material(
                       child: Container(
                         width: 300.0.w,

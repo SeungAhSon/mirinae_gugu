@@ -19,7 +19,7 @@ class _Body_1 extends State<Body_1>{
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
 
-    QuestionController_1 _questionController = Get.put(QuestionController_1());
+    QuestionController_21 _questionController = Get.put(QuestionController_21());
     return Stack(
       children: [
         SafeArea(

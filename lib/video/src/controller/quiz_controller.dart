@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_choice_quiz.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
 
 class QuestionController extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;

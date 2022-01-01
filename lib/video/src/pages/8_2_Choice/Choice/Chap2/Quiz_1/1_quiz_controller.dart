@@ -1,22 +1,22 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Questions_2.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_choice_quiz.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
 
-class QuestionController_1 extends GetxController with SingleGetTickerProviderMixin {
+class QuestionController_21 extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;
   PageController get pageController => _pageController;
 
-  static const List quiz = quiz2;
+  static const List quiz = quiz2_1;
 
   final List<Question> _questions = quiz.map(
         (question) => Question(
-        id: question['id'],
-        options: question['options'],
-        answer: question['answer_index'],
-        VideoId: question['VideoId'],),
+      id: question['id'],
+      options: question['options'],
+      answer: question['answer_index'],
+      VideoId: question['VideoId'],),
   ).toList();
 
   List<Question> get questions => _questions;
@@ -57,7 +57,7 @@ class QuestionController_1 extends GetxController with SingleGetTickerProviderMi
   }
 
   void Video(Question question){
-   _VideoId_ = question.VideoId as String?; //여긴 알빠아니고 null나옴
+    _VideoId_ = question.VideoId as String?; //여긴 알빠아니고 null나옴
 
   }
 
@@ -80,6 +80,7 @@ class QuestionController_1 extends GetxController with SingleGetTickerProviderMi
         _pageController.jumpToPage(_questionNumber.value++);
       } else {
         Get.off(ScoreScreen(lastscore: numOfCorrectAns*10));
+        Get.delete<QuestionController_21>();
       }
     });
   }

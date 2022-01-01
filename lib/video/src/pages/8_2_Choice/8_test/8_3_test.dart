@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_1/1_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_3/3_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_5/5_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_2/2_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_4/4_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap3/Quiz_6/6_Choice.dart';
@@ -32,21 +32,21 @@ class Test_3 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상',  color: Colors.blueAccent,icon: Icons.camera_alt,state: state1, onTap: Choice821(),),
+                  TestButton(text: '동영상',  color: Colors.blueAccent,icon: Icons.camera_alt,state: state1, onTap: Choice31(),),
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice32(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice823(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice33(),),
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice34(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice825(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice35(),),
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice36(),),
               ],
             ),

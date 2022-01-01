@@ -25,7 +25,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
       label: "이전 페이지로 이동",
       child: IconButton(
         icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: () => {Navigator.of(context).pop()},
       ),
       ),
       actions: action,

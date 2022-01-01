@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_3/3_Choice.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_1/1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_2/2_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_3/3_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_4/4_Choice.dart';
+import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_5/5_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap2/Quiz_6/6_Choice.dart';
 import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -80,14 +80,14 @@ class _Test_2 extends State<Test_2>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: Choice823(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: Choice23(),),
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_2,onTap: Choice24(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_3,onTap: Choice825(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_3,onTap: Choice25(),),
                 TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_3, onTap: Choice26(),),
               ],
             ),

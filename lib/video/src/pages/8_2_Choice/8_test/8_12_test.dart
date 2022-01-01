@@ -32,21 +32,21 @@ class Test_12 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', icon: Icons.camera_alt, color: Colors.blueAccent,state: state1, onTap: Choice821(),),
+                  TestButton(text: '동영상', icon: Icons.camera_alt, color: Colors.blueAccent,state: state1, onTap: Choice11(),),
                 TestButton(text: '목소리', icon: Icons.mic,  color: Colors.blueAccent, state: state1,onTap: Choice122(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', icon: Icons.camera_alt, color: Colors.blueAccent, state: state1,onTap: Choice823(),),
+                TestButton(text: '동영상', icon: Icons.camera_alt, color: Colors.blueAccent, state: state1,onTap: Choice13(),),
                 TestButton(text: '목소리', icon: Icons.mic,  color: Colors.blueAccent, state: state1,onTap: Choice124(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', icon: Icons.camera_alt, state: state1,color: Colors.blueAccent, onTap: Choice825(),),
+                TestButton(text: '동영상', icon: Icons.camera_alt, state: state1,color: Colors.blueAccent, onTap: Choice15(),),
                 TestButton(text: '목소리', icon: Icons.mic,  state: state1,color: Colors.blueAccent,onTap: Choice126(),),
               ],
             ),

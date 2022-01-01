@@ -1,12 +1,4 @@
-class Question {
-  final int id, answer;
-  final List<String> options;
-  final List<String> VideoId;
-
-  Question({required this.id, required this.answer, required this.options, required this.VideoId});
-}
-
-const List quiz7 = [
+const List quiz7_1 = [
   {
 "id": 1,
 "options": ['스프링', '오이', '편안', '쌀쌀하다'],
@@ -34,7 +26,7 @@ const List quiz7 = [
 },
 {
 "id": 6,
-"options": ['성우', '상�', '토하다', '비서'],
+"options": ['성우', '상추', '토하다', '비서'],
 "answer_index": 1
 },
 {
@@ -56,10 +48,11 @@ const List quiz7 = [
 "id": 10,
 "options": ['옥수수', '감자', '칠판', '에어컨'],
 "answer_index": 1
-},
+}];
+const List quiz7_2 = [
 {
 "id": 11,
-"options": ['�부', '칠판', '주사', '양파'],
+"options": ['부부', '칠판', '주사', '양파'],
 "answer_index": 3
 },
 {
@@ -69,12 +62,12 @@ const List quiz7 = [
 },
 {
 "id": 13,
-"options": ['�랑이', '가족', '자연', '마늘'],
+"options": ['호랑이', '가족', '자연', '마늘'],
 "answer_index": 3
 },
 {
 "id": 14,
-"options": ['호��이', '승무원', '옥수수', '고추'],
+"options": ['마늘', '승무원', '옥수수', '고추'],
 "answer_index": 3
 },
 {
@@ -84,12 +77,12 @@ const List quiz7 = [
 },
 {
 "id": 16,
-"options": ['�나운서', '열', '��기', '굴뚝'],
+"options": ['아나운서', '열', '달리기', '굴뚝'],
 "answer_index": 2
 },
 {
 "id": 17,
-"options": ['��뚝', '피자', '오렌지', '수업'],
+"options": ['굴뚝', '피자', '오렌지', '수업'],
 "answer_index": 2
 },
 {
@@ -99,14 +92,15 @@ const List quiz7 = [
 },
 {
 "id": 19,
-"options": ['�병', '대파', '창문', '잠자리'],
+"options": ['질병', '대파', '창문', '잠자리'],
 "answer_index": 1
 },
 {
 "id": 20,
-"options": ['다��다', '창문', '고구마', '참외'],
+"options": ['다루다', '창문', '고구마', '참외'],
 "answer_index": 3
-},
+}];
+const List quiz7_3 = [
 {
 "id": 21,
 "options": ['다치다', '여행', '소스', '토마토'],
@@ -114,12 +108,12 @@ const List quiz7 = [
 },
 {
 "id": 22,
-"options": ['소스', '텔레비�', '당근', '계곡'],
+"options": ['소스', '텔레비전', '당근', '계곡'],
 "answer_index": 2
 },
 {
 "id": 23,
-"options": ['메시지', '응원', '텔레비�', '가지'],
+"options": ['메시지', '응원', '참외', '가지'],
 "answer_index": 3
 },
 {

@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Questions_1.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_choice_quiz.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
 
-class QuestionController_1 extends GetxController with SingleGetTickerProviderMixin {
+class QuestionController_11 extends GetxController with SingleGetTickerProviderMixin {
   late PageController _pageController;
   PageController get pageController => _pageController;
 
@@ -81,7 +82,7 @@ class QuestionController_1 extends GetxController with SingleGetTickerProviderMi
         _pageController.jumpToPage(_questionNumber.value++);
       } else {
         Get.off(ScoreScreen(lastscore: numOfCorrectAns*10));
-        Get.delete<QuestionController_1>();
+        Get.delete<QuestionController_11>();
       }
     });
   }

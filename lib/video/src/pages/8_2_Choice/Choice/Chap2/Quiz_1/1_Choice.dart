@@ -13,7 +13,7 @@ class Choice21 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     finish();
-    QuestionController_1 _controller = Get.put(QuestionController_1());
+    QuestionController_21 _controller = Get.put(QuestionController_21());
     return Scaffold(
       appBar: DefaultAppBar(title: '복습시험'),
       body: Body_1(),

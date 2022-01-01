@@ -1,11 +1,3 @@
-class Question {
-  final int id, answer;
-  final List<String> options;
-  final List<String> VideoId;
-
-  Question({required this.id, required this.answer, required this.options, required this.VideoId});
-}
-
 const List quiz1_1 = [
   {
 "id": 1,
@@ -87,12 +79,12 @@ const List quiz1_2 = [
   },
   {
     "id": 16,
-    "options": ['메시지', '�색', '사물함', '펭귄'],
+    "options": ['메시지', '갈색', '사물함', '펭귄'],
     "answer_index": 2
   },
   {
     "id": 17,
-    "options": ['실내화', '��색', '핵가족', '삼촌'],
+    "options": ['실내화', '초록색', '핵가족', '삼촌'],
     "answer_index": 0
   },
   {
@@ -107,7 +99,7 @@ const List quiz1_2 = [
   },
   {
     "id": 20,
-    "options": ['�리기', '요리사', '향기', '청소도구'],
+    "options": ['달리기', '요리사', '향기', '청소도구'],
     "answer_index": 3
   },
 ];

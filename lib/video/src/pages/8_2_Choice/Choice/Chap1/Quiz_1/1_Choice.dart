@@ -5,7 +5,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_qu
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_body.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Choice821 extends StatelessWidget {
+class Choice11 extends StatelessWidget {
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     s.setBool("reading1_1_",true);
@@ -13,7 +13,7 @@ class Choice821 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     finish();
-    QuestionController_1 _controller = Get.put(QuestionController_1());
+    QuestionController_11 _controller = Get.put(QuestionController_11());
     return Scaffold(
       appBar: DefaultAppBar(title: '복습시험'),
       body: Body_1(),

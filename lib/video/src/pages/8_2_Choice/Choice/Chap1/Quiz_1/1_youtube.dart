@@ -5,7 +5,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_1/1_op
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../components/Questions/Questions_1.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
 
 class ayotube extends StatefulWidget {
   const ayotube({
@@ -59,11 +59,10 @@ class ayotube extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height.h;
-    QuestionController_1 _controller = Get.put(QuestionController_1());
+    QuestionController_11 _controller = Get.put(QuestionController_11());
     return Container(
       child: Column(
         children: [
-
           Container(
               margin: EdgeInsets.only(left: 20,right: 20),
               height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31.h,

@@ -77,7 +77,7 @@ void dispose() {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TestButton(text: '읽기1',color: Colors.blueAccent,  icon: Icons.camera_alt, state: reading1_1,
-                  onTap: Choice821(),),
+                  onTap: Choice11(),),
                 TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_1,
                   onTap: Choice12()), //StartPage()
               ],
@@ -87,7 +87,7 @@ void dispose() {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
               children: [
-                TestButton(text: '읽기2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: reading1_2, onTap: Choice823()),
+                TestButton(text: '읽기2',color: Color(0xff7ba6f9), icon: Icons.camera_alt,state: reading1_2, onTap: Choice13()),
                 TestButton(text: '말하기2',color: Colors.blueAccent,  icon: Icons.mic,state: speaking1_2, onTap: Choice14(),),
               ],
 
@@ -96,7 +96,7 @@ void dispose() {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: reading1_3, onTap: Choice825(),),
+                TestButton(text: '읽기3',color: Colors.blueAccent,  icon: Icons.camera_alt,state: reading1_3, onTap: Choice15(),),
                 TestButton(text: '말하기3',color: Colors.blueAccent,  icon: Icons.mic, state: speaking1_3,onTap: Choice16(),),
               ],
             ),

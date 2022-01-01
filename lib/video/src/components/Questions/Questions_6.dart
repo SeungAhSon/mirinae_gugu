@@ -1,13 +1,4 @@
-class Question {
-  final int id, answer;
-  final List<String> options;
-  final List<String> VideoId;
-
-  Question({required this.id, required this.answer, required this.options, required this.VideoId});
-}
-
-const List quiz6 = [
-
+const List quiz6_1 = [
 {
 "id": 1,
 "options": ['수업', '폭설', '해수욕장', '급식'],
@@ -20,7 +11,7 @@ const List quiz6 = [
 },
 {
 "id": 3,
-"options": ['치료', '공무원', '��크림', '배'],
+"options": ['치료', '공무원', '선크림', '배'],
 "answer_index": 2
 },
 {
@@ -57,7 +48,8 @@ const List quiz6 = [
 "id": 10,
 "options": ['떡국', '립스틱', '우산', '편안'],
 "answer_index": 2
-},
+}];
+const List quiz6_2 = [
 {
 "id": 11,
 "options": ['여름방학', '열매', '남매', '립스틱'],
@@ -90,7 +82,7 @@ const List quiz6 = [
 },
 {
 "id": 17,
-"options": ['향기', '며느리', '매��', '붕어빵'],
+"options": ['향기', '며느리', '매미', '붕어빵'],
 "answer_index": 2
 },
 {
@@ -100,14 +92,15 @@ const List quiz6 = [
 },
 {
 "id": 19,
-"options": ['수��', '하늘', '�그인', '신발장'],
+"options": ['수박', '하늘', '로그인', '신발장'],
 "answer_index": 0
 },
 {
 "id": 20,
-"options": ['책상', '계곡', '��', '로그인'],
+"options": ['책상', '계곡', '하늘', '로그인'],
 "answer_index": 1
-},
+}];
+const List quiz6_3 = [
 {
 "id": 21,
 "options": ['축제', '굴뚝', '짝', '눈부시다'],
@@ -115,17 +108,17 @@ const List quiz6 = [
 },
 {
 "id": 22,
-"options": ['교과서', '태양', '진�', '눈부시다'],
+"options": ['교과서', '태양', '진심', '눈부시다'],
 "answer_index": 1
 },
 {
 "id": 23,
-"options": ['땀', '놀��공원', '교과서', '옥수수'],
+"options": ['땀', '놀이공원', '교과서', '옥수수'],
 "answer_index": 0
 },
 {
 "id": 24,
-"options": ['여우', '반바��', '옥수수', '하마'],
+"options": ['여우', '반바지', '옥수수', '하마'],
 "answer_index": 1
 },
 {
@@ -135,17 +128,17 @@ const List quiz6 = [
 },
 {
 "id": 26,
-"options": ['여행', '의�', '공포영화', '사자'],
+"options": ['여행', '의사', '공포영화', '사자'],
 "answer_index": 2
 },
 {
 "id": 27,
-"options": ['기쁘다', '��이스�림', '사자', '초록색'],
+"options": ['기쁘다', '아이스크림', '사자', '초록색'],
 "answer_index": 1
 },
 {
 "id": 28,
-"options": ['조��', '초록색', '엘리베이터', '반팔'],
+"options": ['조개', '초록색', '엘리베이터', '반팔'],
 "answer_index": 3
 },
 {

@@ -1,12 +1,4 @@
-class Question {
-  final int id, answer;
-  final List<String> options;
-  final List<String> VideoId;
-
-  Question({required this.id, required this.answer, required this.options, required this.VideoId});
-}
-
-const List quiz4 = [
+const List quiz4_1 = [
 {
 "id": 1,
 "options": ['형제', '우산', '추수', '사자'],
@@ -19,22 +11,22 @@ const List quiz4 = [
 },
 {
 "id": 3,
-"options": ['게임', '기린', '자녀', '�색'],
+"options": ['게임', '기린', '자녀', '파란색'],
 "answer_index": 1
 },
 {
 "id": 4,
-"options": ['�마', '다이어트', '약국', '�임'],
+"options": ['하마', '다이어트', '약국', '게임'],
 "answer_index": 0
 },
 {
 "id": 5,
-"options": ['약국', '가수', '이어폰', '고�이'],
+"options": ['약국', '가수', '이어폰', '고양이'],
 "answer_index": 3
 },
 {
 "id": 6,
-"options": ['여행', '가수', '강아지', '수�'],
+"options": ['여행', '가수', '강아지', '수풀'],
 "answer_index": 2
 },
 {
@@ -44,7 +36,7 @@ const List quiz4 = [
 },
 {
 "id": 8,
-"options": ['거미', '엘리베이터', '농구', '세�기'],
+"options": ['거미', '엘리베이터', '농구', '세균'],
 "answer_index": 0
 },
 {
@@ -53,23 +45,19 @@ const List quiz4 = [
 "answer_index": 2
 },
 {
-"id": 10,
-"options": ['자두', '난방', '하마', '파리'],
-"answer_index": 3
-},
-{
 "id": 11,
 "options": ['자두', '엄마', '하마', '이름'],
 "answer_index": 2
-},
+}];
+const List quiz4_2 = [
 {
 "id": 12,
-"options": ['수��', '이름', '곰', '며느리'],
+"options": ['수납함', '이름', '곰', '며느리'],
 "answer_index": 2
 },
 {
 "id": 13,
-"options": ['새해', '다�쥐', '형', '수��'],
+"options": ['새해', '다람쥐', '형', '책장'],
 "answer_index": 1
 },
 {
@@ -89,7 +77,7 @@ const List quiz4 = [
 },
 {
 "id": 17,
-"options": ['��수아비', '약국', '참새', '여우'],
+"options": ['허수아비', '약국', '참새', '여우'],
 "answer_index": 3
 },
 {
@@ -98,20 +86,16 @@ const List quiz4 = [
 "answer_index": 2
 },
 {
-"id": 19,
-"options": ['물고기', '발표', '초콜릿', '여름��학'],
-"answer_index": 0
-},
-{
 "id": 20,
 "options": ['가족', '청소', '초콜릿', '오리'],
 "answer_index": 3
 },
 {
 "id": 21,
-"options": ['일기', '슬픔', '가족', '거북�'],
+"options": ['일기', '슬픔', '가족', '거북이'],
 "answer_index": 3
-},
+}];
+const List quiz4_3 = [
 {
 "id": 22,
 "options": ['펭귄', '일기', '냉방', '오이'],
@@ -119,12 +103,12 @@ const List quiz4 = [
 },
 {
 "id": 23,
-"options": ['참새', '기쁘다', '냉방', '아이스�림'],
+"options": ['참새', '기쁘다', '냉방', '아이스크림'],
 "answer_index": 0
 },
 {
 "id": 24,
-"options": ['아이스�림', '곰', '닭', '봄�'],
+"options": ['아이스크림', '곰', '닭', '봄비'],
 "answer_index": 2
 },
 {
@@ -149,12 +133,12 @@ const List quiz4 = [
 },
 {
 "id": 29,
-"options": ['통증', '너구리', '�마', '마늘'],
+"options": ['통증', '너구리', '고구마', '마늘'],
 "answer_index": 1
 },
 {
 "id": 30,
-"options": ['싫어하다', '곡식', '��늘', '사슴'],
+"options": ['싫어하다', '곡식', '하늘', '사슴'],
 "answer_index": 3
 },
 ];

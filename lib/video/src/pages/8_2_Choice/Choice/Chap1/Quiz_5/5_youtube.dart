@@ -5,7 +5,7 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_op
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap1/Quiz_5/5_quiz_controller.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../components/Questions/Questions_1.dart';
+import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
 
 class ayotube_5 extends StatefulWidget {
   const ayotube_5({
@@ -55,7 +55,7 @@ class ayotube_5 extends StatefulWidget {
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height.h;
-    QuestionController_5 _controller = Get.put(QuestionController_5());
+    QuestionController_15 _controller = Get.put(QuestionController_15());
     return Container(
       child: Column(
         children: [
@@ -69,7 +69,7 @@ class ayotube_5 extends StatefulWidget {
           SizedBox(height: 20.h),
           ...List.generate(
             widget.question.options.length,
-                (index) => Option_5(
+                (index) => Option(
               index: index,
               text: widget.question.options[index],
               press: () => _controller.checkAns(widget.question, index),

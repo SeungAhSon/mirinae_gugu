@@ -816,11 +816,8 @@ class _video_Body extends State<video_Body_5> {
 
     var timeZoneOffset = DateTime.now().timeZoneOffset.inMilliseconds;
     var localTimestamp = (DateTime.now().millisecondsSinceEpoch);
-    print('local Timestamp : $localTimestamp');
     String dato = "${localTimestamp.toString()}.wav";
 
-    print('날짜');
-    print(dato);
     Directory appDirec =
     Directory("${appDir!.path}/$jrecord/");
 
@@ -828,7 +825,6 @@ class _video_Body extends State<video_Body_5> {
 
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
-      print("path for file11 $patho");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     } else {
@@ -859,7 +855,6 @@ class _video_Body extends State<video_Body_5> {
         }
 
         var current = await audioRecorder!.current(channel: 0);
-        // print(current.status);
         if (mounted) {
           setState(() {
             _current = current!;
@@ -868,7 +863,6 @@ class _video_Body extends State<video_Body_5> {
         }
       }
     });
-    print('start');
   }
 
   _stop() async {

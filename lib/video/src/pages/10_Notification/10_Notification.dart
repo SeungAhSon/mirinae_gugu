@@ -4,6 +4,7 @@ import 'package:mirinae_gugu/video/src/components/constant.dart';
 import 'package:mirinae_gugu/video/src/pages/10_Notification/NotificationTiles.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/9_setting/9_Walkthrough.dart';
 
 class Notific extends StatefulWidget {
   Notific({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _NotificationState extends State<Notific> {
             )),
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),
             onTap: () {
-              print("tapped on container");
+              Navigator.push(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
             },
           ),
           kDivider,

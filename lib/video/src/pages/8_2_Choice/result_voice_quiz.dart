@@ -50,14 +50,13 @@ class _ScorePageState extends State<ScorePage> {
                     SizedBox(height:MediaQuery.of(context).size.height*0.15.h),
                     Material(
                       child: Container(
-                        width: 300.0,
-                        height: 300.0,
+                        width: 300.0.w,
+                        height: 300.0.h,
                         child: Semantics(
                         label: message,
                         child:
                         ClipRect(
                           child: Image(
-
                             image: AssetImage(image,),
                           ),
                         )),

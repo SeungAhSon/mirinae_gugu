@@ -131,7 +131,7 @@ class _StartPageState_4 extends State<StartPage_4> {
   List qList =[
     Questions("놀이공원"),
     Questions("태어나다"),
-    Questions("�작"),
+    Questions("시작"),
     Questions("무지개"),
     Questions("햇살"),
     Questions("소풍"),

@@ -34,7 +34,11 @@ class Choice23 extends StatelessWidget {
           ),
         ),
       ),
-      body: Body_3(),
-    );
+      body: WillPopScope(
+        child: Body_3(),
+        onWillPop: () {
+          return Future(() => false);
+        },
+      ));
   }
 }

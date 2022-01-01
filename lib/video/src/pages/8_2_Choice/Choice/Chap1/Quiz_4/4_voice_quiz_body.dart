@@ -137,6 +137,7 @@ class _StartPageState_4 extends State<StartPage_4> {
   Questions("실내화"),
   Questions("수돗가"),
   Questions("교무실"),
+    Questions("청소도구"),
   ];
 
   var score=0;

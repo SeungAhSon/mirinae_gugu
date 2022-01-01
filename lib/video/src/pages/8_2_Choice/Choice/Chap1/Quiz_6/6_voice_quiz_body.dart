@@ -129,7 +129,6 @@ class _StartPageState_6 extends State<StartPage_6> {
   var questionnum = 1;
 
   List qList =[
-    Questions("청소도구"),
     Questions("발표"),
     Questions("일기"),
     Questions("숙제"),

@@ -132,7 +132,7 @@ class _StartPageState_6 extends State<StartPage_6> {
     Questions("기쁘다"),
     Questions("공포"),
     Questions("미안"),
-    Questions("창피(하다)"),
+    Questions("창피"),
     Questions("후회"),
     Questions("의심"),
     Questions("아프다"),

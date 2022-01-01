@@ -33,7 +33,11 @@ class Choice71 extends StatelessWidget {
           ),
         ),
       ),
-      body: Body_1(),
-    );
+      body: WillPopScope(
+        child: Body_1(),
+        onWillPop: () {
+          return Future(() => false);
+        },
+      ));
   }
 }

@@ -133,7 +133,7 @@ class _StartPageState_4 extends State<StartPage_4> {
     Questions("근육"),
     Questions("사고"),
     Questions("상처"),
-    Questions("알��"),
+    Questions("알약"),
     Questions("진단"),
     Questions("열"),
     Questions("토하다"),

@@ -38,8 +38,8 @@ class LearnLevelButton extends StatelessWidget {
           padding: const EdgeInsets.only(
             top: 20.0,
             bottom: 20.0,
-            left: 22.0,
-            right: 22.0,
+            left: 15.0,
+            right: 15.0,
           ),
           child: Container(
             padding: const EdgeInsets.all(3.0),
@@ -83,7 +83,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22.0.sp+size, fontWeight: FontWeight.bold,
+                      fontSize: 22.0+size, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

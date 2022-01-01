@@ -71,7 +71,7 @@ class DD extends StatelessWidget{
                           text: '따',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:1,
                             ),));
                           }
                       ),
@@ -79,7 +79,7 @@ class DD extends StatelessWidget{
                           text: '땨',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:2,
                             ),));
                           }
                       ),
@@ -87,7 +87,7 @@ class DD extends StatelessWidget{
                           text: '떠',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:3,
                             ),));}
                       ),
                     ],
@@ -99,21 +99,21 @@ class DD extends StatelessWidget{
                           text: '뗘',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:4,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '또',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:5,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '뚀',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:6,
                             ),));}
                       ),
                     ],
@@ -125,21 +125,21 @@ class DD extends StatelessWidget{
                           text: '뚜',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:7,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '뜌',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:8,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '뜨',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_6_6(
-                              index:10,
+                              index:9,
                             ),));}
                       ),
                     ],

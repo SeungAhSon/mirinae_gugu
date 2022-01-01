@@ -106,8 +106,8 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                 boxShadow: [
                   BoxShadow(
                     color: Color.fromRGBO(11, 50, 118, 0.6),
-                    blurRadius: 40,
-                    spreadRadius: 10,
+                    blurRadius: 10,
+                    spreadRadius: 2,
                     offset: const Offset(0, 0),
                   ),
                 ],

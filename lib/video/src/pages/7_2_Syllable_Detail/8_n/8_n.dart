@@ -39,7 +39,8 @@ class N extends StatelessWidget{
                   Image(image: AssetImage('assets/mouth/8_n.png')),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.symmetric(horizontal:120,vertical: 10),
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
@@ -51,7 +52,8 @@ class N extends StatelessWidget{
                   SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.symmetric(horizontal:120,vertical: 10),
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),

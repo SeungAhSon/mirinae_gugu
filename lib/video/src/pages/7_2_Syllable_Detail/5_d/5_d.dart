@@ -40,7 +40,8 @@ class D extends StatelessWidget{
                   Image(image: AssetImage('assets/mouth/5_d.png')),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.symmetric(horizontal:120,vertical: 10),
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
@@ -52,7 +53,8 @@ class D extends StatelessWidget{
                   Text('폐에서 나오는 공기를 막았다가 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   Container(
                     alignment: Alignment.center,
-                    margin: const EdgeInsets.symmetric(horizontal:150,vertical: 10),
+                    width: MediaQuery.of(context).size.width,
+                    margin: const EdgeInsets.symmetric(horizontal:120,vertical: 10),
                     padding: const EdgeInsets.all(3),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),

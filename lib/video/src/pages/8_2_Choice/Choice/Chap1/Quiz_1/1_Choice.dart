@@ -6,34 +6,43 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Choice11 extends StatelessWidget {
-  void finish() async{
+  void finish() async {
     SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("reading1_1",true);
+    s.setBool("reading1_1", true);
   }
+
   @override
   Widget build(BuildContext context) {
     finish();
     QuestionController_11 _controller = Get.put(QuestionController_11());
     return Scaffold(
-      appBar: AppBar(
-        title: Text('복습시험', style: TextStyle(color: Colors.black,fontSize: 24.sp,fontWeight: FontWeight.bold)),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 3.0,
-        automaticallyImplyLeading: false,
-        iconTheme: IconThemeData(color: Colors.blue),
-        leading: Semantics(
-          label: "이전 페이지로 이동",
-          child: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Colors.black),
-            onPressed: () {
-              Get.delete<QuestionController_11>();
-              Navigator.of(context).pop();
-            },
+        appBar: AppBar(
+          title: Text('복습시험',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 24.sp,
+                  fontWeight: FontWeight.bold)),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          elevation: 3.0,
+          automaticallyImplyLeading: false,
+          iconTheme: IconThemeData(color: Colors.blue),
+          leading: Semantics(
+            label: "이전 페이지로 이동",
+            child: IconButton(
+              icon: Icon(Icons.arrow_back_ios, color: Colors.black),
+              onPressed: () {
+                Get.delete<QuestionController_11>();
+                Navigator.of(context).pop();
+              },
+            ),
           ),
         ),
-      ),
-      body: Body_1(),
-    );
+        body: WillPopScope(
+          child: Body_1(),
+          onWillPop: () {
+            return Future(() => false);
+          },
+        ));
   }
 }

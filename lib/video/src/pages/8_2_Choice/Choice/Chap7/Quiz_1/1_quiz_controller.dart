@@ -79,7 +79,7 @@ class QuestionController_71 extends GetxController with SingleGetTickerProviderM
         _isAnswered = false;
         _pageController.jumpToPage(_questionNumber.value++);
       } else {
-        Get.off(ScoreScreen(lastscore: numOfCorrectAns*10));
+        Get.off(ScoreScreen(lastscore: (numOfCorrectAns/_questions.length*100).round()));
         Get.delete<QuestionController_71>();
       }
     });

@@ -34,35 +34,35 @@ class _Loading extends State<Loading> {
   }
   void loadsize() async{
     SharedPreferences ss = await SharedPreferences.getInstance();
-    if (ss.getString('fontsize') == "작게") {
+    if (ss.getString('fontsize') == "작게 (-4)") {
       size = -4;
     }
-    else if (ss.getString('fontsize') == "조금 작게") {
+    else if (ss.getString('fontsize') == "조금 작게 (-2)") {
       size = -2;
     }
     else if (ss.getString('fontsize') == "보통") {
       size = 0;
     }
-    else if (ss.getString('fontsize') == "조금 크게") {
+    else if (ss.getString('fontsize') == "조금 크게 (+2)") {
       size = 2;
     }
-    else if (ss.getString('fontsize') == "크게") {
+    else if (ss.getString('fontsize') == "크게 (+4)") {
       size = 4;
     }
     if (size == -4) {
-      ss.setString('fontsize', "작게");
+      ss.setString('fontsize', "작게 (-4)");
     }
     else if (size == -2) {
-      ss.setString('fontsize', "조금 작게");
+      ss.setString('fontsize', "조금 작게 (-2)");
     }
     else if (size == 0) {
       ss.setString('fontsize', "보통");
     }
     else if (size ==2) {
-      ss.setString('fontsize', "조금 크게");
+      ss.setString('fontsize', "조금 크게 (+2)");
     }
     else if (size ==4) {
-      ss.setString('fontsize', "크게");
+      ss.setString('fontsize', "크게 (+4)");
     }
   }
   RecordingStatus _currentStatus = RecordingStatus.Unset;

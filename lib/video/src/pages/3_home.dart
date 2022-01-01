@@ -176,8 +176,7 @@ class _Home extends State<Home> {
         s.setBool("speaking8_3",false);
 
         prefs.setInt('fontchoose',1);
-
-        ss.setString('fontsize',"origin");
+        ss.setString('fontsize',"보통");
         //조음학습
 
         //낱말학습

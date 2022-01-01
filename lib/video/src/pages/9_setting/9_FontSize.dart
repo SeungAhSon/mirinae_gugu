@@ -33,11 +33,11 @@ class _MyAppState extends State<MyApp2> {
   Future<String?> getFontSize() async {
     SharedPreferences ss = await SharedPreferences.getInstance();
     if (size == -4) {
-      ss.setString('fontsize', "작게");
+      ss.setString('fontsize', "작게 (-4)");
       print(1);
     }
     else if (size == -2) {
-      ss.setString('fontsize', "조금 작게");
+      ss.setString('fontsize', "조금 작게 (-2)");
       print(2);
     }
     else if (size == 0) {
@@ -45,11 +45,11 @@ class _MyAppState extends State<MyApp2> {
       print(3);
     }
     else if (size ==2) {
-      ss.setString('fontsize', "조금 크게");
+      ss.setString('fontsize', "조금 크게 (+2)");
       print(4);
     }
     else if (size ==4) {
-      ss.setString('fontsize', "크게");
+      ss.setString('fontsize', "크게 (+4)");
       print(5);
     }
     return ss.getString('fontsize');
@@ -58,11 +58,11 @@ class _MyAppState extends State<MyApp2> {
   Future<String?> updateFontSize(String updatedSize) async {
     SharedPreferences ss = await SharedPreferences.getInstance();
     await ss.setString('fontsize', updatedSize);
-    if (ss.getString('fontsize') == "작게") {
+    if (ss.getString('fontsize') == "작게 (-4)") {
       size = -2;
       print(11);
     }
-    else if (ss.getString('fontsize') == "조금 작게") {
+    else if (ss.getString('fontsize') == "조금 작게 (-2)") {
       size = -1;
       print(22);
     }
@@ -70,11 +70,11 @@ class _MyAppState extends State<MyApp2> {
       size = 0;
       print(33);
     }
-    else if (ss.getString('fontsize') == "조금 크게") {
+    else if (ss.getString('fontsize') == "조금 크게 (+2)") {
       size = 1;
       print(44);
     }
-    else if (ss.getString('fontsize') == "크게") {
+    else if (ss.getString('fontsize') == "크게 (+4)") {
       size = 2;
       print(55);
     }

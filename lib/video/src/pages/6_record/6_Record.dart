@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 class Record extends StatefulWidget {
   final records;
@@ -75,7 +76,7 @@ class _RecordState extends State<Record> {
 
                 title: Text(
                   _getTime(filePath: widget.records![i].toString()),
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(color: Colors.black,fontSize: 16.sp+size),
                 ),
                 onExpansionChanged: ((newState) {
                   if (newState) {

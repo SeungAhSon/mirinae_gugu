@@ -1,4 +1,4 @@
-package com.example.mirinae_gugu
+package com.mirinae_gugu
 
 import android.Manifest
 import android.content.pm.PackageManager

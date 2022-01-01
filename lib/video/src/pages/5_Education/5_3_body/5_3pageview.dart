@@ -9,7 +9,6 @@ required this.id,
 
   final int id;
 
-  @override
   _5_video_page createState() => _5_video_page();
 }
 class _5_video_page extends State<video_page>{
@@ -33,38 +32,39 @@ class _5_video_page extends State<video_page>{
   }
 
   List asd = [
-    'k1qGAVsgNNA',
-    'W7n9Rg2zWFw',
-    'dwTmk28Nrv4',
-    'GEv7yyG1NUE',
-    '6mS6JlQKkgA',
-    'MwrKPhCSIQA',
-    'gC8SURUEasA',
-    'YKrfzkF0gNc',
-    'z5yr8TsODVo',
-    's1UUue4H9JQ',
-    //10
-    '54enZ6Ex1ZI',
-    'lx1b6GgnUzM',
-    'vdE4RDBuUkM',
-    'RgJCORuftsg',
-    '263ifYmXHcw',
-    'DJrMIeC05V4',
-    'XxyGCv8wHeI',
-    '4oRBwC6cmEM',
-    'U3CzyzzPNYA',
-    'Ef2BUy8B14M',
-    //29
-    'STisOs9V3iY',
-    'o8SztHFyHbo',
-    '2lhgDlUDCAA',
-    'dbsf8hiC8wI',
-    '32LpPmZtyyw',
-    'yGcdWABYpT0',
-    'o193FkZPIvI',
-    'pADv2YgC9js',
-    'aQMPR-IJJrY',
+    'ufuF6jEqzy4',
+    'xXPv7WRn90s',
+    'rj1AVY-Ay2w',
+    'EzKF2XTgKjI',
+    '0uCUZE4JEo8',
+    'cLPVa3HhVPc',
+    'jS765twH8NM',
+    '0AbmplIPa4o',
+    'UCKbGiWdVho',
+    '-G5WOmWBx4g',
+    'emE2FTyhIlM',
+    'XCuHFzQzitM',
+    'STbXfSpqRrQ',
+    'ZRh-JKyJJ9U',
+    'NLlko03pric',
+    'Ph32BWFJp_s',
+    'Q9nq-iqfPp8',
+    '2VenJHUE248',
+    'ntSPSoMvFuA',
+    'p_NWOINU9VE',
+    'rYL3adu33z0',
+    'O0jup41IlP8',
+    '8UB2hBKzGnY',
+    '7mQnYqo-i_k',
+    'y4h6S4ufI8M',
+    'vQmYrdEXR8c',
+    'jSD3f7qFYbY',
+    'bqbrW_ZGgmY',
+    '26v5T8iGU4Q'
   ];
+
+
+
 
   @override
   void dispose() {

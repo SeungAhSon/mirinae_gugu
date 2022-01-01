@@ -9,7 +9,6 @@ required this.id,
 
   final int id;
 
-  @override
   _5_video_page createState() => _5_video_page();
 }
 class _5_video_page extends State<video_page>{
@@ -33,27 +32,28 @@ class _5_video_page extends State<video_page>{
   }
 
   List asd = [
-    'k1qGAVsgNNA',
-    'W7n9Rg2zWFw',
-    'dwTmk28Nrv4',
-    'GEv7yyG1NUE',
-    '6mS6JlQKkgA',
-    'MwrKPhCSIQA',
-    'gC8SURUEasA',
-    'YKrfzkF0gNc',
-    'z5yr8TsODVo',
-    's1UUue4H9JQ',
-    //10
-    '54enZ6Ex1ZI',
-    'lx1b6GgnUzM',
-    'vdE4RDBuUkM',
-    'RgJCORuftsg',
-    '263ifYmXHcw',
-    'DJrMIeC05V4',
-    'XxyGCv8wHeI',
-    '4oRBwC6cmEM',
-    //18
+    'u74QNHQDsQo',
+    'nG6OAUtrKmk',
+    'RaKLy2CY09k',
+    'sgK_PiJe5Do',
+    'IoMeToG033A',
+    'SHX_h4BlTNA',
+    'omqmM5LlKxA',
+    'bjiN3cndYvI',
+    '-y2Iy6acbq0',
+    'inxzUbZQeUE',
+    'TgjBT33j-cI',
+    'vyFtmSsRBQw',
+    'y3pmTdv1v7U',
+    'oQwpbfjXBHY',
+    '5Rnl6KizgIo',
+    'hOzJGKjpRp4',
+    'PS0-ATDTrdE',
+    'DW7AYkXwE0U'
   ];
+
+
+
 
   @override
   void dispose() {

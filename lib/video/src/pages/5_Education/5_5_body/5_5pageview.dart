@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class video_page extends StatefulWidget {
-  const video_page({
+class video_page_5 extends StatefulWidget {
+  const video_page_5({
     Key ?key,
 required this.id,
   }) : super(key: key);
 
   final int id;
 
-  @override
   _5_video_page createState() => _5_video_page();
 }
-class _5_video_page extends State<video_page>{
+class _5_video_page extends State<video_page_5>{
 
   late final YoutubePlayerController _controller;
   @override
@@ -33,38 +32,38 @@ class _5_video_page extends State<video_page>{
   }
 
   List asd = [
-    'k1qGAVsgNNA',
-    'W7n9Rg2zWFw',
-    'dwTmk28Nrv4',
-    'GEv7yyG1NUE',
-    '6mS6JlQKkgA',
-    'MwrKPhCSIQA',
-    'gC8SURUEasA',
-    'YKrfzkF0gNc',
-    'z5yr8TsODVo',
-    's1UUue4H9JQ',
-    //10
-    '54enZ6Ex1ZI',
-    'lx1b6GgnUzM',
-    'vdE4RDBuUkM',
-    'RgJCORuftsg',
-    '263ifYmXHcw',
-    'DJrMIeC05V4',
-    'XxyGCv8wHeI',
-    '4oRBwC6cmEM',
-    'U3CzyzzPNYA',
-    'Ef2BUy8B14M',
-    //28
-    'STisOs9V3iY',
-    'o8SztHFyHbo',
-    '2lhgDlUDCAA',
-    'dbsf8hiC8wI',
-    '32LpPmZtyyw',
-    'yGcdWABYpT0',
-    'o193FkZPIvI',
-    'pADv2YgC9js',
+    'jFB6uI2tHE8',
+    '69ijeV0eENE',
+    'g97vXm7-_fU',
+    'Q9Yhg9PbkLA',
+    'HtwzKRP2UCg',
+    'FiAj__oc3Lo',
+    '3fjZnOQz2_I',
+    'BrawKgy203E',
+    'Kko_lAI-H4k',
+    'vkmI9WbOKIo',
+    'KOZy2FgqAXo',
+    'yc1TbWYXxVA',
+    '3GajXvGPvNQ',
+    'F83AUWeOVK8',
+    'VLMrHGhzczY',
+    'tEPCqk14CZs',
+    'y8Q3qaT9c1k',
+    'UrBAoDMwKck',
+    'ycKKSRQcRbM',
+    'TjBbWcgzZPA',
+    'Z_ktAFvnK1g',
+    'PuLgeVl4olY',
+    'XMsZD_HBvq0',
+    'HzTlBVT0r0s',
+    '5gKewGCk39w',
+    '4YY3VvCRq0w',
+    '8-B_UilCkSw',
+    '-YYBxODVWqI'
 
   ];
+
+
 
   @override
   void dispose() {

@@ -71,6 +71,11 @@ const List quiz2_3 = [
 "options": ['개나리', '햇살', '근육', '배우'],
 "answer_index": 1
 },
+  {
+    "id": 16,
+    "options": ['배우', '비밀번호', '소풍', '창피'],
+    "answer_index": 2
+  },
 {
 "id": 17,
 "options": ['창피', '개나리', '배터리', '황사'],

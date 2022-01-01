@@ -62,6 +62,7 @@ class _RecordState extends State<Record> {
           itemBuilder: (BuildContext context, int i) {
             return Card(
               elevation: 3,
+                margin: EdgeInsets.symmetric(vertical: 7, horizontal: 0),
               shape: RoundedRectangleBorder(
                   side:  BorderSide(color: Colors.black,width: 1),
                   borderRadius: BorderRadius.all(Radius.circular(9))
@@ -235,7 +236,6 @@ class _RecordState extends State<Record> {
       return "No Date";
     }
   }
-
   String _getDuration(Duration duration) {
     String twoDigits(int n) {
       if (n >= 10) return "$n";

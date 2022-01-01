@@ -4,7 +4,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 class video_page extends StatefulWidget {
   const video_page({
     Key ?key,
-required this.id,
+    required this.id,
   }) : super(key: key);
 
   final int id;
@@ -31,37 +31,7 @@ class _5_video_page extends State<video_page>{
     );
   }
 
-  List asd = [
-    'aYulRnLnS80',
-    'z_Nsplsxga0',
-    '536LvBLULmw',
-    'wOh5HjZ6iAM',
-    'qB6YhWu48jk',
-    'ebs4alKF_pk',
-    'pA4xXJx4qT0',
-    '36H7na9YfYc',
-    'CvZW2Iq3z1s',
-    'jv1Hyd3v834 ',
-    //10
-    'e17qOcGR0VA',
-    'X5u7yF8g78I',
-    'EZQ0nFNi_4M',
-    '0y30zTR2Pt4',
-    'BYCTFcq-WtQ',
-    'Rk0fbymVnQ8',
-    'L6BMm1orM90',
-    '0IjJP-79svk',
-    '-nsef2L1Qlg',
-    'WN0dtRG6be4',
-    //27
-    '9FXneOxl-Z0',
-    'fwfgCTJiA_w',
-    'oTz-q2INyek',
-    'HnAfTVljyz8',
-    'Yh_Y0HXJ3J0',
-    'uXGbnJAPxdQ',
-    '6eW5bRxsvto',
-  ];
+  List asd = ['lDzoiKCpMnQ','DXbe3kMfR3U','x_ATRiIIfE4','-yGaC-_IEfA','5uI-VZF_tXk','XD1GXUkBlBw','rSoEAsvWRrY','c5AOex35qGM','TyFag2Y5NoY','tmwEp_daio8'];
 
   @override
   void dispose() {
@@ -80,12 +50,12 @@ class _5_video_page extends State<video_page>{
   @override
   Widget build(BuildContext context) {
     var height2 = AppBar().preferredSize.height;
+
     return Container(
-      child:
-        Column(
+      child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(27/(27-widget.id)),), //상단 슬라이드
+            padding: EdgeInsets.only(right: MediaQuery.of(context).size.width/(30/(30-widget.id)),), //상단 슬라이드
             child: Container(
               height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.01,
               color: Colors.blue.withOpacity(0.6),
@@ -101,13 +71,15 @@ class _5_video_page extends State<video_page>{
             ),
           ),
           Container(
+
               height: (MediaQuery.of(context).size.height - height2 - MediaQuery.of(context).padding.top) * 0.31,
-              child: Semantics(
-              label: "유튜브 영상",
+    child: Semantics(
+    label: "유튜브 영상",
               child: youtube(context)
-          ))
+    )
+          )
         ],
       ),
-        );
+    );
   }
 }

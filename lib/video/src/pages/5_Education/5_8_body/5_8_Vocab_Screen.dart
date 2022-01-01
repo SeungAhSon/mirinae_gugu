@@ -45,7 +45,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_58>{
                       SizedBox(height: 5.h),
                       Align(
                           alignment: Alignment.centerLeft,
-                          child: Text('  낱말 1단원 (37)',style: TextStyle(fontSize: 20.0.sp+size,fontWeight: FontWeight.bold))
+                          child: Text('  낱말 1단원 (27)',style: TextStyle(fontSize: 20.0.sp+size,fontWeight: FontWeight.bold))
                       ),
                       SizedBox(height: 5.h),
                       Row(

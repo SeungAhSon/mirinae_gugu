@@ -107,6 +107,7 @@ class FlutterAudioRecorder {
 
     if (result != null) {
       response = Map.from(result);
+
       _responseToRecording(response);
     }
 

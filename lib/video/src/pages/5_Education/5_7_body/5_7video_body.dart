@@ -111,36 +111,36 @@ class _video_Body extends State<video_Body_7> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
+    "1. 가지",
+    "2. 감자",
+    "3. 고구마",
+    "4. 고추",
+    "5. 깻잎",
+    "6. 당근",
+    "7. 대파",
+    "8. 딸기",
+    "9. 마늘",
+    "10. 바나나",
+    "11. 배",
+    "12. 배추",
+    "13. 버섯",
+    "14. 복숭아",
+    "15. 사과",
+    "16. 상추",
+    "17. 석류",
+    "18. 양파",
+    "19. 오렌지",
+    "20. 오이",
+    "21. 옥수수",
+    "22. 완두콩",
+    "23. 인삼",
+    "24. 자두",
+    "25. 참외",
+    "26. 콩",
+    "27. 콩나물",
+    "28. 토마토",
+    "29. 포도",
+    "30. 호박"
   ];
 
   //record
@@ -305,7 +305,7 @@ class _video_Body extends State<video_Body_7> {
   Future<void> loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favorite = (prefs.getStringList("favorite_6") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_7") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
@@ -318,10 +318,10 @@ class _video_Body extends State<video_Body_7> {
       });
     }
     await prefs.setStringList(
-        "favorite_6", favorite.map((value) => value.toString()).toList());
+        "favorite_7", favorite.map((value) => value.toString()).toList());
     if (this.mounted) {
     setState(() {
-      favorite = (prefs.getStringList("favorite_6") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_7") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
 

@@ -51,7 +51,7 @@ class _RecordState extends State<Record> {
 
       ),
       body: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         alignment: Alignment.topCenter,
         child: ListView.builder(
           key: Key('builder ${oneopen.toString()}'),

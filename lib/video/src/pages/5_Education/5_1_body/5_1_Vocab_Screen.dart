@@ -1,18 +1,12 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/5_components/5_video_body.dart';
-
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_1_body/5_1video_body.dart';
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../1_Loading.dart';
 
-import '../1_Loading.dart';
-import '../3_home.dart';
-import '../4_Word_Main.dart';
-import '../Video_0_02.dart';
-import '../favorite_global.dart';
 
 class Vocab_Screen_51 extends StatefulWidget {
   @override
@@ -31,22 +25,9 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_51>{
 
   }
 
-  void main() {
-    MaterialApp(
-      // initialRoute 설정. home이 아닌 초기 라우트로 설정
-      // '/'은 앱의 첫 라우트(root 라우트)를 의미함
-      initialRoute: '/',
-      // 라우트들을 등록
-      routes: {
-        '/': (context) => Home(),  // 초기 라우트로 FirstScreen을 설정
-        '/Vocab_Screen_51': (context) => Vocab_Screen_51(), // '/second'란 경로로 SecondScrrent을 설정정
-      },
-    );
-  }
   @override
   void initState() {
     super.initState();
-    print("gd");
   }
   void dispose() {
     super.dispose();

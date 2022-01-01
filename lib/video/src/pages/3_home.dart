@@ -85,8 +85,8 @@ class _Home extends State<Home> {
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-                  if (prefs.getBool('tutorial31') != true){
-                    prefs.setBool('tutorial31', true);
+                  if (prefs.getBool('tutorial34') != true){
+                    prefs.setBool('tutorial34', true);
                   }
                 },
                 child: Text("확인",style: TextStyle(color: Colors.black),),
@@ -94,8 +94,8 @@ class _Home extends State<Home> {
               CupertinoDialogAction(
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
-                  if (prefs.getBool('tutorial31') != true){
-                    prefs.setBool('tutorial31', true);
+                  if (prefs.getBool('tutorial34') != true){
+                    prefs.setBool('tutorial34', true);
                   }
                   Navigator.of(context).pop();
                 },
@@ -113,7 +113,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial31') == null) {
+      if (prefs.getBool('tutorial34') == null) {
         aa(context, "사용 가이드");
 
         s.setBool("reading9",false);
@@ -139,6 +139,13 @@ class _Home extends State<Home> {
 
         //낱말학습
         prefs.setStringList("favorite_1_", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_2", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_3", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_4", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_5", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_6", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_7", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_8", favorite_1.map((value) => value.toString()).toList());
       }
       setState(() {
       });

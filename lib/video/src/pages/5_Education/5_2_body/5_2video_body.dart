@@ -11,10 +11,8 @@ import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
-
-import '../1_Loading.dart';
-import '5_pageview.dart';
-
+import '../../1_Loading.dart';
+import '5_2pageview.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
@@ -22,8 +20,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 
-class video_Body extends StatefulWidget {
-  video_Body({Key? key, required this.index}) : super(key: key);
+class video_Body_2 extends StatefulWidget {
+  video_Body_2({Key? key, required this.index}) : super(key: key);
 
   @override
   _video_Body createState() => _video_Body();
@@ -31,7 +29,7 @@ class video_Body extends StatefulWidget {
 
 }
 
-class _video_Body extends State<video_Body> {
+class _video_Body extends State<video_Body_2> {
   late PageController _pageController;
   List<String> FavoriteButton = [
     "false",
@@ -52,19 +50,6 @@ class _video_Body extends State<video_Body> {
     "false",
     "false",
     "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false",
-    "false"
   ];
   bool finish = false;
   List<bool> favorite = <bool>[
@@ -86,19 +71,6 @@ class _video_Body extends State<video_Body> {
     false,
     false,
     false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false
   ];
   CameraController controller =
   CameraController(cameras[1], ResolutionPreset.veryHigh);
@@ -307,24 +279,11 @@ class _video_Body extends State<video_Body> {
   Future<void> loadFavorite() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_2") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
     });
   }
-  // Future<void> delete() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     favorite[widget.index] = false;
-  //   });
-  //   await prefs.setStringList(
-  //       "favorite_1_", favorite.map((value) => value.toString()).toList());
-  //   setState(() {
-  //     favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
-  //         .map((value) => value == 'true')
-  //         .toList();
-  //   });
-  // }
   Future<void> saved() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (this.mounted) {
@@ -333,10 +292,10 @@ class _video_Body extends State<video_Body> {
       });
     }
     await prefs.setStringList(
-        "favorite_1_", favorite.map((value) => value.toString()).toList());
+        "favorite_2", favorite.map((value) => value.toString()).toList());
     if (this.mounted) {
     setState(() {
-      favorite = (prefs.getStringList("favorite_1_") ?? <bool>[])
+      favorite = (prefs.getStringList("favorite_2") ?? <bool>[])
           .map((value) => value == 'true')
           .toList();
 
@@ -344,8 +303,8 @@ class _video_Body extends State<video_Body> {
   }
 
   void plus() async {
-    if (widget.index != 31) {
-      if (widget.index == 30) {
+    if (widget.index != 19) {
+      if (widget.index == 18) {
         setState(() {
           start = true;
         });
@@ -360,12 +319,12 @@ class _video_Body extends State<video_Body> {
   }
 
   void backplusload() async {
-    if (widget.index != 31) {
+    if (widget.index != 19) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
         });
-      } else if (widget.index == 30) {
+      } else if (widget.index == 18) {
         setState(() {
           start = true;
         });
@@ -374,7 +333,7 @@ class _video_Body extends State<video_Body> {
   }
 
   void back() async {
-    if (widget.index != 31) {
+    if (widget.index != 19) {
       if (widget.index == 1) {
         setState(() {
           finish = true;
@@ -463,7 +422,7 @@ class _video_Body extends State<video_Body> {
                               physics: NeverScrollableScrollPhysics(),
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
-                              itemCount: 30,
+                              itemCount: 18,
                               itemBuilder: (context, index) => video_page(
                                 id: widget.index,
                               ),

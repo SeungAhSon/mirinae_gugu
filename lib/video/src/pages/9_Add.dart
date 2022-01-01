@@ -13,10 +13,10 @@ class Add extends StatelessWidget {
       key: scaffoldKey,
       body: Center(
           child: RaisedButton(
-            child: Text("Show AlertDialog"),
             onPressed: () {
               showAlertDialog(context);
             },
+            child: Text("Show AlertDialog"),
           )
       ),
     );
@@ -32,10 +32,10 @@ class Add extends StatelessWidget {
           content: Text("손승아\n이지현\n임재완"),
           actions: <Widget>[
             FlatButton(
-              child: Text('OK'),
               onPressed: () {
                 Navigator.pop(context, "OK");
               },
+              child: Text('OK'),
             ),
           ],
         );

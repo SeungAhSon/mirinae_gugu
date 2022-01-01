@@ -18,7 +18,7 @@ class _Fontchoose extends State<Languagechoose> {
     select = 1;
 
   }
-  setSelected(int val){
+  void setSelected(int val){
     setState(() {
       select = val;
     });

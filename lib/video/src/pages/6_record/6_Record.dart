@@ -293,13 +293,13 @@ class _Presso extends StatelessWidget {
     return ButtonTheme(
       minWidth: 30.0,
       child: RaisedButton(
+          onPressed: onPressed,
           child:
           Semantics(
             label: label,
               child: Icon(
             ico, color: Colors.white,
-          )),
-          onPressed: onPressed),
+          ))),
     );
   }
 }

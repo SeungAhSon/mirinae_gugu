@@ -53,6 +53,7 @@ class _Test_3 extends State<Test_3>{
 
   @override
   Widget build(BuildContext context){
+    loadnotification();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -26,20 +26,16 @@ class _NotificationState extends State<Notific> {
           SizedBox(height: 0.5),
           Divider(color: Colors.white, thickness: 0.8),
           NotificationTiles(
-            title: '안녕하세요',
+            title: '안녕하세요 개발자입니다.',
             content:
-                '안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요',
-            date: '2021.02.02',
+                '\n이 앱은 현대오토에버와 서울사회복지공동모금회가 지원하는 배리어프리 앱 개발 콘테스트의 출품작입니다.\n'
+                    '\n현재 9,10,11,12단원의 낱말학습 부분과 복습 시험의 일부는 유튜브 일일 업로드 제한으로 인해 추후 따로 업데이트될 예정입니다.\n'
+            '\n오류 신고 및 문의는 jaewan0114@naver.com으로 부탁드립니다.\n'
+            '\n행복 가득한 새해 되세요.\n\n',
+            date: '2022.01.02',
             enable: true,
           ),
-          kDivider,
-          NotificationTiles(
-            title: '감사해요',
-            content:
-                '감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요감사해요',
-            date: '2021.02.01',
-            enable: true,
-          ),
+
           kDivider,
           ListTile(
             title: Semantics(
@@ -50,7 +46,7 @@ class _NotificationState extends State<Notific> {
               children: [
                 Text('사용 방법 소개', style: TextStyle(color: Color(0xFF303030), fontSize:18.sp+size, fontWeight: FontWeight.bold)),
                 SizedBox(height: 5),
-                Text('2021.01.01', style: TextStyle(color: Colors.grey, fontSize:14.sp+size,)),
+                Text('2022.01.01', style: TextStyle(color: Colors.grey, fontSize:14.sp+size,)),
               ],
             )),
             trailing: Icon(Icons.arrow_forward_ios, color: Colors.black,size: 15,),

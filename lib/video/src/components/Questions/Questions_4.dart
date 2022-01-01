@@ -46,7 +46,7 @@ const List quiz4_1 = [
 },
 {
 "id": 11,
-"options": ['자두', '엄마', '하마', '이름'],
+"options": ['자두', '엄마', '파리', '이름'],
 "answer_index": 2
 }];
 const List quiz4_2 = [

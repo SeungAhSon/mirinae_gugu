@@ -32,6 +32,14 @@ List<Map<String, Object>> WALKTHROUGH_ITEMS = [
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-8.png',
+    'button_text': '계속하기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-9.png',
+    'button_text': '계속하기',
+  },
+  {
+    'image': 'assets/Walkthrough/Walkthrough-10.png',
     'button_text': '끝마치기',
   }
 ];
@@ -165,6 +173,11 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                   ),
                   Material(
                     color: (widget.index == 8) ? selectedColor : normalColor,
+                    type: MaterialType.circle,
+                    child: Container(width: 8, height: 8),
+                  ),
+                  Material(
+                    color: (widget.index == 9) ? selectedColor : normalColor,
                     type: MaterialType.circle,
                     child: Container(width: 8, height: 8),
                   ),

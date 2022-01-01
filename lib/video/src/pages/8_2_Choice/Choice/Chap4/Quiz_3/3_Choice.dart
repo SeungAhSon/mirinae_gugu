@@ -9,7 +9,7 @@ class Choice43 extends StatelessWidget {
   @override
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("reading1_2_",true);
+    s.setBool("reading4_2",true);
   }
 
   Widget build(BuildContext context) {

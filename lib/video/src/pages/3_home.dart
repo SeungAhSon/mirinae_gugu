@@ -119,18 +119,61 @@ class _Home extends State<Home> {
         s.setBool("reading9",false);
 
 
-        s.setBool("reading1_1_",false);
-        s.setBool("reading1_2_",false);
+        s.setBool("reading1_1",false);
+        s.setBool("reading1_2",false);
         s.setBool("reading1_3",false);
         s.setBool("speaking1_1",false);
         s.setBool("speaking1_2",false);
         s.setBool("speaking1_3",false);
+
         s.setBool("reading2_1",false);
         s.setBool("reading2_2",false);
         s.setBool("reading2_3",false);
         s.setBool("speaking2_1",false);
         s.setBool("speaking2_2",false);
         s.setBool("speaking2_3",false);
+
+        s.setBool("reading3_1",false);
+        s.setBool("reading3_2",false);
+        s.setBool("reading3_3",false);
+        s.setBool("speaking3_1",false);
+        s.setBool("speaking3_2",false);
+        s.setBool("speaking3_3",false);
+
+        s.setBool("reading4_1",false);
+        s.setBool("reading4_2",false);
+        s.setBool("reading4_3",false);
+        s.setBool("speaking4_1",false);
+        s.setBool("speaking4_2",false);
+        s.setBool("speaking4_3",false);
+
+        s.setBool("reading5_1",false);
+        s.setBool("reading5_2",false);
+        s.setBool("reading5_3",false);
+        s.setBool("speaking5_1",false);
+        s.setBool("speaking5_2",false);
+        s.setBool("speaking5_3",false);
+
+        s.setBool("reading6_1",false);
+        s.setBool("reading6_2",false);
+        s.setBool("reading6_3",false);
+        s.setBool("speaking6_1",false);
+        s.setBool("speaking6_2",false);
+        s.setBool("speaking6_3",false);
+
+        s.setBool("reading7_1",false);
+        s.setBool("reading7_2",false);
+        s.setBool("reading7_3",false);
+        s.setBool("speaking7_1",false);
+        s.setBool("speaking7_2",false);
+        s.setBool("speaking7_3",false);
+
+        s.setBool("reading8_1",false);
+        s.setBool("reading8_2",false);
+        s.setBool("reading8_3",false);
+        s.setBool("speaking8_1",false);
+        s.setBool("speaking8_2",false);
+        s.setBool("speaking8_3",false);
 
         prefs.setInt('fontchoose',1);
 

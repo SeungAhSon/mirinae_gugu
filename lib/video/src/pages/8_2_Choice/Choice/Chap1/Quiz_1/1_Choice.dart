@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class Choice11 extends StatelessWidget {
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
-    s.setBool("reading1_1_",true);
+    s.setBool("reading1_1",true);
   }
   @override
   Widget build(BuildContext context) {

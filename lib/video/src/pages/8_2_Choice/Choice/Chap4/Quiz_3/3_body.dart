@@ -36,7 +36,7 @@ class _Body_3 extends State<Body_3>{
                     style: TextStyle(fontSize: 15.sp+size, color: Colors.blue),
                     children: [
                       TextSpan(
-                        text: "/10",
+                        text: "/${_questionController.questions.length}",
                         style: TextStyle(fontSize: 15.sp+size, color: Colors.blue),
                       ),
                     ],

@@ -56,8 +56,7 @@ class _Test_2 extends State<Test_2>{
   @override
   Widget build(BuildContext context){
     loadnotification();
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -95,7 +94,6 @@ class _Test_2 extends State<Test_2>{
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),
-    ),
     );
   }
 }

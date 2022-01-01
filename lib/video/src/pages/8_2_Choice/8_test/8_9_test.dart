@@ -15,8 +15,7 @@ class Test_9 extends StatelessWidget{
   bool state1 = false;
   @override
   Widget build(BuildContext context){
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -54,7 +53,6 @@ class Test_9 extends StatelessWidget{
           ],
       ),
       appBar: DefaultAppBar(title: '구구절절'),
-    ),
     );
   }
 }

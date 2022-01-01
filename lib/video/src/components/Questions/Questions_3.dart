@@ -108,7 +108,7 @@ const List quiz3_3 = [
 },
 {
 "id": 23,
-"options": ['이모', '바람', '눈사람', '급식'],
+"options": ['이모', '바람', '눈사람', '휴식'],
 "answer_index": 3
 },
 {

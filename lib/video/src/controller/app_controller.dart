@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/app.dart';
-
 
 enum RouteName {Home,Record,Add}
 

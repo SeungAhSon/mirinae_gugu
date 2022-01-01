@@ -8,10 +8,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mirinae_gugu/video/src/binding/initBinding.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../main.dart';
 import '1_Loading.dart';
-import '9_setting/9_Fontchoose.dart';
 
 class Login extends StatelessWidget{
   const Login({Key? key}) : super(key: key);

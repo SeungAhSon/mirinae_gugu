@@ -88,12 +88,13 @@ class _RecordState extends State<Record> {
                       _getDuration(totalTime);
                     });
                   }
-                  else
+                  else {
                     setState(() {
                       oneopen = -1;
                       advancedPlayer.stop();
                       isPlay = false;
                     });
+                  }
                 }),
                 children: [
                   Container(

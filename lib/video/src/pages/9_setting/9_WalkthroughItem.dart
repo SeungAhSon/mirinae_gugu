@@ -61,7 +61,7 @@ class WalkthroughItem extends StatefulWidget {
 class _WalkthroughItemState extends State<WalkthroughItem> {
   @override
   Widget build(BuildContext context) {
-    Color selectedColor = Colors.blue;
+    Color selectedColor = Color.fromRGBO(11, 50, 118, 0.6);
     Color normalColor = Colors.grey;
     final height = MediaQuery.of(context).size.height;
     return Container(

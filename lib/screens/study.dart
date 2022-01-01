@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/screens/screens.dart';
+
 
 class StudyPage extends StatelessWidget {
   @override

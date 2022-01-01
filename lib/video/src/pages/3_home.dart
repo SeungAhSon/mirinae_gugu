@@ -204,9 +204,7 @@ class _Home extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    var height2 = AppBar().preferredSize.height;
     return SafeArea(
-
       child: Scaffold(
         body: Center(
           child: Column(

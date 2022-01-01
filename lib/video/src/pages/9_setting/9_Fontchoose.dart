@@ -1,14 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mirinae_gugu/screens/old_mail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../../../main.dart';
 import '../1_Loading.dart';
-import '../2_Login.dart';
-
-
 
 class Fontchoose extends StatefulWidget{
   Fontchoose({Key? key}) : super(key: key);

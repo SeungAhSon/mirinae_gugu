@@ -56,8 +56,9 @@ class _StartPageState_6 extends State<StartPage_6> {
   void streamingRecognize() async {
     _audioStream = BehaviorSubject<List<int>>();
     _audioStreamSubscription = _recorder.audioStream.listen((event) {
-      if (!_audioStream!.isClosed)
+      if (!_audioStream!.isClosed) {
         _audioStream?.add(event);
+      }
     });
 
     await _recorder.start();

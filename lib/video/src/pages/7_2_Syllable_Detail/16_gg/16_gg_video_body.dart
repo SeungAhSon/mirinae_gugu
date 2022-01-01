@@ -126,8 +126,9 @@ class _video_Body extends State<video_Body_16> {
     if (mounted){
       _audioStream = BehaviorSubject<List<int>>();
       _audioStreamSubscription = _recorder.audioStream.listen((event) {
-        if (!_audioStream!.isClosed)
+        if (!_audioStream!.isClosed) {
           _audioStream?.add(event);
+        }
       });
 
       await _recorder.start();
@@ -155,7 +156,7 @@ class _video_Body extends State<video_Body_16> {
         data.results.map((e) => e.alternatives.first.transcript).join("");
 
         if (data.results.first.isFinal) {
-          if (this.mounted) {
+          if (mounted) {
             //responseText += currentText;
             setState(() {
               //text = responseText;
@@ -163,7 +164,7 @@ class _video_Body extends State<video_Body_16> {
             });
           }
         } else {
-          if (this.mounted) {
+          if (mounted) {
             setState(() {
               text = currentText;
               recognizeFinished = true;
@@ -173,7 +174,7 @@ class _video_Body extends State<video_Body_16> {
       },
 
           onDone: () {
-            if (this.mounted) {
+            if (mounted) {
               setState(() {
 
                 recognizing = false;
@@ -643,7 +644,7 @@ class _video_Body extends State<video_Body_16> {
   _onFinish_test() {
     appDir!.list().listen((onData) {
     }).onDone(() {
-      if (this.mounted) {
+      if (mounted) {
         setState(() {});
       }
     });
@@ -677,7 +678,7 @@ class _video_Body extends State<video_Body_16> {
 
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
-      print("path for file11 ${patho}");
+      print("path for file11 $patho");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     } else {
@@ -692,7 +693,7 @@ class _video_Body extends State<video_Body_16> {
   _start() async {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
-    if (this.mounted) {
+    if (mounted) {
       setState(() {
         _current = recording!;
       });
@@ -709,7 +710,7 @@ class _video_Body extends State<video_Body_16> {
 
         var current = await audioRecorder!.current(channel: 0);
         // print(current.status);
-        if (this.mounted) {
+        if (mounted) {
           setState(() {
             _current = current!;
             _currentStatus = _current!.status!;
@@ -724,7 +725,7 @@ class _video_Body extends State<video_Body_16> {
     var result = await audioRecorder!.stop();
     Fluttertoast.showToast(msg: "녹음 파일이 저장되었습니다");
     _onFinish_test();
-    if (this.mounted) {
+    if (mounted) {
       setState(() {
         _current = result!;
         _currentStatus = _current!.status!;
@@ -753,7 +754,7 @@ class _video_Body extends State<video_Body_16> {
       await _initial();
       await _start();
       Fluttertoast.showToast(msg: "녹음 시작");
-      if (this.mounted) {
+      if (mounted) {
         setState(() {
           _currentStatus = RecordingStatus.Recording;
           /*_recordIcon = Icons.pause;*/
@@ -767,7 +768,7 @@ class _video_Body extends State<video_Body_16> {
   }
 
 
-  reset() {
+  void reset() {
 
     setState(() {
       //counter = 0;

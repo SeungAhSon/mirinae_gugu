@@ -125,8 +125,9 @@ class _video_Body extends State<video_Body_15> {
     if (mounted){
       _audioStream = BehaviorSubject<List<int>>();
       _audioStreamSubscription = _recorder.audioStream.listen((event) {
-        if (!_audioStream!.isClosed)
+        if (!_audioStream!.isClosed) {
           _audioStream?.add(event);
+        }
       });
 
       await _recorder.start();
@@ -684,7 +685,7 @@ class _video_Body extends State<video_Body_15> {
 
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
-      print("path for file11 ${patho}");
+      print("path for file11 $patho");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     } else {

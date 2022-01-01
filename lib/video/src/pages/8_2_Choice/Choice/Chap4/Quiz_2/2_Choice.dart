@@ -4,11 +4,11 @@ import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap4/Quiz_2/2_vo
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Choice42 extends StatelessWidget {
-  @override
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     s.setBool("speaking4_1",true);
   }
+  @override
   Widget build(BuildContext context) {
     finish();
     return Scaffold(

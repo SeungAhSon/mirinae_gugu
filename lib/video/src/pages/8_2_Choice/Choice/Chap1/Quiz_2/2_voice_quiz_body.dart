@@ -10,7 +10,6 @@ import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/result_voice_quiz.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Questions{
   String qText;

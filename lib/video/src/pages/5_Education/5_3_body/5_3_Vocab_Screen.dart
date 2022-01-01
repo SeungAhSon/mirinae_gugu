@@ -15,7 +15,6 @@ class Vocab_Screen_53 extends StatefulWidget {
 class _Vocab_Screen_51 extends State<Vocab_Screen_53>{
   List<bool> FavoriteButtons = <bool>[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
   List<String> FavoriteButton = ["false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"];
-  @override
   Future<void> loadFavorite() async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState((){
@@ -28,6 +27,7 @@ class _Vocab_Screen_51 extends State<Vocab_Screen_53>{
   void initState() {
     super.initState();
   }
+  @override
   void dispose() {
     super.dispose();
   }

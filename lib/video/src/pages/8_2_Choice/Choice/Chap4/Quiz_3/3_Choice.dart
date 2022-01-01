@@ -6,12 +6,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Choice43 extends StatelessWidget {
-  @override
   void finish() async{
     SharedPreferences s = await SharedPreferences.getInstance();
     s.setBool("reading4_2",true);
   }
-
+  @override
   Widget build(BuildContext context) {
     finish();
     QuestionController_43 _controller = Get.put(QuestionController_43());

@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class video_page extends StatefulWidget {
-  const video_page({
+class video_page_18 extends StatefulWidget {
+  const video_page_18({
     Key ?key,
     required this.id,
   }) : super(key: key);
 
   final int id;
 
-  @override
   _5_video_page createState() => _5_video_page();
 }
-class _5_video_page extends State<video_page>{
+class _5_video_page extends State<video_page_18>{
 
   late final YoutubePlayerController _controller;
   @override
@@ -32,7 +31,8 @@ class _5_video_page extends State<video_page>{
     );
   }
 
-  List asd = ['lDzoiKCpMnQ','DXbe3kMfR3U','x_ATRiIIfE4','-yGaC-_IEfA','5uI-VZF_tXk','XD1GXUkBlBw','rSoEAsvWRrY','c5AOex35qGM','TyFag2Y5NoY','tmwEp_daio8'];
+  List asd = ['f9kSVM0UbLU','Baz4pxiYPl8','wd5wjTZzwgQ','Vw1HTsxvHpA','kuwYt57NkN4','nZr4yWxzI18','UFoWxBIkxRg','2HwXBDdYs-o','xPK4ZTwtyis','4e59q1YpLXQ'];
+
 
   @override
   void dispose() {

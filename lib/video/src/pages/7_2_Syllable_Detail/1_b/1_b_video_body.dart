@@ -12,7 +12,6 @@ import 'package:google_speech/config/streaming_recognition_config.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:google_speech/speech_to_text.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
-import 'package:mirinae_gugu/video/src/pages/7_2_Syllable_Detail/16_gg/16_gg_youtube.dart';
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -20,6 +19,7 @@ import 'package:rxdart/rxdart.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
+import '1_b_youtube.dart';
 
 class video_Body_1_1 extends StatefulWidget {
   video_Body_1_1({Key? key, required this.index}) : super(key: key);
@@ -44,7 +44,7 @@ class _video_Body extends State<video_Body_1_1> {
   StreamSubscription<List<int>>? _audioStreamSubscription;
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
-  List<String> Questiontitle = ["1. 까", "2. 꺄", "3. 꺼","4. 껴","5. 꼬","6. 꾜","7. 꾸","8. 뀨","9. 끄","10. 끼"];
+  List<String> Questiontitle = ["1. 바", "2. 뱌", "3. 버","4. 벼","5. 보","6. 뵤","7. 부","8. 뷰","9. 브","10. 비"];
 
   //record
   //record
@@ -126,9 +126,8 @@ class _video_Body extends State<video_Body_1_1> {
     if (mounted){
       _audioStream = BehaviorSubject<List<int>>();
       _audioStreamSubscription = _recorder.audioStream.listen((event) {
-        if (!_audioStream!.isClosed) {
+        if (!_audioStream!.isClosed)
           _audioStream?.add(event);
-        }
       });
 
       await _recorder.start();
@@ -156,7 +155,7 @@ class _video_Body extends State<video_Body_1_1> {
         data.results.map((e) => e.alternatives.first.transcript).join("");
 
         if (data.results.first.isFinal) {
-          if (mounted) {
+          if (this.mounted) {
             //responseText += currentText;
             setState(() {
               //text = responseText;
@@ -164,7 +163,7 @@ class _video_Body extends State<video_Body_1_1> {
             });
           }
         } else {
-          if (mounted) {
+          if (this.mounted) {
             setState(() {
               text = currentText;
               recognizeFinished = true;
@@ -174,7 +173,7 @@ class _video_Body extends State<video_Body_1_1> {
       },
 
           onDone: () {
-            if (mounted) {
+            if (this.mounted) {
               setState(() {
 
                 recognizing = false;
@@ -324,7 +323,7 @@ class _video_Body extends State<video_Body_1_1> {
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
                               itemCount: 30,
-                              itemBuilder: (context, index) => video_page(
+                              itemBuilder: (context, index) => video_page_1(
                                 id: widget.index,
                               ),
                             ),
@@ -644,7 +643,7 @@ class _video_Body extends State<video_Body_1_1> {
   _onFinish_test() {
     appDir!.list().listen((onData) {
     }).onDone(() {
-      if (mounted) {
+      if (this.mounted) {
         setState(() {});
       }
     });
@@ -678,7 +677,7 @@ class _video_Body extends State<video_Body_1_1> {
 
     if (await appDirec.exists()) {
       String patho = "${appDirec.path}$dato";
-      print("path for file11 $patho");
+      print("path for file11 ${patho}");
       audioRecorder = FlutterAudioRecorder(patho, audioFormat: AudioFormat.WAV);
       await audioRecorder!.initialized;
     } else {
@@ -693,7 +692,7 @@ class _video_Body extends State<video_Body_1_1> {
   _start() async {
     await audioRecorder!.start();
     var recording = await audioRecorder!.current(channel: 0);
-    if (mounted) {
+    if (this.mounted) {
       setState(() {
         _current = recording!;
       });
@@ -710,7 +709,7 @@ class _video_Body extends State<video_Body_1_1> {
 
         var current = await audioRecorder!.current(channel: 0);
         // print(current.status);
-        if (mounted) {
+        if (this.mounted) {
           setState(() {
             _current = current!;
             _currentStatus = _current!.status!;
@@ -725,7 +724,7 @@ class _video_Body extends State<video_Body_1_1> {
     var result = await audioRecorder!.stop();
     Fluttertoast.showToast(msg: "녹음 파일이 저장되었습니다");
     _onFinish_test();
-    if (mounted) {
+    if (this.mounted) {
       setState(() {
         _current = result!;
         _currentStatus = _current!.status!;
@@ -754,7 +753,7 @@ class _video_Body extends State<video_Body_1_1> {
       await _initial();
       await _start();
       Fluttertoast.showToast(msg: "녹음 시작");
-      if (mounted) {
+      if (this.mounted) {
         setState(() {
           _currentStatus = RecordingStatus.Recording;
           /*_recordIcon = Icons.pause;*/
@@ -768,7 +767,7 @@ class _video_Body extends State<video_Body_1_1> {
   }
 
 
-  void reset() {
+  reset() {
 
     setState(() {
       //counter = 0;

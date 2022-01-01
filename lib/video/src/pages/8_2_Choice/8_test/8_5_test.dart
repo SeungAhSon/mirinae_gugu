@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/update.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap5/Quiz_1/1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap5/Quiz_3/3_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap5/Quiz_5/5_Choice.dart';
@@ -31,22 +32,22 @@ class Test_5 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice51(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice52(),), //StartPage()
+                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: update(),),
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice52(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice53(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice54(),),
+                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: update(),),
+                TestButton(text: '말하기2', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice54(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice55(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice56(),),
+                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: update(),),
+                TestButton(text: '말하기3', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice56(),),
               ],
             ),
             SizedBox(height: 30.h),

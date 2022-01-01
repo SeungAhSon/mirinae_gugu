@@ -31,22 +31,22 @@ class Test_4 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice41(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice42(),), //StartPage()
+                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice41(),),
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice42(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice43(),),
-                TestButton(text: '목소리',  color: Colors.blueAccent,icon: Icons.mic,state: state1, onTap: Choice44(),),
+                TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice43(),),
+                TestButton(text: '말하기1',  color: Colors.blueAccent,icon: Icons.mic,state: state1, onTap: Choice44(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice45(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice46(),),
+                TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice45(),),
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic, state: state1,onTap: Choice46(),),
               ],
             ),
             SizedBox(height: 30.h),

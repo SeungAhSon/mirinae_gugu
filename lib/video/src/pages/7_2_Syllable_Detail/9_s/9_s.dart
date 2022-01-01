@@ -46,9 +46,9 @@ class S extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 방법',style:TextStyle(fontSize: 16.sp+size)),
+                    child: Text('마찰음 ',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('마찰음 : 입안이나 목청 사이의 통로를 좁혀\n그 사이로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
+                  Text('입안이나 목청 사이의 통로를 좁혀\n그 사이로 공기를 내보내면서 내는 소리',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 5.h),
                   Container(
                     alignment: Alignment.center,
@@ -58,9 +58,9 @@ class S extends StatelessWidget{
                       borderRadius: BorderRadius.circular(50),
                       border: Border.all(color: Colors.black),
                     ),
-                    child: Text('발음 동작',style:TextStyle(fontSize: 16.sp+size)),
+                    child: Text('잇몸소리',style:TextStyle(fontSize: 16.sp+size)),
                   ),
-                  Text('잇몸소리 : 혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
+                  Text('혀끝을 앞니 뒤에 살짝 붙였다 떼며 발음',style:TextStyle(fontSize: 15.sp+size),textAlign: TextAlign.center,),
                   SizedBox(height: 5.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

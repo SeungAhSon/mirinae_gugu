@@ -71,7 +71,7 @@ class T extends StatelessWidget{
                           text: '타',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_7_7(
-                              index:10,
+                              index:1,
                             ),));}
                       ),
                       LearnLevelButton(

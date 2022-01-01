@@ -85,8 +85,8 @@ class _Home extends State<Home> {
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-                  if (prefs.getBool('tutorial34') != true){
-                    prefs.setBool('tutorial34', true);
+                  if (prefs.getBool('tutorial35') != true){
+                    prefs.setBool('tutorial35', true);
                   }
                 },
                 child: Text("확인",style: TextStyle(color: Colors.black),),
@@ -94,8 +94,8 @@ class _Home extends State<Home> {
               CupertinoDialogAction(
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
-                  if (prefs.getBool('tutorial34') != true){
-                    prefs.setBool('tutorial34', true);
+                  if (prefs.getBool('tutorial35') != true){
+                    prefs.setBool('tutorial35', true);
                   }
                   Navigator.of(context).pop();
                 },
@@ -113,7 +113,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial34') == null) {
+      if (prefs.getBool('tutorial35') == null) {
         aa(context, "사용 가이드");
 
         s.setBool("reading9",false);

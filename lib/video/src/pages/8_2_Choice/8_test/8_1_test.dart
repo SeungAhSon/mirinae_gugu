@@ -34,8 +34,8 @@ void loadnotification() async{
     speaking1_1 = s.getBool("speaking1_1")!;
     speaking1_2 = s.getBool("speaking1_2")!;
     speaking1_3 = s.getBool("speaking1_3")!;
-    reading1_1 = s.getBool("reading1_1_")!;
-    reading1_2 = s.getBool("reading1_2_")!;
+    reading1_1 = s.getBool("reading1_1")!;
+    reading1_2 = s.getBool("reading1_2")!;
     reading1_3 = s.getBool("reading1_3")!;
   });
 }

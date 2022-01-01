@@ -70,9 +70,8 @@ class SS extends StatelessWidget{
                       LearnLevelButton(
                           text: '싸',
                           onTap: () async {
-
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:1,
                             ),));
                           }
                       ),
@@ -80,14 +79,14 @@ class SS extends StatelessWidget{
                           text: '쌰',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:2,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '써',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:3,
                             ),));}
                       ),
                     ],
@@ -99,21 +98,21 @@ class SS extends StatelessWidget{
                           text: '쎠',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:4,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '쏘',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:5,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '쑈',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:6,
                             ),));}
                       ),
                     ],
@@ -125,21 +124,21 @@ class SS extends StatelessWidget{
                           text: '쑤',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:7,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '쓔',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:8,
                             ),));}
                       ),
                       LearnLevelButton(
                           text: '쓰',
                           onTap: () async {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => video_Body_10_10(
-                              index:10,
+                              index:9,
                             ),));}
                       ),
                     ],

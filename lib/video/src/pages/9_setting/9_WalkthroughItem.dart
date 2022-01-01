@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 List<Map<String, Object>> WALKTHROUGH_ITEMS = [
   {
     'image': 'assets/Walkthrough/Walkthrough-1.png',
     'button_text': '계속하기',
+    'String':'sadasdasd',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-2.png',
     'button_text': '계속하기',
+    'String':'sadasdasd',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-3.png',
@@ -51,13 +54,24 @@ class WalkthroughItem extends StatefulWidget {
   final Map<String, dynamic>? item;
 
   const WalkthroughItem(
-      {Key? key, this.controller, this.index, this.totalItem, this.item})
+      {Key? key, this.controller, this.index, this.totalItem, this.item,})
       : super(key: key);
 
   @override
   _WalkthroughItemState createState() => _WalkthroughItemState();
 }
 
+List asd =[
+  "공지사항을 확인해주세요",
+  "발음 방법과 동작을 확인해주세요",
+  "완료한 학습과 시험은 아이콘과 색으로 확인할 수 있어요!",
+  "녹음하기를 통해 녹을할 수 있어요!",
+  "받아쓰기를 통해 발음을 확인해 보세요! 다시 버튼을 사용하면 글자들이 깨끗이 사라져요!",
+"녹음을 듣거나 삭제할 수 있어요!",
+"복습시험은 객관식과 말하기 유형이 있어요! 시험에 통과하면 버튼 색깔이 변해요! 객관식 유형 시험 예시",
+"말하기 유형 시험 예시",
+"글꼴, 글자 크기 등의 설정을 할 수 있어요! 변경 내용을 적용하려면 앱을 다시 시작해야해요!",
+"녹음 버튼이나 받아쓰기 버튼을 연달아 빠르게 누르지 마세요!! 오류가 발생할 경우, 앱을 다시 실행하거나 앱 정보> 저장공간> 데이터 삭제를 해주세요!"];
 class _WalkthroughItemState extends State<WalkthroughItem> {
   @override
   Widget build(BuildContext context) {
@@ -112,13 +126,15 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                   ),
                 ],
               ),
-              child: Text(
+              child: Semantics(
+                label: asd[widget.index],
+                child: Text(
                 widget.item!['button_text'] ?? 'Continue',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 16 + size),
-              ),
+              )),
             ),
           ),
         ),

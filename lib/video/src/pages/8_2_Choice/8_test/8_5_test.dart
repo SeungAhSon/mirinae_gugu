@@ -72,21 +72,21 @@ class _Test_2 extends State<Test_5>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_1,onTap: update(),),
+                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_1,onTap: Choice51(),),
                 TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_1,onTap: Choice52(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: update(),),
+                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: Choice53(),),
                 TestButton(text: '말하기2', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_2, onTap: Choice54(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_3,onTap: update(),),
+                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_3,onTap: Choice55(),),
                 TestButton(text: '말하기3', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_3,onTap: Choice56(),),
               ],
             ),

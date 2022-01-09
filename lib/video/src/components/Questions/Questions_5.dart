@@ -1,7 +1,7 @@
 const List quiz5_1 = [
 {
 "id": 1,
-"options": ['행동', '오이', '싫어하다', '꽃'],
+"options": ['행복', '오이', '싫어하다', '꽃'],
 "answer_index": 0
 },
 {
@@ -94,13 +94,13 @@ const List quiz5_2 = [
 "id": 19,
 "options": ['지루하다', '교실', '상처', '휴식'],
 "answer_index": 0
-},
+}];
+const List quiz5_3 = [
 {
 "id": 20,
 "options": ['공부', '쌀쌀하다', '앉다', '아내'],
 "answer_index": 2
-}];
-const List quiz5_3 = [
+},
 {
 "id": 21,
 "options": ['아내', '자동차', '축제', '기쁘다'],
@@ -112,37 +112,32 @@ const List quiz5_3 = [
 "answer_index": 2
 },
 {
-"id": 24,
+"id": 23,
 "options": ['창피', '병원', '선크림', '조카'],
 "answer_index": 0
 },
 {
-"id": 25,
+"id": 24,
 "options": ['후회', '부수다', '선크림', '여우'],
 "answer_index": 0
 },
 {
-"id": 26,
+"id": 25,
 "options": ['배구', '부수다', '의심', '썰매'],
 "answer_index": 2
 },
 {
-"id": 27,
-"options": ['배구', '아프다', '펭귄', '벼'],
-"answer_index": 1
-},
-{
-"id": 28,
+"id": 26,
 "options": ['배터리', '작가', '벼', '일어나다'],
 "answer_index": 3
 },
 {
-"id": 29,
+"id": 27,
 "options": ['사랑', '카페', '계곡', '배터리'],
 "answer_index": 0
 },
 {
-"id": 30,
+"id": 28,
 "options": ['추억', '우정', '카페', '급식'],
 "answer_index": 1
 },

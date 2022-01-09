@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap5/Quiz_1/1_quiz_controller.dart';
-import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap5/Quiz_1/1_option.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/components/Questions/Question.dart';
+
+import '1_option.dart';
+import '1_quiz_controller.dart';
 
 class ayotube extends StatefulWidget {
   const ayotube({
@@ -39,7 +40,17 @@ class ayotube extends StatefulWidget {
       );
     }
 
-    List asd = ['0','1uJvtbTyVPk','d122d','asfsdf','asdasdgdas','5gTwukGJMYk','dasdasda','sadasdas','9','9','IovzbPNQcp4'];
+    List asd = ['0',"uRp80LTU7iU",
+      "cjqLWnLyNAg",
+      "eM9jpS8KaPk",
+      "3Cu4KWCmlwk",
+      "Heg1R83B7gU",
+      "RBPN5NORdQA",
+      "YMY762yG_Os",
+      "-XT_QW4I7u4",
+      "0JePW6ab46s",
+      "bgRRRAwNh5Q",];
+
 
     @override
     void dispose() {

@@ -52,7 +52,7 @@ const List quiz5_1 = [
 const List quiz5_2 = [
 {
 "id": 11,
-"options": ['피자', '미안', '바람', '진달래'],
+"options": ['피자', '미안(하다)', '바람', '진달래'],
 "answer_index": 1
 },
 {
@@ -113,7 +113,7 @@ const List quiz5_3 = [
 },
 {
 "id": 23,
-"options": ['창피', '병원', '선크림', '조카'],
+"options": ['창피(하다)', '병원', '선크림', '조카'],
 "answer_index": 0
 },
 {

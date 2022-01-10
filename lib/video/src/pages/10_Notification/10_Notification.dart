@@ -35,7 +35,19 @@ class _NotificationState extends State<Notific> {
             date: '2022.01.02',
             enable: true,
           ),
-
+          kDivider,
+          NotificationTiles(
+            title: '현재까지 알려진 오류입니다.',
+            content:
+            '\n현재 말하기 시험에서 비정상적인 종료를 4건 확인하였습니다. \n'
+                '\n확인해본 결과 플러터 플러그인 문제로, 현재 버전을 수정해 놓은 상태지만 플러그인의 문제이기 때문에 플러그인 개발자가 수정을 하기 전까지는 완벽한 해결이 불가능합니다. 주의부탁드리겠습니다.\n'
+                '\n또한 일부 폰트(야체, 주야체)에서 일부 단어가 표시되지 않는 현상을 확인했습니다.\n'
+                '\n이는 폰트의 문제이기 때문에, 야체와 주야체 사용을 가급적 자제 부탁드리고, 추후 업데이트를 통해 새로운 폰트를 추가하도록 하겠습니다.\n'
+                '\n오류 신고 및 문의는 jaewan0114@naver.com으로 부탁드립니다.\n'
+                '\n행복 가득한 새해되세요.\n\n',
+            date: '2022.01.02',
+            enable: true,
+          ),
           kDivider,
           ListTile(
             title: Semantics(

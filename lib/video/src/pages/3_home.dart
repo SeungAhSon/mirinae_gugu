@@ -57,7 +57,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
 
     setState(() {
-      Reading = s.getBool("reading9")!;
+      Reading = s.getBool("reading10")!;
     }
     );
   }
@@ -85,8 +85,8 @@ class _Home extends State<Home> {
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WalkthroughScreen()));
-                  if (prefs.getBool('tutorial35') != true){
-                    prefs.setBool('tutorial35', true);
+                  if (prefs.getBool('tutorial36') != true){
+                    prefs.setBool('tutorial36', true);
                   }
                 },
                 child: Text("확인",style: TextStyle(color: Colors.black),),
@@ -94,8 +94,8 @@ class _Home extends State<Home> {
               CupertinoDialogAction(
                 onPressed: () async {
                   SharedPreferences prefs = await SharedPreferences.getInstance();
-                  if (prefs.getBool('tutorial35') != true){
-                    prefs.setBool('tutorial35', true);
+                  if (prefs.getBool('tutorial36') != true){
+                    prefs.setBool('tutorial36', true);
                   }
                   Navigator.of(context).pop();
                 },
@@ -113,10 +113,10 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
     SharedPreferences ss = await SharedPreferences.getInstance();
     WidgetsBinding.instance!.addPostFrameCallback((_) {
-      if (prefs.getBool('tutorial35') == null) {
+      if (prefs.getBool('tutorial36') == null) {
         aa(context, "사용 가이드");
 
-        s.setBool("reading9",false);
+        s.setBool("reading10",false);
 
 
         s.setBool("reading1_1",false);
@@ -504,8 +504,8 @@ class _Home extends State<Home> {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
                             )),);
                             setState(() {
-                              s.setBool("reading9",true);
-                              Reading =  s.getBool("reading9")!;
+                              s.setBool("reading10",true);
+                              Reading =  s.getBool("reading10")!;
                             }
                             );
                             //onPageChanged: _questionController.updateTheQnNum,

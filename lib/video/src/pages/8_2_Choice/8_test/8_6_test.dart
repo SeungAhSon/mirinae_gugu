@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
-import 'package:mirinae_gugu/video/src/pages/5_Education/update.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap6/Quiz_1/1_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap6/Quiz_2/2_Choice.dart';
 import 'package:mirinae_gugu/video/src/pages/8_2_Choice/Choice/Chap6/Quiz_3/3_Choice.dart';
@@ -72,21 +71,21 @@ class _Test_2 extends State<Test_6>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: update(),),
+                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_2, onTap: Choice61(),),
                 TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_2,onTap: Choice62(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_2,onTap: update(),),
+                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_2,onTap: Choice63(),),
                 TestButton(text: '말하기2', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_2, onTap: Choice64(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_3, onTap: update(),),
+                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_3, onTap: Choice65(),),
                 TestButton(text: '말하기3',  color: Colors.blueAccent,icon: Icons.mic, state: speaking1_3,onTap: Choice66(),),
               ],
             ),

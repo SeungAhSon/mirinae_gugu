@@ -77,7 +77,7 @@ const List quiz7_2 = [
 },
 {
 "id": 16,
-"options": ['아나운서', '열', '달리기', '굴뚝'],
+"options": ['아나운서', '열', '딸기', '굴뚝'],
 "answer_index": 2
 },
 {

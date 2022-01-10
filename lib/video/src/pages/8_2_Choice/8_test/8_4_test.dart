@@ -79,15 +79,15 @@ class _Test_2 extends State<Test_4>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_2,onTap: Choice43(),),
-                TestButton(text: '말하기1',  color: Colors.blueAccent,icon: Icons.mic,state: speaking1_2, onTap: Choice44(),),
+                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_2,onTap: Choice43(),),
+                TestButton(text: '말하기2',  color: Colors.blueAccent,icon: Icons.mic,state: speaking1_2, onTap: Choice44(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_3, onTap: Choice45(),),
-                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_3, onTap: Choice46(),),
+                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading1_3, onTap: Choice45(),),
+                TestButton(text: '말하기3', color: Colors.blueAccent, icon: Icons.mic, state: speaking1_3, onTap: Choice46(),),
               ],
             ),
             SizedBox(height: 30.h),

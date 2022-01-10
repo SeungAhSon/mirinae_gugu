@@ -45,7 +45,7 @@ class _NotificationState extends State<Notific> {
                 '\n이는 폰트의 문제이기 때문에, 야체와 주야체 사용을 가급적 자제 부탁드리고, 추후 업데이트를 통해 새로운 폰트를 추가하도록 하겠습니다.\n'
                 '\n오류 신고 및 문의는 jaewan0114@naver.com으로 부탁드립니다.\n'
                 '\n행복 가득한 새해되세요.\n\n',
-            date: '2022.01.02',
+            date: '2022.01.11',
             enable: true,
           ),
           kDivider,

@@ -79,7 +79,7 @@ class _Test_2 extends State<Test_7>{
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading1_2,onTap: Choice73(),),
-                TestButton(text: '말하기3', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_2, onTap: Choice74(),),
+                TestButton(text: '말하기2', color: Colors.blueAccent, icon: Icons.mic,state: speaking1_2, onTap: Choice74(),),
               ],
             ),
             Row(

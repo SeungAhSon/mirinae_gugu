@@ -37,7 +37,7 @@ class _NotificationState extends State<Notific> {
           ),
           kDivider,
           NotificationTiles(
-            title: '현재까지 알려진 오류입니다.',
+            title: '1.0.0.+5 수정사항입니다..',
             content:
             '\n현재 비정상적인 종료를 4건 확인하였습니다. \n'
                 '\n테스트 결과, 앱 사용에는 큰 문제가 없으며 비정상 종료 역시 실제로 확인되지 않고 로그에 기록만 남아있는 상황입니다.\n'

@@ -164,7 +164,7 @@ GestureDetector buildAccountOption2(BuildContext context, String title)
           Container(
             child: Padding(
               padding: EdgeInsets.only(left:3,right: 5),
-              child: Text("1.0.0+1",style: TextStyle(
+              child: Text("1.0.0+5",style: TextStyle(
                   fontSize: 18.sp+size,
                   fontWeight: FontWeight.w500,
                   color: Colors.grey[800]

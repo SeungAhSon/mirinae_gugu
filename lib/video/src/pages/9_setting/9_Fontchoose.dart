@@ -120,7 +120,7 @@ class _Fontchoose extends State<Fontchoose> {
             },
           ),
           SizedBox(width: 10.0.w,),
-          Text("주아체",style: TextStyle(fontFamily: "bmjua",fontSize: 16.sp),)
+          Text("쿠키런체",style: TextStyle(fontFamily: "cookie",fontSize: 16.sp),)
 
         ],),),
         Semantics(
@@ -150,7 +150,7 @@ class _Fontchoose extends State<Fontchoose> {
             },
           ),
           SizedBox(width: 10.0.w,),
-          Text("야체",style: TextStyle(fontFamily: "ya",fontSize: 16.sp),)
+          Text("넥슨 Lv.1 고딕",style: TextStyle(fontFamily: "nexon",fontSize: 16.sp),)
         ],),
         ),
     Semantics(

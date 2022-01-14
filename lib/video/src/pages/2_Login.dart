@@ -25,13 +25,13 @@ class Login extends StatelessWidget{
       Q = "origin";
     }
     else if(select ==2){
-      Q = "bmjua";
+      Q = "cookie";
     }
     else if(select ==3){
       Q = "chosun100";
     }
     else if(select ==4){
-      Q = "ya";
+      Q = "nexon";
     }
     else if(select ==5){
       Q ="nunum";

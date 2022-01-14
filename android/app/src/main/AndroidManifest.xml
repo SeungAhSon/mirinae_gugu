@@ -12,6 +12,7 @@
         android:label="구구절절"
         android:icon="@mipmap/ggjj">
         <activity
+            android:exported="true"
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"

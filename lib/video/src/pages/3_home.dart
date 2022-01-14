@@ -57,7 +57,7 @@ class _Home extends State<Home> {
     SharedPreferences s = await SharedPreferences.getInstance();
 
     setState(() {
-      Reading = s.getBool("reading10")!;
+      Reading = s.getBool("reading11")!;
     }
     );
   }
@@ -116,7 +116,7 @@ class _Home extends State<Home> {
       if (prefs.getBool('tutorial36') == null) {
         aa(context, "사용 가이드");
 
-        s.setBool("reading10",false);
+        s.setBool("reading11",false);
 
 
         s.setBool("reading1_1",false);
@@ -504,8 +504,8 @@ class _Home extends State<Home> {
                             await Navigator.push(context, MaterialPageRoute(builder: (context) => Notific(
                             )),);
                             setState(() {
-                              s.setBool("reading10",true);
-                              Reading =  s.getBool("reading10")!;
+                              s.setBool("reading11",true);
+                              Reading =  s.getBool("reading11")!;
                             }
                             );
                             //onPageChanged: _questionController.updateTheQnNum,

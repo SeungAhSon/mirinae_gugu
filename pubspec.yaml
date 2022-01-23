@@ -173,6 +173,10 @@ flutter:
       fonts:
         - asset: assets/fonts/NanumGothic.ttf
 
+    - family: mbc
+      fonts:
+        - asset: assets/fonts/MBC 1961 M.ttf
+
     #- images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

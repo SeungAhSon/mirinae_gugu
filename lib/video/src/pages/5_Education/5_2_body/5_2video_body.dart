@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class video_Body_2 extends StatefulWidget {
 }
 
 class _video_Body extends State<video_Body_2> {
+
   late PageController _pageController;
   List<String> FavoriteButton = [
     "false",
@@ -105,7 +107,7 @@ class _video_Body extends State<video_Body_2> {
     "18. 황사"
   ];
 
-
+  var height2 = AppBar().preferredSize.height;
 
   //record
   late Directory? appDir;
@@ -337,12 +339,37 @@ class _video_Body extends State<video_Body_2> {
       }
     }
   }
+  bool val = false;
+  onChangeMethod(bool newValue){
+    setState(() {
+      val=newValue;
+      print(newValue);
+    });
+  }
+
+  Yourface(){
+    if (val == true) {
+      return CameraPreview(controller);
+    } else if (val == false) {
+      return Container(
+          height: (MediaQuery.of(context).size.height -
+              height2 -
+              MediaQuery.of(context).padding.top) *
+              0.441,
+        color: Colors.grey[300],
+          child: Center(
+            child: Text("\n카메라\n  꺼짐",style: TextStyle(fontSize: 60.sp,fontFamily:'cookie')),
+
+    )
+      );
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
     saved();
     backplusload();
-    var height2 = AppBar().preferredSize.height;
 
     if (!controller.value.isInitialized) {
       return Container();
@@ -372,13 +399,29 @@ class _video_Body extends State<video_Body_2> {
             icon: Icon(Icons.arrow_back),
           ),
           ),
+
           actions: <Widget>[
-            Container(
-                height: 47.h,
-                width: 47.w,
-                color: Colors.white.withOpacity(0)
+        Padding(
+        padding: EdgeInsets.symmetric(horizontal: 5),
+      child: Row(
+
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Transform.scale(scale: 0.8,child: CupertinoSwitch(
+            activeColor: Colors.blue,
+
+            trackColor: Colors.grey,
+            value: val,
+            onChanged: (bool newValue){
+              onChangeMethod(newValue);
+            },
+          ),)
+        ],
+      )
             ),
           ],
+
+
         ),
         body: Stack(
           children: [
@@ -386,15 +429,14 @@ class _video_Body extends State<video_Body_2> {
             Center(
                 child: Container(
                     padding: EdgeInsets.all(20),
-                    child:
-                    CameraPreview(controller)) //CameraPreview(controller)/
+                    child: Yourface()),
+              //CameraPreview(controller)/
             ),
 
             //상단 슬라이드
             Column(
               children: [
                 Stack(
-
                   children: [
                     backcolor1(),//유튜브 뒤에 흰색 배경
                     Column(
@@ -427,12 +469,10 @@ class _video_Body extends State<video_Body_2> {
                 Semantics(
                     label: "전면 카메라",
                     child: SizedBox(
-
                   height: (MediaQuery.of(context).size.height -
                       height2 -
                       MediaQuery.of(context).padding.top) *
                       0.341,
-                  child: backcolor3(),
                 ),),
 
                 Stack(
@@ -702,12 +742,6 @@ class _video_Body extends State<video_Body_2> {
     );
   }
 
-  Widget backcolor3() {
-    //카메라 아래
-    return Container(
-      color: Colors.white.withOpacity(0),
-    );
-  }
   
 
 //텍스트 프린트

@@ -387,12 +387,39 @@ class _video_Body extends State<video_Body> {
       }
     }
   }
+  var height2 = AppBar().preferredSize.height;
+  bool val = false;
+  onChangeMethod(bool newValue){
+    setState(() {
+      val=newValue;
+      print(newValue);
+    });
+  }
 
+  Yourface(){
+    if (val == true) {
+      return Semantics(
+    label: "전면 카메라 켜짐",
+          child: CameraPreview(controller));
+    } else if (val == false) {
+      return Container(
+          height: (MediaQuery.of(context).size.height -
+              height2 -
+              MediaQuery.of(context).padding.top) *
+              0.441,
+          color: Colors.grey[300],
+child: Semantics(
+  label: "",
+          child: Center(
+            child: Text("\n카메라\n  꺼짐",style: TextStyle(fontSize: 60.sp,fontFamily:'cookie')),
+            ))
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     saved();
     backplusload();
-    var height2 = AppBar().preferredSize.height;
 
     if (!controller.value.isInitialized) {
       return Container();
@@ -423,10 +450,26 @@ class _video_Body extends State<video_Body> {
           ),
           ),
           actions: <Widget>[
-            Container(
-                height: 47.h,
-                width: 47.w,
-                color: Colors.white.withOpacity(0)
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                  children: [
+                    Transform.scale(scale: 0.8,
+                      child: Semantics(
+                  label: '카메라',
+                      child: CupertinoSwitch(
+                      activeColor: Colors.blue,
+                      trackColor: Colors.grey,
+                      value: val,
+                      onChanged: (bool newValue){
+                        onChangeMethod(newValue);
+                      },
+                    ),))
+
+                  ],
+                )
             ),
           ],
         ),
@@ -437,7 +480,7 @@ class _video_Body extends State<video_Body> {
                 child: Container(
                     padding: EdgeInsets.all(20),
                     child:
-                    CameraPreview(controller)) //CameraPreview(controller)/
+                    Yourface()),
             ),
 
             //상단 슬라이드
@@ -475,7 +518,7 @@ class _video_Body extends State<video_Body> {
     ],
                 ),
                 Semantics(
-                    label: "전면 카메라",
+                    label: "",
                     child: SizedBox(
 
                   height: (MediaQuery.of(context).size.height -

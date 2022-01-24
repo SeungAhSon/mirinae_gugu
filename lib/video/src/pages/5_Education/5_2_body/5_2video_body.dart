@@ -107,8 +107,6 @@ class _video_Body extends State<video_Body_2> {
     "18. 황사"
   ];
 
-  var height2 = AppBar().preferredSize.height;
-
   //record
   late Directory? appDir;
 
@@ -339,6 +337,7 @@ class _video_Body extends State<video_Body_2> {
       }
     }
   }
+  var height2 = AppBar().preferredSize.height;
   bool val = false;
   onChangeMethod(bool newValue){
     setState(() {
@@ -349,23 +348,24 @@ class _video_Body extends State<video_Body_2> {
 
   Yourface(){
     if (val == true) {
-      return CameraPreview(controller);
+      return Semantics(
+          label: "전면 카메라 켜짐",
+          child: CameraPreview(controller));
     } else if (val == false) {
       return Container(
           height: (MediaQuery.of(context).size.height -
               height2 -
               MediaQuery.of(context).padding.top) *
               0.441,
-        color: Colors.grey[300],
-          child: Center(
-            child: Text("\n카메라\n  꺼짐",style: TextStyle(fontSize: 60.sp,fontFamily:'cookie')),
-
-    )
+          color: Colors.grey[300],
+          child: Semantics(
+              label: "",
+              child: Center(
+                child: Text("\n카메라\n  꺼짐",style: TextStyle(fontSize: 60.sp,fontFamily:'cookie')),
+              ))
       );
     }
   }
-
-
   @override
   Widget build(BuildContext context) {
     saved();
@@ -390,47 +390,47 @@ class _video_Body extends State<video_Body_2> {
 
           leading: Semantics(
             label: "이전 페이지로 이동",
-    child: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            color: Colors.black,
-            iconSize: 25,
-            icon: Icon(Icons.arrow_back),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              color: Colors.black,
+              iconSize: 25,
+              icon: Icon(Icons.arrow_back),
+            ),
           ),
-          ),
-
           actions: <Widget>[
-        Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5),
-      child: Row(
+            Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Transform.scale(scale: 0.8,child: CupertinoSwitch(
-            activeColor: Colors.blue,
+                  children: [
+                    Transform.scale(scale: 0.8,
+                        child: Semantics(
+                          label: '카메라',
+                          child: CupertinoSwitch(
+                            activeColor: Colors.blue,
+                            trackColor: Colors.grey,
+                            value: val,
+                            onChanged: (bool newValue){
+                              onChangeMethod(newValue);
+                            },
+                          ),))
 
-            trackColor: Colors.grey,
-            value: val,
-            onChanged: (bool newValue){
-              onChangeMethod(newValue);
-            },
-          ),)
-        ],
-      )
+                  ],
+                )
             ),
           ],
-
-
         ),
         body: Stack(
           children: [
             //카메라
             Center(
-                child: Container(
-                    padding: EdgeInsets.all(20),
-                    child: Yourface()),
-              //CameraPreview(controller)/
+              child: Container(
+                  padding: EdgeInsets.all(20),
+                  child:
+                  Yourface()),
             ),
 
             //상단 슬라이드
@@ -467,7 +467,7 @@ class _video_Body extends State<video_Body_2> {
     ],
                 ),
                 Semantics(
-                    label: "전면 카메라",
+                    label: "",
                     child: SizedBox(
                   height: (MediaQuery.of(context).size.height -
                       height2 -

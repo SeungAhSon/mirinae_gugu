@@ -242,7 +242,7 @@ class _Home extends State<Home> {
                       CircleAvatar(
                         radius: 40.0,
                         backgroundColor: Colors.grey,
-                        backgroundImage: AssetImage('assets/hedgehog.jpeg'),
+                        backgroundImage: AssetImage('assets/duk2.jpg'),
                       )
                     ]
                 ),

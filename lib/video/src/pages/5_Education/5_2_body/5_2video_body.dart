@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
@@ -375,6 +376,7 @@ class _video_Body extends State<video_Body_2> {
       return Container();
     }
 
+
     return Scaffold(
         appBar: AppBar(
           //이 부분은 상단바 반응형으로 만든거. 근데 없어도 될듯
@@ -382,10 +384,12 @@ class _video_Body extends State<video_Body_2> {
           backgroundColor: Colors.white,
 
           title: Center(
-            child: Text(
-              '${Questiontitle[widget.index - 1]}',
-              style: TextStyle(fontSize: 24.sp + size, color: Colors.blue),
-            ),
+              child: Padding(
+                padding:EdgeInsets.only(left:20),
+                child: Text(
+                  '${Questiontitle[widget.index - 1]}',
+                  style: TextStyle(fontSize: 24.sp + size, color: Colors.blue),
+                ),)
           ),
 
           leading: Semantics(
@@ -401,24 +405,35 @@ class _video_Body extends State<video_Body_2> {
           ),
           actions: <Widget>[
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
+                padding: EdgeInsets.only(right:10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                  children: [
-                    Transform.scale(scale: 0.8,
-                        child: Semantics(
-                          label: '카메라',
-                          child: CupertinoSwitch(
-                            activeColor: Colors.blue,
-                            trackColor: Colors.grey,
-                            value: val,
-                            onChanged: (bool newValue){
-                              onChangeMethod(newValue);
-                            },
-                          ),))
-
+                  children: <Widget>[
+                    Semantics(
+                      label: "카메라 전원 버튼 \n카메라 현재 상태",
+                      child: FlutterSwitch(
+                        activeText: "카메라 on",
+                        inactiveText: "카메라 off",
+                        activeColor: Colors.blue,
+                        value: val,
+                        valueFontSize: 11.0.sp,
+                        inactiveTextColor: Colors.black87,
+                        inactiveToggleColor: Colors.white70,
+                        activeTextColor:Colors.white,
+                        inactiveTextFontWeight: FontWeight.w500,
+                        activeTextFontWeight: FontWeight.w500,
+                        width: 85.w,
+                        borderRadius: 30.0,
+                        showOnOff: true,
+                        onToggle: (val) {
+                          setState(() {
+                            val = onChangeMethod(val);
+                          });
+                        },
+                      ),
+                    )
                   ],
+
                 )
             ),
           ],

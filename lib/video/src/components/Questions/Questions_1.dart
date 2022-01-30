@@ -6,7 +6,7 @@ const List quiz1_1 = [
 },
 {
 "id": 2,
-"options": ['의심', '아빠', '카메라', '소개'],
+"options": ['의심', '아빠', '카메라', '소개(하다)'],
 "answer_index": 3
 },
 {

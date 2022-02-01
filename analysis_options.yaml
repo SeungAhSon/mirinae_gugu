@@ -1,6 +1,6 @@
 include: package:pedantic/analysis_options.yaml
 
-analyzer:
+analyzer: 
   errors:
     prefer_single_quotes: ignore
 

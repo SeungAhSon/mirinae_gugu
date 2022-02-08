@@ -6,44 +6,54 @@ List<Map<String, Object>> WALKTHROUGH_ITEMS = [
   {
     'image': 'assets/Walkthrough/Walkthrough-1.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
     'String':'sadasdasd',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-2.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
     'String':'sadasdasd',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-3.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-4.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-5.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-6.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-7.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-8.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-9.png',
     'button_text': '계속하기',
+    'button_text1': '되돌리기',
   },
   {
     'image': 'assets/Walkthrough/Walkthrough-10.png',
     'button_text': '끝마치기',
+    'button_text1': '되돌리기',
   }
 ];
 
@@ -67,11 +77,11 @@ List asd =[
   "완료한 학습과 시험은 아이콘과 색으로 확인할 수 있어요!",
   "녹음하기를 통해 녹을할 수 있어요!",
   "받아쓰기를 통해 발음을 확인해 보세요! 다시 버튼을 사용하면 글자들이 깨끗이 사라져요!",
-"녹음을 듣거나 삭제할 수 있어요!",
-"복습시험은 객관식과 말하기 유형이 있어요! 시험에 통과하면 버튼 색깔이 변해요! 객관식 유형 시험 예시",
-"말하기 유형 시험 예시",
-"글꼴, 글자 크기 등의 설정을 할 수 있어요! 변경 내용을 적용하려면 앱을 다시 시작해야해요!",
-"녹음 버튼이나 받아쓰기 버튼을 연달아 빠르게 누르지 마세요!! 오류가 발생할 경우, 앱을 다시 실행하거나 앱 정보> 저장공간> 데이터 삭제를 해주세요!"];
+  "녹음을 듣거나 삭제할 수 있어요!",
+  "복습시험은 객관식과 말하기 유형이 있어요! 시험에 통과하면 버튼 색깔이 변해요! 객관식 유형 시험 예시",
+  "말하기 유형 시험 예시",
+  "글꼴, 글자 크기 등의 설정을 할 수 있어요! 변경 내용을 적용하려면 앱을 다시 시작해야해요!",
+  "녹음 버튼이나 받아쓰기 버튼을 연달아 빠르게 누르지 마세요!! 오류가 발생할 경우, 앱을 다시 실행하거나 앱 정보> 저장공간> 데이터 삭제를 해주세요!"];
 class _WalkthroughItemState extends State<WalkthroughItem> {
   @override
   Widget build(BuildContext context) {
@@ -93,50 +103,99 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
           ),
         ),
         Container(
-          alignment: Alignment.bottomCenter,
-          child: InkWell(
-            customBorder: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(50)),
-            ),
-            onTap: () async {
-              if ((widget.index + 1) == widget.totalItem) {
-                Navigator.of(context).pop();
-              } else {
-                await widget.controller.animateToPage(
-                  widget.index + 1,
-                  curve: Curves.easeIn,
-                  duration: Duration(milliseconds: 200),
-                );
-              }
-            },
-            child: Container(
-              alignment: Alignment.center,
-              height: 52,
-              margin: EdgeInsets.only(bottom: 30, left: 30, right: 30),
-              padding: EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(28, 75, 169, 1),
-                borderRadius: BorderRadius.all(Radius.circular(50)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(11, 50, 118, 0.6),
-                    blurRadius: 10,
-                    spreadRadius: 2,
-                    offset: const Offset(0, 0),
+            alignment: Alignment.bottomCenter,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children :[
+                  InkWell(
+                    customBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    onTap: () async {
+                      if ((widget.index) != 0){
+                        await widget.controller.animateToPage(
+                          widget.index - 1,
+                          curve: Curves.easeInOut,
+                          //curve: Curves.bounceIn,
+                          duration: Duration(milliseconds: 200),
+                        );
+                      }
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 52,
+                      width: MediaQuery.of(context).size.width*0.3,
+                      margin: EdgeInsets.only(bottom: 30, left: 30, right: 30),
+                      padding: EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(28, 75, 169, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromRGBO(11, 50, 118, 0.6),
+                            blurRadius: 10,
+                            spreadRadius: 2,
+                            offset: const Offset(0, 0),
+                          ),
+                        ],
+                      ),
+                      child: Semantics(
+                          label: asd[widget.index],
+                          child: Text(
+                            widget.item!['button_text1'] ?? 'Back',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16 + size),
+                          )),
+                    ),
                   ),
-                ],
-              ),
-              child: Semantics(
-                label: asd[widget.index],
-                child: Text(
-                widget.item!['button_text'] ?? 'Continue',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16 + size),
-              )),
-            ),
-          ),
+                  InkWell(
+                    customBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(50)),
+                    ),
+                    onTap: () async {
+                      if ((widget.index + 1) == widget.totalItem) {
+                        Navigator.of(context).pop();
+                      } else {
+                        await widget.controller.animateToPage(
+                          widget.index + 1,
+                          curve: Curves.easeInOut,
+                          duration: Duration(milliseconds: 200),
+                        );
+                      }
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 52,
+                      width: MediaQuery.of(context).size.width*0.3,
+                      margin: EdgeInsets.only(bottom: 30, left: 30, right: 30),
+                      padding: EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 5),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(28, 75, 169, 1),
+                        borderRadius: BorderRadius.all(Radius.circular(50)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromRGBO(11, 50, 118, 0.6),
+                            blurRadius: 10,
+                            spreadRadius: 2,
+                            offset: const Offset(0, 0),
+                          ),
+                        ],
+                      ),
+                      child: Semantics(
+                          label: asd[widget.index],
+                          child: Text(
+                            widget.item!['button_text'] ?? 'Continue',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 16 + size),
+                          )),
+                    ),
+                  ),
+                ]
+            )
         ),
         Center(
           child: Padding(

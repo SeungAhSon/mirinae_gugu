@@ -66,6 +66,7 @@ dependencies:
   storage_path:
   flutter_screenutil: ^5.0.2
   flutter_switch: ^0.3.2
+  introduction_screen: ^2.1.0
 
 
 dependency_overrides:
@@ -147,7 +148,15 @@ flutter:
     - assets/Walkthrough/Walkthrough-8.png
     - assets/Walkthrough/Walkthrough-9.png
     - assets/Walkthrough/Walkthrough-10.png
-
+    - assets/Walkthrough1/Walkthrough-1.jpg
+    - assets/Walkthrough1/Walkthrough-2.jpg
+    - assets/Walkthrough1/Walkthrough-3.jpg
+    - assets/Walkthrough1/Walkthrough-4.jpg
+    - assets/Walkthrough1/Walkthrough-5.jpg
+    - assets/Walkthrough1/Walkthrough-6.jpg
+    - assets/Walkthrough1/Walkthrough-7-1.jpg
+    - assets/Walkthrough1/Walkthrough-7-2.jpg
+    - assets/Walkthrough1/Walkthrough-8.jpg
 
   fonts:
     - family: cookie

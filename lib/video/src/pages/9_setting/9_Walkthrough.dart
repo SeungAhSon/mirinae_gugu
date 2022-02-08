@@ -1,32 +1,140 @@
 import 'package:flutter/material.dart';
-import 'package:mirinae_gugu/video/src/pages/9_setting/9_WalkthroughItem.dart';
-class WalkthroughScreen extends StatefulWidget {
-  const WalkthroughScreen({Key? key}) : super(key: key);
+import 'package:introduction_screen/introduction_screen.dart';
 
+GlobalKey<IntroductionScreenState> _introScreenKey = GlobalKey<IntroductionScreenState>();
+
+class WalkthroughScreen extends StatelessWidget {
   @override
-  _WalkthroughScreenState createState() => _WalkthroughScreenState();
-}
+  Widget build(BuildContext context) => SafeArea(
+    child: IntroductionScreen(
+      key: _introScreenKey,
+      pages: [
+        PageViewModel(
+          title: '공지사항을\n확인해주세요!',
+          body: '',
+          image: buildImage('assets/Walkthrough1/Walkthrough-1.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '발음 방법과 동작을\n확인해주세요',
+          body: '',
+          image: buildImage('assets/Walkthrough1/Walkthrough-2.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '완료한 학습과 시험은\n아이콘과 색으로\n확인할 수 있어요',
+          body: '',
+          image: buildImage('assets/Walkthrough1/Walkthrough-3.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '[녹음하기]를 통해\n녹음할 수 있어요',
+          body: '버튼으로 카메라를 끄고 킬 수 있어요',
+          image: buildImage('assets/Walkthrough1/Walkthrough-4.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '[받아쓰기]를 통해\n발음을 확인해보세요!',
+          body: '다시 버튼을 사용하면 글자들이 깨끗이 사라져요',
+          image: buildImage('assets/Walkthrough1/Walkthrough-5.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '녹음을 듣거나\n삭제할 수 있어요',
+          body: '',
+          image: buildImage('assets/Walkthrough1/Walkthrough-6.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '복습시험은 [객관식]과\n[말하기] 유형이 있어요',
+          body: '시험에 통과하면 버튼 색깔이 변해요',
+          image: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Image.asset('assets/Walkthrough1/Walkthrough-7-1.jpg'),
+              Image.asset('assets/Walkthrough1/Walkthrough-7-2.jpg'),
+          ],),
+          decoration: PageDecoration(
+              titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+              bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+              //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
+              //imagePadding: EdgeInsets.all(10),
+              pageColor: Color(0xFF489BFB),
+              imageFlex: 2,
+              imagePadding: EdgeInsets.only(top:MediaQuery.of(context).size.height * 0.1)
+          ),
+        ),
+        PageViewModel(
+          title: '글꼴, 글자 크기 등의\n[설정]을 할 수 있어요',
+          body: '변경 내용을 적용하려면 앱을 다시 시작해야해요!',
+          image: buildImage('assets/Walkthrough1/Walkthrough-8.jpg'),
+          decoration: getPageDecoration(),
+        ),
+        PageViewModel(
+          title: '녹음 버튼이나 받아쓰기\n버튼을 연달아 빠르게\n누르지 마세요!!',
+          body: '오류가 발생할 경우, 앱을 다시 실행하거나\n앱 정보>저장공간>데이터삭제를 해주세요!',
+          //image: buildImage('assets/GGJJ_logo.JPG'),
+          footer: RaisedButton(
+            onPressed: () => goToHome(context),
+            color: Theme.of(context).primaryColor,
+            shape: StadiumBorder(),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+            child: Text(
+              '닫기',
+              style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+          decoration: PageDecoration(
+            titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+            bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+            //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
+            titlePadding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.2, 0, 20),
+            descriptionPadding: EdgeInsets.all(10),
+            pageColor: Color(0xFF489BFB),
+          ),
+        ),
+      ],
+      done: Text('닫기', style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600)),
+      onDone: () => goToHome(context),
 
-class _WalkthroughScreenState extends State<WalkthroughScreen> {
-  @override
-  Widget build(BuildContext context) {
-    PageController _controller = PageController(initialPage: 0);
+      globalBackgroundColor: Color(0xFF489BFB),
+      showNextButton: true,
+      showSkipButton: true,
+      showDoneButton: true,
 
-    return Scaffold(
-        body: PageView.builder(
-            physics:new NeverScrollableScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            controller: _controller,
-            itemCount: WALKTHROUGH_ITEMS.length,
-            itemBuilder: (BuildContext context, int index) {
-              return WalkthroughItem(
-                  controller: _controller,
-                  item: WALKTHROUGH_ITEMS[index],
-                  index: index,
-                  totalItem: WALKTHROUGH_ITEMS.length
-              );
-            }
-        )
-    );
-  }
+      skip: Icon(Icons.arrow_back, color: Colors.white,),
+      //onSkip: () => goToHome(context),
+      onSkip:() => _introScreenKey.currentState?.previous(),
+      next: Icon(Icons.arrow_forward, color: Colors.white,),
+
+      dotsDecorator: getDotDecoration(),
+      skipFlex: 0,
+      nextFlex: 0,
+    ),
+  );
+
+  void goToHome(context) =>  Navigator.of(context).pop();
+
+  Widget buildImage(String path) =>
+      Center(child: Image.asset(path, width: 350));
+
+  DotsDecorator getDotDecoration() => DotsDecorator(
+    color: Color(0xFFBDBDBD),
+    size: Size(10, 10),
+    activeSize: Size(22, 10),
+    activeColor: Colors.white,
+    activeShape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(24),
+    ),
+  );
+
+  PageDecoration getPageDecoration() => PageDecoration(
+    titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+    bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+    //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
+    //imagePadding: EdgeInsets.all(10),
+    pageColor: Color(0xFF489BFB),
+    imageFlex: 3,
+    imagePadding: EdgeInsets.only(top:20)
+  );
 }

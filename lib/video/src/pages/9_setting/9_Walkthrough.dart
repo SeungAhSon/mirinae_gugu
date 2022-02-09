@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 GlobalKey<IntroductionScreenState> _introScreenKey = GlobalKey<IntroductionScreenState>();
 
@@ -55,8 +56,8 @@ class WalkthroughScreen extends StatelessWidget {
               Image.asset('assets/Walkthrough1/Walkthrough-7-2.jpg'),
           ],),
           decoration: PageDecoration(
-              titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
-              bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+              titleTextStyle: TextStyle(fontSize: 25.0.sp, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+              bodyTextStyle: TextStyle(fontSize: 15.0.sp, color:Colors.white,fontFamily: "cookie"),
               //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
               //imagePadding: EdgeInsets.all(10),
               pageColor: Color(0xFF489BFB),
@@ -76,17 +77,17 @@ class WalkthroughScreen extends StatelessWidget {
           //image: buildImage('assets/GGJJ_logo.JPG'),
           footer: RaisedButton(
             onPressed: () => goToHome(context),
-            color: Theme.of(context).primaryColor,
+            color: Colors.white,
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
             child: Text(
               '닫기',
-              style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+              style: TextStyle(color: Colors.black, fontSize: 16.0.sp, fontWeight: FontWeight.bold),
             ),
           ),
           decoration: PageDecoration(
-            titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
-            bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+            titleTextStyle: TextStyle(fontSize: 25.0.sp, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+            bodyTextStyle: TextStyle(fontSize: 15.0.sp, color:Colors.white,fontFamily: "cookie"),
             //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
             titlePadding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.2, 0, 20),
             descriptionPadding: EdgeInsets.all(10),
@@ -94,7 +95,7 @@ class WalkthroughScreen extends StatelessWidget {
           ),
         ),
       ],
-      done: Text('닫기', style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.w600)),
+      done: Text('닫기', style: TextStyle(color: Colors.white,fontSize: 15.0.sp,fontWeight: FontWeight.w600)),
       onDone: () => goToHome(context),
 
       globalBackgroundColor: Color(0xFF489BFB),
@@ -129,8 +130,8 @@ class WalkthroughScreen extends StatelessWidget {
   );
 
   PageDecoration getPageDecoration() => PageDecoration(
-    titleTextStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
-    bodyTextStyle: TextStyle(fontSize: 15, color:Colors.white,fontFamily: "cookie"),
+    titleTextStyle: TextStyle(fontSize: 25.0.sp, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
+    bodyTextStyle: TextStyle(fontSize: 15.0.sp, color:Colors.white,fontFamily: "cookie"),
     //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
     //imagePadding: EdgeInsets.all(10),
     pageColor: Color(0xFF489BFB),

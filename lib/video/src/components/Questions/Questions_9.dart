@@ -94,14 +94,14 @@ const List quiz9_2 = [
 "id": 19,
 "options": [' 파인애플', ' 강아지', ' 은행원', ' 철새'],
 "answer_index": 2
-}
+},
+  {
+    "id": 20,
+    "options": [' 파인애플', ' 신발장', ' 감기', ' 군인'],
+    "answer_index": 3
+  }
 ];
 const List quiz9_3 = [
-{
-"id": 20,
-"options": [' 파인애플', ' 신발장', ' 감기', ' 군인'],
-"answer_index": 3
-},
 {
 "id": 21,
 "options": [' 간호사', ' 내복', ' 오리', ' 감기'],

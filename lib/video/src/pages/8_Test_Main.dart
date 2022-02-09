@@ -28,7 +28,7 @@ class Test_Main extends StatelessWidget{
               ButtonChapter(onTap: Test_8(), number: 8, text: '가을'),
               ButtonChapter(onTap: Test_9(), number: 9, text: '직업'),
               ButtonChapter(onTap: Test_10(), number: 10, text: '집'),
-              ButtonChapter(onTap: update(), number: 11, text: '겨울'),
+              ButtonChapter(onTap: Test_11(), number: 11, text: '겨울'),
               ButtonChapter(onTap: update(), number: 12, text: '가족'),
               ButtonChapter(onTap: update(), number: 13, text: '외래어 1'),
             ],

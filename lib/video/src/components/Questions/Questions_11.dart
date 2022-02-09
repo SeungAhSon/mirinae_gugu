@@ -1,7 +1,7 @@
 const List quiz11_1 = [
   {
     "id": 1,
-    "options": [' 성탄절', ' 장마', ' 소개(하다)', ' 화가'],
+    "options": [' 성탄절', ' 장마', ' 소개', ' 화가'],
     "answer_index": 0
   },
   {
@@ -21,8 +21,8 @@ const List quiz11_1 = [
   },
   {
     "id": 5,
-    "options": [' 떡국', ' 열대야', ' 평화', ' 초콜릿'],
-    "answer_index": 0
+    "options": [ ' 열대야', ' 평화', ' 떡국',' 초콜릿'],
+    "answer_index": 2
   },
   {
     "id": 6,
@@ -83,12 +83,12 @@ const List quiz11_2 = [
   },
   {
     "id": 17,
-    "options": [' 창피(하다)', ' 붕어빵', ' 명절', ' 화상'],
+    "options": [' 창피', ' 붕어빵', ' 명절', ' 화상'],
     "answer_index": 1
   },
   {
     "id": 18,
-    "options": [' 창피(하다)', ' 담요', ' 낭만', ' 난방'],
+    "options": [' 단소', ' 담요', ' 낭만', ' 난방'],
     "answer_index": 1
   },
   {
@@ -130,7 +130,7 @@ const List quiz11_3 = [
   },
   {
     "id": 26,
-    "options": [' 친척', ' 목도리', ' 창피(하다)', ' 고드름'],
+    "options": [' 친척', ' 목도리', ' 창피', ' 고드름'],
     "answer_index": 3
   },
   {

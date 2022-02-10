@@ -175,6 +175,41 @@ class _Home extends State<Home> {
         s.setBool("speaking8_2",false);
         s.setBool("speaking8_3",false);
 
+        s.setBool("reading9_1",false);
+        s.setBool("reading9_2",false);
+        s.setBool("reading9_3",false);
+        s.setBool("speaking9_1",false);
+        s.setBool("speaking9_2",false);
+        s.setBool("speaking9_3",false);
+
+        s.setBool("reading10_1",false);
+        s.setBool("reading10_2",false);
+        s.setBool("reading10_3",false);
+        s.setBool("speaking10_1",false);
+        s.setBool("speaking10_2",false);
+        s.setBool("speaking10_3",false);
+
+        s.setBool("reading11_1",false);
+        s.setBool("reading11_2",false);
+        s.setBool("reading11_3",false);
+        s.setBool("speaking11_1",false);
+        s.setBool("speaking11_2",false);
+        s.setBool("speaking11_3",false);
+
+        s.setBool("reading12_1",false);
+        s.setBool("reading12_2",false);
+        s.setBool("reading12_3",false);
+        s.setBool("speaking12_1",false);
+        s.setBool("speaking12_2",false);
+        s.setBool("speaking12_3",false);
+
+        s.setBool("reading13_1",false);
+        s.setBool("reading13_2",false);
+        s.setBool("reading13_3",false);
+        s.setBool("speaking13_1",false);
+        s.setBool("speaking13_2",false);
+        s.setBool("speaking13_3",false);
+
         prefs.setInt('fontchoose',1);
         ss.setString('fontsize',"보통");
         //조음학습
@@ -188,6 +223,11 @@ class _Home extends State<Home> {
         prefs.setStringList("favorite_6", favorite_1.map((value) => value.toString()).toList());
         prefs.setStringList("favorite_7", favorite_1.map((value) => value.toString()).toList());
         prefs.setStringList("favorite_8", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_9_", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_10_", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_11_", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_12_", favorite_1.map((value) => value.toString()).toList());
+        prefs.setStringList("favorite_13_", favorite_1.map((value) => value.toString()).toList());
       }
       setState(() {
       });

@@ -86,7 +86,7 @@ class LearnLevelButton extends StatelessWidget {
                   text,
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20.0.sp, fontWeight: FontWeight.bold,
+                      fontSize: 18.0.sp, fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

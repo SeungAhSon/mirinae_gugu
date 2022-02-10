@@ -12,10 +12,48 @@ import 'package:mirinae_gugu/video/src/widget/button_test.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Test_9 extends StatelessWidget{
-  bool state1 = false;
+class Test_9 extends StatefulWidget{
+  const Test_9({
+    Key ?key,
+  }) : super(key: key);
   @override
+  _Test_9 createState() => _Test_9();
+}
+class _Test_9 extends State<Test_9>{
+  bool speaking9_1 = false;
+  bool speaking9_2 = false;
+  bool speaking9_3 = false;
+  bool reading9_1 = false;
+  bool reading9_2 = false;
+  bool reading9_3 = false;
+
+
+  void loadnotification() async{
+    SharedPreferences s = await SharedPreferences.getInstance();
+    setState(() {
+      speaking9_1 = s.getBool("speaking9_1")!;
+      speaking9_2 = s.getBool("speaking9_2")!;
+      speaking9_3 = s.getBool("speaking9_3")!;
+      reading9_1 = s.getBool("reading9_1")!;
+      reading9_2 = s.getBool("reading9_2")!;
+      reading9_3 = s.getBool("reading9_3")!;
+    });
+  }
+
+
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+  @override
+  void dispose() {
+    super.dispose();
+
+  }
   Widget build(BuildContext context){
+    loadnotification();
     return Scaffold(
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -32,22 +70,22 @@ class Test_9 extends StatelessWidget{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice91(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice92(),), //StartPage()
+                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_1, onTap: Choice91(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_1, onTap: Choice92(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: state1, onTap: Choice93(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice94(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_3, onTap: Choice93(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_2, onTap: Choice94(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: state1,onTap: Choice95(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: state1, onTap: Choice96(),),
+                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading9_3,onTap: Choice95(),),
+                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_3, onTap: Choice96(),),
               ],
             ),
             SizedBox(height: 30.h),

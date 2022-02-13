@@ -35,8 +35,6 @@ class _StartPageState_2 extends State<StartPage_2> {
   int myindex = 0;
   String myoption = '';
 
-
-
   @override
   void initState() {
     super.initState();
@@ -45,8 +43,6 @@ class _StartPageState_2 extends State<StartPage_2> {
   }
   @override
   void dispose() {
-
-
     _recorder.stop();
     _audioStreamSubscription?.cancel();
     _audioStream?.close();

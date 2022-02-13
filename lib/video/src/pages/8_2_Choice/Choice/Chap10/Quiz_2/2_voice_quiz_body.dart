@@ -138,7 +138,6 @@ class _StartPageState_2 extends State<StartPage_2> {
     Questions("의자"),
     Questions("빨래"),
     Questions("세탁세제"),
-    Questions("하늘"),
   ];
 
   var score=0;
@@ -200,7 +199,7 @@ class _StartPageState_2 extends State<StartPage_2> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => ScorePage(lastscore: score),
+              builder: (context) => ScorePage(lastscore: (score/9*10).round()),
             ),
           );
         }
@@ -237,7 +236,7 @@ class _StartPageState_2 extends State<StartPage_2> {
                   children: <Widget>[
 /*                    Text("Score : $score /100",style: TextStyle(color : Colors.brown ,
                         fontSize: 20,fontWeight: FontWeight.bold),),*/
-                    Text("문제 : $questionnum / 10",style: TextStyle(color : Colors.brown ,
+                    Text("문제 : $questionnum / 9",style: TextStyle(color : Colors.brown ,
                         fontSize: 20.sp+size,fontWeight: FontWeight.bold),),
 
                   ],

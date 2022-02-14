@@ -14,13 +14,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
-import '5_11_pageview.dart';
+
 
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '5_11_pageview.dart';
 
 
 class video_Body extends StatefulWidget {
@@ -114,36 +116,37 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
+  '1. 화재',
+  '2. 하얗다',
+  '3. 폭설',
+  '4. 춥다',
+  '5. 추위',
+  '6. 장갑',
+  '7. 입김',
+  '8. 영하',
+  '9. 얼음',
+  '10. 썰매',
+  '11. 스키',
+  '12. 손난로',
+  '13. 성탄절',
+  '14. 설날',
+  '15. 새해',
+  '16. 붕어빵',
+  '17. 바람',
+  '18. 목도리',
+  '19. 떡국',
+  '20. 동상',
+  '21. 담요',
+  '22. 눈싸움',
+  '23. 눈사람',
+  '24. 눈꽃',
+  '25. 내복',
+  '26. 난방',
+  '27. 귤',
+  '28. 귀마개',
+  '29.굴뚝',
+  '30. 고드름',
+
   ];
 
   //record

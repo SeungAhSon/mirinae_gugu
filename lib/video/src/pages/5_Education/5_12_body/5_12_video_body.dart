@@ -14,13 +14,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
-import '5_12_pageview.dart';
+
 
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '5_12_pageview.dart';
 
 
 class video_Body extends StatefulWidget {
@@ -114,37 +116,37 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
-  ];
+  '1. 형제',
+  '2. 형',
+  '3. 핵가족',
+  '4. 할머니',
+  '5. 할아버지',
+  '6. 친척',
+  '7. 조카',
+  '8. 자매',
+  '9. 자녀',
+  '10. 이모',
+  '11. 오빠',
+  '12. 엄마',
+  '13. 언니',
+  '14. 어머니',
+  '15. 아주머니',
+  '16. 아빠',
+  '17. 아버지',
+  '18. 아내',
+  '19. 삼촌',
+  '20. 사촌',
+  '21. 사위',
+  '22. 명절',
+  '23. 며느리',
+  '24. 동생',
+  '25. 대가족',
+  '26. 누나',
+  '27. 남편',
+  '28. 남매',
+  '29. 고모',
+  '30. 가족',
+];
 
   //record
   late Directory? appDir;

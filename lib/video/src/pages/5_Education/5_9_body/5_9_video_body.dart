@@ -14,13 +14,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
-import '5_9_pageview.dart';
+
 
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '5_9_pageview.dart';
 
 
 class video_Body extends StatefulWidget {
@@ -114,36 +116,36 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
+  '1. 회사원',
+  '2. 화가',
+  '3. 프로그래머',
+  '4. 작가',
+  '5. 의사',
+  '6. 은행원',
+  '7. 운동선수',
+  '8. 요리사',
+  '9. 외교관',
+  '10. 영화감독',
+  '11. 아나운서',
+  '12. 승무원',
+  '13. 성우',
+  '14. 비서',
+  '15. 변호사',
+  '16. 번역가',
+  '17. 배우',
+  '18. 디자이너',
+  '19. 대통령',
+  '20. 농부',
+  '21. 기자',
+  '22. 국회의원',
+  '23. 군인',
+  '24. 과학자',
+  '25. 공무원',
+  '26. 경호원',
+  '27. 경찰',
+  '28. 건축가',
+  '29. 간호사',
+  '30. 가수'
   ];
 
   //record

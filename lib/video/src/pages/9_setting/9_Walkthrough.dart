@@ -103,10 +103,10 @@ class WalkthroughScreen extends StatelessWidget {
       showSkipButton: true,
       showDoneButton: true,
 
-      skip: Icon(Icons.arrow_back, color: Colors.white,),
+      skip: Icon(Icons.arrow_back, color: Colors.white,semanticLabel: "이전으로",),
       //onSkip: () => goToHome(context),
       onSkip:() => _introScreenKey.currentState?.previous(),
-      next: Icon(Icons.arrow_forward, color: Colors.white,),
+      next: Icon(Icons.arrow_forward, color: Colors.white,semanticLabel:"다음으로"),
 
       dotsDecorator: getDotDecoration(),
       skipFlex: 0,

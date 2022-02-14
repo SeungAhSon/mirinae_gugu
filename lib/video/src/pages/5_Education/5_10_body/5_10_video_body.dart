@@ -14,13 +14,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
-import '5_10_pageview.dart';
+
 
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+import '5_10_pageview.dart';
 
 
 class video_Body extends StatefulWidget {
@@ -112,36 +114,36 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
+  '1. 화장실',
+  '2. 형광등',
+  '3. 현관문',
+  '4. 침대',
+  '5. 청소',
+  '6. 책장',
+  '7. 책상',
+  '8. 창문',
+  '9. 주방',
+  '10. 휴지',
+  '11. 전자제품',
+  '12. 젓가락',
+  '13. 장난감',
+  '14. 자동차',
+  '15. 이불',
+  '16. 의자',
+  '17. 요리',
+  '18. 쓰레기통',
+  '19. 신발장',
+  '20. 세탁기',
+  '21. 설거지',
+  '22. 빨래',
+  '23. 비밀번호',
+  '24. 분리수거',
+  '25. 베게',
+  '26. 마당',
+  '27. 놀이터',
+  '28. 거실',
+  '29. 가구'
+
   ];
 
   //record
@@ -517,7 +519,7 @@ child: Semantics(
                               physics: NeverScrollableScrollPhysics(),
                               controller: _pageController,
                               onPageChanged: updateTheQnNum,
-                              itemCount: 30,
+                              itemCount: 29,
                               itemBuilder: (context, index) => video_page(
                                 id: widget.index,
                               ),

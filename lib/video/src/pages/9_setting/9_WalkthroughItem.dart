@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/pages/1_Loading.dart';
 
 List<Map<String, Object>> WALKTHROUGH_ITEMS = [
@@ -92,6 +93,7 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
       decoration: BoxDecoration(color: Color(0xFF489BFB)),
       child: Stack(children: [
         Center(
+
           child: Container(
             height: MediaQuery.of(context).size.height * 0.9,
             width: MediaQuery.of(context).size.width * 0.9,
@@ -99,8 +101,7 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
               image: DecorationImage(
                   image: AssetImage(widget.item!['image'] ?? ''),
                   fit: BoxFit.fill),
-            ),
-          ),
+            ),)
         ),
         Container(
             alignment: Alignment.bottomCenter,
@@ -146,7 +147,7 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                fontSize: 16 + size),
+                                fontSize: 16.sp + size),
                           )),
                     ),
                   ),
@@ -190,7 +191,7 @@ class _WalkthroughItemState extends State<WalkthroughItem> {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                fontSize: 16 + size),
+                                fontSize: 16.sp+size),
                           )),
                     ),
                   ),

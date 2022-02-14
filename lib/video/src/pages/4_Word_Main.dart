@@ -19,7 +19,7 @@ class Word_Main extends StatelessWidget{
           padding: EdgeInsets.all(10),
           children: [
             SizedBox(height: 5.h),
-            Text('낱말 시험', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
+            Text('낱말 학습', style: TextStyle(fontSize: 20.sp+size, color: Colors.black, fontWeight: FontWeight.bold)),
             SizedBox(height: 8.h),
             ButtonChapter(onTap: Vocab_Screen_51(), number: 1, text: '새학년'),
             ButtonChapter(onTap: Vocab_Screen_52(), number: 2, text: '봄'),

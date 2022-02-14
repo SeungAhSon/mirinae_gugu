@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mirinae_gugu/video/src/components/DefaultAppBar.dart';
-import 'package:mirinae_gugu/video/src/pages/5_Education/5_12_body/5_12_video_body.dart';
+
 import 'package:mirinae_gugu/video/src/widget/learn_level_button_f.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../1_Loading.dart';
+import '5_12_video_body.dart';
 
 
 class Vocab_Screen_512 extends StatefulWidget {

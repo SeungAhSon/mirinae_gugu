@@ -8,19 +8,23 @@ import 'package:flutter_switch/flutter_switch.dart';
 import 'package:google_speech/google_speech.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:mirinae_gugu/video/src/pages/5_Education/5_13_body/5_13_pageview.dart';
+
 import 'package:mirinae_gugu/video/src/pages/noise_meter.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sound_stream/sound_stream.dart';
 
 import '../../1_Loading.dart';
-import '5_13_pageview.dart';
+
 
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:mirinae_gugu/video/src/pages/6_record/6_audio_recorder.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:permission_handler/permission_handler.dart';
+
+
 
 
 class video_Body extends StatefulWidget {
@@ -114,36 +118,38 @@ class _video_Body extends State<video_Body> {
   BehaviorSubject<List<int>>? _audioStream;
   late bool favoriteButton_0_01_01 = false;
   List<String> Questiontitle = [
-    "1. 공책",
-    "2. 교실",
-    "3. 교과서",
-    "4. 교무실",
-    "5. 교복",
-    "6. 교훈",
-    "7. 급식",
-    "8. 낙서",
-    "9. 대화",
-    "10. 등교",
-    "11. 발표",
-    "12. 사물함",
-    "13. 선생님",
-    "14. 소개",
-    "15. 수돗가",
-    "16. 수업",
-    "17. 숙제",
-    "18. 실내화",
-    "19. 연필",
-    "20. 우유",
-    "21. 운동장",
-    "22. 이름",
-    "23. 일기",
-    "24. 지우개",
-    "25. 짝",
-    "26. 책가방",
-    "27. 청소도구",
-    "28. 친구",
-    "29. 칠판",
-    "30. 학년"
+  '1. 피자',
+  '2. 프라이팬',
+  '3. 파인애플',
+  '4. 텔레비전',
+  '5. 케이크',
+  '6. 컵',
+  '7. 컴퓨터',
+  '8. 카페',
+  '9. 카메라',
+  '10. 치킨',
+  '11. 초콜릿',
+  '12. 주스',
+  '13. 인터넷',
+  '14. 이어폰',
+  '15. 엘리베이터',
+  '16. 에어컨',
+  '17. 스프링',
+  '18. 소스',
+  '19. 서핑',
+  '20. 버스',
+  '21. 배터리',
+  '22. 메세지',
+  '23. 마우스',
+  '24. 마스크',
+  '25. 립스틱',
+  '26. 로션',
+  '27. 로그인',
+  '28. 다이어트',
+  '29. 노트북',
+  '30. 게임'
+
+
   ];
 
   //record

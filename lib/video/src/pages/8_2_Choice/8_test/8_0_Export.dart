@@ -10,3 +10,4 @@ export 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_9_test.dart';
 export 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_10_test.dart';
 export 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_11_test.dart';
 export 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_12_test.dart';
+export 'package:mirinae_gugu/video/src/pages/8_2_Choice/8_test/8_13_test.dart';

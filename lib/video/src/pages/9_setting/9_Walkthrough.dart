@@ -11,7 +11,7 @@ class WalkthroughScreen extends StatelessWidget {
       key: _introScreenKey,
       pages: [
         PageViewModel(
-          title: '공지사항을\n확인해주세요!',
+          title: '[공지사항]을\n확인해주세요!',
           body: '',
           image: buildImage('assets/Walkthrough1/Walkthrough-1.jpg'),
           decoration: getPageDecoration(),
@@ -41,7 +41,7 @@ class WalkthroughScreen extends StatelessWidget {
           decoration: getPageDecoration(),
         ),
         PageViewModel(
-          title: '녹음을 듣거나\n삭제할 수 있어요',
+          title: '[녹음]을 듣거나\n삭제할 수 있어요',
           body: '',
           image: buildImage('assets/Walkthrough1/Walkthrough-6.jpg'),
           decoration: getPageDecoration(),

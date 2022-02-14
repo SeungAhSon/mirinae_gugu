@@ -6,8 +6,8 @@ GlobalKey<IntroductionScreenState> _introScreenKey = GlobalKey<IntroductionScree
 
 class WalkthroughScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => SafeArea(
-    child: IntroductionScreen(
+  Widget build(BuildContext context) {
+    return IntroductionScreen(
       key: _introScreenKey,
       pages: [
         PageViewModel(
@@ -52,9 +52,9 @@ class WalkthroughScreen extends StatelessWidget {
           image: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Image.asset('assets/Walkthrough1/Walkthrough-7-1.jpg'),
+              Image.asset('assets/Walkthrough1/Walkthrough-7-1.jpg'),
               Image.asset('assets/Walkthrough1/Walkthrough-7-2.jpg'),
-          ],),
+            ],),
           decoration: PageDecoration(
               titleTextStyle: TextStyle(fontSize: 25.0.sp, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
               bodyTextStyle: TextStyle(fontSize: 15.0.sp, color:Colors.white,fontFamily: "cookie"),
@@ -89,7 +89,7 @@ class WalkthroughScreen extends StatelessWidget {
             titleTextStyle: TextStyle(fontSize: 25.0.sp, fontWeight: FontWeight.bold, color:Colors.white,fontFamily: "cookie"),
             bodyTextStyle: TextStyle(fontSize: 15.0.sp, color:Colors.white,fontFamily: "cookie"),
             //descriptionPadding: EdgeInsets.all(16).copyWith(bottom: 0),
-            titlePadding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.2, 0, 20),
+            titlePadding: EdgeInsets.fromLTRB(0, MediaQuery.of(context).size.height * 0.4, 0, 20),
             descriptionPadding: EdgeInsets.all(10),
             pageColor: Color(0xFF489BFB),
           ),
@@ -111,8 +111,8 @@ class WalkthroughScreen extends StatelessWidget {
       dotsDecorator: getDotDecoration(),
       skipFlex: 0,
       nextFlex: 0,
-    ),
-  );
+    );
+  }
 
   void goToHome(context) =>  Navigator.of(context).pop();
 
@@ -136,6 +136,6 @@ class WalkthroughScreen extends StatelessWidget {
     //imagePadding: EdgeInsets.all(10),
     pageColor: Color(0xFF489BFB),
     imageFlex: 3,
-    imagePadding: EdgeInsets.only(top:20)
+    imagePadding: EdgeInsets.only(top:40)
   );
 }

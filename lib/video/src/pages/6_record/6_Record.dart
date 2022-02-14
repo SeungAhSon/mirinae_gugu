@@ -62,156 +62,198 @@ class _RecordState extends State<Record> {
 
           itemBuilder: (BuildContext context, int i) {
             return Card(
-              elevation: 3,
+                elevation: 3,
                 margin: EdgeInsets.symmetric(vertical: 7, horizontal: 0),
-              shape: RoundedRectangleBorder(
-                  side:  BorderSide(color: Colors.black,width: 1),
-                  borderRadius: BorderRadius.all(Radius.circular(9))
-              ),
-              child:Semantics(
-              label: "녹음 ${i+1}",
-              child: ExpansionTile(
-                key: Key(i.toString()),
-                initiallyExpanded: i == oneopen,
-
-                title: Text(
-                  _getTime(filePath: widget.records![i].toString()),
-                  style: TextStyle(color: Colors.black,fontSize: 16.sp+size),
+                shape: RoundedRectangleBorder(
+                    side:  BorderSide(color: Colors.black,width: 1),
+                    borderRadius: BorderRadius.all(Radius.circular(9))
                 ),
-                onExpansionChanged: ((newState) {
-                  if (newState) {
-                    setState(() {
-                      _selected = i;
-                      oneopen = i;
-                      advancedPlayer.stop();
-                      isPlay = false;
-                      _percent = 0.0;
-                      _getDuration(totalTime);
-                    });
-                  }
-                  else {
-                    setState(() {
-                      oneopen = -1;
-                      advancedPlayer.stop();
-                      isPlay = false;
-                    });
-                  }
-                }),
-                children: [
-                  Container(
-                    height: 120,
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                child:Semantics(
+                  label: "녹음 ${i+1}",
+                  child: ExpansionTile(
+                    key: Key(i.toString()),
+                    initiallyExpanded: i == oneopen,
 
-                        LinearProgressIndicator(
-                          minHeight: 5,
-                          backgroundColor: Colors.black,
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                          value: _selected == i ? _percent : 0,
-                          //value: (currentTime.inMilliseconds / totalTime.inMilliseconds) * 1.0,
-
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              Text(
-                                _getDuration(currentTime),
-                                style: TextStyle(color: Colors.blue),
-                              ),
-                              Text(
-                                _getDuration(totalTime),
-                                style: TextStyle(color: Colors.black),
-                              )
-                            ],
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    title: Text(
+                      _getTime(filePath: widget.records![i].toString()),
+                      style: TextStyle(color: Colors.black,fontSize: 16.sp+size),
+                    ),
+                    onExpansionChanged: ((newState) {
+                      if (newState) {
+                        setState(() {
+                          _selected = i;
+                          oneopen = i;
+                          advancedPlayer.stop();
+                          isPlay = false;
+                          _percent = 0.0;
+                          _getDuration(totalTime);
+                        });
+                      }
+                      else {
+                        setState(() {
+                          oneopen = -1;
+                          advancedPlayer.stop();
+                          isPlay = false;
+                        });
+                      }
+                    }),
+                    children: [
+                      Container(
+                        height: 120,
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            (isPlay)?
-                            _Presso(
-                              label: "일시 정지",
-                                ico: Icons.pause,
-                                onPressed: () {
-                                  setState(() {
-                                    isPlay=false;
-                                  });
-                                  advancedPlayer.pause();
-                                }): _Presso(
-                                label: "재생",
-                                ico: Icons.play_arrow,
-                                onPressed: () {
-                                  setState(() {
-                                    isPlay=true;
-                                    currentTime = new Duration(seconds: 0);
-                                  });
-                                  advancedPlayer.play(widget.records!.elementAt(i),
-                                      isLocal: true);
-                                  setState(() {});
-                                  setState(() {
-                                    _selected = i;
-                                    _percent = 0.0;
-                                  });
-                                  advancedPlayer.onPlayerCompletion.listen((_) {
-                                    setState(() {
-                                      _percent = 0.0;
-                                    });
-                                  });
-                                  advancedPlayer.onDurationChanged.listen((duration) {
-                                    setState(() {
-                                      _totalTime = duration.inMicroseconds;
-                                      totalTime = duration;
-                                    });
-                                  });
-                                  advancedPlayer.onAudioPositionChanged
-                                      .listen((duration) {
-                                    setState(() {
-                                      _currentTime = duration.inMicroseconds;
-                                      currentTime = duration;
-                                      _percent = _currentTime.toDouble() /
-                                          _totalTime.toDouble();
-                                    });
-                                  });
-                                }),
 
-                            _Presso(
-                                label:"중지",
-                                ico: Icons.stop,
-                                onPressed: () {
-                                  advancedPlayer.stop();
-                                  setState(() {
-                                    currentTime = new Duration();
-                                    _percent = 0.0;
-                                  });
-                                }),
-                            _Presso(
-                                label:"녹음 삭제",
-                                ico: Icons.delete,
-                                onPressed: () {
-                                  Directory appDirec =
-                                  Directory(widget.records.elementAt(i));
-                                  appDirec.delete(recursive: true);
-                                  Fluttertoast.showToast(msg: "파일이 삭제되었습니다.");
-                                  setState(() {
-                                    widget.records
-                                        .remove(widget.records.elementAt(i));
-                                    advancedPlayer.stop();
-                                    _percent = 0.0;
-                                    oneopen = -1;
-                                  });
-                                }),
+                            LinearProgressIndicator(
+                              minHeight: 5,
+                              backgroundColor: Colors.black,
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                              value: _selected == i ? _percent : 0,
+                              //value: (currentTime.inMilliseconds / totalTime.inMilliseconds) * 1.0,
+
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    _getDuration(currentTime),
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                  Text(
+                                    _getDuration(totalTime),
+                                    style: TextStyle(color: Colors.black),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                (isPlay)?
+                                _Presso(
+                                    label: "일시 정지",
+                                    ico: Icons.pause,
+                                    onPressed: () {
+                                      setState(() {
+                                        isPlay=false;
+                                      });
+                                      advancedPlayer.pause();
+                                    }): _Presso(
+                                    label: "재생",
+                                    ico: Icons.play_arrow,
+                                    onPressed: () {
+                                      setState(() {
+                                        isPlay=true;
+                                        currentTime = new Duration(seconds: 0);
+                                      });
+                                      advancedPlayer.play(widget.records!.elementAt(i),
+                                          isLocal: true);
+                                      setState(() {});
+                                      setState(() {
+                                        _selected = i;
+                                        _percent = 0.0;
+                                      });
+                                      advancedPlayer.onPlayerCompletion.listen((_) {
+                                        setState(() {
+                                          _percent = 0.0;
+                                        });
+                                      });
+                                      advancedPlayer.onDurationChanged.listen((duration) {
+                                        setState(() {
+                                          _totalTime = duration.inMicroseconds;
+                                          totalTime = duration;
+                                        });
+                                      });
+                                      advancedPlayer.onAudioPositionChanged
+                                          .listen((duration) {
+                                        setState(() {
+                                          _currentTime = duration.inMicroseconds;
+                                          currentTime = duration;
+                                          _percent = _currentTime.toDouble() /
+                                              _totalTime.toDouble();
+                                        });
+                                      });
+                                    }),
+
+                                _Presso(
+                                    label:"중지",
+                                    ico: Icons.stop,
+                                    onPressed: () {
+                                      advancedPlayer.stop();
+                                      setState(() {
+                                        currentTime = new Duration();
+                                        _percent = 0.0;
+                                      });
+                                    }),
+                                _Presso(
+                                    label:"녹음 삭제",
+                                    ico: Icons.delete,
+                                    onPressed: () {
+                                      showDialog(
+                                          context: context,
+                                          barrierDismissible: false,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                                content: SingleChildScrollView(
+                                                  child: ListBody(
+                                                    children: <Widget>[
+                                                      Text('정말로 삭제하시겠습니까?',
+                                                          style: TextStyle(
+                                                            fontSize: 17,
+                                                          )),
+                                                    ],
+                                                  ),
+                                                ),
+                                                actions: <Widget>[
+                                                  FlatButton(
+                                                      child: Text(
+                                                          '네',
+                                                          style: TextStyle(
+                                                              fontSize: 15,
+                                                              color: Colors.blue
+                                                          )),
+                                                      onPressed: () {
+                                                        Directory appDirec =
+                                                        Directory(widget.records.elementAt(i));
+                                                        appDirec.delete(recursive: true);
+                                                        Fluttertoast.showToast(msg: "파일이 삭제되었습니다.");
+                                                        setState(() {
+                                                          widget.records
+                                                              .remove(widget.records.elementAt(i));
+                                                          advancedPlayer.stop();
+                                                          _percent = 0.0;
+                                                          oneopen = -1;
+                                                        });
+                                                        Navigator.of(context).pop();
+                                                      }
+                                                  ),
+                                                  FlatButton(
+                                                      child: Text('아니오',
+                                                          style: TextStyle(
+                                                              fontSize: 15,
+                                                              color: Colors.blue
+                                                          )
+                                                      ),
+                                                      onPressed: () {
+                                                        Navigator.of(context).pop();
+                                                      }
+                                                  )
+                                                ]
+                                            );
+                                          }
+                                      );
+                                    }),
+                              ],
+                            ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              ));
+                ));
           },
 
         ),
@@ -297,10 +339,10 @@ class _Presso extends StatelessWidget {
           onPressed: onPressed,
           child:
           Semantics(
-            label: label,
+              label: label,
               child: Icon(
-            ico, color: Colors.white,
-          ))),
+                ico, color: Colors.white,
+              ))),
     );
   }
 }

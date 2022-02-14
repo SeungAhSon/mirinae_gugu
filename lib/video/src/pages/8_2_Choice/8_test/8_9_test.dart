@@ -70,22 +70,22 @@ class _Test_9 extends State<Test_9>{
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                  TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_1, onTap: Choice91(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_1, onTap: Choice92(),), //StartPage()
+                  TestButton(text: '읽기1', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_1, onTap: Choice91(),),
+                TestButton(text: '말하기1', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_1, onTap: Choice92(),), //StartPage()
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_3, onTap: Choice93(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_2, onTap: Choice94(),),
+                TestButton(text: '읽기2', color: Colors.blueAccent, icon: Icons.camera_alt,state: reading9_3, onTap: Choice93(),),
+                TestButton(text: '말하기2', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_2, onTap: Choice94(),),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TestButton(text: '동영상', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading9_3,onTap: Choice95(),),
-                TestButton(text: '목소리', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_3, onTap: Choice96(),),
+                TestButton(text: '읽기3', color: Colors.blueAccent, icon: Icons.camera_alt, state: reading9_3,onTap: Choice95(),),
+                TestButton(text: '말하기3', color: Colors.blueAccent, icon: Icons.mic,state: speaking9_3, onTap: Choice96(),),
               ],
             ),
             SizedBox(height: 30.h),

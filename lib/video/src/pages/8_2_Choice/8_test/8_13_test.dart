@@ -65,7 +65,7 @@ class _Test_13 extends State<Test_13>{
           label: "외래어 1",
             child: Container(
               height: MediaQuery.of(context).size.height*0.35.h,
-              child:Image.asset('assets/test_chapter/12_family.png'),
+              child:Image.asset('assets/test_chapter/13_foreign.png'),
             )),
             SizedBox(height: 5.h),
             Row(
